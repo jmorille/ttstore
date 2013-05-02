@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Group xmlns:fx="http://ns.adobe.com/mxml/2009" 
+		  xmlns:s="library://ns.adobe.com/flex/spark" 
+		  xmlns:mx="library://ns.adobe.com/flex/mx" width="100%" height="100%" 
+		  xmlns:view="eu.ttbox.view.*" 
+        >
+
+	<s:states>
+		<s:State name="logoutState"/>
+		<s:State name="loginState"/>
+	</s:states>
+	
+     
+	<fx:Metadata>
+		[Name]
+	</fx:Metadata>
+	
+	<fx:Script>
+		<![CDATA[
+			import mx.containers.Tile;
+			
+			import org.granite.tide.events.TideEvent;
+			
+			public function logout():void {
+				this.currentState = "logoutState"; 
+			}
+
+			public function loginSuccess():void {
+				this.currentState = "loginState";
+			}
+
+		]]>
+	</fx:Script>
+	
+	<fx:Declarations>
+		<!-- Placer ici les éléments non visuels (services et objets de valeur, par exemple). -->
+	</fx:Declarations>
+	
+	<s:Rect top="0" bottom="0" left="0" right="0">
+		<s:fill>
+			<s:LinearGradient rotation="90">
+				<s:GradientEntry color="0xFFFFFF"/>
+				<s:GradientEntry color="0xDDDDDD"/>
+			</s:LinearGradient>
+		</s:fill>
+	</s:Rect>
+	
+	
+	<view:LoginPanel id="loginPanel"  verticalCenter="0" horizontalCenter="0" includeIn="logoutState"/> 
+	
+	<view:UserForm id="userForm"  width="100%" height="100%" includeIn="loginState"/> 
+	
+	<mx:ApplicationControlBar verticalCenter="top"   dock="false" includeIn="loginState">
+		<view:LoggedPanel />
+	</mx:ApplicationControlBar>
+	
+	
+</s:Group>

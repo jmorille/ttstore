@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Group xmlns:fx="http://ns.adobe.com/mxml/2009" 
+		 xmlns:s="library://ns.adobe.com/flex/spark" 
+		 xmlns:mx="library://ns.adobe.com/flex/mx"   xmlns:catalog="eu.ttbox.view.admin.catalog.*" xmlns:product="eu.ttbox.view.admin.product.*">
+	<fx:Metadata>
+		[Name]
+	</fx:Metadata>
+	
+	<s:layout>
+		<s:HorizontalLayout />
+	</s:layout>
+	
+	<fx:Declarations>
+		<!-- Placer ici les éléments non visuels (services et objets de valeur, par exemple). -->
+	</fx:Declarations>
+
+
+	<catalog:CatalogPanel width="60%" height="100%" />
+	<product:ProductPanel width="40%" height="100%" />
+	
+</s:Group>

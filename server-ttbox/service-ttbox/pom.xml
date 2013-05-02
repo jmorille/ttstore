@@ -1,0 +1,318 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>eu.ttbox.serveur</groupId>
+    <artifactId>serveur-ttbox</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+  </parent>
+
+  <artifactId>service-ttbox</artifactId>
+  <packaging>jar</packaging>
+
+  <name>TTBox Server - Service</name>
+
+  <properties>
+    <dbunit.dataTypeFactoryName>org.dbunit.ext.postgresql.PostgresqlDataTypeFactory</dbunit.dataTypeFactoryName>
+    <dbunit.jdbc.driver>org.postgresql.Driver</dbunit.jdbc.driver>
+    <dbunit.jdbc.url>jdbc:postgresql://localhost:5432/postgres</dbunit.jdbc.url>
+    <dbunit.jdbc.schema>ttbox</dbunit.jdbc.schema>
+    <dbunit.jdbc.username>ttbox</dbunit.jdbc.username>
+    <dbunit.jdbc.password>ttbox</dbunit.jdbc.password>
+
+  </properties>
+
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>eu.ttbox.bom</groupId>
+        <artifactId>bom-ttbox</artifactId>
+        <version>${project.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+
+  <dependencies>
+
+    <!-- test -->
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.dbunit</groupId>
+      <artifactId>dbunit</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-test</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>commons-dbcp</groupId>
+      <artifactId>commons-dbcp</artifactId>
+      <scope>test</scope>
+    </dependency>
+
+      <dependency>
+        <groupId>com.h2database</groupId>
+        <artifactId>h2</artifactId> 
+        <scope>test</scope>
+      </dependency>     
+    <dependency>
+      <groupId>hsqldb</groupId>
+      <artifactId>hsqldb</artifactId>
+      <scope>test</scope>
+    </dependency>
+    
+    
+<!--         <dependency> -->
+<!--        <groupId>org.hsqldb</groupId> -->
+<!--       <artifactId>hsqldb</artifactId> -->
+<!--       <version>2.2.4</version> -->
+<!--       <scope>test</scope> -->
+<!--     </dependency> -->
+    <dependency>
+      <groupId>javax.transaction</groupId>
+      <artifactId>jta</artifactId>
+      <version>1.1</version>
+      <scope>test</scope>
+    </dependency>
+    <!-- <dependency> <groupId>org.spockframework</groupId> <artifactId>spock-core</artifactId> <version>${spock.version}</version> 
+      <scope>test</scope> </dependency> <dependency> <groupId>org.spockframework</groupId> <artifactId>spock-spring</artifactId> 
+      <version>${spock.version}</version> <scope>test</scope> </dependency> -->
+    <dependency>
+      <groupId>ch.qos.logback</groupId>
+      <artifactId>logback-classic</artifactId>
+      <scope>test</scope>
+    </dependency>
+
+    <!-- Logging -->
+    <dependency>
+      <groupId>eu.ttbox.composant</groupId>
+      <artifactId>logging-comp</artifactId>
+      <version>0.0.1-SNAPSHOT</version>
+      <type>pom</type>
+    </dependency>
+    
+    <!-- Persistance -->
+    <dependency>
+      <groupId>javax.validation</groupId>
+      <artifactId>validation-api</artifactId>
+      <version>1.0.0.GA</version>
+    </dependency>
+
+
+    <dependency>
+      <groupId>org.hibernate</groupId>
+      <artifactId>hibernate-validator</artifactId>
+    </dependency>
+
+    <!-- Commons -->
+    <dependency>
+      <groupId>commons-lang</groupId>
+      <artifactId>commons-lang</artifactId>
+    </dependency>
+
+    <!-- Security -->
+    <dependency>
+      <groupId>org.springframework.security</groupId>
+      <artifactId>spring-security-core</artifactId>
+    </dependency>
+
+    <!-- Add service -->
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-core</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-beans</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-aop</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-context</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-context-support</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-tx</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-jdbc</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-orm</artifactId>
+    </dependency>
+
+    <!-- Granite Annotation <dependency> <groupId>org.graniteds</groupId> <artifactId>granite-core</artifactId> <version>${graniteds.version}</version> 
+      </dependency> -->
+    <!-- Persistence -->
+    <dependency>
+      <groupId>org.hibernate</groupId>
+      <artifactId>hibernate-core</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.hibernate.javax.persistence</groupId>
+      <artifactId>hibernate-jpa-2.0-api</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.hibernate</groupId>
+      <artifactId>hibernate-entitymanager</artifactId>
+    </dependency>
+
+  <!-- Tools -->
+    <dependency>
+      <groupId>com.google.guava</groupId>
+      <artifactId>guava</artifactId>
+    </dependency>
+    
+    <!-- Query Dsl -->
+    <dependency>
+      <groupId>com.mysema.querydsl</groupId>
+      <artifactId>querydsl-apt</artifactId>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.mysema.querydsl</groupId>
+      <artifactId>querydsl-jpa</artifactId>
+    </dependency>
+
+    <!-- <dependency> -->
+    <!-- <groupId>org.slf4j</groupId> -->
+    <!-- <artifactId>slf4j-log4j12</artifactId> -->
+    <!-- <version>1.6.1</version> -->
+    <!-- </dependency> -->
+    <!-- <dependency> <groupId>org.hibernate</groupId> <artifactId>hibernate-annotations</artifactId> <version>${hibernate.version}</version> 
+      </dependency> -->
+    <!-- Search <dependency> <groupId>org.hibernate</groupId> <artifactId>hibernate-search</artifactId> <version>${hibernate-search.version}</version> 
+      </dependency> -->
+  </dependencies>
+
+
+  <build>
+
+    <plugins>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>dbunit-maven-plugin</artifactId>
+        <version>${dbunit-maven-plugin.verion}</version>
+        <!-- common configurations -->
+        <configuration>
+          <dataTypeFactoryName>${dbunit.dataTypeFactoryName}</dataTypeFactoryName>
+          <driver>${dbunit.jdbc.driver}</driver>
+          <url>${dbunit.jdbc.url}</url>
+          <schema>${dbunit.jdbc.schema}</schema>
+          <username>${dbunit.jdbc.username}</username>
+          <password>${dbunit.jdbc.password}</password>
+          <supportBatchStatement>true</supportBatchStatement>
+          <format>flat</format>
+          <ordered>true</ordered>
+          <dest>src/test/resources/data/ttbox-db-export.xml</dest>
+          <src>src/test/resources/data/ttbox-db-export.xml</src>
+          <type>INSERT</type>
+          <tables>
+            <table>
+              <name>B_HOLDING</name>
+            </table>
+            <table>
+              <name>B_SALESPOINT</name>
+            </table>
+            <table>
+              <name>B_PRICING</name>
+            </table>
+            <table>
+              <name>B_USER</name>
+            </table>
+            <table>
+              <name>B_ROLE</name>
+            </table>
+            <table>
+              <name>B_GROUP</name>
+            </table>
+            <table>
+              <name>B_USER_GROUP</name>
+            </table>
+            <table>
+              <name>B_GROUP_ROLE</name>
+            </table>
+            <table>
+              <name>B_PRODUCT</name>
+            </table>
+            <table>
+              <name>B_CATALOG</name>
+            </table>
+            <table>
+              <name>B_CATALOG_OFFER</name>
+            </table>
+            <table>
+              <name>B_OFFER</name>
+            </table>
+            <table>
+              <name>B_OFFER_STOCK</name>
+            </table>
+            <table>
+              <name>B_WEBLOCK</name>
+            </table>
+            <table>
+              <name>B_WEBLOCK_COLUMN</name>
+            </table>
+            <table>
+              <name>B_WEBSITE</name>
+            </table>
+            <table>
+              <name>B_WEBPAGE</name>
+            </table>
+          </tables>
+        </configuration>
+        <!--jar file that has the jdbc driver -->
+        <dependencies>
+          <dependency>
+            <groupId>postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <version>${postgresql.version}</version>
+          </dependency>
+        </dependencies>
+      </plugin>
+
+
+      <plugin>
+        <groupId>com.mysema.maven</groupId>
+        <artifactId>maven-apt-plugin</artifactId>
+        <version>${maven-apt-plugin}</version>
+        <executions>
+          <execution>  
+            <phase>generate-sources</phase>
+            <goals>
+              <goal>process</goal>
+            </goals>
+            <configuration>
+              <outputDirectory>target/generated-sources/java</outputDirectory>
+              <processor>com.mysema.query.apt.jpa.JPAAnnotationProcessor</processor>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+
+
+
+      <!-- Disable annotation processors during normal compilation <plugin> <groupId>org.apache.maven.plugins</groupId> <artifactId>maven-compiler-plugin</artifactId> 
+        <configuration> <compilerArgument>-proc:none</compilerArgument> </configuration> </plugin> -->
+    </plugins>
+  </build>
+
+</project>

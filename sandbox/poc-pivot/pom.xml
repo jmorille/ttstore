@@ -1,0 +1,120 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  
+  <groupId>fr.generali.ccj.sample.solr</groupId>
+  <artifactId>poc-pivot</artifactId>
+  <version>1.1.0-RC3-SNAPSHOT</version>
+  <packaging>pom</packaging>
+  <name>CCJ Poc Pivot</name>
+ 
+ 
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+    <sourceEncoding>UTF-8</sourceEncoding>
+    <compileSource>1.6</compileSource>
+    
+    <spring.version>3.0.5.RELEASE</spring.version>
+    <slf4j.version>1.6.1</slf4j.version>
+    <logback.version>0.9.25</logback.version>
+
+    <jetty.version>6.1.25</jetty.version>  <!-- 6.1.25,  7.2.1.v20101111 -->
+    <jetty7.version>7.2.1.v20101111</jetty7.version>  <!-- 6.1.25,  7.2.1.v20101111 -->
+    <postgresql.version>9.0-801.jdbc4</postgresql.version>
+    <mysql.version>5.1.13</mysql.version>
+    
+	<cxf.version>2.3.3</cxf.version>
+    
+   </properties>
+   	
+  <repositories>
+
+        <repository>
+          <id>repo1.maven.org</id>
+          <name>Maven Repository Group</name>
+          <url>http://repo1.maven.org</url>
+        </repository>
+
+        <repository>
+          <id>jboss-public-repository-group</id>
+          <name>JBoss Public Maven Repository Group</name>
+          <url>https://repository.jboss.org/nexus/content/groups/public</url>
+        </repository>
+        
+         <!-- TO Browse https://s3browse.springsource.com/browse/maven.springframework.org/ -->
+        <repository>
+          <id>spring-releases</id>
+          <name>Spring Maven RELEASE Repository</name>
+          <url>http://s3.amazonaws.com/maven.springframework.org/release</url>
+        </repository>
+        <repository>
+          <id>spring-external</id>
+          <name>Spring Maven External Repository</name>
+          <url>http://s3.amazonaws.com/maven.springframework.org/external</url>
+         </repository>
+        <!-- http://s3browse.com/explore/maven.springframework.org/milestone -->
+        <repository>
+          <id>spring-milestone</id>
+          <name>Spring Portfolio Milestone Repository</name>
+          <url>http://s3.amazonaws.com/maven.springframework.org/milestone</url>
+         </repository>
+        <repository>
+          <id>spring-milestone-maven</id>
+          <name>Spring Portfolio Milestone Repository</name>
+          <url>http://maven.springframework.org/milestone</url>
+       </repository>
+
+   </repositories>
+
+<build>
+	<plugins>
+      
+	      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <configuration>
+          <source>1.6</source>
+          <target>1.6</target>
+          <encoding>${project.build.sourceEncoding}</encoding>
+        </configuration>
+      </plugin>
+      
+	<plugin>
+	<groupId>org.apache.cxf</groupId>
+	<artifactId>cxf-codegen-plugin</artifactId>
+	<version>${cxf.version}</version>
+	<executions>
+		<execution>
+			<id>generate-sources</id>
+			<phase>generate-sources</phase>
+			<configuration>
+				<sourceRoot>${project.build.directory}/generated/cxf</sourceRoot>
+				<wsdlOptions>
+					<wsdlOption>
+						<wsdl>${basedir}/src/main/wsdl/geoipservice.wsdl</wsdl>
+					</wsdlOption>
+				</wsdlOptions>
+			</configuration>
+			<goals>
+				<goal>wsdl2java</goal>
+			</goals>
+		</execution>
+	</executions>
+	<!--
+	<dependencies>
+    <dependency>
+        <groupId>org.apache.cxf</groupId>
+        <artifactId>cxf-xjc-ts</artifactId>
+        <version>2.2.12</version>
+     </dependency>
+	</dependencies>
+  -->
+</plugin>  
+
+	</plugins>
+	  
+</build>	
+   
+   </project>

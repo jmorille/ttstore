@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Group xmlns:fx="http://ns.adobe.com/mxml/2009"
+         xmlns:s="library://ns.adobe.com/flex/spark"
+         xmlns:mx="library://ns.adobe.com/flex/mx">
+
+    <fx:Script>
+        <![CDATA[
+            import eu.ttbox.controler.core.I18nManager;
+            import eu.ttbox.model.salespoint.Holding;
+
+            import mx.collections.IList;
+            import mx.validators.Validator;
+
+            import org.granite.validation.FormValidator;
+            import org.granite.validation.IValidator;
+
+            import spark.components.Form;
+            import spark.components.supportClasses.GridColumn;
+
+            [Bindable]
+            public var msg:I18nManager=I18nManager.getInstance();
+
+            [Bindable]
+            public var crudCommand:IEntityCrudCommand;
+
+            [Bindable]
+            public var columns:Array;
+
+            [Bindable]
+            public var searchForm:Form;
+
+            [Bindable]
+            public var entityForm:Form;
+
+            [Bindable]
+            public var entityValidator:FormValidator;
+
+            [Bindable]
+            public var validators:Array;
+
+            protected function addButton_clickHandler(event:MouseEvent):void {
+                crudCommand.doCreateNewEntity();
+                goToEditState();
+            }
+
+            protected function deleteButton_clickHandler(event:MouseEvent):void {
+                //TODO (event.currentTarget as DataGrid).selectedItem
+                var selectedItem:Object=searchResultGrid.selectedItem;
+                if (selectedItem != null) {
+                    crudCommand.setSelectedEntity(selectedItem);
+                    crudCommand.doRemove();
+                    goToSearchState();
+                }
+            }
+
+            protected function editButton_clickHandler(event:MouseEvent):void {
+                var selectedItem:Object=searchResultGrid.selectedItem;
+                if (selectedItem != null) {
+                    crudCommand.setSelectedEntity(selectedItem);
+                    goToEditState();
+                }
+            }
+
+            private function saveEntity():void {
+                var isValid:Boolean=true;
+                if (validators && validators.length > 0) {
+                    var valResults:Array=Validator.validateAll(validators);
+                    if (isValid && valResults.length > 0) {
+                        isValid=false;
+                    }
+                }
+                if (entityValidator) {
+                    var isValidEntity:Boolean=entityValidator.validateEntity();
+                    if (isValid) {
+                        isValid=isValidEntity;
+                    }
+                }
+                if (isValid) {
+                    crudCommand.doSave();
+                    goToSearchState();
+                }
+            }
+
+            private function cancelEntity():void {
+                crudCommand.doCancel();
+                goToSearchState();
+            }
+
+            protected function goToEditState():void {
+                this.currentState="editState";
+            }
+
+            protected function goToSearchState():void {
+                this.currentState="searchState";
+            }
+
+            private function initializeSearchResultDataGrid():void {
+                searchResultGrid.columns=columns;
+            }
+        ]]>
+    </fx:Script>
+
+    <s:states>
+        <s:State name="searchState"/>
+        <s:State name="editState"/>
+    </s:states>
+
+
+    <fx:Declarations>
+        <!-- Placer ici les éléments non visuels (services et objets de valeur, par exemple). -->
+    </fx:Declarations>
+
+    <s:layout>
+        <s:VerticalLayout/>
+    </s:layout>
+
+
+    <s:HGroup includeIn="searchState">
+        <s:Button id="searchButton"
+                  label="{msg.search}"
+                  click="crudCommand.doSearch()"/>
+        <s:Button id="addButton"
+                  label="{msg.add}"
+                  click="addButton_clickHandler(event)"/>
+        <s:Button id="deleteButton"
+                  label="{msg.remove}"
+                  click="deleteButton_clickHandler(event)"/>
+        <s:Button id="editButton"
+                  label="{msg.edit}"
+                  click="editButton_clickHandler(event)"/>
+    </s:HGroup>
+
+    <mx:DataGrid id="searchResultGrid"
+                 includeIn="searchState"
+                 width="100%"
+                 height="100%"
+                 initialize="{initializeSearchResultDataGrid()}">
+        <mx:dataProvider>
+            <s:AsyncListView list="{crudCommand.resultList}"/>
+        </mx:dataProvider>
+    </mx:DataGrid>
+
+    <s:Group id="entityFormContainer"
+             includeIn="editState"
+             initialize="{entityFormContainer.addElement(entityForm);}"
+             width="100%"
+             height="100%"/>
+
+    <s:HGroup includeIn="editState">
+        <s:Button label="{msg.save}"
+                  click="{saveEntity()}"/>
+        <s:Button label="{msg.cancel}"
+                  click="{cancelEntity()}"/>
+
+    </s:HGroup>
+</s:Group>

@@ -1,0 +1,37 @@
+- import eu.ttbox.model.ui.store.header.AbstractWebHeader
+-@ val body: String
+-@ val head: String = ""
+-@ val title: String = "this is the default value"
+-@ val webSite:eu.ttbox.model.ui.store.WebSite = attributeOrElse("webSite", null)
+-@ val headers : java.util.List[AbstractWebHeader] =  webSite.getHeaders.asInstanceOf[java.util.List[AbstractWebHeader]]
+!!! XML
+!!! 5
+%html(lang="en")
+ %head
+  %title #{title}
+  %link(href={uri("/css/default.css")} rel="stylesheet" type="text/css")/
+  %link(href={uri("/css/store.css")} rel="stylesheet" type="text/css")/
+  - collection(headers)
+  != head
+  -# http://code.google.com/p/ie7-js/
+  /[if lt IE 9]
+   %script
+    var IE7_PNG_SUFFIX = ".png";
+   %script(src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js")/
+  -# http://remysharp.com/2009/01/07/html5-enabling-script/
+  /[if lt IE 9]
+   %script(src="http://html5shim.googlecode.com/svn/trunk/html5.js")/
+ %body.body
+  %nav
+   %ul
+    %li ACCUEIL
+    %li RECHERCHER
+    %li Panier
+    %li Mon Compte
+    %li Contact
+    %li Magasin
+    %li CGV
+  #contenBody
+   != body
+  %footer.footer
+   Tous Droit réservé ~ #{webSite.getName} ~ @2011

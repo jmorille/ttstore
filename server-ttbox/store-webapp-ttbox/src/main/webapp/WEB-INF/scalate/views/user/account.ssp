@@ -1,0 +1,13 @@
+
+<% attributes("title") = "User account" %>
+<%@ var user: String %>
+
+<div id="supportingText">
+	<div  class="block">
+		<p>Hi ${user}, User account</p>
+		#for (i <- 1 to 3)
+		<p>${i}</p>
+		#end
+		<p>See, I can count!</p>
+	</div>
+</div>

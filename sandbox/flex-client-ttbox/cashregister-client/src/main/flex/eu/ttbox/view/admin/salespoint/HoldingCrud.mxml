@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Group xmlns:fx="http://ns.adobe.com/mxml/2009"
+         xmlns:s="library://ns.adobe.com/flex/spark"
+         xmlns:mx="library://ns.adobe.com/flex/mx"
+         xmlns:salespoint="eu.ttbox.view.admin.salespoint.*"
+         creationComplete="{crudCommand.doSearch()}"
+         xmlns:validation="org.granite.validation.*"
+         xmlns:core="eu.ttbox.view.admin.core.*">
+    <s:layout>
+        <s:VerticalLayout/>
+    </s:layout>
+    <fx:Metadata>
+		[Name]
+	</fx:Metadata>
+
+    <fx:Script>
+        <![CDATA[
+            import eu.ttbox.controler.admin.salespoint.HoldingControler;
+            import eu.ttbox.controler.core.I18nManager;
+            import eu.ttbox.model.salespoint.Holding;
+            import eu.ttbox.service.salespoint.HoldingService;
+
+            import mx.binding.utils.BindingUtils;
+
+            [Bindable]
+            public var msg:I18nManager=I18nManager.getInstance();
+
+            [Inject]
+            [Bindable]
+            public var holdingControler:HoldingService;
+
+            [Bindable]
+            public var crudCommand:HoldingCrudCommand;
+
+            [Bindable]
+            public var entity:Holding;
+
+            [PostConstruct]
+            public function postConstruct():void {
+                crudCommand=new HoldingCrudCommand();
+                crudCommand.service=holdingControler;
+                entity=crudCommand.entity;
+            }
+        ]]>
+    </fx:Script>
+
+    <fx:Binding source="{crudCommand.entity}"
+                destination="entity"/>
+
+
+    <fx:Declarations>
+        <!-- Placer ici les éléments non visuels (services et objets de valeur, par exemple). -->
+    </fx:Declarations>
+
+
+    <core:EntityCrudEditor id="editEntityForm"
+                           crudCommand="{crudCommand}"
+                           width="100%"
+                           height="100%">
+        <core:columns>
+
+            <mx:DataGridColumn headerText="{msg.id}"
+                               dataField="id"/>
+            <mx:DataGridColumn headerText="{msg.name}"
+                               dataField="name"/>
+
+        </core:columns>
+        <core:entityValidator>
+            <validation:FormValidator id="entityValidator"
+                                      form="{entityEditForm}"
+                                      entity="{entity}"/>
+        </core:entityValidator>
+        <core:entityForm>
+            <s:Form id="entityEditForm">
+                <s:FormItem label="{msg.id}"
+                            visible="{!isNaN(entity.id)}">
+                    <s:Label text="{entity.id}"/>
+                </s:FormItem>
+                <s:FormItem label="{msg.name}">
+                    <s:TextInput text="@{entity.name}"/>
+                </s:FormItem>
+            </s:Form>
+        </core:entityForm>
+    </core:EntityCrudEditor>
+
+</s:Group>

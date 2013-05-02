@@ -1,0 +1,108 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.prime.com.tr/ui">
+
+
+<f:view contentType="text/html" encoding="UTF-8">
+	<h:head>
+		<title><ui:insert name="title">TTBox</ui:insert></title>
+		<meta http-equiv="Content-type" content="text/html; charset=UTF-8" />
+		<link type="text/css" rel="stylesheet"
+			href="#{request.contextPath}/themes/sam/skin.css" />
+		<link type="text/css" rel="stylesheet"
+			href="#{request.contextPath}/syntaxhighlighter/css/syntaxhighlighter.css"></link>
+		<style type="text/css">
+			body {
+				background: url(../images/macosx/macback.png);
+				margin: 0;
+				padding: 0;
+				font-family: geneva, arial, helvetica, sans-serif;
+				font-size: 80%;
+			}
+			
+			.appleIcon {
+				background: url(../images/macosx/apple.png) no-repeat 20%;
+				padding-left: 22px !important;
+			}
+		</style>
+
+	</h:head>
+
+	<h:body>
+
+
+		<p:growl showDetail="true" sticky="true" />
+
+		<p:menubar>
+			<p:submenu labelStyleClass="appleIcon" label="&nbsp;">
+				<p:menuitem value="About TTBox" url="#" onclick="info.show();"></p:menuitem>
+			</p:submenu>
+
+			<p:submenu label="#{admin.menuAdministration}">
+				<p:menuitem value="#{admin.menuUser}" url="/admin/user.jsf"
+					styleClass="open"></p:menuitem>
+				<p:menuitem value="#{admin.menuGroup}" url="/admin/group.jsf"
+					styleClass="open"></p:menuitem>
+				<p:menuitem value="#{admin.menuRole}" url="/admin/role.jsf"
+					styleClass="open"></p:menuitem>
+			</p:submenu>
+
+			<p:submenu label="Edit">
+				<p:menuitem value="Undo" url="#" styleClass="undo" helpText="⌘Z"></p:menuitem>
+				<p:menuitem value="Redo" url="#" styleClass="redo" helpText="⌘Y"></p:menuitem>
+			</p:submenu>
+
+			<p:submenu label="View">
+				<p:menuitem value="Source" url="#" onclick="source.show();"></p:menuitem>
+			</p:submenu>
+		</p:menubar>
+
+		<p:dialog header="About TTBox" draggable="true" widgetVar="info">
+			<h:form>
+				<h:panelGrid columns="1" style="width:100%;text-align:center;">
+					<p:graphicImage value="/images/dock/Toolbox-128.png" />
+					<h:outputText value="TTBox" style="font-size:16px" />
+					<h:outputText value="Version #{build.ttBoxVersion}" />
+					<p:commandButton value="Software Update" async="true"
+						onclick="return false;" />
+				</h:panelGrid>
+
+				<h:panelGrid columns="2">
+					<h:outputText value="Processor" style="font-weight:bold" />
+					<h:outputText value="2.4 GHz Intel Core 2 Duo" />
+
+					<h:outputText value="Memory" style="font-weight:bold" />
+					<h:outputText value="4 GB 667 MHz DDR2 SDRAM" />
+
+					<h:outputText value="Startup Disk" style="font-weight:bold" />
+					<h:outputText value="Macintosh HD" />
+				</h:panelGrid>
+
+			</h:form>
+		</p:dialog>
+
+		<ui:insert name="content">...</ui:insert>
+
+		<p:dock>
+			<p:menuitem value="#{admin.menuRole}"
+				icon="/images/dock/Katana-Saido_128.png" url="/admin/role.jsf" />
+			<p:menuitem value="#{admin.menuUser}"
+				icon="/images/dock/Ningyou_128.png" url="/admin/user.jsf" />
+			<p:menuitem value="#{admin.menuMenu}"
+				icon="/images/dock/Emakimono_128.png" url="#" />
+			<p:menuitem value="Product" icon="/images/dock/Yunomi-Saido_128.png"
+				url="#" />
+			<p:menuitem value="iChat" icon="/images/dock/Lampion_128.png" url="#" />
+			<p:menuitem value="Trash" icon="/images/dock/Sensu_128.png" url="#" />
+		</p:dock>
+
+	</h:body>
+
+
+</f:view>
+
+
+</html>

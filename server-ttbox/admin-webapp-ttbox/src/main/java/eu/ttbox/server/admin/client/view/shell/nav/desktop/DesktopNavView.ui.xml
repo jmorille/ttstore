@@ -1,0 +1,39 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui">
+	<ui:style>
+		.important {
+			font-weight: bold;
+		}
+	</ui:style>
+<!-- 	<g:HTMLPanel> -->
+<!-- 		<h1>Navigation</h1> -->
+		<g:StackLayoutPanel unit='EM' ui:field="menu" > 
+			<g:stack >
+				<g:header size='4' >Home</g:header> 
+				<g:HTMLPanel>
+					Page de bienvenue
+				</g:HTMLPanel>
+			</g:stack>
+			<g:stack >
+				<g:header size='4' >Liste des Stations</g:header> 
+				<g:HTMLPanel>
+					Voici la liste complête des stations de Velib de paris
+				</g:HTMLPanel>
+			</g:stack>
+			<g:stack>
+				<g:header size='4' >Cartographie des Stations</g:header>
+				<g:HTMLPanel>
+					Voici la cartographie complête des stations de Velib de paris
+				</g:HTMLPanel>
+			</g:stack>
+			<g:stack>
+				<g:header size='4' >Detail d'une Stations</g:header>
+				<g:HTMLPanel>
+					Consulter la disponibilité totale
+				</g:HTMLPanel>
+			</g:stack> 
+		  </g:StackLayoutPanel>
+<!-- 		<g:Button styleName="{style.important}" ui:field="button" /> -->
+<!-- 	</g:HTMLPanel> -->
+</ui:UiBinder> 

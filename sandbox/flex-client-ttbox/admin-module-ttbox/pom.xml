@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+
+    <parent>
+        <groupId>com.j3.ttbox</groupId>
+        <artifactId>client-ttbox</artifactId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+
+    <artifactId>admin-module-ttbox</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>swc</packaging>
+
+    <name>TTBox Client Flex - Admin Module</name>
+    <properties>
+        <!-- the application name which must match the main mxml file and application
+             descriptor file names -->
+        <application.name>TTBox</application.name>
+        <!-- Sign Air -->
+        <keystore.file>${basedir}/cert.p12</keystore.file>
+        <keystore.password>39#wnetx3tl</keystore.password>
+
+        <sourceDir>src/main/flex</sourceDir>
+    </properties>
+
+    <build>
+        <sourceDirectory>src/main/flex</sourceDirectory>
+        <testSourceDirectory>src/test/flex</testSourceDirectory>
+ 
+ 
+    </build>
+
+    <dependencies>
+
+        <!-- TTBOX Service -->
+        <dependency>
+            <groupId>com.j3.ttbox</groupId>
+            <artifactId>common-module-ttbox</artifactId>
+            <version>1.0-SNAPSHOT</version>
+            <type>swc</type>
+            <exclusions>
+                <exclusion>
+                    <groupId>com.adobe.flex.framework</groupId>
+                    <artifactId>flex-framework</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+        <dependency>
+            <groupId>com.j3.ttbox</groupId>
+            <artifactId>service-api-flex-ttbox</artifactId>
+            <version>1.0-SNAPSHOT</version>
+            <type>swc</type>
+            <exclusions>
+                <exclusion>
+                    <groupId>com.adobe.flex.framework</groupId>
+                    <artifactId>flex-framework</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+        <!-- Flex XML -->
+        <dependency>
+            <groupId>com.googlecode</groupId>
+            <artifactId>flexxb</artifactId>
+            <version>1.6.3</version>
+            <type>swc</type>
+        </dependency>
+        <!-- Test -->
+        <dependency>
+            <groupId>com.adobe.flexunit</groupId>
+            <artifactId>flexunit</artifactId>
+            <version>${flexunit.version}</version>
+            <type>swc</type>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- Air SDK dependencies -->
+        <dependency>
+            <groupId>com.adobe.flex.framework</groupId>
+            <artifactId>air-framework</artifactId>
+            <version>${flex.sdk.version}</version>
+            <type>pom</type>
+        </dependency>
+
+        <!-- Granite DS -->
+        <dependency>
+            <groupId>org.graniteds</groupId>
+            <artifactId>granite-essentials-swc</artifactId>
+            <version>${graniteds.version}</version>
+            <type>swc</type>
+            <scope>internal</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.graniteds</groupId>
+            <artifactId>granite-swc</artifactId>
+            <version>${graniteds.version}</version>
+            <type>swc</type>
+            <scope>internal</scope>
+        </dependency>
+
+    </dependencies>
+
+
+</project>

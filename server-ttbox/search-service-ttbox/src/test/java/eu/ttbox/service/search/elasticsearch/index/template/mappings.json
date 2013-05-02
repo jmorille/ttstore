@@ -1,0 +1,7 @@
+{
+  "france" : { 
+     "properties" : { 
+         "name" : {"type":"string","store":"yes","index":"not_analyzed"} 
+      }
+   }
+}

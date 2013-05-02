@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Group xmlns:fx="http://ns.adobe.com/mxml/2009"
+         xmlns:s="library://ns.adobe.com/flex/spark"
+         xmlns:mx="library://ns.adobe.com/flex/mx"
+         xmlns:validation="org.granite.validation.*"
+         xmlns:validators="org.granite.tide.validators.*" xmlns:view="eu.ttbox.view.*">
+    <s:layout>
+        <s:VerticalLayout horizontalAlign="center"
+                          paddingTop="20"/>
+    </s:layout>
+
+    <fx:Metadata>
+		[Name]
+	</fx:Metadata>
+
+    <fx:Script>
+        <![CDATA[
+			import eu.ttbox.controller.UserController;
+			import eu.ttbox.model.user.User;
+			
+			import mx.binding.utils.BindingUtils;
+			import mx.controls.Alert;
+			import mx.events.ItemClickEvent;
+			
+			import org.granite.tide.events.TideUIEvent;
+			import org.granite.tide.events.TideValidatorEvent;
+			import org.granite.tide.spring.Context;
+			import org.granite.tide.spring.Identity;
+			import org.granite.tide.spring.PagedQuery;
+			import org.granite.tide.validators.InvalidValue;
+			import org.granite.validation.ConstraintViolationEvent; 
+			
+            [Inject]
+            [Bindable]
+            public var userControler:UserController;
+
+			
+            [Inject]
+            [Bindable]
+            public var tideContext:Context;
+
+            [In]
+            [Bindable]
+            public var identity:Identity;
+
+			[Bindable] 
+			[In("#{userControler.users}")]
+			public var userList:PagedQuery;       
+
+ 
+
+            private function userListClick(event:MouseEvent):void
+            {
+                userControler.currentUser=userListGrid.selectedItem as User;
+            }
+ 
+/*             public function setup():void
+            {
+                tideContext.addEventListener(TideValidatorEvent.INVALID, validationHandler);
+            }
+
+            private function validationHandler(event:TideValidatorEvent):void
+            {
+                var invalidValues:Array=event.invalidValues;
+                for each (var iv:Object in invalidValues)
+                {
+                    var invalidValue:InvalidValue=iv as InvalidValue;
+                    Alert.show("Invalid property: " + invalidValue.path + " on object " + invalidValue.bean);
+                }
+            } */
+			
+			private function initButtonBar():void {
+				BindingUtils.bindProperty(bbMain.getChildAt(1), "enabled", userListGrid, "selectedItem");
+			}
+			
+			private function clickHandler(event:ItemClickEvent):void {
+				if (event.index == 0)
+					dispatchEvent(new TideUIEvent('New Book', 'editBook'));
+				else if (event.index == 1 && userListGrid.selectedItem)
+					dispatchEvent(new TideUIEvent('Book#' + userListGrid.selectedItem.id, 'editBook', userListGrid.selectedItem));
+			}
+        ]]>
+    </fx:Script>
+
+    <fx:Declarations>
+
+
+    </fx:Declarations>
+
+
+    <s:HGroup>
+
+<!--        <s:Button label="Get All User"
+                  click="{userControler.getAllUsers()}"/>-->
+
+<!--		<s:Button label="Refresh"
+				  click="{userListService.refresh()}"/>-->
+
+    </s:HGroup>
+	<mx:ButtonBar id="bbMain" creationComplete="initButtonBar()" itemClick="clickHandler(event);">
+		<mx:dataProvider>
+			<fx:Array>
+				<fx:String>New Book</fx:String>
+				<fx:String>Edit Book</fx:String>
+			</fx:Array>
+		</mx:dataProvider>
+	</mx:ButtonBar>
+	
+	<!-- dataProvider="{userControler.users}" -->
+    <mx:DataGrid id="userListGrid" liveScrolling="false"
+                 dataProvider="{userList}"
+                 click="{userListClick(event)}">
+		
+        <mx:columns>
+            <mx:DataGridColumn headerText="id"
+                               dataField="id"/>
+            <mx:DataGridColumn headerText="firstName"
+                               dataField="firstName"/>
+            <mx:DataGridColumn headerText="lastName"
+                               dataField="lastName"/>
+			<mx:DataGridColumn headerText="version"
+							   dataField="version"/>
+        </mx:columns>
+    </mx:DataGrid>
+	
+	<view:UserEditForm id="userEditForm" />
+ 
+<!--    <s:TextArea id="strackTrace"
+                width="100%"
+                height="50%"/>-->
+
+</s:Group>

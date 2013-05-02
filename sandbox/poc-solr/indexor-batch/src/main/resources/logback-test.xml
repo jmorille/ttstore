@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+<!--  <consolePlugin />-->
+
+
+  <appender name="FILE" class="ch.qos.logback.core.FileAppender">
+    <file>testFile.log</file>
+    <append>true</append>
+    <!-- encoders are assigned the type
+         ch.qos.logback.classic.encoder.PatternLayoutEncoder by default -->
+    <encoder>
+      <pattern>%-4relative [%thread] %-5level %logger{35} - %msg%n</pattern>
+    </encoder>
+  </appender>
+
+
+    <appender name="STDOUT"
+              class="ch.qos.logback.core.ConsoleAppender">
+        <layout class="ch.qos.logback.classic.PatternLayout">
+            <Pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</Pattern>
+        </layout>
+     <filter class="ch.qos.logback.classic.filter.LevelFilter">
+      <level>ERROR</level>
+      <onMatch>DENY</onMatch>
+      <onMismatch>NEUTRAL</onMismatch>
+    </filter>
+     <filter class="ch.qos.logback.classic.filter.LevelFilter">
+      <level>WARN</level>
+      <onMatch>DENY</onMatch>
+      <onMismatch>NEUTRAL</onMismatch>
+    </filter>
+     <target>System.out</target>
+    </appender>
+
+
+    <appender name="STDERR"
+              class="ch.qos.logback.core.ConsoleAppender">
+        <layout class="ch.qos.logback.classic.PatternLayout">
+            <Pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</Pattern>
+        </layout>
+        <!-- deny all events with a level below WARM, that is INFO, TRACE and DEBUG -->
+        <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+          <level>WARN</level>
+        </filter>
+         <target>System.err</target>
+    </appender>
+
+    <logger name="fr.generali.ccj.sample">
+        <level value="DEBUG"/>
+    </logger>
+
+    <logger name="org">
+        <level value="INFO"/>
+    </logger>
+
+    <logger name="org.springframework.batch">
+        <level value="INFO"/>
+    </logger>
+
+    <logger name="org.springframework.batch.item.database">
+        <level value="INFO"/>
+    </logger>
+    
+    <logger name="httpclient">
+        <level value="INFO"/>
+    </logger>
+    
+ 
+    
+    <root>
+        <level value="DEBUG"/>
+        <appender-ref ref="FILE" /> 
+        <appender-ref ref="STDOUT" />
+        <appender-ref ref="STDERR" />
+    </root>
+
+</configuration>

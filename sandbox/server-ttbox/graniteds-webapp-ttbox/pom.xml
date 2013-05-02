@@ -1,0 +1,392 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>com.j3.ttbox</groupId>
+        <artifactId>server-ttbox</artifactId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+
+
+    <artifactId>graniteds-webapp-ttbox</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>war</packaging>
+
+    <name>TTBox Server - Webapp GraniteDS</name>
+
+    <dependencies>
+
+        <dependency>
+            <groupId>com.j3.ttbox</groupId>
+            <artifactId>service-ttbox</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+
+
+
+        <!-- Commons -->
+        <dependency>
+            <groupId>commons-fileupload</groupId>
+            <artifactId>commons-fileupload</artifactId>
+            <version>${commons-fileupload.version}</version>
+        </dependency>
+
+        <!-- Logs -->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>${slf4j.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>jcl-over-slf4j</artifactId>
+            <version>${slf4j.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>log4j-over-slf4j</artifactId>
+            <version>${slf4j.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+            <version>${logback.version}</version>
+        </dependency>
+
+        <!-- spring Security -->
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-config</artifactId>
+            <version>${spring.security.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-web</artifactId>
+            <version>${spring.security.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-openid</artifactId>
+            <version>${spring.security.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-core</artifactId>
+            <version>${spring.security.version}</version>
+            <exclusions>
+                <exclusion>
+                    <artifactId>spring-tx</artifactId>
+                    <groupId>org.springframework</groupId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>spring-context</artifactId>
+                    <groupId>org.springframework</groupId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>spring-aop</artifactId>
+                    <groupId>org.springframework</groupId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>spring-core</artifactId>
+                    <groupId>org.springframework</groupId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>aspectjweaver</artifactId>
+                    <groupId>org.aspectj</groupId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>aspectjrt</artifactId>
+                    <groupId>org.aspectj</groupId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+        <!-- spring -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-test</artifactId>
+            <version>${spring.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-web</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-webmvc</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+
+
+
+        <!-- <dependency> <groupId>javax.validation</groupId> <artifactId>validation-api</artifactId>
+             <version>1.0.0.GA</version> </dependency> -->
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-validator</artifactId>
+            <version>${hibernate.validator.version}</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.hibernate</groupId>
+                    <artifactId>hibernate-core</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>log4j</groupId>
+                    <artifactId>log4j</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>javax.xml.bind</groupId>
+                    <artifactId>jaxb-api</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>com.sun.xml.bind</groupId>
+                    <artifactId>jaxb-impl</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-infinispan</artifactId>
+            <version>${hibernate.version}</version>
+            <exclusions>
+                <exclusion>
+                    <artifactId>hibernate-testing</artifactId>
+                    <groupId>org.hibernate</groupId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+
+        <dependency>
+            <groupId>org.infinispan</groupId>
+            <artifactId>infinispan-core</artifactId>
+            <version>${infinispan.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.infinispan</groupId>
+            <artifactId>infinispan-lucene-directory</artifactId>
+            <version>${infinispan.version}</version>
+            <exclusions>
+                <exclusion>
+                    <artifactId>lucene-core</artifactId>
+                    <groupId>org.apache.lucene</groupId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+
+        <!-- <dependency> -->
+        <!-- <groupId>net.sf.ehcache</groupId> -->
+        <!-- <artifactId>ehcache-core</artifactId> -->
+        <!-- <version>${ehcache.version}</version> -->
+        <!-- <exclusions> -->
+        <!-- <exclusion> -->
+        <!-- <groupId>commons-logging</groupId> -->
+        <!-- <artifactId>commons-logging</artifactId> -->
+        <!-- </exclusion> -->
+        <!-- </exclusions> -->
+        <!-- </dependency> -->
+
+        <!-- <dependency> <groupId>javax.persistence</groupId> <artifactId>persistence-api</artifactId>
+             <version>1.0</version> </dependency> -->
+
+        <dependency>
+            <groupId>javassist</groupId>
+            <artifactId>javassist</artifactId>
+            <version>${javassist.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.graniteds</groupId>
+            <artifactId>granite-core</artifactId>
+            <version>${graniteds.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.graniteds</groupId>
+            <artifactId>granite-hibernate</artifactId>
+            <version>${graniteds.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.graniteds</groupId>
+            <artifactId>granite-spring</artifactId>
+            <version>${graniteds.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.graniteds</groupId>
+            <artifactId>granite-beanvalidation</artifactId>
+            <version>${graniteds.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>servlet-api</artifactId>
+            <version>2.5</version>
+            <scope>provided</scope>
+        </dependency>
+
+    </dependencies>
+
+
+    <build>
+
+        <plugins>
+            <!-- <plugin> <groupId>org.apache.maven.plugins</groupId> <artifactId>maven-dependency-plugin</artifactId>
+                 <version>2.1</version> <executions> <execution> <id>copy</id> <phase>package</phase>
+                 <goals> <goal>copy</goal> </goals> <configuration> <artifactItems> <artifactItem>
+                 <groupId>com.cestpasdur</groupId> <artifactId>flex-client</artifactId> <version>1.0-SNAPSHOT</version>
+                 <type>swf</type> <overWrite>true</overWrite> </artifactItem> </artifactItems>
+                 <outputDirectory>${project.build.directory}/${project.build.finalName}/flex
+                 </outputDirectory> <overWriteReleases>false</overWriteReleases> <overWriteSnapshots>true</overWriteSnapshots>
+                 </configuration> </execution> </executions> </plugin> -->
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>2.1.1</version>
+                <configuration>
+                    <webXml>src/main/webapp/WEB-INF/web.xml</webXml>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <artifactId>maven-eclipse-plugin</artifactId>
+                <version>2.7</version>
+                <configuration>
+                    <additionalProjectnatures>
+                        <projectnature>com.adobe.flexbuilder.project.flexnature</projectnature>
+                        <projectnature>com.adobe.flexbuilder.project.actionscriptnature</projectnature>
+                        <projectnature>org.springframework.ide.eclipse.core.springnature</projectnature>
+                    </additionalProjectnatures>
+                    <additionalBuildcommands>
+                        <buildcommand>org.springframework.ide.eclipse.core.springbuilder</buildcommand>
+                        <buildcommand>com.adobe.flexbuilder.project.flexbuilder</buildcommand>
+                    </additionalBuildcommands>
+                    <downloadSources>true</downloadSources>
+                    <downloadJavadocs>false</downloadJavadocs>
+                    <wtpversion>2.0</wtpversion>
+                </configuration>
+            </plugin>
+
+
+
+
+
+            <!-- mvn jetty:run -Dhttp.proxyHost=webcache.generali.fr -Dhttp.proxyPort=3128
+                 -Dhttp.nonProxyHosts="*.generali.fr|localhost" Refactoring Jetty 7 http://wiki.eclipse.org/Jetty/Getting_Started/Porting_to_Jetty_7/Refactoring -->
+            <plugin>
+                <!-- <groupId>org.mortbay.jetty</groupId> -->
+                <!-- <artifactId>jetty-maven-plugin</artifactId> -->
+                <!-- <version>7.2.1.v20101111</version> -->
+
+                <groupId>org.mortbay.jetty</groupId>
+                <artifactId>maven-jetty-plugin</artifactId>
+                <version>${jetty.version}</version>
+                <configuration>
+                    <!-- By default the artifactId is taken, override it with something
+                         simple -->
+                    <contextPath>/ttbox</contextPath>
+                    <!-- <jettyEnvXml>${basedir}/src/main/webapp/WEB-INF/jetty-env.xml</jettyEnvXml> -->
+                    <scanIntervalSeconds>10</scanIntervalSeconds>
+                    <stopKey>foo</stopKey>
+                    <stopPort>9999</stopPort>
+                    <connectors>
+                        <connector implementation="org.mortbay.jetty.nio.SelectChannelConnector">
+                            <port>8080</port>
+                            <maxIdleTime>60000</maxIdleTime>
+                        </connector>
+                    </connectors>
+                    <jvmArgs>
+                        <jvmArg>-Xmx384m</jvmArg>
+                    </jvmArgs>
+                    <systemProperties>
+                        <systemProperty>
+                            <name>logback.configurationFile</name>
+                            <value>./src/conf/logback.xml</value>
+                        </systemProperty>
+                    </systemProperties>
+
+                </configuration>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.mortbay.jetty</groupId>
+                        <artifactId>jetty-plus</artifactId>
+                        <version>${jetty.version}</version>
+                    </dependency>
+                    <dependency>
+                        <groupId>org.mortbay.jetty</groupId>
+                        <artifactId>jetty-naming</artifactId>
+                        <version>${jetty.version}</version>
+                    </dependency>
+                    <dependency>
+                        <groupId>org.mortbay.jetty</groupId>
+                        <artifactId>jetty-sslengine</artifactId>
+                        <version>${jetty.version}</version>
+                    </dependency>
+                    <dependency>
+                        <groupId>org.springframework</groupId>
+                        <artifactId>spring-instrument</artifactId>
+                        <version>${spring.version}</version>
+                    </dependency>
+                    <!-- Logging -->
+                    <dependency>
+                        <groupId>ch.qos.logback</groupId>
+                        <artifactId>logback-classic</artifactId>
+                        <version>${logback.version}</version>
+                    </dependency>
+                    <dependency>
+                        <groupId>org.slf4j</groupId>
+                        <artifactId>slf4j-api</artifactId>
+                        <version>${slf4j.version}</version>
+                    </dependency>
+                    <dependency>
+                        <groupId>org.slf4j</groupId>
+                        <artifactId>jcl-over-slf4j</artifactId>
+                        <version>${slf4j.version}</version>
+                    </dependency>
+                    <dependency>
+                        <groupId>org.slf4j</groupId>
+                        <artifactId>log4j-over-slf4j</artifactId>
+                        <version>${slf4j.version}</version>
+                    </dependency>
+
+                    <!-- transactions-jta -->
+                    <dependency>
+                        <groupId>com.atomikos</groupId>
+                        <artifactId>transactions-jta</artifactId>
+                        <version>3.6.4</version>
+                    </dependency>
+                    <dependency>
+                        <groupId>com.atomikos</groupId>
+                        <artifactId>transactions-jdbc</artifactId>
+                        <version>3.6.4</version>
+                    </dependency>
+                    <dependency>
+                        <groupId>javax.transaction</groupId>
+                        <artifactId>jta</artifactId>
+                        <version>1.1</version>
+                    </dependency>
+
+                    <!-- Database -->
+                    <dependency>
+                        <groupId>postgresql</groupId>
+                        <artifactId>postgresql</artifactId>
+                        <version>${postgresql.version}</version>
+                    </dependency>
+                    <!-- <dependency> -->
+                    <!-- <groupId>mysql</groupId> -->
+                    <!-- <artifactId>mysql-connector-java</artifactId> -->
+                    <!-- <version>${mysql.version}</version> -->
+                    <!-- </dependency> -->
+                </dependencies>
+            </plugin>
+
+        </plugins>
+    </build>
+
+</project>

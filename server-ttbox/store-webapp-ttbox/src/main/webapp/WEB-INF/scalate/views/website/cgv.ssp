@@ -1,0 +1,12 @@
+
+<% attributes("title") = "CGV" %>
+
+<%@ var user: String %>
+<div id="supportingText">
+	<div id="quickSummary" class="block">
+		<h3>CGV Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h3>
+		<p class="p1">
+		   Fusce imperdiet porta ante, vel tincidunt tortor iaculis ut. Vivamus ut ante leo. Phasellus congue ultricies eleifend. Aenean in lectus et purus malesuada vulputate in et erat. Pellentesque at felis et sem vestibulum tincidunt. Etiam cursus erat a tortor posuere rhoncus. Mauris non mi nisl, id commodo leo. Praesent mi orci, blandit quis luctus et, auctor vitae ligula. Aliquam erat volutpat. Aliquam erat volutpat. Sed vulputate, neque posuere porta dapibus, metus diam venenatis magna, id euismod risus augue nec arcu. Nam ac mi sit amet sem gravida luctus vitae id ante. Vestibulum hendrerit, metus congue placerat luctus, dolor est ornare purus, id semper augue turpis eu justo. Maecenas pulvinar lacus cursus ligula volutpat rhoncus.
+		</p>
+	<div>
+<div>	

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<articles>
+	<article name="Jus d'orange" group="Pur Jus" type="Boison" priceHT="3"
+		imageUri="http://thejewishstar.files.wordpress.com/2009/06/smoothie.jpg" />
+	<article name="Jus d'ananas" group="Pur Jus" type="Boison"  priceHT="3"
+		imageUri="http://www.euvs.org/img/tools/ingredients/pineapple-juice.jpg" />
+	<article name="Rose paradise" group="Smoothie" type="Boison" priceHT="3"
+		imageUri="http://www.highonhealth.org/wp-content/uploads/2008/08/berry-smoothie.jpg" />
+	<article name="Chaleur des tropiques" group="Smoothie" type="Boison" priceHT="3"
+		imageUri="http://www.neskoncept.com/images/illustrations/large/smoothie.jpg" />
+	<article name="Plongé aquatique" group="Smoothie" type="Boison" priceHT="3"
+		imageUri="http://www.femmeactuelle.fr/var/femmeactuelle/storage/images/cuisine/recettes/smoothie-avocat-mangue/6170606-1-fre-FR/smoothie_avocat_mangue_large.jpg" />
+	<article name="Sirenne endormie" group="Smoothie" type="Boison" priceHT="3"
+		imageUri="http://seejenneat.files.wordpress.com/2010/03/smoothie003_thumb.jpg" />
+	<article name="Firecracker" group="Smoothie" type="Boison" priceHT="3"
+		imageUri="http://3.bp.blogspot.com/_Dwex9AQ8IuA/Sk6I6Oxe6NI/AAAAAAAAHwc/59RPs6_A6AM/s400/red-white-blueberry-smoothie-400-3.jpg" />
+	<article name="Fraicheur oriantale" group="Smoothie" type="Boison" priceHT="3"
+		imageUri="http://croquecru.files.wordpress.com/2009/07/smoothies-lime1.jpg" />
+</articles>

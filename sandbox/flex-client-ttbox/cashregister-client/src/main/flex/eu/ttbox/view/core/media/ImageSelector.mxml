@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Group xmlns:fx="http://ns.adobe.com/mxml/2009"
+         xmlns:s="library://ns.adobe.com/flex/spark"
+         xmlns:mx="library://ns.adobe.com/flex/mx"
+         nativeDragEnter="onDragEnter(event)"
+         nativeDragDrop="onDragDrop(event)"
+         creationComplete="{onCreationComplete()}"
+         doubleClick="{openFileSelector();}"
+         xmlns:media="eu.ttbox.view.core.media.*">
+    <s:layout>
+        <s:VerticalLayout/>
+    </s:layout>
+    <fx:Script>
+        <![CDATA[
+            import flash.net.FileReference;
+
+            import mx.core.IUIComponent;
+            import mx.managers.DragManager;
+
+            private var refChooserFile:FileReference;
+
+            public function set source(source:Object):void {
+                selectedImage.source;
+            }
+
+            public function set data(data:Object):void {
+                selectedImage.data=data;
+            }
+
+            private function onCreationComplete():void {
+                if (!refChooserFile) {
+                    refChooserFile=new FileReference();
+                    refChooserFile.addEventListener(Event.SELECT, selectHandler);
+                    //refChooserFile.addEventListener(Event.OPEN, openHandler);
+                    //refChooserFile.addEventListener(ProgressEvent.PROGRESS, progressHandler);
+                    refChooserFile.addEventListener(Event.COMPLETE, completeHandler);
+                }
+
+            }
+
+            private function openFileSelector():void {
+                if (refChooserFile) {
+                    refChooserFile.browse();
+                }
+            }
+
+
+            private function selectHandler(event:Event):void {
+                refChooserFile.load();
+            }
+
+            private function completeHandler(event:Event):void {
+                selectedImage.source=refChooserFile.data;
+            }
+
+
+            private function onDragEnter(event:NativeDragEvent):void {
+                // Event handler for when something is dragged over to the WindowedApplication
+                // Only allow files to be dragged in
+                if (event.clipboard.hasFormat(ClipboardFormats.FILE_LIST_FORMAT)) {
+                    var files:Array=event.clipboard.getData(ClipboardFormats.FILE_LIST_FORMAT) as Array;
+
+                    // only allow a single file to be dragged in
+                    if (files.length == 1) {
+                        DragManager.acceptDragDrop(event.currentTarget as IUIComponent);
+                    }
+                }
+            }
+
+            private function onDragDrop(event:NativeDragEvent):void {
+                // Event handler for when a dragged item is dropped on the WindowedApplication
+                var filesToUpload:Array=event.clipboard.getData(ClipboardFormats.FILE_LIST_FORMAT) as Array;
+                selectedImage.source=(filesToUpload[0] as File).url;
+            }
+        ]]>
+    </fx:Script>
+    <fx:Declarations>
+        <!-- Placer ici les éléments non visuels (services et objets de valeur, par exemple). -->
+    </fx:Declarations>
+    <mx:Image id="selectedImage"
+              width="100%"
+              height="100%"
+              horizontalAlign="center"
+              verticalAlign="middle"/>
+</s:Group>

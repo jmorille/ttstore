@@ -1,0 +1,1999 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE ICECAT-interface SYSTEM "http://data.icecat.biz/dtd/ICECAT-supplier_mapping.dtd">
+<!-- source: ICEcat.biz 2010 -->
+<ICECAT-interface xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://data.icecat.biz/xsd/ICECAT-supplier_mapping.xsd">
+	<SupplierMappings Generated="20100331000501">
+		<SupplierMapping supplier_id="1" name="HP">
+			<Symbol>COMPAQ</Symbol>
+			<Symbol>HP SUPPL</Symbol>
+			<Symbol>HEWLETT PACKARD</Symbol>
+			<Symbol>HP</Symbol>
+			<Symbol>hp systems</Symbol>
+			<Symbol>hp peripherals</Symbol>
+			<Symbol>hp top value</Symbol>
+			<Symbol>hp supplies</Symbol>
+			<Symbol>Compaq Spare Parts</Symbol>
+			<Symbol>HP Spare Parts</Symbol>
+			<Symbol>CQ</Symbol>
+			<Symbol>HPQDESKT</Symbol>
+			<Symbol>COMPAQ-SPARE</Symbol>
+			<Symbol>HPQNOTEB</Symbol>
+			<Symbol>HP MULTI</Symbol>
+			<Symbol>HPTON</Symbol>
+			<Symbol>HPQWRKST</Symbol>
+			<Symbol>HP DIGPR</Symbol>
+			<Symbol>HPQHANDH</Symbol>
+			<Symbol>HPINK</Symbol>
+			<Symbol>HP LASCO</Symbol>
+			<Symbol>HPQOPTIO</Symbol>
+			<Symbol>HP 9000</Symbol>
+			<Symbol>HPQSTORA</Symbol>
+			<Symbol>HP OVERIG</Symbol>
+			<Symbol>HPCINKJT</Symbol>
+			<Symbol>HEWLETT-PACKARD</Symbol>
+			<Symbol>SUNSET</Symbol>
+			<Symbol>COMPAQ HP PSG</Symbol>
+			<Symbol>COMPAQ HP PROJECTOR</Symbol>
+			<Symbol>COMPAQ HP ALPHA SERVERS</Symbol>
+			<Symbol>COMPAQ HP SERVICES</Symbol>
+			<Symbol>COMPAQ HP OUTSOURCED</Symbol>
+			<Symbol>COMPAQ HP SERVERS</Symbol>
+			<Symbol>COMPAQ HP STORAGE</Symbol>
+			<Symbol>PART OF HP</Symbol>
+			<Symbol>COMPAQ COMPUTER</Symbol>
+			<Symbol>Q7311A#ABH</Symbol>
+			<Symbol>HP STORAGE MEDIA BY IMATION HPUN</Symbol>
+			<Symbol>HP _ UNREPORTED SPARE PARTS</Symbol>
+			<Symbol>HP STORAGE MEDIA BY IMATION HPUNREP</Symbol>
+			<Symbol>GENUINE HEWLETT-PACKARD</Symbol>
+			<Symbol>HP IP</Symbol>
+			<Symbol>COMPAQ SMARTSTART</Symbol>
+			<Symbol>HP üBRIG</Symbol>
+			<Symbol>HP NETWOKING</Symbol>
+			<Symbol>HP SPECIAL</Symbol>
+			<Symbol>HP ?BRIG</Symbol>
+			<Symbol>HP Openview</Symbol>
+			<Symbol>HEWLETT-PACKARD STORAGE</Symbol>
+			<Symbol>COMPAQ COMPUTER LIMITED</Symbol>
+			<Symbol>HP SERVER ISS</Symbol>
+			<Symbol>HEWLETT PACKARD BV</Symbol>
+			<Symbol>HP PRINTSERVER</Symbol>
+			<Symbol>HP UNIX SYSTEM</Symbol>
+			<Symbol>HP-CONSUMIBLES</Symbol>
+			<Symbol>HP/COMPAQ</Symbol>
+			<Symbol>HP SPARES</Symbol>
+			<Symbol>HP HEWLETT PACKARD</Symbol>
+			<Symbol>HEWLETT PACKARD / HP</Symbol>
+			<Symbol>HPSUPPLIES</Symbol>
+			<Symbol>HP WORKSTATIONS</Symbol>
+			<Symbol>HP SERVERS</Symbol>
+			<Symbol>HP PCS</Symbol>
+			<Symbol>HP NETWORK</Symbol>
+			<Symbol>HP MOBILE</Symbol>
+			<Symbol>HP HANDHELD</Symbol>
+			<Symbol>HP MEDIASMART</Symbol>
+			<Symbol>HP ISS</Symbol>
+			<Symbol>HP HOME</Symbol>
+			<Symbol>HP HARDWARE</Symbol>
+			<Symbol>HP CONSUMABLES</Symbol>
+			<Symbol>HP COMPUTERS</Symbol>
+			<Symbol>HP COMMERCIAL</Symbol>
+			<Symbol>HP CALCULATORS</Symbol>
+			<Symbol>HP BUSINESS</Symbol>
+			<Symbol>HEWLETT-PACKARD CO.</Symbol>
+			<Symbol>HEWLETT PACKARD FINANCE LTD.</Symbol>
+			<Symbol>HP COMPUTER PSG</Symbol>
+			<Symbol>HP-PCS-PROFESIONAL</Symbol>
+			<Symbol>HP-PORTATILES</Symbol>
+			<Symbol>HEWLETT-PACKARD OEM</Symbol>
+			<Symbol>HEWLETT PACKARD LTD</Symbol>
+			<Symbol>HEWLETT PA</Symbol>
+			<Symbol>HP HEWLETT PACKARD SUPPLIES</Symbol>
+			<Symbol>HEWLETT PACKARD TRAINING</Symbol>
+			<Symbol>HP HEWLETT PACKARD NETWORKING</Symbol>
+			<Symbol>HP THIN CLIENTS</Symbol>
+			<Symbol>HP STORAGE</Symbol>
+			<Symbol>HP_WKS_TFIG</Symbol>
+			<Symbol>HP - *</Symbol>
+			<Symbol>HP EXTENSION GAR PC</Symbol>
+			<Symbol>HP RETAIL</Symbol>
+			<Symbol>HP SUPPL TONER</Symbol>
+			<Symbol>HP-COMPAQ PR</Symbol>
+			<Symbol>HEWLETT PACKARD PROCURVE</Symbol>
+			<Symbol>HP-COMPAQ GP</Symbol>
+			<Symbol>HEWLET PACKARD SPARE</Symbol>
+			<Symbol>HEWLETT PACKARD £ (UK)</Symbol>
+			<Symbol>HP-PCS-CONSUMO</Symbol>
+			<Symbol>HEWLETT PACKARD LIMITED</Symbol>
+			<Symbol>HP DIREKT</Symbol>
+			<Symbol>HP AFRICA</Symbol>
+			<Symbol>HEWLETT PACKARD MEXICO S DE RL CV</Symbol>
+			<Symbol>HP SCAN</Symbol>
+			<Symbol>HP COMPAQ</Symbol>
+			<Symbol>HP HEWLETT-PACKARD</Symbol>
+			<Symbol>HEWLETT PACKARD MEXICO STORAGE II</Symbol>
+			<Symbol>HP-MONITORES</Symbol>
+			<Symbol>HP-PCS-WORKSTATION</Symbol>
+			<Symbol>HEWLETT PACKARD MEXICO SRL DE CV</Symbol>
+			<Symbol>HEWLATT PACKARD</Symbol>
+			<Symbol>HEWLETT</Symbol>
+			<Symbol>HEWLETT-PACKARD DE MEXICO</Symbol>
+			<Symbol>HP-THINCLIENT</Symbol>
+			<Symbol>HEWLETT PACKARD MEXICO</Symbol>
+			<Symbol>HP HEWLETT PACKARD STORAGE</Symbol>
+			<Symbol>HP TSG</Symbol>
+			<Symbol>HP-ACCESORIOS</Symbol>
+			<Symbol>HEWLETT PACKARD MEXICO S DE R.L.</Symbol>
+			<Symbol>HEWLETT PACKARD DE MEXICO</Symbol>
+			<Symbol>HP COMPAQ 6910, 6910P SERIES</Symbol>
+			<Symbol>HP HDX X16 X16T HDX16 SERIES</Symbol>
+			<Symbol>HP STORAGE VALUE</Symbol>
+			<Symbol>HP PAVILION DV3-2000 SERIES</Symbol>
+			<Symbol>HP HDX X18 X18T</Symbol>
+			<Symbol>HEWLETT PACKARD S.A DE C.V</Symbol>
+			<Symbol>HP COMPAQ TX1000 TX1300 TX1100</Symbol>
+			<Symbol>HP PAVILION DV6 DV6-1000 DV6-1</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="2" name="Toshiba">
+			<Symbol>TOSHIBA</Symbol>
+			<Symbol>TOSHANDH</Symbol>
+			<Symbol>TOSCNOTE</Symbol>
+			<Symbol>TOSNOTEB</Symbol>
+			<Symbol>TOSHIBA BEAMERS</Symbol>
+			<Symbol>TOSHIBA BEAMER</Symbol>
+			<Symbol>TOSHIBA SPECIAL</Symbol>
+			<Symbol>TOSHIBA COMPUTER</Symbol>
+			<Symbol>TSH</Symbol>
+			<Symbol>TOSHIBA AUDIO-VIDEO</Symbol>
+			<Symbol>TOSHIBA HARD DRIVES</Symbol>
+			<Symbol>TOSHIBA CONSUMER</Symbol>
+			<Symbol>TOSHIBA CONSUMER (TV/DVD/ETC)</Symbol>
+			<Symbol>TOSHIBA CAMERAS</Symbol>
+			<Symbol>TOSHIBASURF</Symbol>
+			<Symbol>TOSHIBA-CONSUMIBLES</Symbol>
+			<Symbol>TOSHIBA UK</Symbol>
+			<Symbol>TOSHIBA - *</Symbol>
+			<Symbol>TOSHIBA TEC</Symbol>
+			<Symbol>TOSHIBA TECH</Symbol>
+			<Symbol>TOSHIBA DE MEXICO, S.A. DE C.V.</Symbol>
+			<Symbol>TOSHIBA INFORMATION SYS (UK) LT</Symbol>
+			<Symbol>TOSHIBA P2000 U200 SERIES</Symbol>
+			<Symbol>TOSHIBA HD</Symbol>
+			<Symbol>TOSHIBA DE MEXICO S.A. DE C.V.</Symbol>
+			<Symbol>TOSHIBA SATELLITE A200 A205 A2</Symbol>
+			<Symbol>TOSHIBA INFORMATION SYS (UK) LTD</Symbol>
+			<Symbol>TOSHIBA DE MEXICO  S.A. DE C.V.</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="3" name="IBM">
+			<Symbol>IBM FOCUS</Symbol>
+			<Symbol>IBM</Symbol>
+			<Symbol>LOTUS DEVELOPMENT</Symbol>
+			<Symbol>IBM STORAGE</Symbol>
+			<Symbol>IBM Printing Systems</Symbol>
+			<Symbol>LOTUS</Symbol>
+			<Symbol>IBM SOFTWARE</Symbol>
+			<Symbol>IBMPCC</Symbol>
+			<Symbol>IBM RS/6000</Symbol>
+			<Symbol>IBM AS/400</Symbol>
+			<Symbol>LOTUS / IBM</Symbol>
+			<Symbol>IBM RS/6000 I'P</Symbol>
+			<Symbol>IBM DIVERSEN</Symbol>
+			<Symbol>IBM OPTIONS OTHERS</Symbol>
+			<Symbol>IBM PRINTERSUPPLIES</Symbol>
+			<Symbol>IBM Opslagmedia</Symbol>
+			<Symbol>IB</Symbol>
+			<Symbol>IBM SPECIAL</Symbol>
+			<Symbol>TIVOLI SOFTWARE</Symbol>
+			<Symbol>WEBSPHERE SOFTWARE</Symbol>
+			<Symbol>LOTUS SOFTWARE</Symbol>
+			<Symbol>IBM X SERIES STORAGE</Symbol>
+			<Symbol>IBM DATA MANAGEMENT</Symbol>
+			<Symbol>IBM PRINTER SUPPLIES</Symbol>
+			<Symbol>IBM STORAGE MEDIA</Symbol>
+			<Symbol>IBM WEBSPHERE</Symbol>
+			<Symbol>TIVOLI</Symbol>
+			<Symbol>IBM (UK) LTD</Symbol>
+			<Symbol>IBM OPENPOWER</Symbol>
+			<Symbol>IBM STORAG</Symbol>
+			<Symbol>IBM XSERIES 440</Symbol>
+			<Symbol>IBM RISC/6000 &amp; STORAGE</Symbol>
+			<Symbol>IBM - *</Symbol>
+			<Symbol>IBM DE MEXICO COM Y SERVICIOS S.A.</Symbol>
+			<Symbol>IBM COMPUTER</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="5" name="Sony">
+			<Symbol>SONY</Symbol>
+			<Symbol>Sony Data Media</Symbol>
+			<Symbol>Sony Information Products</Symbol>
+			<Symbol>Sony Presentatie</Symbol>
+			<Symbol>Sony Storage</Symbol>
+			<Symbol>Sony Vaio</Symbol>
+			<Symbol>SONDIGCA</Symbol>
+			<Symbol>SON DVD</Symbol>
+			<Symbol>SONDIGPR</Symbol>
+			<Symbol>SONPCC</Symbol>
+			<Symbol>SONOPT</Symbol>
+			<Symbol>SONCSTOR</Symbol>
+			<Symbol>SONY OPTICAL</Symbol>
+			<Symbol>SONY TAPE</Symbol>
+			<Symbol>SONY CONSUMER ELECTRONICS</Symbol>
+			<Symbol>SONY OPTICAL RETAIL</Symbol>
+			<Symbol>SO</Symbol>
+			<Symbol>SONY MONITORS</Symbol>
+			<Symbol>SONY OPTICAL OEM</Symbol>
+			<Symbol>SONY NORDIC</Symbol>
+			<Symbol>SONY SPECIAL</Symbol>
+			<Symbol>SONY UNITED KINGDOM LIMITED.</Symbol>
+			<Symbol>SONY-NEC</Symbol>
+			<Symbol>SONY NEC OPTIARC</Symbol>
+			<Symbol>SONY/NEC OPTIARC</Symbol>
+			<Symbol>SONY-MULTIMEDIA</Symbol>
+			<Symbol>SONY UNITED KINGDOM LTD</Symbol>
+			<Symbol>SONY (UK) LTD</Symbol>
+			<Symbol>SONY-OPCIONES</Symbol>
+			<Symbol>SONY STYLE EUROPE</Symbol>
+			<Symbol>SONY-TV</Symbol>
+			<Symbol>SONY-CONSUMIBLES</Symbol>
+			<Symbol>SONY STORAGE &amp; MEDIA</Symbol>
+			<Symbol>SONY-ALMACENAMIENTO</Symbol>
+			<Symbol>SONY DIGITAL VIDEO</Symbol>
+			<Symbol>SONY MEDIA</Symbol>
+			<Symbol>SONY VAIO HIGH END</Symbol>
+			<Symbol>OPTIARC</Symbol>
+			<Symbol>NEC SONY OPTIARC</Symbol>
+			<Symbol>SONY/</Symbol>
+			<Symbol>SONY SES</Symbol>
+			<Symbol>SONY UK LTD</Symbol>
+			<Symbol>SONY NEC OPTIARC EUROPE</Symbol>
+			<Symbol>SONY SUPPLIES</Symbol>
+			<Symbol>SONYSTOR</Symbol>
+			<Symbol>SONY-PORTATILES</Symbol>
+			<Symbol>SONY OPTIARC EUROPE</Symbol>
+			<Symbol>SONY-CAMARAS-DIGITALES</Symbol>
+			<Symbol>SONY-IPELA</Symbol>
+			<Symbol>SONY CREATIVE SOFTWARE</Symbol>
+			<Symbol>SONY-PROYECTORES</Symbol>
+			<Symbol>SONY-OPCIONES-PORTATIL</Symbol>
+			<Symbol>SONY-NEC-OPTIARC</Symbol>
+			<Symbol>SONY PRO</Symbol>
+			<Symbol>SONY PHOTO VIDEO</Symbol>
+			<Symbol>SONY MULTIMEDIA</Symbol>
+			<Symbol>SONYOTH</Symbol>
+			<Symbol>SONYRET</Symbol>
+			<Symbol>SONY BATT.</Symbol>
+			<Symbol>SONY PILES</Symbol>
+			<Symbol>SONY HARDWARE</Symbol>
+			<Symbol>GPS SONY</Symbol>
+			<Symbol>SONY - *</Symbol>
+			<Symbol>SONY COMPUTER ENTERTAINMENT</Symbol>
+			<Symbol>SONY NEC OPTIARC INC.</Symbol>
+			<Symbol>SONY COMPUTER</Symbol>
+			<Symbol>SONY OPTIARC</Symbol>
+			<Symbol>SONY DE MEXICO, S.A. DE C.V.</Symbol>
+			<Symbol>SONY DE MEXICO, S.A.DE C.V.</Symbol>
+			<Symbol>SONY NUEVO LAREDO, S.A DE C.V.</Symbol>
+			<Symbol>SONY NUEVO LAREDO, S.A. DE C.V.</Symbol>
+			<Symbol>SONY NUEVO LAREDO  S.A. DE C.V.</Symbol>
+			<Symbol>SONY MEDIAS</Symbol>
+			<Symbol>SONY DE MEXICO  S.A. DE C.V.</Symbol>
+			<Symbol>SONY NUEVO LAREDO  S.A DE C.V.</Symbol>
+			<Symbol>SONY DE MEXICO  S.A.DE C.V.</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="6" name="3com">
+			<Symbol>3COM</Symbol>
+			<Symbol>3COMHW</Symbol>
+			<Symbol>GM 3COM</Symbol>
+			<Symbol>3COM SPECIAL</Symbol>
+			<Symbol>3-Com</Symbol>
+			<Symbol>3COMVOI</Symbol>
+			<Symbol>3COM SYSTEMS</Symbol>
+			<Symbol>3 COM</Symbol>
+			<Symbol>3COM - *</Symbol>
+			<Symbol>3COM - BUSINESS ACCESS (BNC)</Symbol>
+			<Symbol>3COM CORPORATION</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="7" name="Acer">
+			<Symbol>ACER</Symbol>
+			<Symbol>ACERPC</Symbol>
+			<Symbol>Acer PC</Symbol>
+			<Symbol>Acer Storage</Symbol>
+			<Symbol>Acer Supplies</Symbol>
+			<Symbol>ACRDESKT</Symbol>
+			<Symbol>ACROPTIO</Symbol>
+			<Symbol>ACRCDESK</Symbol>
+			<Symbol>ACRHANDH</Symbol>
+			<Symbol>ACRCNOTE</Symbol>
+			<Symbol>ACRNOTEB</Symbol>
+			<Symbol>ACRDIGCA</Symbol>
+			<Symbol>ACERCI-8330</Symbol>
+			<Symbol>ACER-WAR</Symbol>
+			<Symbol>ACER PROFESSIONAL</Symbol>
+			<Symbol>ACER-ASPIRE-ONE</Symbol>
+			<Symbol>ACER CONSUMER</Symbol>
+			<Symbol>ACER COMPUTERS</Symbol>
+			<Symbol>ACER AMERICA CORP.</Symbol>
+			<Symbol>ACER-PCS-PROFESIONAL</Symbol>
+			<Symbol>ACER-MONITORES</Symbol>
+			<Symbol>ACER-EMACHINES</Symbol>
+			<Symbol>ACER-SERVERS</Symbol>
+			<Symbol>ACER-PORTATILES</Symbol>
+			<Symbol>ACER-PROYECTORES</Symbol>
+			<Symbol>ACER-PCS-CONSUMO</Symbol>
+			<Symbol>ACER-OPCIONES</Symbol>
+			<Symbol>ACER - *</Symbol>
+			<Symbol>ACER GATEWAY</Symbol>
+			<Symbol>ACER.</Symbol>
+			<Symbol>ACER FULFILMENT</Symbol>
+			<Symbol>ACER COMPUTEC MEXICO S.A. DE C.V.</Symbol>
+			<Symbol>ACER TRAVELMATE TM240 TM 240 2</Symbol>
+			<Symbol>ACER ASPIRE AS5930 5930, 5330,</Symbol>
+			<Symbol>ACER CONSUMER_MEDIA</Symbol>
+			<Symbol>ACER TRAVELMATE 6292 6291 6231</Symbol>
+			<Symbol>ACER COMPUTEC MEXICO  S.A. DE C.V.</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="8" name="Adobe">
+			<Symbol>ADOBE</Symbol>
+			<Symbol>ADOBE SYSTEMS</Symbol>
+			<Symbol>MACROMEDIA</Symbol>
+			<Symbol>MACROMED</Symbol>
+			<Symbol>ADOACROB</Symbol>
+			<Symbol>ADOOTHER</Symbol>
+			<Symbol>ADOMACRO</Symbol>
+			<Symbol>ADB</Symbol>
+			<Symbol>ADOBE SYSTEMS UK</Symbol>
+			<Symbol>ADOBE/MACROMEDIA</Symbol>
+			<Symbol>ADOBE EDUCATION</Symbol>
+			<Symbol>ADOBE PRESS</Symbol>
+			<Symbol>ADOBE SOFTWARE</Symbol>
+			<Symbol>ADOBE - *</Symbol>
+			<Symbol>ADOBE LIC</Symbol>
+			<Symbol>ADOBE ENTERPRISE</Symbol>
+			<Symbol>ADOBE SYSTEMS, INC.</Symbol>
+			<Symbol>ADOBE SYSTEMS  INC.</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="10" name="Canon">
+			<Symbol>CANON</Symbol>
+			<Symbol>CANMEDIA</Symbol>
+			<Symbol>CANSUPPL</Symbol>
+			<Symbol>EXPORT NETHERLANDS - CANON</Symbol>
+			<Symbol>CANON UK LTD.</Symbol>
+			<Symbol>CANON / DIGITAL RIVER</Symbol>
+			<Symbol>CANON UK LTD</Symbol>
+			<Symbol>CANON EUROPA NV</Symbol>
+			<Symbol>CANON-OPCIONES</Symbol>
+			<Symbol>CANON-CONSUMIBLES</Symbol>
+			<Symbol>CANON INK</Symbol>
+			<Symbol>CANON-PROYECTORES</Symbol>
+			<Symbol>CANON HEADWAY TECHNOLOGIE</Symbol>
+			<Symbol>CANON-FAXES</Symbol>
+			<Symbol>CANON SUPPLIES</Symbol>
+			<Symbol>CANON USA</Symbol>
+			<Symbol>CANON PROJECTORS</Symbol>
+			<Symbol>CANON COMPUTERS SYSTEMS</Symbol>
+			<Symbol>CANON CAMERAS</Symbol>
+			<Symbol>CANON CAMCORDERS</Symbol>
+			<Symbol>CANON-CALCULADORAS</Symbol>
+			<Symbol>CANON BUSINESS SERVICE (UK) LTD</Symbol>
+			<Symbol>CANON UK</Symbol>
+			<Symbol>CANON-ESCANERS</Symbol>
+			<Symbol>CANON-CAMARAS-DIGITALES</Symbol>
+			<Symbol>CANON (UK)</Symbol>
+			<Symbol>CANON-PRINTER</Symbol>
+			<Symbol>CANON TONER</Symbol>
+			<Symbol>CANON PHOTO VIDEO</Symbol>
+			<Symbol>CANON - *</Symbol>
+			<Symbol>CANON ITALIA S.P.A.</Symbol>
+			<Symbol>CANON OFFICE</Symbol>
+			<Symbol>CANON BUSINESS SOLUTION</Symbol>
+			<Symbol>CA</Symbol>
+			<Symbol>CANON MEXICANA S DE R.L. DE C.V.</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="11" name="Cisco">
+			<Symbol>CISCO</Symbol>
+			<Symbol>CISCO SMARTNET</Symbol>
+			<Symbol>Cisco Systems</Symbol>
+			<Symbol>CISCO REFURBISHED EQUIP.</Symbol>
+			<Symbol>Cisco SB</Symbol>
+			<Symbol>CISCO SMALL BUSINESS</Symbol>
+			<Symbol>CISCO - *</Symbol>
+			<Symbol>CISCO SYSTEMS INC.</Symbol>
+			<Symbol>CISCO SYSTEMS  INC.</Symbol>
+			<Symbol>CISCO E-DELIVERY</Symbol>
+			<Symbol>CISCO SYSTEMS INC</Symbol>
+			<Symbol>CISCO-LINKSYS LLC (LINKSYS)</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="13" name="Epson">
+			<Symbol>EPSON</Symbol>
+			<Symbol>EPSPLOTT</Symbol>
+			<Symbol>EPSINKJT</Symbol>
+			<Symbol>EPSDIGPR</Symbol>
+			<Symbol>EPSMULTI</Symbol>
+			<Symbol>EPSLASCO</Symbol>
+			<Symbol>EP</Symbol>
+			<Symbol>EPSON OEM</Symbol>
+			<Symbol>ICD EPSON</Symbol>
+			<Symbol>EPSON (UK) LTD (INFO ONLY)</Symbol>
+			<Symbol>EPSON (UK) LIMITED</Symbol>
+			<Symbol>EPSON-OPCIONES</Symbol>
+			<Symbol>EPSON-POS</Symbol>
+			<Symbol>EPSON-PRINTER-B</Symbol>
+			<Symbol>EPSON-CONSUMIBLES</Symbol>
+			<Symbol>EPSON-PRINTER-C</Symbol>
+			<Symbol>EPSON SUPPLIES</Symbol>
+			<Symbol>EPSON AMERICA INC</Symbol>
+			<Symbol>EPSON SPECIAL</Symbol>
+			<Symbol>EPSON-ESCANER-C</Symbol>
+			<Symbol>EPSON UK</Symbol>
+			<Symbol>EPSON-ESCANER-B</Symbol>
+			<Symbol>EPSON LG FORMAT</Symbol>
+			<Symbol>EPSON-PROYECTORES</Symbol>
+			<Symbol>EPSON - *</Symbol>
+			<Symbol>EPSON MEXICO S.A. DE C.V.</Symbol>
+			<Symbol>EPSON ITALIA S.P.A.</Symbol>
+			<Symbol>EPSON MEXICO, S.A.DE C.V.</Symbol>
+			<Symbol>EPSON MEXICO  S.A.DE C.V.</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="14" name="Freecom">
+			<Symbol>FREECOM</Symbol>
+			<Symbol>FREECOM TECHNOLOGIES</Symbol>
+			<Symbol>FREECOM - *</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="15" name="Fujitsu">
+			<Symbol>FUJITSU SIEMENS</Symbol>
+			<Symbol>FUJITSU-SIEMENS</Symbol>
+			<Symbol>FUJITSU SIEMENS COMPUTERS</Symbol>
+			<Symbol>FUJITSU</Symbol>
+			<Symbol>FS DESKT</Symbol>
+			<Symbol>FUJITSU-SI</Symbol>
+			<Symbol>SIEMENS NIXDORF</Symbol>
+			<Symbol>FS NOTEB</Symbol>
+			<Symbol>FUJITSU-SIEMENS COMPUTERS</Symbol>
+			<Symbol>FUJITSU-SIEMENS COMPUTER</Symbol>
+			<Symbol>FUJITSU SIEMENS BTO SERVER</Symbol>
+			<Symbol>FUJITSU-SIEMENS CONSUMER</Symbol>
+			<Symbol>FUJITSU-SIEMENS ZAKELIJK</Symbol>
+			<Symbol>FUJITSU-SIEMENS ENTERPRISE</Symbol>
+			<Symbol>FUJITSU-SIEMENS SERVERS</Symbol>
+			<Symbol>FUJITSU-SIEMENS MOBILE</Symbol>
+			<Symbol>FUJITSU EUROPE</Symbol>
+			<Symbol>FUJITSU - SIEMENS</Symbol>
+			<Symbol>FUJI SIEMENS</Symbol>
+			<Symbol>FUJITSU GENERAL</Symbol>
+			<Symbol>FUJITSU EUROPE LTD</Symbol>
+			<Symbol>Fujitsu-Siemens-Computers</Symbol>
+			<Symbol>FUJ/SIEM</Symbol>
+			<Symbol>FSC COMPUTER SPECIAL</Symbol>
+			<Symbol>FUJITSU-MO</Symbol>
+			<Symbol>FUJITSU-E</Symbol>
+			<Symbol>FUJITSU-OPCIONES</Symbol>
+			<Symbol>FUJITSU-P</Symbol>
+			<Symbol>FSC SPECIAL</Symbol>
+			<Symbol>FUJITSU SI</Symbol>
+			<Symbol>FUJITSU-CONSUMIBLES</Symbol>
+			<Symbol>FUJITSUSIEMENS</Symbol>
+			<Symbol>FUJITSU SIEMENS OPRUIMERS</Symbol>
+			<Symbol>FUJITSU-DISCOS</Symbol>
+			<Symbol>F/SIEMENS</Symbol>
+			<Symbol>FSIEMENS GP</Symbol>
+			<Symbol>FUJITSU TECHNOLOGY SYSTEMS</Symbol>
+			<Symbol>FSC</Symbol>
+			<Symbol>FSIEMENS PRO</Symbol>
+			<Symbol>FUJITSU-SIEM</Symbol>
+			<Symbol>FUJISTU-SIEMENS</Symbol>
+			<Symbol>FTS SPECIAL</Symbol>
+			<Symbol>FTS</Symbol>
+			<Symbol>FUJITSU BATTERY PK</Symbol>
+			<Symbol>FUJITSU TECHNOLOGY SOLUTIONS</Symbol>
+			<Symbol>FUJITSU-DIGITAL</Symbol>
+			<Symbol>FUJITSU-TS</Symbol>
+			<Symbol>FUJITSU COMPONENTS</Symbol>
+			<Symbol>FUJITSU TECHNOLOGY SOLUT.</Symbol>
+			<Symbol>FUJITSU ICL</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="17" name="Iomega">
+			<Symbol>IOMEGA</Symbol>
+			<Symbol>IOMCSTOR</Symbol>
+			<Symbol>IOMPCC</Symbol>
+			<Symbol>IOMEGA EUROPE</Symbol>
+			<Symbol>IO</Symbol>
+			<Symbol>IOMEGA INTERNATIONAL S.A.</Symbol>
+			<Symbol>IOMEGA CORPORATION</Symbol>
+			<Symbol>IOMEGA INTERNATIONAL SA</Symbol>
+			<Symbol>I-OMEGA</Symbol>
+			<Symbol>IOMEGA - *</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="18" name="Kingston">
+			<Symbol>KINGSTON TECHNOLOGY*</Symbol>
+			<Symbol>KINGSTON</Symbol>
+			<Symbol>KINGSTON FOR DELL ONLY</Symbol>
+			<Symbol>KINGSTON VALUERAM</Symbol>
+			<Symbol>KINGSTON DIGITAL EUROPE LTD</Symbol>
+			<Symbol>KINGSTON TECHNOLOGY EUROPE LTD</Symbol>
+			<Symbol>KINGSTON-MEMORIAS</Symbol>
+			<Symbol>KINGSTON VALUE RAM</Symbol>
+			<Symbol>KINGSTON TECHNOLOGY</Symbol>
+			<Symbol>KINGSTON TECHNOLOGY FLASH</Symbol>
+			<Symbol>KINGSTON TECHNOLOGY CORP</Symbol>
+			<Symbol>KINGSTON DIGITAL MEDIA</Symbol>
+			<Symbol>KINGSTON TECHNOLOGY BRANDED</Symbol>
+			<Symbol>KINGSTON TECHNOLOGY VALUERAM</Symbol>
+			<Symbol>KINGSTON MEMORY</Symbol>
+			<Symbol>KINGSTON HYPERX</Symbol>
+			<Symbol>KINGSTON - *</Symbol>
+			<Symbol>KINGSTONE</Symbol>
+			<Symbol>KINGSTON TECHNOLOGY - VALUE RAM</Symbol>
+			<Symbol>KINGSTON DIGITAL INC.</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="20" name="Lexmark">
+			<Symbol>LEXMARK</Symbol>
+			<Symbol>Lexmark supplies</Symbol>
+			<Symbol>LEXLASER</Symbol>
+			<Symbol>LEXMULTI</Symbol>
+			<Symbol>LE</Symbol>
+			<Symbol>LEXMARK OUTSOURCED</Symbol>
+			<Symbol>LEXMARK SPECIAL</Symbol>
+			<Symbol>LEXMARK CONSUMABLES</Symbol>
+			<Symbol>LEXMARK INTERNATIONAL LTD</Symbol>
+			<Symbol>LEX</Symbol>
+			<Symbol>LEXMARK INTERNATIONAL LIMITED.</Symbol>
+			<Symbol>LEXMARK INTERNATIONAL</Symbol>
+			<Symbol>LEXMARK-CONSUMIBLES</Symbol>
+			<Symbol>LEXMARK-OPCIONES</Symbol>
+			<Symbol>LEXMARKRESELLER</Symbol>
+			<Symbol>LEXMARKPRNTRACCESSORY</Symbol>
+			<Symbol>LEXMARK - *</Symbol>
+			<Symbol>LEXMARK INTERN.DE MEXICO S DE RLCV</Symbol>
+			<Symbol>LEXMARK INTERN.DE MEXICO S DE RL CV</Symbol>
+			<Symbol>LEXMARK GMBH</Symbol>
+			<Symbol>LEXMARK INTERNATIONAL S.R.L.</Symbol>
+			<Symbol>LEXMARK INTERN.DE MEXICO S DE RL</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="23" name="OKI">
+			<Symbol>OKI</Symbol>
+			<Symbol>Oki supplies</Symbol>
+			<Symbol>OKIPAGE</Symbol>
+			<Symbol>OKILASER</Symbol>
+			<Symbol>OKI MFP</Symbol>
+			<Symbol>OKIDATA</Symbol>
+			<Symbol>OK</Symbol>
+			<Symbol>OKI-PRINTER</Symbol>
+			<Symbol>OKI-DESTRUCTORAS</Symbol>
+			<Symbol>OKI-CONSUMIBLES</Symbol>
+			<Symbol>OKI-FAXES</Symbol>
+			<Symbol>OKI-POS</Symbol>
+			<Symbol>OKI-PCS</Symbol>
+			<Symbol>OKI-TV</Symbol>
+			<Symbol>OKI-OPCIONES</Symbol>
+			<Symbol>OKIDATA - CONSUMABLES</Symbol>
+			<Symbol>OKI - *</Symbol>
+			<Symbol>OKI - LASER PRINTER</Symbol>
+			<Symbol>OKI SYSTEMS</Symbol>
+			<Symbol>OKIDATA DE MEXICO, S.A. DE C.V.</Symbol>
+			<Symbol>OKIDATA DE MEXICO S.A. DE C.V.</Symbol>
+			<Symbol>OKIDATA DE MEXICO  S.A. DE C.V.</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="24" name="Packard Bell">
+			<Symbol>PACKARD BELL</Symbol>
+			<Symbol>PACKARD BELL - DESKTOP</Symbol>
+			<Symbol>PACKARD</Symbol>
+			<Symbol>PACKARD BE</Symbol>
+			<Symbol>PACKARD BELL NL</Symbol>
+			<Symbol>PACKARD BELL - MOBILE</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="25" name="Philips">
+			<Symbol>PHILIPS</Symbol>
+			<Symbol>Philips PC add-on</Symbol>
+			<Symbol>Philips Tapes &amp; Accessoires</Symbol>
+			<Symbol>PHIMULTI</Symbol>
+			<Symbol>PHIMONIT</Symbol>
+			<Symbol>HILIPS</Symbol>
+			<Symbol>PD</Symbol>
+			<Symbol>PHILLIPS</Symbol>
+			<Symbol>PHILIPS TECHNOLOGIE GMBH</Symbol>
+			<Symbol>PHILIPS ELECTRONICS UK LTD</Symbol>
+			<Symbol>PHILIPS-ALMA</Symbol>
+			<Symbol>PHILIPS-CONSUMIBLES</Symbol>
+			<Symbol>PHILIPS ACCESSORIES</Symbol>
+			<Symbol>PHILIPS-AUDIO-VIDEO</Symbol>
+			<Symbol>PHILIPS STORAGE MULTIMEDIA</Symbol>
+			<Symbol>PHILIPS-MONITORES</Symbol>
+			<Symbol>PHILIPS 3D PRODUCTS</Symbol>
+			<Symbol>PHILIPS-PERIFERIA</Symbol>
+			<Symbol>PHILIPS CE</Symbol>
+			<Symbol>PHILIPS-TV</Symbol>
+			<Symbol>PHILIPS AUDIO-VIDEO</Symbol>
+			<Symbol>PHILIPS MONITOR</Symbol>
+			<Symbol>PHILIPS - *</Symbol>
+			<Symbol>PHILIPS ENTERTAINMENT</Symbol>
+			<Symbol>PHIL.SAGEM</Symbol>
+			<Symbol>ADAC LABS</Symbol>
+			<Symbol>PHILPS</Symbol>
+			<Symbol>MMD-PHILIPS</Symbol>
+			<Symbol>PHILIPS ELETTRODOMESTICI</Symbol>
+			<Symbol>PHILIPS LIGHTING</Symbol>
+			<Symbol>PHILIPS RECHTSTREEKS</Symbol>
+			<Symbol>PHILIPSD</Symbol>
+			<Symbol>PHILIPSC</Symbol>
+			<Symbol>PHILIPSV</Symbol>
+			<Symbol>PHILIPS C.E.</Symbol>
+			<Symbol>PHILIPS RECORDABLE MEDIA</Symbol>
+			<Symbol>PHILIPS HOTEL TVC</Symbol>
+			<Symbol>MMD</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="26" name="Samsung">
+			<Symbol>SAMSUNG</Symbol>
+			<Symbol>SAMMONIT</Symbol>
+			<Symbol>SAMLASER</Symbol>
+			<Symbol>SAMDIGPR</Symbol>
+			<Symbol>SA</Symbol>
+			<Symbol>SMS</Symbol>
+			<Symbol>SAM</Symbol>
+			<Symbol>SAMSUNG ELECTRONICS</Symbol>
+			<Symbol>SAMSUNG ELECTRONICS (UK) LTD</Symbol>
+			<Symbol>SAMSUNG ELECTRONICS AUSTRIA</Symbol>
+			<Symbol>SAMSUNG ELECTRONICS LTD</Symbol>
+			<Symbol>SAMSUNG MONITORS/PRINTERS</Symbol>
+			<Symbol>SAMSUNG MONITORS &amp; PRINTERS</Symbol>
+			<Symbol>SAMSUNG CAMERA</Symbol>
+			<Symbol>SAMLASCO</Symbol>
+			<Symbol>SAMSUNG-OPCIONES-PORTATIL</Symbol>
+			<Symbol>SAMSUNG SUPPLIES</Symbol>
+			<Symbol>SAMSUNG-PORTATILES</Symbol>
+			<Symbol>SAMSUNG-MONITORES</Symbol>
+			<Symbol>SAMSUNG SEMICONDUCTORS EUROPE LTD</Symbol>
+			<Symbol>SAMSUNG DRUCKER</Symbol>
+			<Symbol>SAMSUNG - *</Symbol>
+			<Symbol>SAMSUNG/ADIDAS</Symbol>
+			<Symbol>SAMSUNG|</Symbol>
+			<Symbol>SAMSUNG INFORMATION SYSTEMS</Symbol>
+			<Symbol>SAMSUNG WHITE GOODS</Symbol>
+			<Symbol>SAMSUNG NOTEBOOKS</Symbol>
+			<Symbol>AMSUNG</Symbol>
+			<Symbol>SAMSUNG ELECTRONICS MXP</Symbol>
+			<Symbol>SAMSUNG ELECTRONICOS, S.A. DE C.V.</Symbol>
+			<Symbol>SAMSUNG ELECTRONICS MEXICO,S.A.C.V.</Symbol>
+			<Symbol>SAMSUNG BID</Symbol>
+			<Symbol>SAMSUNG VOICE (UK)</Symbol>
+			<Symbol>SAMSUNG SEMICONDUCTORS EUROPE L</Symbol>
+			<Symbol>SAMSUNG OPTO-ELECTORNICS</Symbol>
+			<Symbol>SAMSUNG ELECTRONICS MEXICO</Symbol>
+			<Symbol>SAMSUNG ELECTRONICS MEXICO S.A.C.V.</Symbol>
+			<Symbol>SAMSUNG ELECTRONICOS  S.A. DE C.V.</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="29" name="Western digital">
+			<Symbol>WESTERN DIGITAL</Symbol>
+			<Symbol>WEST DIG</Symbol>
+			<Symbol>WESTERN</Symbol>
+			<Symbol>WESTRET</Symbol>
+			<Symbol>WESTERN DI</Symbol>
+			<Symbol>WD</Symbol>
+			<Symbol>WESTERN DIGITAL BULK</Symbol>
+			<Symbol>WESTERN DIGITAL RETAIL</Symbol>
+			<Symbol>WESTERND</Symbol>
+			<Symbol>W.D.</Symbol>
+			<Symbol>WESTERN DIGITAL CORP.</Symbol>
+			<Symbol>WESTERNDIGITAL</Symbol>
+			<Symbol>WDC WESTERN DIGITAL CORPORATIO</Symbol>
+			<Symbol>WD MOBILE</Symbol>
+			<Symbol>WESTERN DIGITAL - *</Symbol>
+			<Symbol>WESTERN-DIGITAL</Symbol>
+			<Symbol>WESTERN DIGIT</Symbol>
+			<Symbol>WESTERN DIGITAL CORPORATION</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="30" name="Xerox">
+			<Symbol>XEROX</Symbol>
+			<Symbol>TEKTRONIX</Symbol>
+			<Symbol>XEROX/TEKTRONIX</Symbol>
+			<Symbol>XEROX DOCUMENT SUPPLIES</Symbol>
+			<Symbol>XEROX (ETC)</Symbol>
+			<Symbol>XE</Symbol>
+			<Symbol>XEROX CHANNELS LIMITED</Symbol>
+			<Symbol>XEROX (UK) LTD</Symbol>
+			<Symbol>XEROX OFFICE SUPPLIES LTD</Symbol>
+			<Symbol>XEROX ENGINEERING SYSTEMS LTD.</Symbol>
+			<Symbol>XER</Symbol>
+			<Symbol>XEROX®</Symbol>
+			<Symbol>XEROX SUPPL</Symbol>
+			<Symbol>XEROX OSG</Symbol>
+			<Symbol>XEROX SUPPLIES</Symbol>
+			<Symbol>XEROX ODP SUPPLIES</Symbol>
+			<Symbol>XEROX - *</Symbol>
+			<Symbol>XEROX GMBH</Symbol>
+			<Symbol>XEROX-TEKTRONIX</Symbol>
+			<Symbol>XEROX MEXICANA S.A. DE C.V.</Symbol>
+			<Symbol>FUJI XEROX</Symbol>
+			<Symbol>XEROX MEXICANA, S.A. DE C.V.</Symbol>
+			<Symbol>XEROX CORPORATION</Symbol>
+			<Symbol>RANK XEROX</Symbol>
+			<Symbol>XEROX MEXICANA  S.A. DE C.V.</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="31" name="Pinnacle">
+			<Symbol>PINNACLE</Symbol>
+			<Symbol>PINNACLE MICRO</Symbol>
+			<Symbol>PINNACLE SYSTEMS</Symbol>
+			<Symbol>DAZZLE</Symbol>
+			<Symbol>PINNACLE SYSTEMS (MIRO)</Symbol>
+			<Symbol>M-AUDIO</Symbol>
+			<Symbol>PINCL</Symbol>
+			<Symbol>PINNACLE SYS</Symbol>
+			<Symbol>PINNACLE SYSTEMS - RETAIL</Symbol>
+			<Symbol>PINNACLE SYSTEM</Symbol>
+			<Symbol>PINNACLE SYSTEMS,INC.</Symbol>
+			<Symbol>PINNACLE SYSTEMS INC.</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="32" name="Belkin">
+			<Symbol>BELKIN</Symbol>
+			<Symbol>BELNETW</Symbol>
+			<Symbol>BELKIN - VOLUME</Symbol>
+			<Symbol>BELPERI</Symbol>
+			<Symbol>BELCABLE</Symbol>
+			<Symbol>BELKIN COMPONENTS</Symbol>
+			<Symbol>BELKIN - VALUE</Symbol>
+			<Symbol>BELKIN CORPORATION</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="33" name="APC">
+			<Symbol>APC</Symbol>
+			<Symbol>AMERICAN POWER CORPORATION</Symbol>
+			<Symbol>AMERICAN POWER CONVERSION</Symbol>
+			<Symbol>APC SPECIAL</Symbol>
+			<Symbol>AMERICAN POWER CONVERSION-APC</Symbol>
+			<Symbol>APC-MGE</Symbol>
+			<Symbol>AMERICAN POWER CONVERSION UK LTD</Symbol>
+			<Symbol>APCAMERICANPOWERCONVERSION</Symbol>
+			<Symbol>APC - *</Symbol>
+			<Symbol>AMERICAN POWER CONVERSION (APC)</Symbol>
+			<Symbol>APC/ MGE</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="42" name="AVM">
+			<Symbol>AVM COMPUTER SYSTEMS</Symbol>
+			<Symbol>AVM</Symbol>
+			<Symbol>AVMFRITZ</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="43" name="US Robotics">
+			<Symbol>US ROBOTICS (NEW)</Symbol>
+			<Symbol>US ROBOTICS</Symbol>
+			<Symbol>US ROBOTIC</Symbol>
+			<Symbol>US ROB</Symbol>
+			<Symbol>US-ROBOTICS</Symbol>
+			<Symbol>US R</Symbol>
+			<Symbol>USROBOTICS</Symbol>
+			<Symbol>U.S. Robotics</Symbol>
+			<Symbol>USR</Symbol>
+			<Symbol>USROBOT</Symbol>
+			<Symbol>U S ROBOTICS</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="45" name="Creative Labs">
+			<Symbol>CREATIVE LABS*</Symbol>
+			<Symbol>CREATIVE TECHNOLOGY</Symbol>
+			<Symbol>CREATIVE</Symbol>
+			<Symbol>CREATIVE L</Symbol>
+			<Symbol>CREASOVI</Symbol>
+			<Symbol>CREATIVE CZ</Symbol>
+			<Symbol>CREATIVE LAB</Symbol>
+			<Symbol>CREATIVE LABS INC</Symbol>
+			<Symbol>CREATIVE LABS OEM</Symbol>
+			<Symbol>CREATIVE LABS</Symbol>
+			<Symbol>CREATIVE LABS (UK) LTD</Symbol>
+			<Symbol>CREATIV</Symbol>
+			<Symbol>CREATIVE LABS - SPEAKERS</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="49" name="Allied Telesis">
+			<Symbol>ALLIED DATA</Symbol>
+			<Symbol>ALLIED TELESYN</Symbol>
+			<Symbol>ALLIED DATA TECHNOLOGIES</Symbol>
+			<Symbol>ALLIED</Symbol>
+			<Symbol>ALLIED TELESIS</Symbol>
+			<Symbol>ALLIED TEL</Symbol>
+			<Symbol>ALLIEDTELESYN</Symbol>
+			<Symbol>ALLIED TELESIS, INC</Symbol>
+			<Symbol>ALTEL</Symbol>
+			<Symbol>ALLIED TELESIS - LOW END</Symbol>
+			<Symbol>ALLIED TELESIS INC</Symbol>
+			<Symbol>ALLIED TELESYN INTERNATIONAL</Symbol>
+			<Symbol>ALLIED TELESYS</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="57" name="Benq">
+			<Symbol>BENQ</Symbol>
+			<Symbol>BENQ-MONITORES</Symbol>
+			<Symbol>BENQ-OPCIONES</Symbol>
+			<Symbol>BENQ-CAMARAS-DIGITALES</Symbol>
+			<Symbol>BENQ-PROYECTORES</Symbol>
+			<Symbol>BENQ-PERIFERIA</Symbol>
+			<Symbol>BENQ DEUTSCHL</Symbol>
+			<Symbol>BENQ - *</Symbol>
+			<Symbol>BENQ MEXICO S DE R.L. DE C.V.</Symbol>
+			<Symbol>BENQ MEXICO S DE RL DE C.V.</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="59" name="CA">
+			<Symbol>COMPUTER ASSOCI</Symbol>
+			<Symbol>COMPUTER ASSOCIATES</Symbol>
+			<Symbol>COMPUTER A</Symbol>
+			<Symbol>CA ETRUST OLP</Symbol>
+			<Symbol>CA LICENSE MLP</Symbol>
+			<Symbol>CA ETRUST MLP</Symbol>
+			<Symbol>CA BRIGHTSTOR MLP</Symbol>
+			<Symbol>CA LICENSE OLP</Symbol>
+			<Symbol>CA BRIGHTSTOR OLP</Symbol>
+			<Symbol>CA PROTECTION OLP</Symbol>
+			<Symbol>CA ALLFUSION MLP</Symbol>
+			<Symbol>CA BOX PRODUCTS</Symbol>
+			<Symbol>CA LICENSE GLP</Symbol>
+			<Symbol>CA BRIGHTSTOR GLP</Symbol>
+			<Symbol>CA BRIGHTSTOR BOX</Symbol>
+			<Symbol>CA DESKTOP PROTECTION</Symbol>
+			<Symbol>CA ETRUST BOX</Symbol>
+			<Symbol>CA ETRUST GLP</Symbol>
+			<Symbol>CA ALLFUSION OLP</Symbol>
+			<Symbol>CA ALLFUSION GLP</Symbol>
+			<Symbol>CA BOX</Symbol>
+			<Symbol>CA ANTISPAM OLP</Symbol>
+			<Symbol>CA DESKTOP MANAGEMENT SUITE</Symbol>
+			<Symbol>CA XOSOFT</Symbol>
+			<Symbol>CA BUSINESS PROTECTION OLP</Symbol>
+			<Symbol>CA HIPS MLP</Symbol>
+			<Symbol>CA INTEGRATED THREAT MANAGEMENT OLP</Symbol>
+			<Symbol>CA INTEGRATED THREAT MANAGEMENT GLP</Symbol>
+			<Symbol>CA HIPS OLP</Symbol>
+			<Symbol>CA SERVER PROTECTION OLP</Symbol>
+			<Symbol>CA INTEGRATED THREAT MANAGEMENT MLP</Symbol>
+			<Symbol>CA HIPS GLP</Symbol>
+			<Symbol>CA</Symbol>
+			<Symbol>CA - *</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="61" name="Corel">
+			<Symbol>JASC</Symbol>
+			<Symbol>COREL</Symbol>
+			<Symbol>MENSYS B.V.</Symbol>
+			<Symbol>MENSYS</Symbol>
+			<Symbol>COR</Symbol>
+			<Symbol>COREL SYSTEMS</Symbol>
+			<Symbol>COREL CORPORATION</Symbol>
+			<Symbol>COREL WINZIP</Symbol>
+			<Symbol>COREL - *</Symbol>
+			<Symbol>COREL GMBH</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="63" name="D-Link">
+			<Symbol>D-LINK</Symbol>
+			<Symbol>D LINK</Symbol>
+			<Symbol>DLINK</Symbol>
+			<Symbol>DLINKOEM</Symbol>
+			<Symbol>D-LINK SYSTEMS</Symbol>
+			<Symbol>D-LINK EUROPE</Symbol>
+			<Symbol>D-LINK - XSTACK</Symbol>
+			<Symbol>DLINK RETAIL</Symbol>
+			<Symbol>D-LINK MEXICANA, S.A. DE C.V.</Symbol>
+			<Symbol>D-LINK MEXICANA  S.A. DE C.V.</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="75" name="Fujifilm">
+			<Symbol>FUJI MAGNETICS</Symbol>
+			<Symbol>FUJI PHOTO FILM</Symbol>
+			<Symbol>FUJI MAGNE</Symbol>
+			<Symbol>FUJIFILM</Symbol>
+			<Symbol>FJ</Symbol>
+			<Symbol>FUJI FILM</Symbol>
+			<Symbol>FUJI PHOTO FILM UK LTD</Symbol>
+			<Symbol>FUJIFILM UK LTD</Symbol>
+			<Symbol>FUJI</Symbol>
+			<Symbol>FUJI FILM USA</Symbol>
+			<Symbol>FUJI - MEDIA</Symbol>
+			<Symbol>FUJIMEDIA</Symbol>
+			<Symbol>FUJI SUP MAG</Symbol>
+			<Symbol>FUJIFULM</Symbol>
+			<Symbol>FUJI - DIGITAL CAMERA ACCS</Symbol>
+			<Symbol>FUJIFILM RME</Symbol>
+			<Symbol>FUJIFILM DE MEXICO S.A. DE C.V.</Symbol>
+			<Symbol>FUJIFILM NEU</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="80" name="iiyama">
+			<Symbol>IIYAMA</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="81" name="Imation">
+			<Symbol>IMATION</Symbol>
+			<Symbol>IM</Symbol>
+			<Symbol>IMATION DEUTSCHLAND GMBH</Symbol>
+			<Symbol>IMATION UK LIMITED</Symbol>
+			<Symbol>IMATION UK LTD</Symbol>
+			<Symbol>IMATION CORP.</Symbol>
+			<Symbol>IMATION - OPTICAL STORAGE</Symbol>
+			<Symbol>IMATION - MEMOREX</Symbol>
+			<Symbol>IMATION-TDK</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="83" name="Infocus">
+			<Symbol>INFOCUS</Symbol>
+			<Symbol>INFOCUS - *</Symbol>
+			<Symbol>IN FOCUS</Symbol>
+			<Symbol>IN FOCUS SYSTEMS, INC</Symbol>
+			<Symbol>IN FOCUS SYSTEMS  INC</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="87" name="Kensington">
+			<Symbol>KENSINGTON</Symbol>
+			<Symbol>ACCO/KENSINGTON</Symbol>
+			<Symbol>KENLINE</Symbol>
+			<Symbol>ACCO KENSINGTON</Symbol>
+			<Symbol>ACCO UK LTD</Symbol>
+			<Symbol>ACCO EUROPE (KENSINGTON)</Symbol>
+			<Symbol>ACCO KENSINGTON UK LTD</Symbol>
+			<Symbol>KENSINGTON - ACCODATA</Symbol>
+			<Symbol>KENGST</Symbol>
+			<Symbol>KENSINGT</Symbol>
+			<Symbol>KENSINGTON TECHNOLOGY GROUP</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="88" name="Kodak">
+			<Symbol>KODAK</Symbol>
+			<Symbol>KO</Symbol>
+			<Symbol>KODAK PRODUCTS</Symbol>
+			<Symbol>KODAK FILM/CAMERAS</Symbol>
+			<Symbol>KODAK RETAIL</Symbol>
+			<Symbol>KODAK LIMITED.</Symbol>
+			<Symbol>KODAK - DIGITAL CAMERAS</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="91" name="Logitech">
+			<Symbol>LOGITECH</Symbol>
+			<Symbol>LOGMIKEY</Symbol>
+			<Symbol>LOGSOVI</Symbol>
+			<Symbol>LOGITECH OEM</Symbol>
+			<Symbol>LOGITEC</Symbol>
+			<Symbol>LOGI</Symbol>
+			<Symbol>LOGITECH EUROPE S.A.</Symbol>
+			<Symbol>LOGITECH INC</Symbol>
+			<Symbol>LOGITECH - *</Symbol>
+			<Symbol>LOGITECH DE MEXICO,S.A. DE C.V.</Symbol>
+			<Symbol>LOGITECH_OEM</Symbol>
+			<Symbol>LOGITECH RTL</Symbol>
+			<Symbol>LOGITECH GMBH</Symbol>
+			<Symbol>LOGITECH INC.</Symbol>
+			<Symbol>LOGITECH DE MEXICO S.A. DE C.V.</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="93" name="Magix">
+			<Symbol>MAGIX</Symbol>
+			<Symbol>MAGIX ENTERTAINMENT</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="163" name="Belinea">
+			<Symbol>BELINEA</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="96" name="Maxdata">
+			<Symbol>MAXDATA</Symbol>
+			<Symbol>MD</Symbol>
+			<Symbol>MAXRET</Symbol>
+			<Symbol>MAXDATA AG</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="102" name="Nashua">
+			<Symbol>NASHUA</Symbol>
+			<Symbol>NASHUA MEDIA PRODUCTS</Symbol>
+			<Symbol>NASHUATEC</Symbol>
+			<Symbol>NASHUA DS</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="103" name="NEC">
+			<Symbol>NEC-MITSUBISHI</Symbol>
+			<Symbol>NEC</Symbol>
+			<Symbol>Nec Monitors</Symbol>
+			<Symbol>Nec Projectors</Symbol>
+			<Symbol>NEC MITSUBISHI</Symbol>
+			<Symbol>NEC COMPUTERS</Symbol>
+			<Symbol>NEC-MITSUB</Symbol>
+			<Symbol>NEC/MITSUBISHI</Symbol>
+			<Symbol>NMD</Symbol>
+			<Symbol>NEC UK</Symbol>
+			<Symbol>NEC MITS</Symbol>
+			<Symbol>NEC DISPLAY SOLUTIONS</Symbol>
+			<Symbol>NEC Display Solutions Europe GmbH</Symbol>
+			<Symbol>NEC/MITS</Symbol>
+			<Symbol>NEC SYSTEMS</Symbol>
+			<Symbol>NEC DISPLAY SOLUTIONS EUROPE</Symbol>
+			<Symbol>NEC PROIETTORI</Symbol>
+			<Symbol>NEC VIDEOPRO</Symbol>
+			<Symbol>NEC - *</Symbol>
+			<Symbol>NEC DISPLAY SOLUTION</Symbol>
+			<Symbol>NEC DISPLAYS SOLUTIONS OF AMERICAI</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="104" name="Netgear">
+			<Symbol>NETGEAR</Symbol>
+			<Symbol>NETGEAR SPECIAL</Symbol>
+			<Symbol>NETGEAR INTERNATIONAL INC.</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="105" name="McAfee">
+			<Symbol>NETWORK ASSOCIATES/MCAFEE</Symbol>
+			<Symbol>NETWORK ASSOCIATES</Symbol>
+			<Symbol>NW ASSOCIATES</Symbol>
+			<Symbol>MCAFEE</Symbol>
+			<Symbol>NAI</Symbol>
+			<Symbol>MCAFEE IRELAND</Symbol>
+			<Symbol>NW ASSOCIA</Symbol>
+			<Symbol>MCAFEE BOX</Symbol>
+			<Symbol>MCAFEE HIGHEND</Symbol>
+			<Symbol>MAF</Symbol>
+			<Symbol>MCAFEE MEDIA</Symbol>
+			<Symbol>McAfee - NAI</Symbol>
+			<Symbol>MCAFEE RETAIL</Symbol>
+			<Symbol>MCAFEE - MULTINODE</Symbol>
+			<Symbol>MC AFEE</Symbol>
+			<Symbol>MCAFEE LIC</Symbol>
+			<Symbol>MCAFEE - LICENSE MCAFEE</Symbol>
+			<Symbol>MCAFEE - BOXED MCAFEE</Symbol>
+			<Symbol>MCAFEE - MEDIAPACK</Symbol>
+			<Symbol>MCAFEE - ASSURANCE PARTS</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="107" name="Novell">
+			<Symbol>NOVELL</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="112" name="Panda">
+			<Symbol>PANDA</Symbol>
+			<Symbol>PANDA SW</Symbol>
+			<Symbol>PANDA SOFTWARE</Symbol>
+			<Symbol>PANDA ANTIVIRUS</Symbol>
+			<Symbol>PANDA SECURITY</Symbol>
+			<Symbol>PANDA-CONSUMO</Symbol>
+			<Symbol>PANDA SOFTWARE ITALIA S.R.L.</Symbol>
+			<Symbol>PANDA SOFTWARE S.A. DE C.V.</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="120" name="Route 66">
+			<Symbol>ROUTE 66</Symbol>
+			<Symbol>ROUTE 6 ATM N</Symbol>
+			<Symbol>ROUTE66</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="127" name="Symantec">
+			<Symbol>SYMANTEC</Symbol>
+			<Symbol>VERITAS</Symbol>
+			<Symbol>PC</Symbol>
+			<Symbol>S&amp;S</Symbol>
+			<Symbol>SYMANTEC/POWERQUEST</Symbol>
+			<Symbol>SYMSECUR</Symbol>
+			<Symbol>SYMUTILI</Symbol>
+			<Symbol>SYMSUITE</Symbol>
+			<Symbol>VERITAS ENTERPRISE</Symbol>
+			<Symbol>SYMANTEC OEM</Symbol>
+			<Symbol>NORTON</Symbol>
+			<Symbol>VERITAS LICENSE LEVEL C</Symbol>
+			<Symbol>VERITAS LICENSE LEVEL D</Symbol>
+			<Symbol>VERITAS LICENSE LEVEL E</Symbol>
+			<Symbol>VERITAS MEDIA</Symbol>
+			<Symbol>VERITAS LICENSE LEVEL B</Symbol>
+			<Symbol>VERITAS BOX PRODUCTS</Symbol>
+			<Symbol>SYMANTEC SECURITY A</Symbol>
+			<Symbol>VERITAS SOFTWARE</Symbol>
+			<Symbol>NORTON SYSTEMWORKS</Symbol>
+			<Symbol>SYMANTEC SPECIAL</Symbol>
+			<Symbol>SYM</Symbol>
+			<Symbol>SYMANTEC (UK) LTD</Symbol>
+			<Symbol>SYMANTEC SMB E LICENZE</Symbol>
+			<Symbol>SYMANTEC CONSUMER</Symbol>
+			<Symbol>SYMANTEC (DEUTSCHLAND) GMBH</Symbol>
+			<Symbol>VERITAS - LICENSE (VOLUME)</Symbol>
+			<Symbol>SYMANTEC - *</Symbol>
+			<Symbol>SYMANTEC VALUE LICENSE</Symbol>
+			<Symbol>SYMANTEC CORP.</Symbol>
+			<Symbol>SYMANTEC SMB ED ENTERPRISE</Symbol>
+			<Symbol>SYMANTEC LICENSING</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="128" name="Targus">
+			<Symbol>TARGUS</Symbol>
+			<Symbol>TARGACCS</Symbol>
+			<Symbol>TARGCASE</Symbol>
+			<Symbol>TARGUS EUROPE</Symbol>
+			<Symbol>TARGUS SPECIAL</Symbol>
+			<Symbol>TARGUS EUROPE LTD</Symbol>
+			<Symbol>TARGUS EUROPE LTD.</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="131" name="Terratec">
+			<Symbol>TERRATEC</Symbol>
+			<Symbol>TERRATEC ELECTRONIC</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="136" name="Trend Micro">
+			<Symbol>TREND MICRO</Symbol>
+			<Symbol>TRENDMICRO</Symbol>
+			<Symbol>TREND MICR</Symbol>
+			<Symbol>TRENDMICRO-SMB</Symbol>
+			<Symbol>TREND MICRO - BOX</Symbol>
+			<Symbol>TREND MICRO - LICENSES</Symbol>
+			<Symbol>TREND MICRO - ENTERPRISE</Symbol>
+			<Symbol>TREND MICRO LATINOAMERICA S.A C,V,</Symbol>
+			<Symbol>TREND MICRO LATINOAMIERICA SA CV</Symbol>
+			<Symbol>TREND MICRO LATINOAMERICA S.A C V</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="148" name="Case Logic">
+			<Symbol>CASE</Symbol>
+			<Symbol>CASE LOGIC</Symbol>
+			<Symbol>Caselogic</Symbol>
+			<Symbol>CASE LOG</Symbol>
+			<Symbol>CASELOG</Symbol>
+			<Symbol>CASELOGI</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="161" name="Asus">
+			<Symbol>Asus</Symbol>
+			<Symbol>ASUS NOTEBOOK</Symbol>
+			<Symbol>ASUSMBRD</Symbol>
+			<Symbol>ASUSGRAFICS</Symbol>
+			<Symbol>ASUSOPTI</Symbol>
+			<Symbol>ASUSTEK COMPUTER</Symbol>
+			<Symbol>ASUSTEK</Symbol>
+			<Symbol>ASUS NETWORKING</Symbol>
+			<Symbol>ASUS NOTEBOOKS</Symbol>
+			<Symbol>ASUSTEK COMPUTER,INC</Symbol>
+			<Symbol>ASUS-PORTATILES</Symbol>
+			<Symbol>ASUS COMPONENTS</Symbol>
+			<Symbol>ASUS-ULTRAPORTATILES</Symbol>
+			<Symbol>ASUSTEK - *</Symbol>
+			<Symbol>ASUS COMPONENTI PC</Symbol>
+			<Symbol>ASUS COMPUTER INTERNATIONAL</Symbol>
+			<Symbol>ASUS COMPUTER GMBH</Symbol>
+			<Symbol>ASUS EEEPC EPC EEE PC 700 701</Symbol>
+			<Symbol>ASUS EEEPC EEE PC 1000 1000H</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="172" name="Autodesk">
+			<Symbol>AUTODESK</Symbol>
+			<Symbol>AUTODESK LT</Symbol>
+			<Symbol>MAN &amp; MACHINE</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="173" name="TomTom">
+			<Symbol>TOMTOM</Symbol>
+			<Symbol>TOMTOM LICENSING</Symbol>
+			<Symbol>TOMTOM ACCESSORIES</Symbol>
+			<Symbol>TOM TOM</Symbol>
+			<Symbol>Navigatie TomTom</Symbol>
+			<Symbol>TOMTOM-WORK</Symbol>
+			<Symbol>TOMTOM - *</Symbol>
+			<Symbol>TOMTOM  - RETAIL</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="180" name="Antec">
+			<Symbol>ANTEC</Symbol>
+			<Symbol>ANTCASES</Symbol>
+			<Symbol>ANTEC INC</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="183" name="Avocent">
+			<Symbol>AVOCENT</Symbol>
+			<Symbol>Avocent/Cybex</Symbol>
+			<Symbol>AVOCENT INTERNATIONAL</Symbol>
+			<Symbol>AVOCENT FOR DELL ONLY</Symbol>
+			<Symbol>AVOCENT ENTERPRISE</Symbol>
+			<Symbol>AVOCENT AUSTRALIA</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="186" name="Conceptronic">
+			<Symbol>2L INTERNATIONAL</Symbol>
+			<Symbol>2L</Symbol>
+			<Symbol>CONCEPT</Symbol>
+			<Symbol>CONCEPTRONIC</Symbol>
+			<Symbol>CONCEPTRONICS</Symbol>
+			<Symbol>CONCEPTRONICS (2L INTERNATIONAL)</Symbol>
+			<Symbol>2L INTERNATIONAL B.V.</Symbol>
+			<Symbol>ALT - CONCEPTRONIC</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="188" name="Wacom">
+			<Symbol>WACOM</Symbol>
+			<Symbol>WACOM TECHNOLOGIES</Symbol>
+			<Symbol>WACOM TECH CORP.</Symbol>
+			<Symbol>WACOM TECHNOLOGY</Symbol>
+			<Symbol>WACOM TECHNOLOGY CORPORATION</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="189" name="Brother">
+			<Symbol>BROTHER</Symbol>
+			<Symbol>P-TOUCH</Symbol>
+			<Symbol>BR</Symbol>
+			<Symbol>BROTHER INTERNATIONAL</Symbol>
+			<Symbol>BROTHER SUPPLIES</Symbol>
+			<Symbol>BROTHER UK LTD</Symbol>
+			<Symbol>BROTHER UK LIMITED</Symbol>
+			<Symbol>BROTHER - *</Symbol>
+			<Symbol>BROTHER INTERNACIONAL DE MEXICO,S.A</Symbol>
+			<Symbol>BROTHER INTERNACIONAL DE MEXICO S.A</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="197" name="Linksys">
+			<Symbol>LINKSYS</Symbol>
+			<Symbol>KISS</Symbol>
+			<Symbol>LINKSYS/KISS TECHNOLOGY</Symbol>
+			<Symbol>KISS TECHNOLOGY</Symbol>
+			<Symbol>LINKSYS -KISS-</Symbol>
+			<Symbol>CISCO LINKSYS</Symbol>
+			<Symbol>CISCO-LINKSYS</Symbol>
+			<Symbol>LINKSYS CBO</Symbol>
+			<Symbol>LINKSYS - VAR</Symbol>
+			<Symbol>LINKSYS BY CISCO</Symbol>
+			<Symbol>LINKSYS LLC</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="200" name="Davilex">
+			<Symbol>DAVILEX BUSINESS</Symbol>
+			<Symbol>DAVILEX</Symbol>
+			<Symbol>DAVILEX SOFTWARE</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="205" name="XFX">
+			<Symbol>XFX</Symbol>
+			<Symbol>XFX - VGA CARDS</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="206" name="3M">
+			<Symbol>3M</Symbol>
+			<Symbol>3M POST-IT</Symbol>
+			<Symbol>MICROTOUCH</Symbol>
+			<Symbol>GM 3M</Symbol>
+			<Symbol>3M UNITED KINGDOM PLC</Symbol>
+			<Symbol>3M UK</Symbol>
+			<Symbol>3M CO</Symbol>
+			<Symbol>3M-SCOTCH-POST-IT</Symbol>
+			<Symbol>3M - *</Symbol>
+			<Symbol>VIKUITI</Symbol>
+			<Symbol>DISAGU/3M</Symbol>
+			<Symbol>3M QUANTE</Symbol>
+			<Symbol>3 M</Symbol>
+			<Symbol>3M-QUANTE</Symbol>
+			<Symbol>3M DE MEXICO, S.A. DE C.V.</Symbol>
+			<Symbol>3M DE MEXICO  S.A. DE C.V.</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="211" name="Aopen">
+			<Symbol>AOPEN</Symbol>
+			<Symbol>AOPEN INC</Symbol>
+			<Symbol>AOPEN COMPONENTS BV</Symbol>
+			<Symbol>AOPEN  COMPUTER  BV</Symbol>
+			<Symbol>AOPEN - *</Symbol>
+			<Symbol>A OPEN</Symbol>
+			<Symbol>AOPEN AMERICA INC</Symbol>
+			<Symbol>AOPEN COMPUTER</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="227" name="GP Batteries">
+			<Symbol>GP BATTERIES</Symbol>
+			<Symbol>GP</Symbol>
+			<Symbol>GPBATTERIES</Symbol>
+			<Symbol>GP BATTERY</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="240" name="Intronics">
+			<Symbol>INTRONICS</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="244" name="Trust">
+			<Symbol>TRUST COMPUTER</Symbol>
+			<Symbol>TRUST</Symbol>
+			<Symbol>Trust Deutschland GmbH</Symbol>
+			<Symbol>TRUST COMPUTER PRODUCTS</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="247" name="Viewsonic">
+			<Symbol>VIEWSONIC</Symbol>
+			<Symbol>VIEWSONI</Symbol>
+			<Symbol>VIEWSONIC EUROPE LTD</Symbol>
+			<Symbol>VIEWSONIC - *</Symbol>
+			<Symbol>VIEWSONIC CORPORATION</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="251" name="TDK">
+			<Symbol>TDK SYSTEMS</Symbol>
+			<Symbol>TDK</Symbol>
+			<Symbol>TD</Symbol>
+			<Symbol>TDK MARKETING UK</Symbol>
+			<Symbol>TDK ELECTRONICS CORP.</Symbol>
+			<Symbol>TDK EUROPE</Symbol>
+			<Symbol>TDK - CONSUMABLES</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="254" name="Seiko">
+			<Symbol>SEIKO</Symbol>
+			<Symbol>SEIKOSHA</Symbol>
+			<Symbol>SEIKO INSTRUMENTS</Symbol>
+			<Symbol>SEIKO PRECISION</Symbol>
+			<Symbol>SEIKO UK LIMITED</Symbol>
+			<Symbol>SEIKO OROLOGI</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="274" name="Macally">
+			<Symbol>TEKLINK</Symbol>
+			<Symbol>MACALLY</Symbol>
+			<Symbol>MAC ALLY</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="275" name="Matrox">
+			<Symbol>MATROX</Symbol>
+			<Symbol>MATROX GRAPHICS</Symbol>
+			<Symbol>MATROX LTD</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="278" name="MSI">
+			<Symbol>MSI COMPUTER</Symbol>
+			<Symbol>MSI</Symbol>
+			<Symbol>MSI MICROSTAR</Symbol>
+			<Symbol>MSI COMPUTERS</Symbol>
+			<Symbol>MSI COMPUTER EUROPE BV</Symbol>
+			<Symbol>MICROSTAR</Symbol>
+			<Symbol>MICRO-STAR INTERNATIONAL</Symbol>
+			<Symbol>MSI (MICROSTAR)</Symbol>
+			<Symbol>MSI VIDEO</Symbol>
+			<Symbol>MICROSTAR INTERNATIONAL</Symbol>
+			<Symbol>MICRO STAR INTERNATIONAL COMPU</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="290" name="Newstar">
+			<Symbol>NEWSTAR COMPUTER PRODUCTS EUROPA</Symbol>
+			<Symbol>NEWSTAR COMPUTER PRODUCTS</Symbol>
+			<Symbol>NEWSTAR</Symbol>
+			<Symbol>NWS</Symbol>
+			<Symbol>NEWSTAR COMPUTER PRODUCTS EUROP</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="291" name="Vodafone">
+			<Symbol>VODAFONE</Symbol>
+			<Symbol>VODAFO</Symbol>
+			<Symbol>VODAFON</Symbol>
+			<Symbol>VODAFONE D2 GMBH</Symbol>
+			<Symbol>VODAFONE NL</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="292" name="DELL">
+			<Symbol>DELL</Symbol>
+			<Symbol>DELL COMPUTER</Symbol>
+			<Symbol>DEC</Symbol>
+			<Symbol>DL</Symbol>
+			<Symbol>DELL SERVERS</Symbol>
+			<Symbol>DELL PCS</Symbol>
+			<Symbol>DELL NOTEBOOKS</Symbol>
+			<Symbol>DELL COMPUTER CORPORATION.</Symbol>
+			<Symbol>DELL SECOND SOURCE</Symbol>
+			<Symbol>DELL INSPIRON 1420 1520 1521 1</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="293" name="LG">
+			<Symbol>LGEMONIT</Symbol>
+			<Symbol>LG ELECTRO</Symbol>
+			<Symbol>LG</Symbol>
+			<Symbol>LG ELECTRONICS</Symbol>
+			<Symbol>LG  ELECTRONICS</Symbol>
+			<Symbol>LG CE</Symbol>
+			<Symbol>LG / GOLDSTAR</Symbol>
+			<Symbol>LUCKY GOLDSTAR</Symbol>
+			<Symbol>LG ELECTRONICS BENELUX</Symbol>
+			<Symbol>LG Electronics (Media)</Symbol>
+			<Symbol>L G ELECTRONICS</Symbol>
+			<Symbol>LG ELECTRONICS UK LTD</Symbol>
+			<Symbol>LG-ELECTRONICS</Symbol>
+			<Symbol>LG-ALMA-OPT</Symbol>
+			<Symbol>LG-PORTATILES</Symbol>
+			<Symbol>LGE</Symbol>
+			<Symbol>LG-PROYECTORES</Symbol>
+			<Symbol>LG-TV</Symbol>
+			<Symbol>LG-MONITORES</Symbol>
+			<Symbol>LG AUDIO-VIDEO</Symbol>
+			<Symbol>LG-AUDIO-VIDEO</Symbol>
+			<Symbol>LG DRIVES</Symbol>
+			<Symbol>L.G.</Symbol>
+			<Symbol>LG/GOLDSTAR</Symbol>
+			<Symbol>LG AFFICHAGE</Symbol>
+			<Symbol>LG ELECTRONICS - *</Symbol>
+			<Symbol>LG-GOLDSTAR</Symbol>
+			<Symbol>LG GOLDSTAR FRANCE</Symbol>
+			<Symbol>LG ELECTRONICS MEXICO, S.A. DE C.V.</Symbol>
+			<Symbol>LG ENTERTAINMENT</Symbol>
+			<Symbol>LG ELECTRONICS MEXICO  S.A. DE C.V.</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="294" name="Kaspersky Lab">
+			<Symbol>KASPERSKY</Symbol>
+			<Symbol>KASPERSKY LAB BENELUX BV</Symbol>
+			<Symbol>KASPERSKY LAB</Symbol>
+			<Symbol>Kaspersky Labs</Symbol>
+			<Symbol>KASPERSKY COMMERCIAL</Symbol>
+			<Symbol>KASPERSKY LICENSING</Symbol>
+			<Symbol>KASPERSKY - *</Symbol>
+			<Symbol>KASPERSKY LABS GMBH</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="296" name="CLUB3D">
+			<Symbol>CLUB3D</Symbol>
+			<Symbol>CLUB3D - COLOURPOWER</Symbol>
+			<Symbol>CLUB 3D</Symbol>
+			<Symbol>C3D</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="307" name="Bakker &amp; Elkhuizen">
+			<Symbol>BAKKER&amp;ELKHUIZEN</Symbol>
+			<Symbol>BAKKER &amp; ELKHUIZEN</Symbol>
+			<Symbol>BAKKER ELKHUIZEN</Symbol>
+			<Symbol>BakkerElkhuizen</Symbol>
+			<Symbol>BAKKERELK</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="331" name="Devolo">
+			<Symbol>DEVOLO</Symbol>
+			<Symbol>DEVOLO AG</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="339" name="Dymo">
+			<Symbol>DYMO</Symbol>
+			<Symbol>ESSELDYM</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="360" name="Legamaster">
+			<Symbol>LEGAMASTER</Symbol>
+			<Symbol>LEGA</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="3374" name="DistriRead">
+			<Symbol>DISTRIREAD</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="383" name="Pelikan">
+			<Symbol>PELIKAN HARDCOPY</Symbol>
+			<Symbol>PELIKAN</Symbol>
+			<Symbol>PELIKAN® HARDCOPY</Symbol>
+			<Symbol>PELIKAN HARCOPY</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="405" name="Sitecom">
+			<Symbol>SITECOM</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="430" name="ZyXEL">
+			<Symbol>ZYXEL</Symbol>
+			<Symbol>ZYXEL-ZYWALL</Symbol>
+			<Symbol>ZYXEL-XDSL-ISDN</Symbol>
+			<Symbol>ZYXEL-SWITCH-NIC-MODUL-GBIC</Symbol>
+			<Symbol>ZYXEL-ZYAIR</Symbol>
+			<Symbol>ZYXEL COMMUNICATIONS</Symbol>
+			<Symbol>ZYXEL - *</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="439" name="Projecta">
+			<Symbol>PROJECTA</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="440" name="LaCie">
+			<Symbol>LACIE</Symbol>
+			<Symbol>LaCie GmbH</Symbol>
+			<Symbol>LACIE LTD</Symbol>
+			<Symbol>LA CIE</Symbol>
+			<Symbol>D2 - LA CIE</Symbol>
+			<Symbol>LACIE, INC.</Symbol>
+			<Symbol>LACIE  INC.</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="451" name="I.R.I.S.">
+			<Symbol>IRIS</Symbol>
+			<Symbol>I.R.I.S.</Symbol>
+			<Symbol>I.R.I.S</Symbol>
+			<Symbol>READIRIS</Symbol>
+			<Symbol>IRIS LINK</Symbol>
+			<Symbol>IRIS - CONSIGNMENT</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="571" name="Memorex">
+			<Symbol>MEMOREX</Symbol>
+			<Symbol>ME</Symbol>
+			<Symbol>MEMOREX PRODUCTS EUROPE LIMITED</Symbol>
+			<Symbol>MEMOREX - PRODUCTS EUROPE</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="589" name="Nobo">
+			<Symbol>NOBO</Symbol>
+			<Symbol>NOB</Symbol>
+			<Symbol>ACCO/NOBO</Symbol>
+			<Symbol>ACCONOBO</Symbol>
+			<Symbol>NOBO A/V</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="619" name="Rexel">
+			<Symbol>REXEL</Symbol>
+			<Symbol>ACCO REXEL</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="686" name="AMD">
+			<Symbol>ATI</Symbol>
+			<Symbol>AMD</Symbol>
+			<Symbol>ATI TECHNOLOGIES*</Symbol>
+			<Symbol>ATI TECHNOLOGIES</Symbol>
+			<Symbol>AMD-RECHNER</Symbol>
+			<Symbol>ADVANCED MICRO DEVICES</Symbol>
+			<Symbol>AMD GMBH</Symbol>
+			<Symbol>AMD - TRAY</Symbol>
+			<Symbol>AMD MICRODEVICES</Symbol>
+			<Symbol>AMD RETAIL</Symbol>
+			<Symbol>AMD BOXED</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="702" name="Sweex">
+			<Symbol>SWEEX</Symbol>
+			<Symbol>SWEEX EUROPE BV</Symbol>
+			<Symbol>SWEEX ESSENTIALS</Symbol>
+			<Symbol>SWEEX EUROPE</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="703" name="takeMS">
+			<Symbol>TAKEMS</Symbol>
+			<Symbol>TAKE MS</Symbol>
+			<Symbol>TAKEMS FLASH CARDS</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="705" name="Hauppauge">
+			<Symbol>HAUPPAUGE</Symbol>
+			<Symbol>HAUPPAUG</Symbol>
+			<Symbol>HAUPPAUGE DIGITAL</Symbol>
+			<Symbol>HAUPPAUGE COMPUTER WORKS</Symbol>
+			<Symbol>HAUPPAUGE COMPUTER</Symbol>
+			<Symbol>HAUPP</Symbol>
+			<Symbol>HAUPPAGE</Symbol>
+			<Symbol>HAUPPAUGE-DIGITAL</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="711" name="Vogel's">
+			<Symbol>VOGEL'S</Symbol>
+			<Symbol>VOGEL-S</Symbol>
+			<Symbol>VOGELS</Symbol>
+			<Symbol>VOGEL`S</Symbol>
+			<Symbol>VOGELS PRODUCTS B.V.</Symbol>
+			<Symbol>VOGEL´S</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="717" name="Nexus">
+			<Symbol>NEXUS</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="728" name="Lenovo">
+			<Symbol>LENOVO</Symbol>
+			<Symbol>LENOVO OPTIONS OTHERS</Symbol>
+			<Symbol>LENOV</Symbol>
+			<Symbol>IBM / LENOVO</Symbol>
+			<Symbol>LENOVO SPECIAL</Symbol>
+			<Symbol>LENOVO -PC MOBILE</Symbol>
+			<Symbol>LENOVO TECHNOLOGY UK LIMITED</Symbol>
+			<Symbol>LENOVO-IDEA</Symbol>
+			<Symbol>IBM-LENOVO</Symbol>
+			<Symbol>IBMLENOVO</Symbol>
+			<Symbol>LENOVO - *</Symbol>
+			<Symbol>LENOVO MEXICO, S DE R.L.DE C.V.</Symbol>
+			<Symbol>LENOVO / IBM COMPUTER</Symbol>
+			<Symbol>LENOVO PC HK LIMITED</Symbol>
+			<Symbol>LENOVO MEXICO, S DE R.L. DE C.V.</Symbol>
+			<Symbol>LENOVO MEXICO  S DE R.L.DE C.V.</Symbol>
+			<Symbol>LENOVO ETC</Symbol>
+			<Symbol>LENOVO MEXICO  S DE R.L. DE C.V.</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="737" name="Gembird">
+			<Symbol>GEMBIRD</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="745" name="Canyon">
+			<Symbol>CANYON</Symbol>
+			<Symbol>CANYON TECHNOLOGY BV</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="746" name="Dicota">
+			<Symbol>DICOTA</Symbol>
+			<Symbol>DICOTA UK LTD</Symbol>
+			<Symbol>DICOT</Symbol>
+			<Symbol>DICOTA - CONSIGNMENT</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="2601" name="ACT">
+			<Symbol>ACT</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="749" name="Saitek">
+			<Symbol>SAITEK</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="750" name="Dane-Elec">
+			<Symbol>DANE-ELEC</Symbol>
+			<Symbol>DANE ELEC</Symbol>
+			<Symbol>DANE-ELEC APS</Symbol>
+			<Symbol>RAM</Symbol>
+			<Symbol>DANEELEC</Symbol>
+			<Symbol>DANE-ELEC MEMORY</Symbol>
+			<Symbol>DANE ELECTRONICS</Symbol>
+			<Symbol>DANE-ELEC.</Symbol>
+			<Symbol>DANE_ELEC</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="751" name="Bluetrek">
+			<Symbol>BLUETREK</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="863" name="GBC">
+			<Symbol>GBC</Symbol>
+			<Symbol>GBC (UNITED KINGDOM) LTD</Symbol>
+			<Symbol>GBC IBICO</Symbol>
+			<Symbol>GBC-IBICO</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="896" name="Alecto">
+			<Symbol>ALECTO</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="927" name="Lenco">
+			<Symbol>LENCO</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="940" name="Profoon">
+			<Symbol>PROFOON</Symbol>
+			<Symbol>PROFOON TELECOMMUNICATIE</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="1003" name="EMC">
+			<Symbol>EMC COMPUTER SYSTEMS</Symbol>
+			<Symbol>EMC2</Symbol>
+			<Symbol>EMC</Symbol>
+			<Symbol>EMC INSIGNIA (VH DANTZ)</Symbol>
+			<Symbol>EMC RETROSPECT</Symbol>
+			<Symbol>EMC COMPUTER SYSTEMS MEXICO</Symbol>
+			<Symbol>EMC INSIGNIA</Symbol>
+			<Symbol>EMC COMPUTER SYSTEMS MEXICO S,A C.V</Symbol>
+			<Symbol>EMC CORPORATION</Symbol>
+			<Symbol>EMC COMPUTER SYSTEMS MEXICO S A C.V</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="1131" name="Phoenix">
+			<Symbol>PHOENIX TECHNOLOGIES</Symbol>
+			<Symbol>PHOENIX</Symbol>
+			<Symbol>PHOENIX BUSINESS DEVELOPMENT</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="1172" name="Tatung">
+			<Symbol>TATUNG</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="1181" name="KiSS">
+			<Symbol>KISS NETWORKED ENTERTAINMENT</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="1189" name="Qtrek">
+			<Symbol>QTREK</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="1203" name="Nuance">
+			<Symbol>SCANSOFT</Symbol>
+			<Symbol>SCANSOFT (EX CAERE)</Symbol>
+			<Symbol>NUANCE (EX CAERE)</Symbol>
+			<Symbol>NUANCE</Symbol>
+			<Symbol>NUANCELIC</Symbol>
+			<Symbol>NUANCE COMMUNICATIONS</Symbol>
+			<Symbol>NUANCE - LICENSE (EX CAERE)</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="1217" name="ITT">
+			<Symbol>ITT</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="1241" name="Synology">
+			<Symbol>SYNOLOGY</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="1278" name="OCZ">
+			<Symbol>OCZ</Symbol>
+			<Symbol>OCZ TECHNOLOGY</Symbol>
+			<Symbol>OCZ TECH</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="1290" name="XtremeMac">
+			<Symbol>XTREMEMAC</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="1370" name="Haier">
+			<Symbol>HAIER</Symbol>
+			<Symbol>HAIER AMERICA TRADING</Symbol>
+			<Symbol>HAIER AMERICA</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="1384" name="Foxconn">
+			<Symbol>FOXCONN</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="1388" name="E-TEN">
+			<Symbol>E-TEN CORPATION</Symbol>
+			<Symbol>E-TEN</Symbol>
+			<Symbol>E-TEN/GLOFIISH</Symbol>
+			<Symbol>ETEN</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="1395" name="Onyx">
+			<Symbol>ONYX</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="1463" name="New Universe">
+			<Symbol>NEW UNIVERSE B.V.</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="1468" name="Easy-Disc">
+			<Symbol>EASY-DISC</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="1470" name="Ability">
+			<Symbol>ABILITY</Symbol>
+			<Symbol>Ability Office</Symbol>
+			<Symbol>ABILITY SOFTWARE</Symbol>
+			<Symbol>ASI ABILITY NL</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="1471" name="Telefoongids">
+			<Symbol>TELEFOONGIDS</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="1483" name="Datalogic">
+			<Symbol>DATALOGIC</Symbol>
+			<Symbol>DATALOGIC UK LTD</Symbol>
+			<Symbol>DATALOGIC-AUTOMATION</Symbol>
+			<Symbol>DATALOGIC-SCANNING</Symbol>
+			<Symbol>DATALOGIC-MOBILE</Symbol>
+			<Symbol>DATALOGIC SCANNING</Symbol>
+			<Symbol>DATALOGIC AUTOMATION</Symbol>
+			<Symbol>DATALOGIC MOBILE</Symbol>
+			<Symbol>DATALOGIC - DLMC2</Symbol>
+			<Symbol>DATALOGIC - DLMC1</Symbol>
+			<Symbol>DATALOGIC - DLMC4</Symbol>
+			<Symbol>DATALOGIC - DLUSS2</Symbol>
+			<Symbol>DATALOGIC - DLMC3</Symbol>
+			<Symbol>DATALOGIC - DLUSS3</Symbol>
+			<Symbol>DATALOGIC - HH RETAIL ACC</Symbol>
+			<Symbol>DATALOGIC SCANNING,INC.</Symbol>
+			<Symbol>DATALOGIC - HH RETAIL 1</Symbol>
+			<Symbol>DATALOGIC - HH INDUSTRIAL ACC</Symbol>
+			<Symbol>DATALOGIC - DLUSS1</Symbol>
+			<Symbol>DATALOGIC - HH INDUSTRIAL 1</Symbol>
+			<Symbol>DATALOGIC SCANNING INC.</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="1485" name="Hayes">
+			<Symbol>HAYES</Symbol>
+			<Symbol>HAYES            #</Symbol>
+			<Symbol>ZOOM/HAYES</Symbol>
+			<Symbol>HAYES-DIVERSE-INDUSTRIE</Symbol>
+			<Symbol>HAYES/ZOOM</Symbol>
+			<Symbol>HAYES MICROCOMPUTER PRODUCTS</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="1515" name="Difrnce">
+			<Symbol>DIFRNCE</Symbol>
+			<Symbol>DIFRNCE B.V.</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="1575" name="AFTC">
+			<Symbol>AFTC</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="1616" name="Zoom">
+			<Symbol>ZOOM</Symbol>
+			<Symbol>ZOOM TELEPHONICS</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="1619" name="Mio">
+			<Symbol>MIO</Symbol>
+			<Symbol>MIO TECHNOLOGY EUROPE</Symbol>
+			<Symbol>MIO TECHNOLOGY</Symbol>
+			<Symbol>MIO DIGIWALKER</Symbol>
+			<Symbol>GPS MIO</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="1631" name="Mirai">
+			<Symbol>MIRAI</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="1636" name="Sandberg">
+			<Symbol>SANDBERG</Symbol>
+			<Symbol>SANDBERG A/S</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="1683" name="Sharkoon">
+			<Symbol>SHARKOON</Symbol>
+			<Symbol>SHARKOON TECHNOLOGIE</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="1740" name="Adapt">
+			<Symbol>ADAPT</Symbol>
+			<Symbol>ADAPT MOBILE</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="1786" name="LevelOne">
+			<Symbol>LEVEL ONE</Symbol>
+			<Symbol>LevelOne</Symbol>
+			<Symbol>Level-One</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="1809" name="BlueEars">
+			<Symbol>BlueEars</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="1810" name="Map&amp;Travel">
+			<Symbol>MAP &amp; TRAVEL</Symbol>
+			<Symbol>MAP&amp;TRAVEL</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="1816" name="ID Control">
+			<Symbol>ID Control</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="1858" name="Medion">
+			<Symbol>MEDION B.V.</Symbol>
+			<Symbol>MEDION</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="1860" name="Hiper">
+			<Symbol>HIPER</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="1861" name="PNX">
+			<Symbol>PNX</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="1862" name="Yusmart">
+			<Symbol>YUSMART</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="1863" name="Prestigio">
+			<Symbol>PRESTIGIO</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="1883" name="Elecom">
+			<Symbol>ELECOM</Symbol>
+			<Symbol>ELECOM EUROPE BV</Symbol>
+			<Symbol>ELECOM UK LIMITED</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="1891" name="XXODD">
+			<Symbol>XXODD</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="1894" name="Thecus">
+			<Symbol>THECUS PRODUCTS</Symbol>
+			<Symbol>THECUS</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="1914" name="Hotbrick">
+			<Symbol>Hotbrick</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="1946" name="Edimax">
+			<Symbol>Edimax</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="1956" name="Haicom">
+			<Symbol>Haicom</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="1979" name="Speed-Link">
+			<Symbol>SPEEDLINK</Symbol>
+			<Symbol>SPEED-LINK</Symbol>
+			<Symbol>SPEED LINK</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="2046" name="CardScan">
+			<Symbol>CARDSCAN</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="2136" name="ErgoXS">
+			<Symbol>ErgoXS</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="2153" name="G DATA">
+			<Symbol>G-DATA</Symbol>
+			<Symbol>GDATA</Symbol>
+			<Symbol>G DATA</Symbol>
+			<Symbol>G DATA SOFTWARE</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="2156" name="Collax">
+			<Symbol>COLLAX GMBH</Symbol>
+			<Symbol>COLLAX</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="2171" name="ICIDU">
+			<Symbol>ICIDU</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="2181" name="Eminent">
+			<Symbol>E-TECH</Symbol>
+			<Symbol>ETECH</Symbol>
+			<Symbol>EMINENT</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="2214" name="Thermaltake">
+			<Symbol>Thermaltake</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="2249" name="AT Telecom">
+			<Symbol>AT</Symbol>
+			<Symbol>AT TELECOM</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="2286" name="iRhythms">
+			<Symbol>IRHYTHMS</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="2307" name="Chimei">
+			<Symbol>MIRAI/CHIMEI</Symbol>
+			<Symbol>CHIMEI</Symbol>
+			<Symbol>MIRAI-CHIMEI</Symbol>
+			<Symbol>CHI MEI CORPORATION</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="2313" name="Kingpin Screens">
+			<Symbol>KINGPIN</Symbol>
+			<Symbol>KINGPIN SCREENS</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="2341" name="Mobisafe">
+			<Symbol>MOBISAFE</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="2351" name="Supertooth">
+			<Symbol>SUPERTOOTH</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="2363" name="Point of View">
+			<Symbol>POINT-OF-VIEW</Symbol>
+			<Symbol>POINT OF VIEW</Symbol>
+			<Symbol>POV</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="2364" name="Open-Xchange">
+			<Symbol>Open-Xchange</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="2379" name="iDream">
+			<Symbol>iDream</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="2407" name="Flybook">
+			<Symbol>FLYBOOK</Symbol>
+			<Symbol>DIALOGUE / FLYBOOK</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="2418" name="PowerOn">
+			<Symbol>POWERON EUROPE</Symbol>
+			<Symbol>POWERON</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="2457" name="Eaton">
+			<Symbol>MERLIN</Symbol>
+			<Symbol>MERLIN GERIN</Symbol>
+			<Symbol>MGE UPS</Symbol>
+			<Symbol>MGE</Symbol>
+			<Symbol>MGE UPS SYSTEMS</Symbol>
+			<Symbol>MERLIN GER</Symbol>
+			<Symbol>MGE UPS SYSTEMS LTD</Symbol>
+			<Symbol>POWERWARE</Symbol>
+			<Symbol>MGE USV SYSTEME GMBH</Symbol>
+			<Symbol>MGE-UPS-SYSTEMS</Symbol>
+			<Symbol>EATON POWERWARE</Symbol>
+			<Symbol>EATON CORPORATION</Symbol>
+			<Symbol>EATON</Symbol>
+			<Symbol>MGEUPSSYSTEMS</Symbol>
+			<Symbol>EATON POWER QUALITY</Symbol>
+			<Symbol>MGE - UPS</Symbol>
+			<Symbol>MGE UPS SYSTEM</Symbol>
+			<Symbol>EATON MANUFACTURING</Symbol>
+			<Symbol>MGE OFFICE PROTECTION SYSTEMS</Symbol>
+			<Symbol>EATON MANUFACTURING LP</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="2467" name="G.Skill">
+			<Symbol>G.SKILL</Symbol>
+			<Symbol>G-SKILL</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="2497" name="Razer">
+			<Symbol>RAZER</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="2564" name="Ateca">
+			<Symbol>ATECA</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="2606" name="Loop">
+			<Symbol>Loop</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="2626" name="Be-Quiet">
+			<Symbol>BE QUIET</Symbol>
+			<Symbol>BE QUIET!</Symbol>
+			<Symbol>LISTAN-BE QUIET!</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="2667" name="Promptchat">
+			<Symbol>Promptchat</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="2683" name="Abbrazzio">
+			<Symbol>ABBRAZZIO</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="2797" name="QNAP">
+			<Symbol>QNAP SYSTEMS</Symbol>
+			<Symbol>QNAP</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="2799" name="Recom">
+			<Symbol>RECOM</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="2802" name="SafeStick">
+			<Symbol>SafeStick</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="2988" name="TP-LINK">
+			<Symbol>TP-LINK</Symbol>
+			<Symbol>TPLINK</Symbol>
+			<Symbol>TP-LINK TECHNOLOGIES</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="3005" name="Spectorsoft">
+			<Symbol>Spectorsoft</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="3006" name="Awareness Technologies">
+			<Symbol>Awareness Technologies</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="3011" name="GEAR4">
+			<Symbol>GEAR4</Symbol>
+			<Symbol>DISRUPTIVE GROUP</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="3060" name="Ricatech">
+			<Symbol>RICATECH</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="3061" name="Netvoyager">
+			<Symbol>Netvoyager</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="3196" name="AC Ryan">
+			<Symbol>AC RYAN</Symbol>
+			<Symbol>A.C.RYAN</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="3302" name="boXXed">
+			<Symbol>BOXXED</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="3365" name="Wyse">
+			<Symbol>WYSE TECHNOLOGY</Symbol>
+			<Symbol>WYSE</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="3472" name="DC-Networks">
+			<Symbol>DCN</Symbol>
+			<Symbol>Digital China Networks</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="3473" name="EnGenius">
+			<Symbol>ENGENIUS</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="3474" name="WiFi-Link">
+			<Symbol>WiFi-Link</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="3475" name="The Greenbow">
+			<Symbol>The Greenbow</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="3786" name="IREX Technologies">
+			<Symbol>IREX TECHNOLOGIES</Symbol>
+			<Symbol>IREX</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="4047" name="Atep Gates">
+			<Symbol>Atep Gates</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="4254" name="Celly">
+			<Symbol>Celly</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="4255" name="Dexim">
+			<Symbol>Dexim</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="4256" name="MCA">
+			<Symbol>MCA</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="4257" name="Orkio">
+			<Symbol>Orkio</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="4258" name="Switcheasy">
+			<Symbol>Switcheasy</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="4306" name="Hundyx">
+			<Symbol>Hundyx</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="4307" name="Synkro">
+			<Symbol>Synkro</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="4312" name="basexx">
+			<Symbol>BASEXX</Symbol>
+			<Symbol>BASE XX</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="4313" name="Muvit">
+			<Symbol>MUVIT</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="4387" name="Hanvon">
+			<Symbol>HANVON</Symbol>
+			<Symbol>HANVON TECHNOLOGY DEUTSCHLAND GMBH</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="4434" name="Ednet">
+			<Symbol>Ednet</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="4438" name="ION">
+			<Symbol>ION</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="4510" name="Gigaset">
+			<Symbol>Gigaset</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="4523" name="ECOserver">
+			<Symbol>ECOserver</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="4551" name="Physix">
+			<Symbol>PHYSIX</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="4649" name="LUXA2">
+			<Symbol>LUXA²</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="4683" name="Bookeen">
+			<Symbol>Bookeen</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="4695" name="DPI">
+			<Symbol>DPI</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="4724" name="Foxit">
+			<Symbol>Foxit</Symbol>
+		</SupplierMapping>
+		<SupplierMapping supplier_id="4725" name="Interead">
+			<Symbol>Interead</Symbol>
+		</SupplierMapping>
+	</SupplierMappings>
+</ICECAT-interface>

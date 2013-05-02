@@ -1,0 +1,15 @@
+
+<% attributes("title") = "This is the custom title" %>
+<%@ var user: String %>
+	
+<div id="supportingText">
+	<div  class="block">
+		<h3>Hi ${user}, Group</h3>
+		<p class="p1">
+			#for (i <- 1 to 3)
+			<p>${i}</p>
+			#end
+			<p>See, I can count!</p>
+		</p>
+	<div>
+<div>		

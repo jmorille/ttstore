@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:graniteds="http://www.graniteds.org/config"
+       xsi:schemaLocation="
+       http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+       http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd
+       http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
+       http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
+       http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd
+       http://www.graniteds.org/config  http://www.graniteds.org/public/dtd/2.1.0/granite-config-2.1.xsd">
+
+
+    <!--
+         <graniteds:tide-annotations></graniteds:tide-annotations> tide="true" <graniteds:tide-annotations>
+         <graniteds:value>org.springframework.stereotype.Controller</graniteds:value>
+         <graniteds:value>org.springframework.stereotype.Service</graniteds:value> </graniteds:tide-annotations>
+         <graniteds:messaging-destination id="userTopic" no-local="true" session-selector="true"/>
+    -->
+
+
+    <!--
+         <graniteds:tide-annotations> <graniteds:value>org.springframework.stereotype.Controller</graniteds:value>
+         <graniteds:value>org.springframework.stereotype.Service</graniteds:value> <tide-component
+         annotated-with="org.granite.messaging.service.annotations.RemoteDestination"/> <tide-component
+         annotated-with="org.springframework.stereotype.Controller"/> </graniteds:tide-annotations> <bean id="tideValidator"
+         class="org.granite.tide.validation.BeanValidationExceptionConverter"/>
+    -->
+
+    <!-- JSR-303 support will be detected on classpath and enabled automatically
+         <mvc:annotation-driven/>
+    -->
+
+    <bean class="org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping"/>
+
+    <bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter"/>
+
+
+    <graniteds:flex-filter url-pattern="/*"
+                           tide="true">
+
+        <graniteds:tide-annotations>
+
+            <graniteds:value>org.granite.messaging.service.annotations.RemoteDestination</graniteds:value>
+            <graniteds:value>org.springframework.stereotype.Controller</graniteds:value>
+        </graniteds:tide-annotations>
+
+        <graniteds:exception-converters>
+            <graniteds:value>org.granite.tide.validation.BeanValidationExceptionConverter</graniteds:value>
+            <graniteds:value>org.granite.tide.hibernate.HibernateExceptionConverter</graniteds:value>
+        </graniteds:exception-converters>
+
+    </graniteds:flex-filter>
+
+
+    <graniteds:tide-persistence id="entityManagerFactory"
+                                transaction-manager="transactionManager"/>
+    <graniteds:security-service authentication-manager="authenticationManager"/>
+    <graniteds:tide-identity/>
+
+    <graniteds:messaging-destination id="dataTopic"
+                                     no-local="true"
+                                     session-selector="true"/>
+
+    <!-- MVC Controler -->
+    <!-- lets use the Commons-based implementation of the MultipartResolver interface -->
+    <bean id="multipartResolver"
+          class="org.springframework.web.multipart.commons.CommonsMultipartResolver"/>
+
+    <bean id="helloWorldController"
+          class="eu.ttbox.web.HelloWorldController"/>
+
+    <bean id="fileUploadController"
+          class="eu.ttbox.web.admin.product.FileUploadController"/>
+</beans>

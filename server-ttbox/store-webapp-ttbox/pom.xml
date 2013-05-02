@@ -1,0 +1,215 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>eu.ttbox.serveur</groupId>
+		<artifactId>serveur-ttbox</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
+
+	<artifactId>store-webapp-ttbox</artifactId>
+
+	<packaging>war</packaging>
+
+	<properties>
+		<!-- Application settings -->
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<spring.version>3.0.6.RELEASE</spring.version>
+		<scalate.version>1.5.3</scalate.version>
+		<scalate.workdir>${basedir}/target/_scalate</scalate.workdir>
+		<!-- Plugins -->
+		<maven-scala-plugin.version>2.9.1</maven-scala-plugin.version>
+		<!-- Jetty dep -->
+		<atomikos.version>3.7.0</atomikos.version>
+		<ttbox.jettyEnvXml>${basedir}/src/test/conf/jetty-env.xml</ttbox.jettyEnvXml>
+	</properties>
+
+	<repositories>
+		<!-- Scala 2.8 Latest : http://mackaz.de/111 -->
+		<repository>
+			<id>scala-tools.org.releases</id>
+			<name>Scala Tools Maven2 Repository</name>
+			<url>http://scala-tools.org/repo-releases</url>
+		</repository>
+	</repositories>
+
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>eu.ttbox.bom</groupId>
+				<artifactId>bom-ttbox</artifactId>
+				<version>${project.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
+	<dependencies>
+		<!-- Domain -->
+		<dependency>
+			<groupId>eu.ttbox.serveur</groupId>
+			<artifactId>domain-ttbox</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+
+		<!-- Logging -->
+		<dependency>
+			<groupId>eu.ttbox.composant</groupId>
+			<artifactId>logging-comp</artifactId>
+			<version>${project.version}</version>
+			<type>pom</type>
+		</dependency>
+
+		<!-- Spring -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-core</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-web</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-webmvc</artifactId>
+		</dependency>
+
+		<!-- Security -->
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-core</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-config</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-web</artifactId>
+		</dependency>
+
+		<!-- Scalate -->
+		<dependency>
+			<groupId>org.fusesource.scalate</groupId>
+			<artifactId>scalate-spring-mvc</artifactId>
+			<version>${scalate.version}</version>
+		</dependency>
+
+		<!-- Provided -->
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+			<version>3.0.1</version>
+			<scope>provided</scope>
+		</dependency>
+
+	</dependencies>
+
+
+	<build>
+		<plugins>
+			<!-- Scala Compiler : http://mackaz.de/111 -->
+			<plugin>
+				<groupId>org.scala-tools</groupId>
+				<artifactId>maven-scala-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>scala-compile-first</id>
+						<phase>process-resources</phase>
+						<goals>
+							<goal>add-source</goal>
+							<goal>compile</goal>
+						</goals>
+					</execution>
+					<execution>
+						<id>scala-test-compile</id>
+						<phase>process-test-resources</phase>
+						<goals>
+							<goal>testCompile</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<!-- <scalaVersion>${scala.version}</scalaVersion> -->
+					<args>
+						<arg>-target:jvm-1.5</arg>
+						<!-- to support mix java/scala only -->
+						<arg>-make:transitivenocp</arg>
+						<arg>-dependencyfile</arg>
+						<arg>${project.build.directory}/.scala_dependencies</arg>
+					</args>
+				</configuration>
+			</plugin>
+
+			<!-- Maven 2 : jetty:run-war -->
+			<!-- Maven 3 : jetty:run -->
+			<plugin>
+				<groupId>org.mortbay.jetty</groupId>
+				<artifactId>jetty-maven-plugin</artifactId>
+				<version>8.0.4.v20111024</version> <!-- 7.5.1.v2011090, 7.5.2.v20111006 , 8.0.4.v20111024 -->
+				<configuration>
+	                <webAppConfig>
+					  <contextPath>/ttbox</contextPath>
+					  <jettyEnvXml>${ttbox.jettyEnvXml}</jettyEnvXml>
+				    </webAppConfig>
+					<scanIntervalSeconds>0</scanIntervalSeconds>
+					<stopKey>foo</stopKey>
+					<stopPort>9999</stopPort>
+					<jvmArgs>
+						<jvmArg>-Xmx584m</jvmArg>
+					</jvmArgs>
+					<systemProperties>
+						<systemProperty>
+							<name>logback.configurationFile</name>
+							<value>./src/conf/logback.xml</value>
+						</systemProperty>
+						<!-- enable easy JMX connection to JConsole -->
+						<systemProperty>
+							<name>com.sun.management.jmxremote</name>
+							<value />
+						</systemProperty>
+						<systemProperty>
+							<name>scalate.workdir</name>
+							<value>${scalate.workdir}</value>
+						</systemProperty>
+					</systemProperties>
+				</configuration>
+				<dependencies>
+					<!-- transactions-jta -->
+					<dependency>
+						<groupId>com.atomikos</groupId>
+						<artifactId>transactions-jta</artifactId>
+						<version>${atomikos.version}</version>
+					</dependency>
+					<dependency>
+						<groupId>com.atomikos</groupId>
+						<artifactId>transactions-jdbc</artifactId>
+						<version>${atomikos.version}</version>
+					</dependency>
+					<dependency>
+						<groupId>javax.transaction</groupId>
+						<artifactId>jta</artifactId>
+						<version>1.1</version>
+					</dependency>
+
+					<!-- Database -->
+					<dependency>
+						<groupId>postgresql</groupId>
+						<artifactId>postgresql</artifactId>
+						<version>${postgresql.version}</version>
+					</dependency>
+				</dependencies>
+			</plugin>
+		</plugins>
+	</build>
+
+
+
+</project>

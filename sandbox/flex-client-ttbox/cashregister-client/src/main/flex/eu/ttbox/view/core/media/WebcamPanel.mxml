@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:SkinnableContainer xmlns:fx="http://ns.adobe.com/mxml/2009"
+                      xmlns:s="library://ns.adobe.com/flex/spark"
+                      xmlns:mx="library://ns.adobe.com/flex/mx">
+
+    <s:layout>
+        <s:VerticalLayout/>
+    </s:layout>
+    <fx:Metadata>
+        [Event(name="cameraSnapshot", type="eu.ttbox.event.core.media.CameraSnapshotEvent")]
+    </fx:Metadata>
+
+    <fx:Script>
+        <![CDATA[
+            import eu.ttbox.controler.core.I18nManager;
+            import eu.ttbox.event.core.media.CameraSnapshotEvent;
+
+            import mx.collections.ArrayCollection;
+            import mx.core.UIComponent;
+            import mx.events.ListEvent;
+
+            [Bindable]
+            private var cameraStream:CameraStream;
+
+            [Bindable]
+            private var cameraNames:ArrayCollection=new ArrayCollection(Camera.names);
+
+            [Bindable]
+            public var msg:I18nManager=I18nManager.getInstance();
+
+            private var _cameraWidth:Number;
+
+            private var _cameraHeight:Number;
+
+            private function videoCamera_CreationComplete(idx:Number=0):void {
+                var cam:Camera=Camera.getCamera(String(idx));
+                cameraStream=new CameraStream(cam, _cameraWidth, _cameraHeight);
+                var uiComp:UIComponent=new UIComponent();
+                uiComp.addChild(cameraStream);
+                videoCamera.addElement(uiComp);
+            }
+
+            private function switchSource(event:ListEvent):void {
+                cameraStream.setCameraByIndex(sourceListComponent.selectedIndex);
+                //setDefaultSource(sourceListComponent.selectedIndex);
+            }
+
+            public function takeSnapshotJPEG(quality:Number=75):void {
+                dispatchEvent(new CameraSnapshotEvent(CameraSnapshotEvent.SNAPSHOT, cameraStream.getSnapshotJPEG()));
+            }
+
+            public function set cameraWidth(width:Number):void {
+                this._cameraWidth=width;
+                if (cameraStream) {
+                    cameraStream.cameraWidth=width;
+                }
+            }
+
+            public function set cameraHeight(height:Number):void {
+                this._cameraHeight=height;
+                if (cameraStream) {
+                    cameraStream.cameraHeight=height;
+                }
+            }
+        ]]>
+    </fx:Script>
+    <fx:Declarations>
+        <!-- Placer ici les éléments non visuels (services et objets de valeur, par exemple). -->
+    </fx:Declarations>
+    <s:Group id="videoCamera"
+             creationComplete="{videoCamera_CreationComplete()}"
+             click="{takeSnapshotJPEG();}"
+             width="100%"
+             height="100%">
+
+    </s:Group>
+    <mx:List dataProvider="{cameraNames}"
+             id="sourceListComponent"
+             itemClick="switchSource(event)"
+             height="100"
+             width="100%">
+    </mx:List>
+</s:SkinnableContainer>

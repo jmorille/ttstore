@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:WindowedApplication xmlns:fx="http://ns.adobe.com/mxml/2009"
+                       xmlns:s="library://ns.adobe.com/flex/spark"
+                       xmlns:mx="library://ns.adobe.com/flex/mx"
+                       xmlns:views="views.*"
+                       preinitialize="{TTBoxConfig.getInstance().applicationPreinitialize()}"
+                       creationComplete="{TTBoxConfig.getInstance().applicationCreationComplete();init();}"
+                       xmlns:fileimporter="eu.ttbox.view.admin.fileimporter.*"
+                       xmlns:admin="eu.ttbox.controler.admin.*">
+
+
+    <s:layout>
+        <s:VerticalLayout horizontalAlign="center"/>
+    </s:layout>
+
+    <fx:Script>
+        <![CDATA[
+            import eu.ttbox.config.TTBoxConfig;
+            import eu.ttbox.controler.admin.AdminTideError;
+            import eu.ttbox.controler.admin.fileimporter.FileImporterModule;
+            import eu.ttbox.controler.admin.fileimporter.ProductFileControler;
+
+            import mx.controls.Alert;
+            import mx.events.CloseEvent;
+            import mx.events.ModuleEvent;
+            import mx.modules.IModuleInfo;
+
+            import org.granite.tide.Tide;
+            import org.granite.tide.data.Conflicts;
+            import org.granite.tide.data.events.TideDataConflictsEvent;
+            import org.granite.tide.events.TideResultEvent;
+            import org.granite.tide.spring.Identity;
+            import org.granite.tide.spring.Spring;
+
+            [Bindable]
+            [In]
+            public var identity:Identity;
+
+            [Bindable]
+            public var adminDomain:ApplicationDomain=new ApplicationDomain(ApplicationDomain.currentDomain);
+
+            // Load Module
+//            Spring.getInstance().addModule(FileImporterModule);
+
+            private function init():void {
+                identity.isLoggedIn();
+                // Enter Fullscreen Interactive State
+                nativeWindow.maximize();
+                //stage.displayState=StageDisplayState.FULL_SCREEN_INTERACTIVE;
+                //stage.name = "TTBox";
+                //stage.displayState=StageDisplayState.NORMAL;
+
+                // Conflict management
+                Spring.getInstance().getContext().addEventListener(TideDataConflictsEvent.DATA_CONFLICTS, conflictsHandler);
+
+                // Do Login
+                identity.login("admin", "admin", todoAfterLogin, AdminTideError.saveFaultHandler);
+            }
+
+            public function todoAfterLogin(event:TideResultEvent):void {
+                // todo Display Message Succes
+                trace("Save Result", event.result);
+            }
+
+            // Conflict Handler
+            private var _conflicts:Conflicts;
+
+            private function conflictsHandler(event:TideDataConflictsEvent):void {
+                _conflicts=event.conflicts;
+                Alert.show("Keep local state ?", "Data conflict", Alert.YES | Alert.NO, null, conflictsCloseHandler);
+            }
+
+            private function conflictsCloseHandler(event:CloseEvent):void {
+                if (event.detail == Alert.YES)
+                    _conflicts.acceptAllClient();
+                else
+                    _conflicts.acceptAllServer();
+            }
+
+            protected function productModuleLoader_readyHandler(event:ModuleEvent):void {
+                var moduleInfo:IModuleInfo=event.module;
+                //  var loadedModule:ProductImporterModule=moduleInfo.factory.create() as ProductImporterModule;
+                // loadedModule.startModule(adminDomain);
+                //trace("moduleInfo.data", module);
+                Spring.getInstance().addModule(eu.ttbox.controler.admin.fileimporter.FileImporterModule, adminDomain);
+            }
+        ]]>
+    </fx:Script>
+
+    <fx:Declarations>
+        <!-- Placer ici les éléments non visuels (services et objets de valeur, par exemple). -->
+    </fx:Declarations>
+
+
+    <!--  -->
+    <mx:ModuleLoader id="productModuleLoader"
+                     url="ProductImporterModule.swf"
+                     verticalAlign="middle"
+                     horizontalAlign="center"
+                     applicationDomain="{adminDomain}"
+                     ready="productModuleLoader_readyHandler(event)"
+                     width="100%"
+                     height="100%"/>
+
+    <!--
+         <fileimporter:ProductImporter width="100%"
+         height="100%"/>
+
+    -->
+</s:WindowedApplication>

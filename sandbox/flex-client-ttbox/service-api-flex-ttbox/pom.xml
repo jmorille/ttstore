@@ -1,0 +1,145 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>com.j3.ttbox</groupId>
+    <artifactId>client-ttbox</artifactId>
+    <version>1.0-SNAPSHOT</version>
+  </parent>
+
+  <artifactId>service-api-flex-ttbox</artifactId>
+  <version>1.0-SNAPSHOT</version>
+  <packaging>swc</packaging>
+
+  <name>TTBox Client Flex - Service Flex Api</name>
+
+
+  <build>
+    <sourceDirectory>${project.build.directory}/generated-sources/flexmojos</sourceDirectory>
+    <testSourceDirectory>src/test/flex</testSourceDirectory>
+
+    <plugins>
+
+      <!-- 
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>2.3.1</version>
+        <configuration>
+          <source>${compileSource}</source>
+          <target>${compileSource}</target>
+          <encoding>${project.build.sourceEncoding}</encoding>
+        </configuration>
+      </plugin>
+
+   -->
+      <plugin>
+        <groupId>org.sonatype.flexmojos</groupId>
+        <artifactId>flexmojos-maven-plugin</artifactId>
+        <version>${flexmojos.version}</version>
+        <extensions>true</extensions>
+        <configuration>
+<!--          <useTideEntityTemplate>true</useTideEntityTemplate>-->
+<!--          <generatorToUse>graniteds21</generatorToUse>-->
+          <generatorToUse>graniteds21</generatorToUse> 
+              <includeJavaClasses>
+                <class>eu.ttbox.model.*</class>
+                <class>eu.ttbox.service.*</class>
+              </includeJavaClasses>
+                <excludeJavaClasses>
+                    <class>eu.ttbox.model.*_</class> 
+                </excludeJavaClasses>               
+<!--          <extraOptions>-->
+<!--            <tide>true</tide>-->
+<!--            <entityFactory>org.granite.generator.as3.BVEntityFactory</entityFactory>-->
+<!--          </extraOptions>-->
+          <!--
+            <templates> <base-bean-template>${basedir}/src/main/gas3-2.2.0.beta1/bean.gsp</base-bean-template>
+            <bean-template>${basedir}/src/main/gas3-2.2.0.beta1/bean.gsp</bean-template>
+            <base-entity-template>${basedir}/src/main/gas3-2.2.0.beta1/entityBase.gsp</base-entity-template>
+            <entity-template>${basedir}/src/main/gas3-2.2.0.beta1/entity.gsp</entity-template>
+            <enum-template>${basedir}/src/main/gas3-2.2.0.beta1/enum.gsp</enum-template>
+            <interface-template>${basedir}/src/main/gas3-2.2.0.beta1/enum.gsp</interface-template>
+            <base-remote-template>${basedir}/src/main/gas3-2.2.0.beta1/remoteBase.gsp</base-remote-template>
+            <remote-template>${basedir}/src/main/gas3-2.2.0.beta1/remote.gsp</remote-template> </templates>
+          -->
+        </configuration>
+
+<!--
+          <execution>
+            <id>attach-sources</id>
+            <goals>
+              <goal>sources</goal>
+            </goals>
+          </execution>
+
+ -->
+        <executions>
+          <execution>
+            <id>generate-sources</id>
+            <goals>
+              <goal>generate</goal>
+            </goals>
+          </execution>
+        </executions>
+  
+      </plugin>
+
+
+    </plugins>
+  </build>
+
+  <dependencies>
+
+    <dependency>
+      <groupId>com.j3.ttbox</groupId>
+      <artifactId>service-ttbox</artifactId>
+      <version>1.0-SNAPSHOT</version>
+      <scope>provided</scope>
+    </dependency>
+
+
+    <dependency>
+      <groupId>org.graniteds</groupId>
+      <artifactId>granite-essentials-swc</artifactId>
+      <version>${graniteds.version}</version>
+      <type>swc</type>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.graniteds</groupId>
+      <artifactId>granite-swc</artifactId>
+      <version>${graniteds.version}</version>
+      <type>swc</type>
+      <scope>compile</scope>
+    </dependency>
+<!-- -->
+    <dependency>
+      <groupId>com.adobe.flex.framework</groupId>
+      <artifactId>flex-framework</artifactId>
+      <version>${flex.sdk.version}</version>
+      <type>pom</type>
+    </dependency>
+
+    <!-- Test -->
+    <dependency>
+      <groupId>com.adobe.flexunit</groupId>
+      <artifactId>flexunit</artifactId>
+      <version>${flexunit.version}</version>
+      <type>swc</type>
+      <scope>test</scope>
+    </dependency>
+    <!--
+      <dependency> <groupId>com.adobe.flexunit</groupId> <artifactId>uirunner</artifactId>
+      <version>${flexunit.version}</version> <type>swc</type> <scope>test</scope> </dependency> <dependency>
+      <groupId>com.adobe.flexunit</groupId> <artifactId>cilistener</artifactId> <version>${flexunit.version}</version>
+      <type>swc</type> <scope>test</scope> </dependency>
+    -->
+
+  </dependencies>
+
+
+</project>

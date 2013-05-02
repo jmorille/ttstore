@@ -1,0 +1,294 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<dataset>
+  <S_SALESPOINT id="1" version_created_agentid="init" version_created_date="2011-10-10 00:00:00.0" version_agentid="init" version_date="2011-10-10 00:00:00.0" name="TTBox" version="0"/>
+  <S_SALESPOINT id="2" version_created_agentid="init" version_created_date="2011-10-10 00:00:00.0" version_agentid="init" version_date="2011-10-10 00:00:00.0" name="TTBox Site 2" version="0"/>
+  <S_SALESPOINT id="3" version_created_agentid="init" version_created_date="2011-10-10 00:00:00.0" version_agentid="init" version_date="2011-10-10 00:00:00.0" name="TTBox Site 3" version="0"/>
+  <S_SALESPOINT id="4" version_created_agentid="init" version_created_date="2011-10-10 00:00:00.0" version_agentid="init" version_date="2011-10-10 00:00:00.0" name="TTBox Site 4" version="0"/>
+  <S_SALESPOINT id="5" version_created_agentid="init" version_created_date="2011-10-10 00:00:00.0" version_agentid="init" version_date="2011-10-10 00:00:00.0" name="GUILLON" version="0"/>
+  <S_SALESPOINT id="6" version_created_agentid="init" version_created_date="2011-10-10 00:00:00.0" version_agentid="init" version_date="2011-10-10 00:00:00.0" name="Sogi" version="0"/>
+  <S_SALESPOINT id="7" version_created_agentid="init" version_created_date="2011-10-10 00:00:00.0" version_agentid="init" version_date="2011-10-10 00:00:00.0" name="s2i" version="0"/>
+  <S_SALESPOINT id="8" version_created_agentid="init" version_created_date="2011-10-10 00:00:00.0" version_agentid="init" version_date="2011-10-10 00:00:00.0" name="Distriprimo" version="0"/>
+  <S_SALESPOINT id="9" version_created_agentid="init" version_created_date="2011-10-10 00:00:00.0" version_agentid="init" version_date="2011-10-10 00:00:00.0" name="E-vipc.com" version="0"/>
+  <S_SALESPOINT id="10" version_created_agentid="init" version_created_date="2011-10-10 00:00:00.0" version_agentid="init" version_date="2011-10-10 00:00:00.0" name="mvi" version="0"/>
+  <S_SALESPOINT id="11" version_created_agentid="init" version_created_date="2011-10-10 00:00:00.0" version_agentid="init" version_date="2011-10-10 00:00:00.0" name="gm-informatique" version="0"/>
+  <S_SALESPOINT id="12" version_created_agentid="init" version_created_date="2011-10-10 00:00:00.0" version_agentid="init" version_date="2011-10-10 00:00:00.0" name="JLL Informatique" version="0"/>
+  <S_SALESPOINT id="13" version_created_agentid="init" version_created_date="2011-10-10 00:00:00.0" version_agentid="init" version_date="2011-10-10 00:00:00.0" name="WSI" version="0"/>
+  <S_SALESPOINT id="14" version_created_agentid="init" version_created_date="2011-10-10 00:00:00.0" version_agentid="init" version_date="2011-10-10 00:00:00.0" name="RSI" version="0"/>
+  <S_SALESPOINT id="15" version_created_agentid="init" version_created_date="2011-10-10 00:00:00.0" version_agentid="init" version_date="2011-10-10 00:00:00.0" name="Class" version="0"/>
+  <S_SALESPOINT id="16" version_created_agentid="init" version_created_date="2011-10-10 00:00:00.0" version_agentid="init" version_date="2011-10-10 00:00:00.0" name="Informatica 47" version="0"/>
+  <S_SALESPOINT id="17" version_created_agentid="init" version_created_date="2011-10-10 00:00:00.0" version_agentid="init" version_date="2011-10-10 00:00:00.0" name="sgui" version="0"/>
+  <S_SALESPOINT id="18" version_created_agentid="init" version_created_date="2011-10-10 00:00:00.0" version_agentid="init" version_date="2011-10-10 00:00:00.0" name="paul-sabatier" version="0"/>
+  <S_SALESPOINT id="19" version_created_agentid="init" version_created_date="2011-10-10 00:00:00.0" version_agentid="init" version_date="2011-10-10 00:00:00.0" name="EDUC" version="0"/>
+  <S_SALESPOINT id="20" version_created_agentid="init" version_created_date="2011-10-10 00:00:00.0" version_agentid="init" version_date="2011-10-10 00:00:00.0" name="ADMIN" version="0"/>
+  <S_SALESPOINT id="21" version_created_agentid="init" version_created_date="2011-10-10 00:00:00.0" version_agentid="init" version_date="2011-10-10 00:00:00.0" name="MAIRIES" version="0"/>
+  <S_SALESPOINT id="22" version_created_agentid="init" version_created_date="2011-10-10 00:00:00.0" version_agentid="init" version_date="2011-10-10 00:00:00.0" name="UTM" version="0"/>
+  <S_SALESPOINT id="23" version_created_agentid="init" version_created_date="2011-10-10 00:00:00.0" version_agentid="init" version_date="2011-10-10 00:00:00.0" name="UPS" version="0"/>
+  <S_SALESPOINT id="24" version_created_agentid="init" version_created_date="2011-10-10 00:00:00.0" version_agentid="init" version_date="2011-10-10 00:00:00.0" name="Automatic 2000" version="0"/>
+  <S_SALESPOINT id="25" version_created_agentid="init" version_created_date="2011-10-10 00:00:00.0" version_agentid="init" version_date="2011-10-10 00:00:00.0" name="ADMI COMPUTER FRANCE" version="0"/>
+  <S_SALESPOINT id="26" version_created_agentid="init" version_created_date="2011-10-10 00:00:00.0" version_agentid="init" version_date="2011-10-10 00:00:00.0" name="MANAGER" version="0"/>
+  <S_SALESPOINT id="27" version_created_agentid="init" version_created_date="2011-10-10 00:00:00.0" version_agentid="init" version_date="2011-10-10 00:00:00.0" name="CAD" version="0"/>
+  <S_SALESPOINT id="28" version_created_agentid="init" version_created_date="2011-10-10 00:00:00.0" version_agentid="init" version_date="2011-10-10 00:00:00.0" name="nextinfo.fr" version="0"/>
+  <S_SALESPOINT id="29" version_created_agentid="init" version_created_date="2011-10-10 00:00:00.0" version_agentid="init" version_date="2011-10-10 00:00:00.0" name="STARGONAUT" version="0"/>
+  <S_SALESPOINT id="30" version_created_agentid="init" version_created_date="2011-10-10 00:00:00.0" version_agentid="init" version_date="2011-10-10 00:00:00.0" name="Altomag" version="0"/>
+  <S_SALESPOINT id="31" version_created_agentid="init" version_created_date="2011-10-10 00:00:00.0" version_agentid="init" version_date="2011-10-10 00:00:00.0" name="Elio Micro" version="0"/>
+  <S_SALESPOINT id="32" version_created_agentid="init" version_created_date="2011-10-10 00:00:00.0" version_agentid="init" version_date="2011-10-10 00:00:00.0" name="Tilt Informatique" version="0"/>
+  <S_SALESPOINT id="33" version_created_agentid="init" version_created_date="2011-10-10 00:00:00.0" version_agentid="init" version_date="2011-10-10 00:00:00.0" name="WELCOME informatique" version="0"/>
+  <S_SALESPOINT id="34" version_created_agentid="init" version_created_date="2011-10-10 00:00:00.0" version_agentid="init" version_date="2011-10-10 00:00:00.0" name="Point Competence Informatique" version="0"/>
+  <S_SALESPOINT id="35" version_created_agentid="init" version_created_date="2011-10-10 00:00:00.0" version_agentid="init" version_date="2011-10-10 00:00:00.0" name="Defis System" version="0"/>
+  <S_SALESPOINT id="36" version_created_agentid="init" version_created_date="2011-10-10 00:00:00.0" version_agentid="init" version_date="2011-10-10 00:00:00.0" name="cap antigone" version="0"/>
+  <S_SALESPOINT id="37" version_created_agentid="init" version_created_date="2011-10-10 00:00:00.0" version_agentid="init" version_date="2011-10-10 00:00:00.0" name="Micro Rouen" version="0"/>
+  <S_SALESPOINT id="38" version_created_agentid="init" version_created_date="2011-10-10 00:00:00.0" version_agentid="init" version_date="2011-10-10 00:00:00.0" name="Micro Sigma" version="0"/>
+  <S_SALESPOINT id="39" version_created_agentid="init" version_created_date="2011-10-10 00:00:00.0" version_agentid="init" version_date="2011-10-10 00:00:00.0" name="DHS" version="0"/>
+  <S_SALESPOINT id="40" version_created_agentid="init" version_created_date="2011-10-10 00:00:00.0" version_agentid="init" version_date="2011-10-10 00:00:00.0" name="TKS" version="0"/>
+  <S_SALESPOINT id="41" version_created_agentid="init" version_created_date="2011-10-10 00:00:00.0" version_agentid="init" version_date="2011-10-10 00:00:00.0" name="Rom" version="0"/>
+  <S_SALESPOINT id="42" version_created_agentid="init" version_created_date="2011-10-10 00:00:00.0" version_agentid="init" version_date="2011-10-10 00:00:00.0" name="SMD Bureautique" version="0"/>
+  <S_SALESPOINT id="43" version_created_agentid="init" version_created_date="2011-10-10 00:00:00.0" version_agentid="init" version_date="2011-10-10 00:00:00.0" name="MICROTEAM" version="0"/>
+  <S_SALESPOINT id="44" version_created_agentid="init" version_created_date="2011-10-10 00:00:00.0" version_agentid="init" version_date="2011-10-10 00:00:00.0" name="DATA7" version="0"/>
+  <S_SALESPOINT id="45" version_created_agentid="init" version_created_date="2011-10-10 00:00:00.0" version_agentid="init" version_date="2011-10-10 00:00:00.0" name="Mac and Co" version="0"/>
+  <S_SALESPOINT id="46" version_created_agentid="init" version_created_date="2011-10-10 00:00:00.0" version_agentid="init" version_date="2011-10-10 00:00:00.0" name="CID" version="0"/>
+  <S_SALESPOINT id="47" version_created_agentid="init" version_created_date="2011-10-10 00:00:00.0" version_agentid="init" version_date="2011-10-10 00:00:00.0" name="Isatis" version="0"/>
+  <S_SALESPOINT id="48" version_created_agentid="init" version_created_date="2011-10-10 00:00:00.0" version_agentid="init" version_date="2011-10-10 00:00:00.0" name="Pixel Informatique" version="0"/>
+  <S_SALESPOINT id="49" version_created_agentid="init" version_created_date="2011-10-10 00:00:00.0" version_agentid="init" version_date="2011-10-10 00:00:00.0" name="Creatis Informatique" version="0"/>
+  <S_SALESPOINT id="50" version_created_agentid="init" version_created_date="2011-10-10 00:00:00.0" version_agentid="init" version_date="2011-10-10 00:00:00.0" name="Micro Systemes" version="0"/>
+  <S_SALESPOINT id="51" version_created_agentid="init" version_created_date="2011-10-10 00:00:00.0" version_agentid="init" version_date="2011-10-10 00:00:00.0" name="Computer Store TJP Informatique " version="0"/>
+  <S_SALESPOINT id="52" version_created_agentid="init" version_created_date="2011-10-10 00:00:00.0" version_agentid="init" version_date="2011-10-10 00:00:00.0" name="ARIS65" version="0"/>
+  <S_SALESPOINT id="53" version_created_agentid="init" version_created_date="2011-10-10 00:00:00.0" version_agentid="init" version_date="2011-10-10 00:00:00.0" name="Ag Tech" version="0"/>
+  <S_SALESPOINT id="54" version_created_agentid="init" version_created_date="2011-10-10 00:00:00.0" version_agentid="init" version_date="2011-10-10 00:00:00.0" name="gs2i" version="0"/>
+  <S_SALESPOINT id="55" version_created_agentid="init" version_created_date="2011-10-10 00:00:00.0" version_agentid="init" version_date="2011-10-10 00:00:00.0" name="CFI Maintenance Informatique" version="0"/>
+  <S_SALESPOINT id="56" version_created_agentid="init" version_created_date="2011-10-10 00:00:00.0" version_agentid="init" version_date="2011-10-10 00:00:00.0" name="Enligne" version="0"/>
+  <S_SALESPOINT id="57" version_created_agentid="init" version_created_date="2011-10-10 00:00:00.0" version_agentid="init" version_date="2011-10-10 00:00:00.0" name="Pro D Rama" version="0"/>
+  <S_SALESPOINT id="58" version_created_agentid="init" version_created_date="2011-10-10 00:00:00.0" version_agentid="init" version_date="2011-10-10 00:00:00.0" name="ordilan" version="0"/>
+  <S_SALESPOINT id="59" version_created_agentid="init" version_created_date="2011-10-10 00:00:00.0" version_agentid="init" version_date="2011-10-10 00:00:00.0" name="mediactive" version="0"/>
+  <S_SALESPOINT id="60" version_created_agentid="init" version_created_date="2011-10-10 00:00:00.0" version_agentid="init" version_date="2011-10-10 00:00:00.0" name="Artymedia" version="0"/>
+  <S_SALESPOINT id="61" version_created_agentid="init" version_created_date="2011-10-10 00:00:00.0" version_agentid="init" version_date="2011-10-10 00:00:00.0" name="Asi 52" version="0"/>
+  <S_SALESPOINT id="62" version_created_agentid="init" version_created_date="2011-10-10 00:00:00.0" version_agentid="init" version_date="2011-10-10 00:00:00.0" name="Cx informatique" version="0"/>
+  <S_SALESPOINT id="63" version_created_agentid="init" version_created_date="2011-10-10 00:00:00.0" version_agentid="init" version_date="2011-10-10 00:00:00.0" name="ko-network" version="0"/>
+  <S_SALESPOINT id="64" version_created_agentid="init" version_created_date="2011-10-10 00:00:00.0" version_agentid="init" version_date="2011-10-10 00:00:00.0" name="EUROGRAPH" version="0"/>
+  <S_SALESPOINT id="65" version_created_agentid="init" version_created_date="2011-10-10 00:00:00.0" version_agentid="init" version_date="2011-10-10 00:00:00.0" name="Goldway France" version="0"/>
+  <S_SALESPOINT id="66" version_created_agentid="init" version_created_date="2011-10-10 00:00:00.0" version_agentid="init" version_date="2011-10-10 00:00:00.0" name="leclerc" version="0"/>
+  <S_SALESPOINT id="67" version_created_agentid="init" version_created_date="2011-10-10 00:00:00.0" version_agentid="init" version_date="2011-10-10 00:00:00.0" name="extranetvence" version="0"/>
+  <S_SALESPOINT id="68" version_created_agentid="init" version_created_date="2011-10-10 00:00:00.0" version_agentid="init" version_date="2011-10-10 00:00:00.0" name="3F Systems" version="0"/>
+  <S_SALESPOINT id="69" version_created_agentid="init" version_created_date="2011-10-10 00:00:00.0" version_agentid="init" version_date="2011-10-10 00:00:00.0" name="Faci" version="0"/>
+  <S_SALESPOINT id="70" version_created_agentid="init" version_created_date="2011-10-10 00:00:00.0" version_agentid="init" version_date="2011-10-10 00:00:00.0" name="Inter Actif" version="0"/>
+  <S_SALESPOINT id="71" version_created_agentid="init" version_created_date="2011-10-10 00:00:00.0" version_agentid="init" version_date="2011-10-10 00:00:00.0" name="akantha" version="0"/>
+  <S_SALESPOINT id="72" version_created_agentid="init" version_created_date="2011-10-10 00:00:00.0" version_agentid="init" version_date="2011-10-10 00:00:00.0" name="MH Informatique" version="0"/>
+  <S_SALESPOINT id="73" version_created_agentid="init" version_created_date="2011-10-10 00:00:00.0" version_agentid="init" version_date="2011-10-10 00:00:00.0" name="ABI France" version="0"/>
+  <S_SALESPOINT id="74" version_created_agentid="init" version_created_date="2011-10-10 00:00:00.0" version_agentid="init" version_date="2011-10-10 00:00:00.0" name="balistik" version="0"/>
+  <S_SALESPOINT id="75" version_created_agentid="init" version_created_date="2011-10-10 00:00:00.0" version_agentid="init" version_date="2011-10-10 00:00:00.0" name="REFINFO" version="0"/>
+  <S_SALESPOINT id="76" version_created_agentid="init" version_created_date="2011-10-10 00:00:00.0" version_agentid="init" version_date="2011-10-10 00:00:00.0" name="NO WORK TECH" version="0"/>
+  <S_SALESPOINT id="77" version_created_agentid="init" version_created_date="2011-10-10 00:00:00.0" version_agentid="init" version_date="2011-10-10 00:00:00.0" name="Web&apos;in Informatique" version="0"/>
+  <S_SALESPOINT id="78" version_created_agentid="init" version_created_date="2011-10-10 00:00:00.0" version_agentid="init" version_date="2011-10-10 00:00:00.0" name="DPI Informatique" version="0"/>
+  <S_SALESPOINT id="79" version_created_agentid="init" version_created_date="2011-10-10 00:00:00.0" version_agentid="init" version_date="2011-10-10 00:00:00.0" name="AIBS" version="0"/>
+  <S_SALESPOINT id="80" version_created_agentid="init" version_created_date="2011-10-10 00:00:00.0" version_agentid="init" version_date="2011-10-10 00:00:00.0" name="Bimp Informatique" version="0"/>
+  <S_SALESPOINT id="81" version_created_agentid="init" version_created_date="2011-10-10 00:00:00.0" version_agentid="init" version_date="2011-10-10 00:00:00.0" name="Gips21" version="0"/>
+  <S_SALESPOINT id="82" version_created_agentid="init" version_created_date="2011-10-10 00:00:00.0" version_agentid="init" version_date="2011-10-10 00:00:00.0" name="Mextor" version="0"/>
+  <S_SALESPOINT id="83" version_created_agentid="init" version_created_date="2011-10-10 00:00:00.0" version_agentid="init" version_date="2011-10-10 00:00:00.0" name="ECCI" version="0"/>
+  <S_SALESPOINT id="84" version_created_agentid="init" version_created_date="2011-10-10 00:00:00.0" version_agentid="init" version_date="2011-10-10 00:00:00.0" name="novalto" version="0"/>
+  <S_SALESPOINT id="85" version_created_agentid="init" version_created_date="2011-10-10 00:00:00.0" version_agentid="init" version_date="2011-10-10 00:00:00.0" name="ISL" version="0"/>
+  <S_SALESPOINT id="86" version_created_agentid="init" version_created_date="2011-10-10 00:00:00.0" version_agentid="init" version_date="2011-10-10 00:00:00.0" name="opsyre" version="0"/>
+  <S_SALESPOINT id="87" version_created_agentid="init" version_created_date="2011-10-10 00:00:00.0" version_agentid="init" version_date="2011-10-10 00:00:00.0" name="BDX informatique" version="0"/>
+  <S_SALESPOINT id="88" version_created_agentid="init" version_created_date="2011-10-10 00:00:00.0" version_agentid="init" version_date="2011-10-10 00:00:00.0" name="Komputer" version="0"/>
+  <S_SALESPOINT id="89" version_created_agentid="init" version_created_date="2011-10-10 00:00:00.0" version_agentid="init" version_date="2011-10-10 00:00:00.0" name="Adesso Multimedia" version="0"/>
+  <S_SALESPOINT id="90" version_created_agentid="init" version_created_date="2011-10-10 00:00:00.0" version_agentid="init" version_date="2011-10-10 00:00:00.0" name="EVEN FRANCE" version="0"/>
+  <S_SALESPOINT id="91" version_created_agentid="init" version_created_date="2011-10-10 00:00:00.0" version_agentid="init" version_date="2011-10-10 00:00:00.0" name="MFVI" version="0"/>
+  <S_SALESPOINT id="92" version_created_agentid="init" version_created_date="2011-10-10 00:00:00.0" version_agentid="init" version_date="2011-10-10 00:00:00.0" name="login" version="0"/>
+  <S_SALESPOINT id="93" version_created_agentid="init" version_created_date="2011-10-10 00:00:00.0" version_agentid="init" version_date="2011-10-10 00:00:00.0" name="EURABIS" version="0"/>
+  <S_SALESPOINT id="94" version_created_agentid="init" version_created_date="2011-10-10 00:00:00.0" version_agentid="init" version_date="2011-10-10 00:00:00.0" name="Micro Plus Informatique" version="0"/>
+  <S_SALESPOINT id="95" version_created_agentid="init" version_created_date="2011-10-10 00:00:00.0" version_agentid="init" version_date="2011-10-10 00:00:00.0" name="AVEROES" version="0"/>
+  <S_SALESPOINT id="96" version_created_agentid="init" version_created_date="2011-10-10 00:00:00.0" version_agentid="init" version_date="2011-10-10 00:00:00.0" name="districad" version="0"/>
+  <S_SALESPOINT id="97" version_created_agentid="init" version_created_date="2011-10-10 00:00:00.0" version_agentid="init" version_date="2011-10-10 00:00:00.0" name="APTOR" version="0"/>
+  <S_SALESPOINT id="98" version_created_agentid="init" version_created_date="2011-10-10 00:00:00.0" version_agentid="init" version_date="2011-10-10 00:00:00.0" name="SLI" version="0"/>
+  <S_SALESPOINT id="99" version_created_agentid="init" version_created_date="2011-10-10 00:00:00.0" version_agentid="init" version_date="2011-10-10 00:00:00.0" name="JCN Informatique" version="0"/>
+  <S_SALESPOINT id="100" version_created_agentid="init" version_created_date="2011-10-10 00:00:00.0" version_agentid="init" version_date="2011-10-10 00:00:00.0" name="SGEI" version="0"/>
+  <S_SALESPOINT id="101" version_created_agentid="init" version_created_date="2011-10-10 00:00:00.0" version_agentid="init" version_date="2011-10-10 00:00:00.0" name="PWI Store" version="0"/>
+  <S_SALESPOINT id="102" version_created_agentid="init" version_created_date="2011-10-10 00:00:00.0" version_agentid="init" version_date="2011-10-10 00:00:00.0" name="jlb formatic" version="0"/>
+  <S_SALESPOINT id="103" version_created_agentid="init" version_created_date="2011-10-10 00:00:00.0" version_agentid="init" version_date="2011-10-10 00:00:00.0" name="GI Informatique" version="0"/>
+  <S_SALESPOINT id="104" version_created_agentid="init" version_created_date="2011-10-10 00:00:00.0" version_agentid="init" version_date="2011-10-10 00:00:00.0" name="Mafip" version="0"/>
+  <S_SALESPOINT id="105" version_created_agentid="init" version_created_date="2011-10-10 00:00:00.0" version_agentid="init" version_date="2011-10-10 00:00:00.0" name="ais (arize informatique service)" version="0"/>
+  <S_SALESPOINT id="106" version_created_agentid="init" version_created_date="2011-10-10 00:00:00.0" version_agentid="init" version_date="2011-10-10 00:00:00.0" name="Pock&apos;it" version="0"/>
+  <S_SALESPOINT id="107" version_created_agentid="init" version_created_date="2011-10-10 00:00:00.0" version_agentid="init" version_date="2011-10-10 00:00:00.0" name="Active developpement" version="0"/>
+  <S_SALESPOINT id="108" version_created_agentid="init" version_created_date="2011-10-10 00:00:00.0" version_agentid="init" version_date="2011-10-10 00:00:00.0" name="Store-Media" version="0"/>
+  <S_SALESPOINT id="109" version_created_agentid="init" version_created_date="2011-10-10 00:00:00.0" version_agentid="init" version_date="2011-10-10 00:00:00.0" name="ais54" version="0"/>
+  <S_SALESPOINT id="110" version_created_agentid="init" version_created_date="2011-10-10 00:00:00.0" version_agentid="init" version_date="2011-10-10 00:00:00.0" name="INACO" version="0"/>
+  <S_SALESPOINT id="111" version_created_agentid="init" version_created_date="2011-10-10 00:00:00.0" version_agentid="init" version_date="2011-10-10 00:00:00.0" name="DVM" version="0"/>
+  <S_SALESPOINT id="112" version_created_agentid="init" version_created_date="2011-10-10 00:00:00.0" version_agentid="init" version_date="2011-10-10 00:00:00.0" name="LID SAS" version="0"/>
+  <S_SALESPOINT id="113" version_created_agentid="init" version_created_date="2011-10-10 00:00:00.0" version_agentid="init" version_date="2011-10-10 00:00:00.0" name="techinfo" version="0"/>
+  <S_SALESPOINT id="114" version_created_agentid="init" version_created_date="2011-10-10 00:00:00.0" version_agentid="init" version_date="2011-10-10 00:00:00.0" name="Click Droit Informatique" version="0"/>
+  <S_SALESPOINT id="115" version_created_agentid="init" version_created_date="2011-10-10 00:00:00.0" version_agentid="init" version_date="2011-10-10 00:00:00.0" name="concepts" version="0"/>
+  <S_SALESPOINT id="116" version_created_agentid="init" version_created_date="2011-10-10 00:00:00.0" version_agentid="init" version_date="2011-10-10 00:00:00.0" name="INFORMATIQUE.COM" version="0"/>
+  <S_SALESPOINT id="117" version_created_agentid="init" version_created_date="2011-10-10 00:00:00.0" version_agentid="init" version_date="2011-10-10 00:00:00.0" name="PC 30" version="0"/>
+  <S_SALESPOINT id="118" version_created_agentid="init" version_created_date="2011-10-10 00:00:00.0" version_agentid="init" version_date="2011-10-10 00:00:00.0" name="Nano Micro" version="0"/>
+  <S_SALESPOINT id="119" version_created_agentid="init" version_created_date="2011-10-10 00:00:00.0" version_agentid="init" version_date="2011-10-10 00:00:00.0" name="NTS Shop" version="0"/>
+  <S_SALESPOINT id="120" version_created_agentid="init" version_created_date="2011-10-10 00:00:00.0" version_agentid="init" version_date="2011-10-10 00:00:00.0" name="Adestore" version="0"/>
+  <S_SALESPOINT id="121" version_created_agentid="init" version_created_date="2011-10-10 00:00:00.0" version_agentid="init" version_date="2011-10-10 00:00:00.0" name="isys" version="0"/>
+  <S_SALESPOINT id="122" version_created_agentid="init" version_created_date="2011-10-10 00:00:00.0" version_agentid="init" version_date="2011-10-10 00:00:00.0" name="macsi" version="0"/>
+  <S_SALESPOINT id="123" version_created_agentid="init" version_created_date="2011-10-10 00:00:00.0" version_agentid="init" version_date="2011-10-10 00:00:00.0" name="Les Indispensables" version="0"/>
+  <S_SALESPOINT id="124" version_created_agentid="init" version_created_date="2011-10-10 00:00:00.0" version_agentid="init" version_date="2011-10-10 00:00:00.0" name="p2m" version="0"/>
+  <S_SALESPOINT id="125" version_created_agentid="init" version_created_date="2011-10-10 00:00:00.0" version_agentid="init" version_date="2011-10-10 00:00:00.0" name="unidees" version="0"/>
+  <S_SALESPOINT id="126" version_created_agentid="init" version_created_date="2011-10-10 00:00:00.0" version_agentid="init" version_date="2011-10-10 00:00:00.0" name="periphelie" version="0"/>
+  <S_SALESPOINT id="127" version_created_agentid="init" version_created_date="2011-10-10 00:00:00.0" version_agentid="init" version_date="2011-10-10 00:00:00.0" name="setf" version="0"/>
+  <S_SALESPOINT id="128" version_created_agentid="init" version_created_date="2011-10-10 00:00:00.0" version_agentid="init" version_date="2011-10-10 00:00:00.0" name="cds-informatique" version="0"/>
+  <S_SALESPOINT id="129" version_created_agentid="init" version_created_date="2011-10-10 00:00:00.0" version_agentid="init" version_date="2011-10-10 00:00:00.0" name="urgences micro" version="0"/>
+  <S_SALESPOINT id="130" version_created_agentid="init" version_created_date="2011-10-10 00:00:00.0" version_agentid="init" version_date="2011-10-10 00:00:00.0" name="dovenco" version="0"/>
+  <S_SALESPOINT id="131" version_created_agentid="init" version_created_date="2011-10-10 00:00:00.0" version_agentid="init" version_date="2011-10-10 00:00:00.0" name="cdc" version="0"/>
+  <S_SALESPOINT id="132" version_created_agentid="init" version_created_date="2011-10-10 00:00:00.0" version_agentid="init" version_date="2011-10-10 00:00:00.0" name="Informatique Aquitaine Assistance" version="0"/>
+  <S_SALESPOINT id="133" version_created_agentid="init" version_created_date="2011-10-10 00:00:00.0" version_agentid="init" version_date="2011-10-10 00:00:00.0" name="mht" version="0"/>
+  <S_SALESPOINT id="134" version_created_agentid="init" version_created_date="2011-10-10 00:00:00.0" version_agentid="init" version_date="2011-10-10 00:00:00.0" name="fradan" version="0"/>
+  <S_SALESPOINT id="135" version_created_agentid="init" version_created_date="2011-10-10 00:00:00.0" version_agentid="init" version_date="2011-10-10 00:00:00.0" name="ADNET CONSULTING" version="0"/>
+  <S_SALESPOINT id="136" version_created_agentid="init" version_created_date="2011-10-10 00:00:00.0" version_agentid="init" version_date="2011-10-10 00:00:00.0" name="DSF Informatique" version="0"/>
+  <S_SALESPOINT id="137" version_created_agentid="init" version_created_date="2011-10-10 00:00:00.0" version_agentid="init" version_date="2011-10-10 00:00:00.0" name="smvi" version="0"/>
+  <S_SALESPOINT id="138" version_created_agentid="init" version_created_date="2011-10-10 00:00:00.0" version_agentid="init" version_date="2011-10-10 00:00:00.0" name="PC Partners" version="0"/>
+  <S_SALESPOINT id="139" version_created_agentid="init" version_created_date="2011-10-10 00:00:00.0" version_agentid="init" version_date="2011-10-10 00:00:00.0" name="IMD INFORMATIQUE" version="0"/>
+  <S_SALESPOINT id="140" version_created_agentid="init" version_created_date="2011-10-10 00:00:00.0" version_agentid="init" version_date="2011-10-10 00:00:00.0" name="Road Store" version="0"/>
+  <S_SALESPOINT id="141" version_created_agentid="init" version_created_date="2011-10-10 00:00:00.0" version_agentid="init" version_date="2011-10-10 00:00:00.0" name="discount-micro" version="0"/>
+  <S_SALESPOINT id="142" version_created_agentid="init" version_created_date="2011-10-10 00:00:00.0" version_agentid="init" version_date="2011-10-10 00:00:00.0" name="isi-groupe" version="0"/>
+  <S_SALESPOINT id="143" version_created_agentid="init" version_created_date="2011-10-10 00:00:00.0" version_agentid="init" version_date="2011-10-10 00:00:00.0" name="Hidelog" version="0"/>
+  <S_WEBLOCK type="100" id="1" key="Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..." value="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin nec posuere erat. Suspendisse potenti. Nunc dictum tellus et ipsum scelerisque sed varius justo malesuada. In hac habitasse platea dictumst. Praesent congue condimentum mi, non viverra risus elementum vel. Mauris eleifend suscipit nibh, vel sagittis odio sodales ac. Sed tempus tincidunt arcu, eget semper eros tincidunt ac. Curabitur nulla turpis, consequat a commodo id, laoreet vestibulum ante." salespoint_id="1"/>
+  <S_SALESPOINT_SUPPLIER id="1" status="1" supplier_type="TECHDATA" supplier_id="486107" version="0" fk_salespoint="1"/>
+  <S_SALESPOINT_SUPPLIER id="2" status="1" supplier_type="TECHDATA" supplier_id="497999" version="0" fk_salespoint="2"/>
+  <S_SALESPOINT_SUPPLIER id="3" status="1" supplier_type="TECHDATA" supplier_id="497999" version="0" fk_salespoint="3"/>
+  <S_SALESPOINT_SUPPLIER id="4" status="1" supplier_type="TECHDATA" supplier_id="497999" version="0" fk_salespoint="4"/>
+  <S_SALESPOINT_SUPPLIER id="5" status="1" supplier_type="TECHDATA" supplier_id="476383" version="0" fk_salespoint="5"/>
+  <S_SALESPOINT_SUPPLIER id="6" status="1" supplier_type="TECHDATA" supplier_id="476392" version="0" fk_salespoint="6"/>
+  <S_SALESPOINT_SUPPLIER id="7" status="1" supplier_type="TECHDATA" supplier_id="476725" version="0" fk_salespoint="7"/>
+  <S_SALESPOINT_SUPPLIER id="8" status="1" supplier_type="TECHDATA" supplier_id="476765" version="0" fk_salespoint="8"/>
+  <S_SALESPOINT_SUPPLIER id="9" status="1" supplier_type="TECHDATA" supplier_id="476843" version="0" fk_salespoint="9"/>
+  <S_SALESPOINT_SUPPLIER id="10" status="1" supplier_type="TECHDATA" supplier_id="476958" version="0" fk_salespoint="10"/>
+  <S_SALESPOINT_SUPPLIER id="11" status="1" supplier_type="TECHDATA" supplier_id="477049" version="0" fk_salespoint="11"/>
+  <S_SALESPOINT_SUPPLIER id="12" status="1" supplier_type="TECHDATA" supplier_id="477118" version="0" fk_salespoint="12"/>
+  <S_SALESPOINT_SUPPLIER id="13" status="1" supplier_type="TECHDATA" supplier_id="477128" version="0" fk_salespoint="13"/>
+  <S_SALESPOINT_SUPPLIER id="14" status="1" supplier_type="TECHDATA" supplier_id="477211" version="0" fk_salespoint="14"/>
+  <S_SALESPOINT_SUPPLIER id="15" status="1" supplier_type="TECHDATA" supplier_id="477258" version="0" fk_salespoint="15"/>
+  <S_SALESPOINT_SUPPLIER id="16" status="1" supplier_type="TECHDATA" supplier_id="477413" version="0" fk_salespoint="16"/>
+  <S_SALESPOINT_SUPPLIER id="17" status="1" supplier_type="TECHDATA" supplier_id="477416" version="0" fk_salespoint="17"/>
+  <S_SALESPOINT_SUPPLIER id="18" status="1" supplier_type="TECHDATA" supplier_id="477717" version="0" fk_salespoint="18"/>
+  <S_SALESPOINT_SUPPLIER id="19" status="1" supplier_type="TECHDATA" supplier_id="477717" version="0" fk_salespoint="19"/>
+  <S_SALESPOINT_SUPPLIER id="20" status="1" supplier_type="TECHDATA" supplier_id="477717" version="0" fk_salespoint="20"/>
+  <S_SALESPOINT_SUPPLIER id="21" status="1" supplier_type="TECHDATA" supplier_id="477717" version="0" fk_salespoint="21"/>
+  <S_SALESPOINT_SUPPLIER id="22" status="1" supplier_type="TECHDATA" supplier_id="477717" version="0" fk_salespoint="22"/>
+  <S_SALESPOINT_SUPPLIER id="23" status="1" supplier_type="TECHDATA" supplier_id="477717" version="0" fk_salespoint="23"/>
+  <S_SALESPOINT_SUPPLIER id="24" status="1" supplier_type="TECHDATA" supplier_id="477717" version="0" fk_salespoint="24"/>
+  <S_SALESPOINT_SUPPLIER id="25" status="1" supplier_type="TECHDATA" supplier_id="477900" version="0" fk_salespoint="25"/>
+  <S_SALESPOINT_SUPPLIER id="26" status="1" supplier_type="TECHDATA" supplier_id="478044" version="0" fk_salespoint="26"/>
+  <S_SALESPOINT_SUPPLIER id="27" status="1" supplier_type="TECHDATA" supplier_id="478135" version="0" fk_salespoint="27"/>
+  <S_SALESPOINT_SUPPLIER id="28" status="1" supplier_type="TECHDATA" supplier_id="478313" version="0" fk_salespoint="28"/>
+  <S_SALESPOINT_SUPPLIER id="29" status="1" supplier_type="TECHDATA" supplier_id="478340" version="0" fk_salespoint="29"/>
+  <S_SALESPOINT_SUPPLIER id="30" status="1" supplier_type="TECHDATA" supplier_id="478479" version="0" fk_salespoint="30"/>
+  <S_SALESPOINT_SUPPLIER id="31" status="1" supplier_type="TECHDATA" supplier_id="478690" version="0" fk_salespoint="31"/>
+  <S_SALESPOINT_SUPPLIER id="32" status="1" supplier_type="TECHDATA" supplier_id="478716" version="0" fk_salespoint="32"/>
+  <S_SALESPOINT_SUPPLIER id="33" status="1" supplier_type="TECHDATA" supplier_id="478772" version="0" fk_salespoint="33"/>
+  <S_SALESPOINT_SUPPLIER id="34" status="1" supplier_type="TECHDATA" supplier_id="478777" version="0" fk_salespoint="34"/>
+  <S_SALESPOINT_SUPPLIER id="35" status="1" supplier_type="TECHDATA" supplier_id="478796" version="0" fk_salespoint="35"/>
+  <S_SALESPOINT_SUPPLIER id="36" status="1" supplier_type="TECHDATA" supplier_id="478949" version="0" fk_salespoint="36"/>
+  <S_SALESPOINT_SUPPLIER id="37" status="1" supplier_type="TECHDATA" supplier_id="478987" version="0" fk_salespoint="37"/>
+  <S_SALESPOINT_SUPPLIER id="38" status="1" supplier_type="TECHDATA" supplier_id="479091" version="0" fk_salespoint="38"/>
+  <S_SALESPOINT_SUPPLIER id="39" status="1" supplier_type="TECHDATA" supplier_id="479328" version="0" fk_salespoint="39"/>
+  <S_SALESPOINT_SUPPLIER id="40" status="1" supplier_type="TECHDATA" supplier_id="479351" version="0" fk_salespoint="40"/>
+  <S_SALESPOINT_SUPPLIER id="41" status="1" supplier_type="TECHDATA" supplier_id="479638" version="0" fk_salespoint="41"/>
+  <S_SALESPOINT_SUPPLIER id="42" status="1" supplier_type="TECHDATA" supplier_id="479676" version="0" fk_salespoint="42"/>
+  <S_SALESPOINT_SUPPLIER id="43" status="1" supplier_type="TECHDATA" supplier_id="480297" version="0" fk_salespoint="43"/>
+  <S_SALESPOINT_SUPPLIER id="44" status="1" supplier_type="TECHDATA" supplier_id="480315" version="0" fk_salespoint="44"/>
+  <S_SALESPOINT_SUPPLIER id="45" status="1" supplier_type="TECHDATA" supplier_id="480481" version="0" fk_salespoint="45"/>
+  <S_SALESPOINT_SUPPLIER id="46" status="1" supplier_type="TECHDATA" supplier_id="480676" version="0" fk_salespoint="46"/>
+  <S_SALESPOINT_SUPPLIER id="47" status="1" supplier_type="TECHDATA" supplier_id="481419" version="0" fk_salespoint="47"/>
+  <S_SALESPOINT_SUPPLIER id="48" status="1" supplier_type="TECHDATA" supplier_id="481444" version="0" fk_salespoint="48"/>
+  <S_SALESPOINT_SUPPLIER id="49" status="1" supplier_type="TECHDATA" supplier_id="481446" version="0" fk_salespoint="49"/>
+  <S_SALESPOINT_SUPPLIER id="50" status="1" supplier_type="TECHDATA" supplier_id="481616" version="0" fk_salespoint="50"/>
+  <S_SALESPOINT_SUPPLIER id="51" status="1" supplier_type="TECHDATA" supplier_id="481951" version="0" fk_salespoint="51"/>
+  <S_SALESPOINT_SUPPLIER id="52" status="1" supplier_type="TECHDATA" supplier_id="482474" version="0" fk_salespoint="52"/>
+  <S_SALESPOINT_SUPPLIER id="53" status="1" supplier_type="TECHDATA" supplier_id="482503" version="0" fk_salespoint="53"/>
+  <S_SALESPOINT_SUPPLIER id="54" status="1" supplier_type="TECHDATA" supplier_id="482550" version="0" fk_salespoint="54"/>
+  <S_SALESPOINT_SUPPLIER id="55" status="1" supplier_type="TECHDATA" supplier_id="482629" version="0" fk_salespoint="55"/>
+  <S_SALESPOINT_SUPPLIER id="56" status="1" supplier_type="TECHDATA" supplier_id="482682" version="0" fk_salespoint="56"/>
+  <S_SALESPOINT_SUPPLIER id="57" status="1" supplier_type="TECHDATA" supplier_id="482749" version="0" fk_salespoint="57"/>
+  <S_SALESPOINT_SUPPLIER id="58" status="1" supplier_type="TECHDATA" supplier_id="482910" version="0" fk_salespoint="58"/>
+  <S_SALESPOINT_SUPPLIER id="59" status="1" supplier_type="TECHDATA" supplier_id="482956" version="0" fk_salespoint="59"/>
+  <S_SALESPOINT_SUPPLIER id="60" status="1" supplier_type="TECHDATA" supplier_id="483101" version="0" fk_salespoint="60"/>
+  <S_SALESPOINT_SUPPLIER id="61" status="1" supplier_type="TECHDATA" supplier_id="483195" version="0" fk_salespoint="61"/>
+  <S_SALESPOINT_SUPPLIER id="62" status="1" supplier_type="TECHDATA" supplier_id="483305" version="0" fk_salespoint="62"/>
+  <S_SALESPOINT_SUPPLIER id="63" status="1" supplier_type="TECHDATA" supplier_id="483489" version="0" fk_salespoint="63"/>
+  <S_SALESPOINT_SUPPLIER id="64" status="1" supplier_type="TECHDATA" supplier_id="483517" version="0" fk_salespoint="64"/>
+  <S_SALESPOINT_SUPPLIER id="65" status="1" supplier_type="TECHDATA" supplier_id="483769" version="0" fk_salespoint="65"/>
+  <S_SALESPOINT_SUPPLIER id="66" status="1" supplier_type="TECHDATA" supplier_id="483769" version="0" fk_salespoint="66"/>
+  <S_SALESPOINT_SUPPLIER id="67" status="1" supplier_type="TECHDATA" supplier_id="483769" version="0" fk_salespoint="67"/>
+  <S_SALESPOINT_SUPPLIER id="68" status="1" supplier_type="TECHDATA" supplier_id="483925" version="0" fk_salespoint="68"/>
+  <S_SALESPOINT_SUPPLIER id="69" status="1" supplier_type="TECHDATA" supplier_id="484007" version="0" fk_salespoint="69"/>
+  <S_SALESPOINT_SUPPLIER id="70" status="1" supplier_type="TECHDATA" supplier_id="484023" version="0" fk_salespoint="70"/>
+  <S_SALESPOINT_SUPPLIER id="71" status="1" supplier_type="TECHDATA" supplier_id="484054" version="0" fk_salespoint="71"/>
+  <S_SALESPOINT_SUPPLIER id="72" status="1" supplier_type="TECHDATA" supplier_id="484103" version="0" fk_salespoint="72"/>
+  <S_SALESPOINT_SUPPLIER id="73" status="1" supplier_type="TECHDATA" supplier_id="484104" version="0" fk_salespoint="73"/>
+  <S_SALESPOINT_SUPPLIER id="74" status="1" supplier_type="TECHDATA" supplier_id="484669" version="0" fk_salespoint="74"/>
+  <S_SALESPOINT_SUPPLIER id="75" status="1" supplier_type="TECHDATA" supplier_id="485043" version="0" fk_salespoint="75"/>
+  <S_SALESPOINT_SUPPLIER id="76" status="1" supplier_type="TECHDATA" supplier_id="485406" version="0" fk_salespoint="76"/>
+  <S_SALESPOINT_SUPPLIER id="77" status="1" supplier_type="TECHDATA" supplier_id="485679" version="0" fk_salespoint="77"/>
+  <S_SALESPOINT_SUPPLIER id="78" status="1" supplier_type="TECHDATA" supplier_id="485856" version="0" fk_salespoint="78"/>
+  <S_SALESPOINT_SUPPLIER id="79" status="1" supplier_type="TECHDATA" supplier_id="485936" version="0" fk_salespoint="79"/>
+  <S_SALESPOINT_SUPPLIER id="80" status="1" supplier_type="TECHDATA" supplier_id="475804" version="0" fk_salespoint="80"/>
+  <S_SALESPOINT_SUPPLIER id="81" status="1" supplier_type="TECHDATA" supplier_id="486120" version="0" fk_salespoint="81"/>
+  <S_SALESPOINT_SUPPLIER id="82" status="1" supplier_type="TECHDATA" supplier_id="486126" version="0" fk_salespoint="82"/>
+  <S_SALESPOINT_SUPPLIER id="83" status="1" supplier_type="TECHDATA" supplier_id="486234" version="0" fk_salespoint="83"/>
+  <S_SALESPOINT_SUPPLIER id="84" status="1" supplier_type="TECHDATA" supplier_id="486291" version="0" fk_salespoint="84"/>
+  <S_SALESPOINT_SUPPLIER id="85" status="1" supplier_type="TECHDATA" supplier_id="486458" version="0" fk_salespoint="85"/>
+  <S_SALESPOINT_SUPPLIER id="86" status="1" supplier_type="TECHDATA" supplier_id="486935" version="0" fk_salespoint="86"/>
+  <S_SALESPOINT_SUPPLIER id="87" status="1" supplier_type="TECHDATA" supplier_id="487210" version="0" fk_salespoint="87"/>
+  <S_SALESPOINT_SUPPLIER id="88" status="1" supplier_type="TECHDATA" supplier_id="487269" version="0" fk_salespoint="88"/>
+  <S_SALESPOINT_SUPPLIER id="89" status="1" supplier_type="TECHDATA" supplier_id="487784" version="0" fk_salespoint="89"/>
+  <S_SALESPOINT_SUPPLIER id="90" status="1" supplier_type="TECHDATA" supplier_id="487910" version="0" fk_salespoint="90"/>
+  <S_SALESPOINT_SUPPLIER id="91" status="1" supplier_type="TECHDATA" supplier_id="488154" version="0" fk_salespoint="91"/>
+  <S_SALESPOINT_SUPPLIER id="92" status="1" supplier_type="TECHDATA" supplier_id="488354" version="0" fk_salespoint="92"/>
+  <S_SALESPOINT_SUPPLIER id="93" status="1" supplier_type="TECHDATA" supplier_id="488453" version="0" fk_salespoint="93"/>
+  <S_SALESPOINT_SUPPLIER id="94" status="1" supplier_type="TECHDATA" supplier_id="488766" version="0" fk_salespoint="94"/>
+  <S_SALESPOINT_SUPPLIER id="95" status="1" supplier_type="TECHDATA" supplier_id="488778" version="0" fk_salespoint="95"/>
+  <S_SALESPOINT_SUPPLIER id="96" status="1" supplier_type="TECHDATA" supplier_id="488981" version="0" fk_salespoint="96"/>
+  <S_SALESPOINT_SUPPLIER id="97" status="1" supplier_type="TECHDATA" supplier_id="489100" version="0" fk_salespoint="97"/>
+  <S_SALESPOINT_SUPPLIER id="98" status="1" supplier_type="TECHDATA" supplier_id="489396" version="0" fk_salespoint="98"/>
+  <S_SALESPOINT_SUPPLIER id="99" status="1" supplier_type="TECHDATA" supplier_id="489618" version="0" fk_salespoint="99"/>
+  <S_SALESPOINT_SUPPLIER id="100" status="1" supplier_type="TECHDATA" supplier_id="489973" version="0" fk_salespoint="100"/>
+  <S_SALESPOINT_SUPPLIER id="101" status="1" supplier_type="TECHDATA" supplier_id="490744" version="0" fk_salespoint="101"/>
+  <S_SALESPOINT_SUPPLIER id="102" status="1" supplier_type="TECHDATA" supplier_id="490900" version="0" fk_salespoint="102"/>
+  <S_SALESPOINT_SUPPLIER id="103" status="1" supplier_type="TECHDATA" supplier_id="491079" version="0" fk_salespoint="103"/>
+  <S_SALESPOINT_SUPPLIER id="104" status="1" supplier_type="TECHDATA" supplier_id="491357" version="0" fk_salespoint="104"/>
+  <S_SALESPOINT_SUPPLIER id="105" status="1" supplier_type="TECHDATA" supplier_id="491492" version="0" fk_salespoint="105"/>
+  <S_SALESPOINT_SUPPLIER id="106" status="1" supplier_type="TECHDATA" supplier_id="491518" version="0" fk_salespoint="106"/>
+  <S_SALESPOINT_SUPPLIER id="107" status="1" supplier_type="TECHDATA" supplier_id="491544" version="0" fk_salespoint="107"/>
+  <S_SALESPOINT_SUPPLIER id="108" status="1" supplier_type="TECHDATA" supplier_id="494886" version="0" fk_salespoint="108"/>
+  <S_SALESPOINT_SUPPLIER id="109" status="1" supplier_type="TECHDATA" supplier_id="496119" version="0" fk_salespoint="109"/>
+  <S_SALESPOINT_SUPPLIER id="110" status="1" supplier_type="TECHDATA" supplier_id="475890" version="0" fk_salespoint="110"/>
+  <S_SALESPOINT_SUPPLIER id="111" status="1" supplier_type="TECHDATA" supplier_id="476065" version="0" fk_salespoint="111"/>
+  <S_SALESPOINT_SUPPLIER id="112" status="1" supplier_type="TECHDATA" supplier_id="476367" version="0" fk_salespoint="112"/>
+  <S_SALESPOINT_SUPPLIER id="113" status="1" supplier_type="TECHDATA" supplier_id="510337" version="0" fk_salespoint="113"/>
+  <S_SALESPOINT_SUPPLIER id="114" status="1" supplier_type="TECHDATA" supplier_id="517001" version="0" fk_salespoint="114"/>
+  <S_SALESPOINT_SUPPLIER id="115" status="1" supplier_type="TECHDATA" supplier_id="520958" version="0" fk_salespoint="115"/>
+  <S_SALESPOINT_SUPPLIER id="116" status="1" supplier_type="TECHDATA" supplier_id="533168" version="0" fk_salespoint="116"/>
+  <S_SALESPOINT_SUPPLIER id="117" status="1" supplier_type="TECHDATA" supplier_id="534208" version="0" fk_salespoint="117"/>
+  <S_SALESPOINT_SUPPLIER id="118" status="1" supplier_type="TECHDATA" supplier_id="534293" version="0" fk_salespoint="118"/>
+  <S_SALESPOINT_SUPPLIER id="119" status="1" supplier_type="TECHDATA" supplier_id="552278" version="0" fk_salespoint="119"/>
+  <S_SALESPOINT_SUPPLIER id="120" status="1" supplier_type="TECHDATA" supplier_id="558131" version="0" fk_salespoint="120"/>
+  <S_SALESPOINT_SUPPLIER id="121" status="1" supplier_type="TECHDATA" supplier_id="558560" version="0" fk_salespoint="121"/>
+  <S_SALESPOINT_SUPPLIER id="122" status="1" supplier_type="TECHDATA" supplier_id="558690" version="0" fk_salespoint="122"/>
+  <S_SALESPOINT_SUPPLIER id="123" status="1" supplier_type="TECHDATA" supplier_id="560205" version="0" fk_salespoint="123"/>
+  <S_SALESPOINT_SUPPLIER id="124" status="1" supplier_type="TECHDATA" supplier_id="564492" version="0" fk_salespoint="124"/>
+  <S_SALESPOINT_SUPPLIER id="125" status="1" supplier_type="TECHDATA" supplier_id="564510" version="0" fk_salespoint="125"/>
+  <S_SALESPOINT_SUPPLIER id="126" status="1" supplier_type="TECHDATA" supplier_id="566432" version="0" fk_salespoint="126"/>
+  <S_SALESPOINT_SUPPLIER id="127" status="1" supplier_type="TECHDATA" supplier_id="572825" version="0" fk_salespoint="127"/>
+  <S_SALESPOINT_SUPPLIER id="128" status="1" supplier_type="TECHDATA" supplier_id="576369" version="0" fk_salespoint="128"/>
+  <S_SALESPOINT_SUPPLIER id="129" status="1" supplier_type="TECHDATA" supplier_id="583652" version="0" fk_salespoint="129"/>
+  <S_SALESPOINT_SUPPLIER id="130" status="1" supplier_type="TECHDATA" supplier_id="584638" version="0" fk_salespoint="130"/>
+  <S_SALESPOINT_SUPPLIER id="131" status="1" supplier_type="TECHDATA" supplier_id="589489" version="0" fk_salespoint="131"/>
+  <S_SALESPOINT_SUPPLIER id="132" status="1" supplier_type="TECHDATA" supplier_id="606879" version="0" fk_salespoint="132"/>
+  <S_SALESPOINT_SUPPLIER id="133" status="1" supplier_type="TECHDATA" supplier_id="608491" version="0" fk_salespoint="133"/>
+  <S_SALESPOINT_SUPPLIER id="134" status="1" supplier_type="TECHDATA" supplier_id="610985" version="0" fk_salespoint="134"/>
+  <S_SALESPOINT_SUPPLIER id="135" status="1" supplier_type="TECHDATA" supplier_id="612077" version="0" fk_salespoint="135"/>
+  <S_SALESPOINT_SUPPLIER id="136" status="1" supplier_type="TECHDATA" supplier_id="612186" version="0" fk_salespoint="136"/>
+  <S_SALESPOINT_SUPPLIER id="137" status="1" supplier_type="TECHDATA" supplier_id="620029" version="0" fk_salespoint="137"/>
+  <S_SALESPOINT_SUPPLIER id="138" status="1" supplier_type="TECHDATA" supplier_id="620087" version="0" fk_salespoint="138"/>
+  <S_SALESPOINT_SUPPLIER id="139" status="1" supplier_type="TECHDATA" supplier_id="623171" version="0" fk_salespoint="139"/>
+  <S_SALESPOINT_SUPPLIER id="140" status="1" supplier_type="TECHDATA" supplier_id="623206" version="0" fk_salespoint="140"/>
+  <S_SALESPOINT_SUPPLIER id="141" status="1" supplier_type="TECHDATA" supplier_id="623271" version="0" fk_salespoint="141"/>
+  <S_SALESPOINT_SUPPLIER id="142" status="1" supplier_type="TECHDATA" supplier_id="624663" version="0" fk_salespoint="142"/>
+  <S_SALESPOINT_SUPPLIER id="143" status="1" supplier_type="TECHDATA" supplier_id="624825" version="0" fk_salespoint="143"/>
+  <S_SALESPOINT_SUPPLIER id="200" status="1" supplier_type="INGRAM" supplier_id="gloha" version="0" fk_salespoint="1" supplier_password="526429"/>
+  <S_WEBSITE id="1" access_mode="1" hostname="127.0.0.1" name="TTBox Website" status="1" version="0" salespoint_id="1"/>
+  <S_WEBSITE id="2" access_mode="1" hostname="localhost" name="TTBox local" status="1" version="0" salespoint_id="1"/>
+  <S_WEBPAGE id="1" type="HOME" version="0" block_body_id="1" website_id="1"/>
+</dataset>

@@ -1,0 +1,33 @@
+<%@ var body: String %>
+<%@ var title: String = "Some Default Title" %>
+<%@ var head: String = "" %>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>${title}</title>
+  <link rel="Shortcut Icon" type="image/x-icon" href="http://www.csszengarden.com/favicon.ico" />	
+  <link type="text/css" href="/ttbox/css/001/main.css" rel="stylesheet">
+  ${unescape(head)}
+</head>
+<body>
+
+  
+  <div id="container">
+	  <div id="pageHeader">
+	     <h1>TTBox - ${webSite.getName}</h1>
+	     <h2>Le Site qui déchire</h2>
+	  </div>
+	  
+    ${unescape(body)}
+  </div>
+
+	<footer id="footer">
+		<a href="http://validator.w3.org/check/referer" title="Check the validity of this site&#8217;s XHTML">xhtml</a> &nbsp; 
+		<a href="http://jigsaw.w3.org/css-validator/check/referer" title="Check the validity of this site&#8217;s CSS">css</a> &nbsp; 
+		<a href="http://creativecommons.org/licenses/by-nc-sa/1.0/" title="View details of the license of this site, courtesy of Creative Commons.">cc</a> &nbsp;
+		<a href="http://mezzoblue.com/zengarden/faq/#s508" title="Read about the accessibility of this site">508</a> &nbsp;
+		<a href="http://www.mezzoblue.com/zengarden/faq/#aaa" title="Read about the accessibility of this site">aaa</a>
+	</footer>
+		
+</body>
+</html>

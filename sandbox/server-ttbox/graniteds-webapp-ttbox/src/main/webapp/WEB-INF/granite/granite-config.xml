@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE granite-config PUBLIC "-//Granite Data Services//DTD granite-config internal//EN" "http://www.graniteds.org/public/dtd/2.2.0/granite-config.dtd"><granite-config scan="true">
+
+    <class-getter type="org.granite.hibernate.HibernateClassGetter"/>
+
+
+    <!--
+    -->
+    <externalizers>
+        <externalizer type="org.granite.hibernate.HibernateExternalizer">
+            <include annotated-with="javax.persistence.Entity"/>
+            <include annotated-with="javax.persistence.MappedSuperclass"/>
+            <include annotated-with="javax.persistence.Embeddable"/>
+        </externalizer>
+        <externalizer type="org.granite.messaging.amf.io.util.externalizer.DefaultExternalizer">
+            <include annotated-with="org.granite.messaging.amf.io.util.externalizer.annotation.ExternalizedBean"/>
+        </externalizer>
+    </externalizers>
+
+
+    <security type="org.granite.spring.security.SpringSecurity3Service"/>
+
+    <tide-components>
+        <tide-component name="identity"/>
+    </tide-components>
+
+    <!--
+         <tide-component annotated-with="org.granite.messaging.service.annotations.RemoteDestination"/>
+         <tide-component annotated-with="org.granite.tide.annotations.TideEnabled"/>
+         <tide-component annotated-with="org.springframework.stereotype.Controller"/>
+
+
+         Uncomment this block if you need to set custom configuration values.
+         <gravity
+         factory="org.granite.gravity.DefaultGravityFactory"
+         channel-idle-timeout-millis="1800000"
+         long-polling-timeout-millis="20000"
+         reconnect-interval-millis="30000"
+         reconnect-max-attempts="60">
+
+         <thread-pool
+         core-pool-size="5"
+         maximum-pool-size="20"
+         keep-alive-time-millis="10000"
+         queue-capacity="2147483647" />
+
+         </gravity>
+    -->
+
+
+
+</granite-config>

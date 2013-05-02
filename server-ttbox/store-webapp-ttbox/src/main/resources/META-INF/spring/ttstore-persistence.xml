@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:context="http://www.springframework.org/schema/context" xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:aop="http://www.springframework.org/schema/aop" xmlns:util="http://www.springframework.org/schema/util"
+       xmlns:jee="http://www.springframework.org/schema/jee"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd
+                           http://www.springframework.org/schema/context
+                           http://www.springframework.org/schema/context/spring-context.xsd
+                           http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.0.xsd
+                           http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-3.0.xsd
+                           http://www.springframework.org/schema/aop
+                           http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
+                           http://www.springframework.org/schema/tx
+                           http://www.springframework.org/schema/tx/spring-tx.xsd">
+
+
+    <jee:jndi-lookup id="dataSource" jndi-name="jdbc/ttbox"/>
+
+
+    <!-- Process @PersistenceContext to inject entity manager factory http://static.springframework.org/spring/docs/2.1.x/reference/orm.html#orm-jpa-straight
+         http://static.springframework.org/spring/docs/2.1.x/api/org/springframework/orm/jpa/support/PersistenceAnnotationBeanPostProcessor.html
+         Note: this post processor is implicitly supplied by context:annotation-config
+         or context:component-scan, however, we explicitly choose not to use those
+         mechanisms as they encourge dependency lookup (versus the more flexible dependency
+         injection) -->
+    <bean
+            class="org.springframework.orm.jpa.support.PersistenceAnnotationBeanPostProcessor"/>
+
+
+    <bean id="entityManagerFactory"
+          class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean"
+          p:persistenceXmlLocation="classpath:META-INF/ttbox-persistence.xml"
+          p:persistenceUnitName="ttbox-pu" p:dataSource-ref="dataSource">
+        <property name="loadTimeWeaver">
+            <bean
+                    class="org.springframework.instrument.classloading.InstrumentationLoadTimeWeaver"/>
+        </property>
+        <property name="jpaVendorAdapter">
+            <bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter">
+                <property name="generateDdl" value="true"/>
+                <property name="database" value="POSTGRESQL"/>
+            </bean>
+        </property>
+        <property name="jpaProperties">
+            <props>
+                <prop key="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</prop>
+                <prop key="hibernate.hbm2ddl.auto">update</prop>
+                <prop key="hibernate.archive.autodetection">class</prop>
+                <prop key="hibernate.show_sql">true</prop>
+                <prop key="hibernate.format_sql">false</prop>
+                <prop key="hibernate.id.new_generator_mappings">true</prop>
+                
+                <!-- Cache -->
+                <prop key="hibernate.cache.use_second_level_cache">false</prop>
+                <prop key="hibernate.cache.use_query_cache">false</prop>
+                <prop key="hibernate.bytecode.provider">javassist</prop>
+<!--                 <prop key="hibernate.cache.region.factory_class">org.hibernate.cache.infinispan.InfinispanRegionFactory</prop> -->
+                <!-- Infinispan -->
+                <prop key="hibernate.cache.infinispan.statistics">true</prop>
+                <prop key="hibernate.cache.infinispan.cfg">/ttbox-persistence-cache-config.xml</prop>
+                <!-- Transaction -->
+                   <!-- <prop key="hibernate.transaction.factory_class">org.hibernate.transaction.CMTTransactionFactory</prop> -->
+<!--                <prop key="hibernate.transaction.factory_class">org.hibernate.transaction.JTATransactionFactory</prop> -->
+                   <!--
+                <prop key="hibernate.cache.infinispan.entity.cfg">ttbox-entity</prop>
+                <prop key="hibernate.cache.infinispan.collection.cfg">ttbox-collection</prop>
+                <prop key="hibernate.cache.infinispan.query.cfg">ttbox-collection</prop>
+                <prop key="hibernate.cache.infinispan.timestamp.cfg">ttbox-timestamp</prop>
+                <prop key="hibernate.cache.infinispan.entity.eviction.strategy">LRU</prop>
+                <prop key="hibernate.cache.infinispan.entity.eviction.wake_up_interval">2000</prop>
+                <prop key="hibernate.cache.infinispan.entity.eviction.max_entries">5000</prop>
+                <prop key="hibernate.cache.infinispan.entity.expiration.lifespan">60000</prop>
+                <prop key="hibernate.cache.infinispan.entity.expiration.max_idle">30000</prop>
+                -->
+                <!-- <prop key="hibernate.cache.infinispan.cfg">/home/infinispan/cacheprovider-configs.xml</prop> -->
+                <!-- Search -->
+<!--                 <prop key="hibernate.search.default.directory_provider">org.hibernate.search.store.FSDirectoryProvider</prop> -->
+<!--                 <prop key="hibernate.search.default.indexBase">/javadev/lucene-repository/indexes</prop> -->
+
+            </props>
+        </property>
+    </bean>
+
+    <!-- Create a transaction manager for JPA operations that exposes JPA transactions
+         to the underlying JDBC connection. http://static.springframework.org/spring/docs/2.1.x/reference/orm.html#orm-jpa-tx
+         http://static.springframework.org/spring/docs/2.1.x/api/org/springframework/orm/jpa/JpaTransactionManager.html -->
+    <bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager"
+          p:entityManagerFactory-ref="entityManagerFactory"/>
+
+
+    <!-- <bean id="transactionManager" -->
+    <!-- class="org.springframework.transaction.jta.JtaTransactionManager"/> -->
+    <!-- process @Transactional to create transaction proxies http://static.springframework.org/spring/docs/2.1.x/reference/transaction.html#transaction-declarative-annotations -->
+    <tx:annotation-driven transaction-manager="transactionManager"
+                          proxy-target-class="false"/>
+
+    <!-- enables interpretation of the @Configurable annotation for domain object
+         dependency injection <aop:spring-configured/> -->
+
+
+</beans>

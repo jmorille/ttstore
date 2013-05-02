@@ -1,0 +1,331 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>com.j3.ttbox</groupId>
+	<artifactId>server-ttbox</artifactId>
+	<version>1.0-SNAPSHOT</version>
+
+	<packaging>pom</packaging>
+
+	<name>TTBox Server - Parent</name>
+
+	<!-- <module>blazeds-webapp-ttbox</module> -->
+	<modules>
+		<module>service-ttbox</module>
+		<module>graniteds-webapp-ttbox</module>
+		<module>springmvc-webapp-ttbox</module>
+	</modules>
+
+
+
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<sourceEncoding>UTF-8</sourceEncoding>
+		<compileSource>1.6</compileSource>
+
+
+		<junit.version>4.8.2</junit.version>
+		<dbunit.version>2.4.8</dbunit.version>
+		<hsqldb.version>1.8.0.10</hsqldb.version>
+		<gmaven.version>1.3</gmaven.version>
+		<spock.version>0.5-groovy-1.7</spock.version> <!-- 0.4-groovy-1.7, 0.5-groovy-1.8-SNAPSHOT -->
+		<groovy.version>1.8</groovy.version>
+
+		<spring.version>3.0.5.RELEASE</spring.version>
+		<spring.security.version>3.0.5.RELEASE</spring.security.version> <!-- 3.0.5.RELEASE, 3.1.0.M1 -->
+		<spring-batch.version>2.1.8.RELEASE</spring-batch.version> <!-- -->
+
+		<slf4j.version>1.6.1</slf4j.version>
+		<logback.version>0.9.28</logback.version>
+
+		<version.flexmojo>3.7.1</version.flexmojo>
+
+		<hibernate-search.version>3.4.0.CR2</hibernate-search.version> <!-- 3.2.1.Final -->
+		<hibernate.version>3.6.4.Final</hibernate.version> <!-- 3.5.6-Final , 3.6.0.Final -->
+		<!-- 3.5.6-Final 
+		<hibernate-annotations.version>3.5.6-Final</hibernate-annotations.version>
+		-->
+		<hibernate-jpa-2.0-api.version>1.0.0.Final</hibernate-jpa-2.0-api.version>
+		<hibernate.validator.version>4.1.0.Final</hibernate.validator.version> <!-- -->
+		<javassist.version>3.12.1.GA</javassist.version>
+
+		<ehcache.version>2.2.0</ehcache.version>
+		<infinispan.version>5.0.0.CR1</infinispan.version>  <!-- 4.2.1.FINAL, 5.0.0.BETA1 -->
+		<commons-fileupload.version>1.2.2</commons-fileupload.version>
+		<commons-lang.version>2.5</commons-lang.version>
+		<commons-dbcp.version>1.4</commons-dbcp.version>
+
+		<jetty.version>6.1.25</jetty.version>  <!-- 6.1.25, 7.2.1.v20101111 -->
+		<jetty7.version>7.2.1.v20101111</jetty7.version>  <!-- 6.1.25, 7.2.1.v20101111 -->
+		<postgresql.version>9.0-801.jdbc4</postgresql.version>
+		<mysql.version>5.1.13</mysql.version>
+		<dbunit-maven-plugin.verion>1.0-beta-3</dbunit-maven-plugin.verion>
+
+		<!--Flex -->
+		<flex.sdk.version>4.1.0.16076</flex.sdk.version>
+		<player.version>10</player.version>
+		<flexmojos.version>3.7.1</flexmojos.version>
+		<graniteds.version>2.2.0.SP2</graniteds.version> <!-- 2.2.0.RC2, 2.2.0.trunk -->
+
+
+		<!-- JSF -->
+		<myfaces.version>2.0.2</myfaces.version>
+		<primefaces.version>2.2.M1</primefaces.version> <!-- 2.1, -->
+	</properties>
+
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-core</artifactId>
+				<version>${spring.version}</version>
+				<exclusions>
+					<exclusion>
+						<artifactId>commons-logging</artifactId>
+						<groupId>commons-logging</groupId>
+					</exclusion>
+				</exclusions>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-aop</artifactId>
+				<version>${spring.version}</version>
+				<exclusions>
+					<exclusion>
+						<artifactId>commons-logging</artifactId>
+						<groupId>commons-logging</groupId>
+					</exclusion>
+				</exclusions>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-context</artifactId>
+				<version>${spring.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-orm</artifactId>
+				<version>${spring.version}</version>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
+	<repositories>
+		<!-- <repository> <id>sonatype</id> <url>http://repository.sonatype.org/content/groups/flexgroup</url> <releases> <enabled>true</enabled> 
+			</releases> <snapshots> <enabled>false</enabled> <updatePolicy>never</updatePolicy> </snapshots> </repository> <repository> 
+			<id>java.net</id> <name>GlassFish Maven Repository</name> <url>http://download.java.net/maven/glassfish</url> </repository> -->
+		<repository>
+			<id>jboss-public-repository-group</id>
+			<name>JBoss Public Maven Repository Group</name>
+			<url>https://repository.jboss.org/nexus/content/groups/public</url>
+			<layout>default</layout>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+			<snapshots>
+				<enabled>false</enabled>
+				<updatePolicy>never</updatePolicy>
+			</snapshots>
+		</repository>
+
+<!-- 		<repository> -->
+<!-- 			<id>prime-repo</id> -->
+<!-- 			<name>Prime Technology Maven Repository</name> -->
+<!-- 			<url>http://repository.prime.com.tr</url> -->
+<!-- 			<layout>default</layout> -->
+<!-- 		</repository> -->
+
+		<!-- Spock Repository -->
+		<repository>
+			<id>spock-snapshots</id>
+			<url>http://m2repo.spockframework.org/snapshots</url>
+			<releases>
+				<enabled>false</enabled>
+			</releases>
+		</repository>
+
+		<!-- TO Browse https://s3browse.springsource.com/browse/maven.springframework.org/ -->
+		<repository>
+			<id>spring-releases</id>
+			<name>Spring Maven RELEASE Repository</name>
+			<url>http://s3.amazonaws.com/maven.springframework.org/release</url>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+			<snapshots>
+				<enabled>false</enabled>
+				<updatePolicy>never</updatePolicy>
+			</snapshots>
+		</repository>
+		<repository>
+			<id>spring-external</id>
+			<name>Spring Maven External Repository</name>
+			<url>http://s3.amazonaws.com/maven.springframework.org/external</url>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+			<snapshots>
+				<enabled>false</enabled>
+				<updatePolicy>never</updatePolicy>
+			</snapshots>
+		</repository>
+		<!-- http://s3browse.com/explore/maven.springframework.org/milestone -->
+		<repository>
+			<id>spring-milestone</id>
+			<name>Spring Portfolio Milestone Repository</name>
+			<url>http://s3.amazonaws.com/maven.springframework.org/milestone</url>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+			<snapshots>
+				<enabled>false</enabled>
+				<updatePolicy>never</updatePolicy>
+			</snapshots>
+		</repository>
+		<repository>
+			<id>spring-milestone-maven</id>
+			<name>Spring Portfolio Milestone Repository</name>
+			<url>http://maven.springframework.org/milestone</url>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+			<snapshots>
+				<enabled>false</enabled>
+				<updatePolicy>never</updatePolicy>
+			</snapshots>
+		</repository>
+		<!-- Octo Repo -->
+		<repository>
+			<id>Octo Technology Nexus</id>
+			<url>http://forge.octo.com/nexus/content/groups/public</url>
+		</repository>
+				
+		<!-- Scala -->
+		<repository>
+			<id>fusesource.m2</id>
+			<name>FuseSource Public Repository</name>
+			<url>http://repo.fusesource.com/nexus/content/repositories/public</url>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+		</repository>
+
+	</repositories>
+
+	<pluginRepositories>
+	
+		<pluginRepository>
+			<id>jboss-public-repository-group</id>
+			<name>JBoss Public Maven Repository Group</name>
+			<url>https://repository.jboss.org/nexus/content/groups/public</url> 
+		</pluginRepository>	
+		<pluginRepository>
+			<id>spock-snapshots</id>
+			<url>http://m2repo.spockframework.org/snapshots</url>
+			<releases>
+				<enabled>false</enabled>
+			</releases>
+		</pluginRepository>
+		<pluginRepository>
+			<id>maven2-repository.dev.java.net</id>
+			<name>Java.net Repository for Maven</name>
+			<url>http://download.java.net/maven/2/</url>
+			<layout>default</layout>
+		</pluginRepository>
+		<pluginRepository>
+			<id>maven-annotation-plugin</id>
+			<url>http://maven-annotation-plugin.googlecode.com/svn/trunk/mavenrepo</url>
+			<releases>
+				<enabled>false</enabled>
+			</releases>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+		</pluginRepository>
+
+	</pluginRepositories>
+
+	<build>
+
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-surefire-plugin</artifactId>
+					<version>2.7.1</version>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+
+		<plugins>
+			<!-- <plugin> <groupId>org.codehaus.gmaven</groupId> <artifactId>gmaven-plugin</artifactId> <version>${gmaven.version}</version> 
+				<configuration> <providerSelection>${groovy.version}</providerSelection> </configuration> <executions> <execution> <goals> 
+				<goal>testCompile</goal> </goals> </execution> </executions> </plugin> <plugin> <groupId>org.spockframework</groupId> <artifactId>spock-maven</artifactId> 
+				<version>${spock.version}</version> <executions> <execution> <goals> <goal>find-specs</goal> </goals> </execution> </executions> 
+				</plugin> -->
+
+			<plugin>
+				<artifactId>maven-eclipse-plugin</artifactId>
+				<version>2.7</version>
+				<configuration>
+					<downloadSources>true</downloadSources>
+					<downloadJavadocs>false</downloadJavadocs>
+					<wtpversion>2.0</wtpversion>
+					<additionalProjectnatures>
+						<projectnature>org.eclipse.jdt.groovy.core.groovyNature</projectnature>
+						<projectnature>org.springframework.ide.eclipse.core.springnature</projectnature>
+					</additionalProjectnatures>
+				</configuration>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>2.3.2</version>
+				<configuration>
+					<source>${compileSource}</source>
+					<target>${compileSource}</target>
+					<encoding>${project.build.sourceEncoding}</encoding>
+				</configuration>
+			</plugin>
+
+		</plugins>
+	</build>
+
+	<profiles>
+
+
+		<profile>
+			<id>version</id>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.codehaus.mojo</groupId>
+						<artifactId>versions-maven-plugin</artifactId>
+						<version>1.2</version>
+						<executions>
+							<execution>
+								<phase>install</phase>
+								<configuration>
+									<comparisonMethod>mercury</comparisonMethod>
+								</configuration>
+								<goals>
+									<goal>display-dependency-updates</goal>
+									<goal>display-plugin-updates</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+	</profiles>
+
+
+</project>

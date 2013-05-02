@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Configure PUBLIC "-//Mort Bay Consulting//DTD Configure//EN" "http://jetty.mortbay.org/configure.dtd"> <!--
+     http://docs.codehaus.org/display/JETTY/JNDI
+-->
+<Configure class="org.mortbay.jetty.webapp.WebAppContext">
+    <Set name="contextPath">/ttbox</Set>
+
+    <New id="userTxImpl"
+         class="com.atomikos.icatch.jta.UserTransactionImp"/>
+
+    <New id="tx"
+         class="org.mortbay.jetty.plus.naming.Transaction">
+        <Arg>
+            <Ref id="userTxImpl"/>
+        </Arg>
+    </New>
+
+    <!--    <New id="ttboxDS"-->
+    <!--         class="org.mortbay.jetty.plus.naming.Resource">-->
+    <!--        <Arg>jdbc/ttbox</Arg>-->
+    <!--        <Arg>-->
+    <!--            <New class="org.apache.commons.dbcp.BasicDataSource">-->
+    <!--                <Set name="Url">jdbc:postgresql://localhost:5432/postgres</Set>-->
+    <!--                <Set name="DriverClassName">org.postgresql.Driver</Set>-->
+    <!--                <Set name="Username">ttbox</Set>-->
+    <!--                <Set name="Password">ttbox</Set>-->
+    <!--                <Set name="MaxActive">30</Set>-->
+    <!--                <Set name="MaxIdle">10</Set>-->
+    <!--                <Set name="MinIdle">2</Set>-->
+    <!--                <Set name="MaxWait">5000</Set>-->
+    <!--                <Set name="MinEvictableIdleTimeMillis">25000</Set>-->
+    <!--                <Set name="TimeBetweenEvictionRunsMillis">30000</Set>-->
+    <!--            </New>-->
+    <!---->
+    <!--        </Arg>-->
+    <!--    </New>-->
+
+    <New id="ttboxDS"
+         class="org.mortbay.jetty.plus.naming.Resource">
+        <Arg>jdbc/ttbox</Arg>
+        <Arg>
+            <New class="com.atomikos.jdbc.AtomikosDataSourceBean">
+                <Set name="minPoolSize">2</Set>
+                <Set name="maxPoolSize">50</Set>
+                <Set name="xaDataSourceClassName">org.postgresql.xa.PGXADataSource</Set>
+                <Set name="UniqueResourceName">ttboxDS</Set>
+                <Get name="xaProperties">
+                    <Call name="setProperty">
+                        <Arg>ServerName</Arg>
+                        <Arg>localhost</Arg>
+                    </Call>
+                    <Call name="setProperty">
+                        <Arg>PortNumber</Arg>
+                        <Arg>5432</Arg>
+                    </Call>
+                    <Call name="setProperty">
+                        <Arg>DatabaseName</Arg>
+                        <Arg>postgres</Arg>
+                    </Call>
+                    <Call name="setProperty">
+                        <Arg>user</Arg>
+                        <Arg>ttbox</Arg>
+                    </Call>
+                    <Call name="setProperty">
+                        <Arg>password</Arg>
+                        <Arg>ttbox</Arg>
+                    </Call>
+                </Get>
+            </New>
+        </Arg>
+    </New>
+
+
+</Configure>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <contextName>ttbox</contextName>
+    <jmxConfigurator/>
+
+    <appender name="STDOUT"
+              class="ch.qos.logback.core.ConsoleAppender">
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <pattern>%date %-5level %logger{35} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+
+    <logger name="org.springframework">
+        <level value="INFO"/>
+    </logger>
+
+    <logger name="org">
+        <level value="INFO"/>
+    </logger>
+
+    <logger name="org.granite">
+        <level value="INFO"/>
+    </logger>
+    <logger name="org.granite.messaging.webapp.AMFMessageServlet">
+        <level value="DEBUG"/>
+    </logger>
+
+
+    <logger name="org.granite.messaging.amf.io.AMF3Serialiser">
+        <level value="INFO"/>
+    </logger>
+
+    <root>
+        <level value="DEBUG"/>
+        <appender-ref ref="STDOUT"/>
+        <!--appender-ref ref="FILE" /-->
+    </root>
+</configuration>

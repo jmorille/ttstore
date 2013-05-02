@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="ICECAT-interface">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="SupplierMappings" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="SupplierMapping">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="Symbol" maxOccurs="unbounded" />
+      </xs:sequence>
+      <xs:attribute name="supplier_id" type="xs:int" use="required" />
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="SupplierMappings">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="SupplierMapping" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+      <xs:attribute name="Generated" type="xs:string" use="optional" />
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="Symbol">
+    <xs:complexType mixed="true" />
+  </xs:element>
+
+</xs:schema>

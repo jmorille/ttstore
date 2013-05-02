@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Panel xmlns:fx="http://ns.adobe.com/mxml/2009"
+         xmlns:s="library://ns.adobe.com/flex/spark"
+         xmlns:mx="library://ns.adobe.com/flex/mx"
+         width="294"
+         height="178"
+         creationComplete="{init()}">
+    <s:layout>
+        <s:VerticalLayout/>
+    </s:layout>
+
+    <fx:Metadata>
+		[Name]
+	</fx:Metadata>
+
+
+    <fx:Script>
+        <![CDATA[
+            import mx.events.EffectEvent;
+
+            import org.granite.tide.events.TideFaultEvent;
+            import org.granite.tide.events.TideResultEvent;
+            import org.granite.tide.spring.Identity;
+
+
+           
+            [In]  [Bindable]
+            public var identity:Identity;
+
+            [Bindable]
+            public var message:String=null;
+
+
+
+            private function init():void
+            {
+                focusManager.setFocus(username);
+            }
+
+            private function tryLogin(username:String, password:String):void
+            {
+                identity.login(username, password, loginResult, loginFault);
+            }
+
+            private function loginResult(event:TideResultEvent):void
+            {
+               message="";
+			   password.text="";
+			   focusManager.setFocus(password);
+            }
+
+            private function loginFault(event:TideFaultEvent):void
+            {
+                message=event.fault.faultString;
+				//message=event.fault.faultCode; // Server.Security.InvalidCredentials / Client.Error.MessageSend 
+                shake.play();
+            }
+
+            private function resetButtonEvent():void
+            {
+                shake.addEventListener(EffectEvent.EFFECT_END, clearUsernamePassword);
+                shake.play();
+            }
+
+            private function clearPassword(event:EffectEvent):void
+            {
+                password.text=null;
+                focusManager.setFocus(password);
+            }
+
+            public function clearUsernamePassword(event:EffectEvent):void
+            {
+                cleanUsernamePassword();
+                focusManager.setFocus(username);
+            }
+
+            [Observer("org.granite.tide.login")]
+            public function cleanUsernamePassword():void
+            {
+                message="";
+                username.text="";
+                password.text="";
+				focusManager.setFocus(username);
+				trace("LoginPanel : Clean username and password Form");
+            }
+        ]]>
+    </fx:Script>
+
+    <fx:Declarations>
+        <!-- Placer ici les éléments non visuels (services et objets de valeur, par exemple). -->
+        <s:Sequence id="shake"
+                    target="{this}"
+                    duration="100"
+					effectEnd="{clearPassword(event)}"
+                    repeatCount="3">
+            <mx:Move xBy="20"/>
+            <mx:Move xBy="-20"/>
+        </s:Sequence>
+    </fx:Declarations>
+
+    <mx:Text text="{message}"
+             width="100%"
+             textAlign="center"/>
+
+    <mx:Form id="loginForm">
+        <mx:FormItem label="login">
+            <s:TextInput id="username"
+                         enter="{focusManager.setFocus(password);}"/>
+        </mx:FormItem>
+        <mx:FormItem label="password">
+            <s:TextInput id="password"
+                         displayAsPassword="true"
+                         enter="tryLogin(username.text, password.text);"/>
+        </mx:FormItem>
+        <mx:HBox width="100%" horizontalAlign="center">
+
+            <s:Button id="loginButton"
+                      label="Login"
+                      click="{tryLogin(username.text, password.text);}"/>
+            <s:Button id="resetButton"
+                      label="Reset"
+                      click="{resetButtonEvent();}"/>
+        </mx:HBox>
+    </mx:Form>
+
+</s:Panel>

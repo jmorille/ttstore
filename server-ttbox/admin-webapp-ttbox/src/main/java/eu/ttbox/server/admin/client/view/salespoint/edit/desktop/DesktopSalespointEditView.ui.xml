@@ -1,0 +1,16 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder" xmlns:g="urn:import:com.google.gwt.user.client.ui"  
+ xmlns:d="urn:import:eu.ttbox.server.admin.client.view.salespoint.edit.desktop">
+
+  <ui:style>
+    .important {
+    	font-weight: bold;
+    }
+  </ui:style>
+  <g:HTMLPanel>
+    Edit salespoint,
+    <d:SalespointEditor ui:field="editor" />
+    <g:Button styleName="{style.important}" ui:field="buttonSave" text="Save" />
+    <g:Button styleName="{style.important}" ui:field="buttonCancel" text="Cancel" />
+  </g:HTMLPanel>
+</ui:UiBinder> 

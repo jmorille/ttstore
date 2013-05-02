@@ -1,0 +1,45 @@
+<configuration>
+
+  <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+    <layout class="ch.qos.logback.classic.PatternLayout">
+      <Pattern>%-30(%d [%thread]) %-5level %logger [%line] - %msg
+        %xEx{3}%n</Pattern>
+    </layout>
+  </appender>
+  
+  
+
+  <logger name="eu.ttbox.store.web.filter">
+    <level value="DEBUG" />
+  </logger>
+
+  <logger name="org.fusesource.scalate">
+    <level value="DEBUG" />
+  </logger>
+
+  <logger name="org">
+    <level value="WARN" />
+  </logger>
+
+  <logger name="org.springframework">
+    <level value="WARN" />
+  </logger>
+
+  <logger name="org.springframework.orm">
+    <level value="WARN" />
+  </logger>
+
+  <logger name="org.springframework.transaction">
+    <level value="WARN" />
+  </logger>
+
+  <logger name="org.hibernate">
+    <level value="WARN" />
+  </logger>
+
+  <root>
+    <level value="DEBUG" />
+    <appender-ref ref="CONSOLE" />
+  </root>
+
+</configuration>

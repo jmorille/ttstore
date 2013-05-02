@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jxb:bindings version="2.0" xmlns:jxb="http://java.sun.com/xml/ns/jaxb" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  xmlns:xjc="http://java.sun.com/xml/ns/jaxb/xjc" xmlns:annox="http://annox.dev.java.net" jxb:extensionBindingPrefixes="xjc">
+
+
+  <jxb:bindings>
+
+    <jxb:globalBindings fixedAttributeAsConstantProperty="true" generateIsSetMethod="true"
+      choiceContentProperty="true" enableJavaNamingConventions="true" underscoreBinding="asWordSeparator">
+      <xjc:simple />
+      <xjc:serializable uid="210125" />
+      <jxb:javaType name="java.lang.Integer" xmlType="xs:integer" hasNsContext="true" />
+      <jxb:javaType name="java.lang.String" xmlType="xs:string"
+        parseMethod="eu.ttbox.connector.icecat.StringEmptyToNullConverter.parseString" printMethod="eu.ttbox.connector.icecat.StringEmptyToNullConverter.printString" />
+    </jxb:globalBindings>
+
+
+  </jxb:bindings>
+</jxb:bindings>

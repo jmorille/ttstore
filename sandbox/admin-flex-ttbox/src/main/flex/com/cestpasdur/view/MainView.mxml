@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:VBox xmlns:mx="http://www.adobe.com/2006/mxml"
+		 xmlns:flexlib="http://code.google.com/p/flexlib/" xmlns:parsley="http://www.spicefactory.org/parsley" xmlns:s="library://ns.adobe.com/flex/spark">
+	
+	<parsley:Configure/>
+	
+	<s:Label text="hello world"/>
+	
+</mx:VBox>

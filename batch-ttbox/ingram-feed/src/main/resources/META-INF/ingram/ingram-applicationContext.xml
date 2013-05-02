@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context" xmlns:util="http://www.springframework.org/schema/util"
+  xmlns:p="http://www.springframework.org/schema/p"
+  xsi:schemaLocation="
+  http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd
+    http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+  <context:annotation-config />
+
+  <context:component-scan base-package="eu.ttbox.batch.ingram" />
+
+  <import resource="classpath:/META-INF/ingram/ingram-ttbox-domain.spring.xml" />
+
+  <!-- Connecteur -->
+  <import resource="classpath:/META-INF/ingram/ingram-ressourceAdaptator.spring.xml" />
+  <import resource="classpath:/META-INF/ingram/icecat-connector-es.spring.xml" />
+
+  <bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+    <property name="ignoreUnresolvablePlaceholders" value="true" />
+    <property name="locations">
+      <list>
+        <value>classpath:/ingram-feed.properties</value>
+      </list>
+    </property>
+  </bean>
+
+  <bean id="folderPartitionner" class="eu.ttbox.batch.core.fs.partitionner.NowDatePartitionner" p:partitionPattern="/ingram-{1,date,yyyy-MM-dd}/{0}" />
+
+  <bean id="aliasFolderPartitionner" class="eu.ttbox.batch.core.fs.partitionner.AliasFilenamePartitionner">
+    <property name="suffixAliases">
+      <util:list id="suffixAliases">
+        <value>-sorted</value>
+        <value>-sort</value>
+        <value>-bad</value>
+      </util:list>
+    </property>
+    <property name="extAliases">
+      <util:list id="extAliases">
+        <value>.txt</value>
+        <value>.txt.gz</value>
+      </util:list>
+    </property>
+  </bean>
+
+
+  <!-- Download -->
+  <bean id="workingLocalFolderIngram" class="eu.ttbox.batch.core.fs.WorkingLocalFileSystemAccessor" 
+  p:compressionGzip="false" p:cacheFolder="${ingram.connector.cacheFolder}" p:filePartitionner-ref="folderPartitionner" />
+
+  <bean id="ingramProxyCacheFtpConnector" class="eu.ttbox.batch.ingram.dao.IngramCacheDownloadConnector" 
+    p:workingLocalFolder-ref="workingLocalFolderIngram" p:aliasFilenamePartitionner-ref="aliasFolderPartitionner">
+    <property name="ftpConnector">
+      <bean class="eu.ttbox.batch.core.download.ftp.FtpConnector" p:hostname="${ingram.ftp.host}" p:fileTypeBinary="true" />
+    </property>
+  </bean>
+
+
+
+
+
+
+</beans>

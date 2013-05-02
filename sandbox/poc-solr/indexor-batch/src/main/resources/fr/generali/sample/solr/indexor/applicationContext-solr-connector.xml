@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:context="http://www.springframework.org/schema/context" xmlns:tx="http://www.springframework.org/schema/tx"
+  xmlns:util="http://www.springframework.org/schema/util" xmlns:jee="http://www.springframework.org/schema/jee" xmlns:p="http://www.springframework.org/schema/p"
+  xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd
+                           http://www.springframework.org/schema/context
+                           http://www.springframework.org/schema/context/spring-context.xsd
+                           http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.0.xsd
+                           http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-3.0.xsd
+                           http://www.springframework.org/schema/tx
+                           http://www.springframework.org/schema/tx/spring-tx.xsd">
+ 
+
+ 
+  <bean id="solrHttpClient" class="org.apache.commons.httpclient.HttpClient">
+    <property name="httpConnectionManager">
+      <bean class="org.apache.commons.httpclient.MultiThreadedHttpConnectionManager">
+        <property name="maxConnectionsPerHost" value="10" />
+        <property name="maxTotalConnections" value="10" />
+      </bean>
+    </property>
+  </bean>
+
+  <bean id="solrServer" class="org.apache.solr.client.solrj.impl.CommonsHttpSolrServer" 
+  p:soTimeout="10000" p:allowCompression="true">
+    <constructor-arg value="http://localhost:8983/solr" />
+
+  </bean>
+<!-- 
+    <constructor-arg ref="solrHttpClient" />
+ -->
+</beans>
+        

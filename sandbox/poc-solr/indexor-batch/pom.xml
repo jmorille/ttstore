@@ -1,0 +1,169 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>fr.generali.ccj.sample.solr</groupId>
+        <artifactId>solr-parent</artifactId>
+        <version>1.1.0-RC3-SNAPSHOT</version>
+    </parent>
+
+    <groupId>fr.generali.ccj.sample.solr</groupId>
+    <artifactId>indexor-batch</artifactId>
+    <version>1.1.0-RC3-SNAPSHOT</version>
+    <name>CCJ Sample Solr Indexor</name>
+
+
+    <dependencies>
+
+        <dependency>
+            <groupId>org.apache.solr</groupId>
+            <artifactId>solr-solrj</artifactId>
+            <version>1.4.1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>1.4</version>
+        </dependency>
+
+        <!-- Logs -->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>${slf4j.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>jcl-over-slf4j</artifactId>
+            <version>${slf4j.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>log4j-over-slf4j</artifactId>
+            <version>${slf4j.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+            <version>${logback.version}</version>
+        </dependency>
+
+
+
+        <!-- Pool -->
+        <dependency>
+            <groupId>org.apache.tomcat</groupId>
+            <artifactId>jdbc-pool</artifactId>
+            <version>1.0.9.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.googlecode.tomcat-slf4j</groupId>
+            <artifactId>tomcat-juli-slf4j</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+        <!-- Database -->
+        <dependency>
+            <groupId>postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <version>${postgresql.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>${mysql.version}</version>
+        </dependency>
+        <!-- <dependency> -->
+        <!-- <groupId>com.oracle</groupId> -->
+        <!-- <artifactId>ojdbc6</artifactId> -->
+        <!-- <version>11.2.0.2.0</version> -->
+        <!-- </dependency> -->
+
+
+        <!-- START SNIPPET: dependance-socle-spring-batch -->
+        <dependency>
+            <groupId>org.springframework.batch</groupId>
+            <artifactId>spring-batch-core</artifactId>
+            <version>2.1.5.RELEASE</version>
+        </dependency>
+        <!-- END SNIPPET: dependance-socle-spring-batch -->
+
+        <!-- Spring -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-core</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-beans</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-aop</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-tx</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+
+
+    </dependencies>
+    <!-- START SNIPPET : generali-batchpackager-plugin -->
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <addClasspath>true</addClasspath>
+                        </manifest>
+                        <manifestEntries>
+                            <Main-Class>org.springframework.batch.core.launch.support.CommandLineJobRunner</Main-Class>
+                        </manifestEntries>
+                    </archive>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <profiles>
+        <profile>
+            <id>run</id>
+            <build>
+                <defaultGoal>exec:java</defaultGoal>
+                <plugins>
+                    <plugin>
+                        <groupId>org.codehaus.mojo</groupId>
+                        <artifactId>exec-maven-plugin</artifactId>
+                        <version>1.2</version>
+                        <configuration>
+                            <mainClass>org.springframework.batch.core.launch.support.CommandLineJobRunner</mainClass>
+                            <commandlineArgs>
+                            jobs/job-solr.xml jdbcToSolrJob
+                            </commandlineArgs>
+                            <executableDependency>
+                                <groupId>fr.generali.ccj.sample.solr</groupId>
+                                <artifactId>indexor-batch</artifactId>
+                            </executableDependency>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+
+    </profiles>
+</project>

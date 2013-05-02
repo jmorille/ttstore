@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<services-config>
+
+    <services>
+        <default-channels>
+            <channel ref="graniteamf" />
+        </default-channels>
+        <service id="granite-service" class="flex.messaging.services.RemotingService" messageTypes="flex.messaging.messages.RemotingMessage">
+            <!--
+                 ! Use "tideSpringFactory" and "graniteamf" for "spring" destination (see ! below). The destination must be
+                 "spring" when using Tide with default ! configuration. !
+            -->
+            <destination id="spring">
+                <channels>
+                    <channel ref="graniteamf" />
+                </channels>
+                <properties>
+                    <factory>tide-spring-factory</factory>
+                    <entityManagerFactoryBeanName>entityManagerFactory</entityManagerFactoryBeanName>
+                    <validator-class-name>org.granite.tide.validation.BeanValidation</validator-class-name>
+                </properties>
+                <security>
+                    <security-constraint>
+                        <auth-method>authenticationManager</auth-method>
+                        <roles>
+                            <role>ROLE_USER</role>
+                            <role>ROLE_ADMIN</role>
+                        </roles>
+                    </security-constraint>
+                </security>
+            </destination>
+            <!--
+                 <destination id="granite"> <channels> <channel ref="graniteamf"/> </channels> <properties>
+                 <factory>springFactory</factory>
+                 <entityManagerFactoryBeanName>entityManagerFactory</entityManagerFactoryBeanName> </properties> </destination> !
+            -->
+        </service>
+        <!--  -->
+        <service id="messaging-service" class="flex.messaging.services.MessagingService" messageTypes="flex.messaging.messages.AsyncMessage">
+            <adapters>
+                <adapter-definition id="simple" class="org.granite.gravity.adapters.SimpleServiceAdapter"
+                                    default="true" />
+            </adapters>
+            <destination id="gravity">
+                <channels>
+                    <channel ref="gravityamf" />
+                </channels>
+            </destination>  
+            <destination id="dataTopic">
+                <channels>
+                    <channel ref="gravityamf" />
+                </channels>
+                <properties>
+                    <no-local>true</no-local>
+                    <session-selector>true</session-selector>
+                    <factory>tide-spring-factory</factory>
+                    <entityManagerFactoryBeanName>entityManagerFactory</entityManagerFactoryBeanName>
+                    <validatorClassName>org.granite.tide.validation.BeanValidation</validatorClassName>
+                </properties>
+                <adapter ref="simple" />
+                <security>
+                    <security-constraint>
+                        <auth-method>authManager</auth-method>
+                        <roles>
+                            <role>ROLE_USER</role>
+                            <role>ROLE_ADMIN</role>
+                        </roles>
+                    </security-constraint>
+                </security>
+            </destination>
+
+        </service>
+
+    </services>
+
+    <!--
+         ! Declare tideSpringFactory service factory.
+         !-->
+    <factories>
+        <factory id="tide-spring-factory" class="org.granite.tide.spring.SpringServiceFactory" />
+    </factories>
+
+
+
+    <channels>
+        <channel-definition id="graniteamf" class="mx.messaging.channels.AMFChannel">
+            <endpoint url="http://{server.name}:{server.port}/{context.root}/graniteamf/amf" class="flex.messaging.endpoints.AMFEndpoint" />
+        </channel-definition>
+        <channel-definition id="gravityamf" class="org.granite.gravity.channels.GravityChannel">
+            <endpoint uri="http://{server.name}:{server.port}/{context.root}/gravityamf/amf" class="flex.messaging.endpoints.AMFEndpoint" />
+        </channel-definition>
+        <!--
+             <channel-definition id="graniteamf" class="mx.messaging.channels.SecureAMFChannel">
+             <endpoint url="https://{server.name}:{server.port}/{context.root}/graniteamf/amf" class="flex.messaging.endpoints.AMFEndpoint" />
+             </channel-definition>
+             <channel-definition id="gravityamf" class="org.granite.gravity.channels.SecureGravityChannel">
+             <endpoint uri="https://{server.name}:{server.port}/{context.root}/gravityamf/amf" class="flex.messaging.endpoints.AMFEndpoint" />
+             </channel-definition>
+        -->
+    </channels>
+
+
+
+    <!--
+         <logging> <target class="org.springframework.flex.core.CommonsLoggingTarget" level="All"> <properties>
+         <categoryPrefix>blazeds</categoryPrefix> </properties> </target> </logging>
+    -->
+    <system>
+        <redeploy>
+            <enabled>true</enabled>
+        </redeploy>
+    </system>
+
+</services-config>

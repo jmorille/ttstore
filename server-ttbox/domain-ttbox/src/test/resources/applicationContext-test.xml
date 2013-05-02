@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:aop="http://www.springframework.org/schema/aop" xmlns:context="http://www.springframework.org/schema/context"
+  xmlns:tx="http://www.springframework.org/schema/tx" xmlns:util="http://www.springframework.org/schema/util" xmlns:jee="http://www.springframework.org/schema/jee"
+  xmlns:p="http://www.springframework.org/schema/p"
+  xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd
+                           http://www.springframework.org/schema/context
+                           http://www.springframework.org/schema/context/spring-context.xsd
+                           http://www.springframework.org/schema/aop
+                           http://www.springframework.org/schema/context/spring-aop.xsd
+                           http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd
+                           http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee.xsd
+                           http://www.springframework.org/schema/tx
+                           http://www.springframework.org/schema/tx/spring-tx.xsd">
+
+
+  
+  <bean id="dataSource" destroy-method="close" class="org.apache.tomcat.jdbc.pool.DataSource" p:driverClassName="org.h2.Driver"
+    p:url="jdbc:h2:mem:test_mem" p:username="sa" p:password="" p:maxWait="100" />
+
+  <bean class="org.springframework.orm.jpa.support.PersistenceAnnotationBeanPostProcessor" />
+
+
+  <bean id="jpaInterceptor" class="org.springframework.orm.jpa.JpaInterceptor">
+    <property name="entityManagerFactory" ref="entityManagerFactory" />
+  </bean>
+
+  <bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean"
+    p:persistenceXmlLocation="classpath:META-INF/ttbox-persistence.xml" p:persistenceUnitName="ttbox-pu"
+    p:dataSource-ref="dataSource">
+    <property name="jpaProperties">
+      <props>
+        <prop key="hibernate.dialect">org.hibernate.dialect.H2Dialect</prop>
+        <prop key="hibernate.hbm2ddl.auto">create</prop>
+        <prop key="hibernate.archive.autodetection">class</prop>
+        <prop key="hibernate.show_sql">true</prop>
+        <prop key="hibernate.format_sql">false</prop>
+        <!-- Optimize -->
+        <prop key="hibernate.id.new_generator_mappings">true</prop>
+        <prop key="hibernate.jdbc.batch_size">30</prop>
+        <prop key="hibernate.order_updates">true</prop>
+        <prop key="hibernate.jdbc.batch_versioned_data">true</prop>
+        <prop key="hibernate.jdbc.use_scrollable_resultset">true</prop>
+        <prop key="hibernate.jdbc.use_streams_for_binary">true</prop>
+        <prop key="hibernate.jdbc.use_get_generated_keys">true</prop>
+
+        <!-- Cache -->
+                    
+        <prop key="hibernate.cache.use_second_level_cache">false</prop>
+        <prop key="hibernate.cache.use_query_cache">false</prop>
+        <prop key="hibernate.cache.provider_class">org.hibernate.cache.HashtableCacheProvider</prop>
+      </props>
+    </property>
+  </bean>
+
+
+  <tx:annotation-driven proxy-target-class="true" />
+  <!-- Create a transaction manager for JPA operations that exposes JPA transactions to the underlying JDBC connection. http://static.springframework.org/spring/docs/2.1.x/reference/orm.html#orm-jpa-tx 
+    http://static.springframework.org/spring/docs/2.1.x/api/org/springframework/orm/jpa/JpaTransactionManager.html -->
+  <bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
+    <property name="entityManagerFactory" ref="entityManagerFactory" />
+  </bean>
+
+  <!-- process @Transactional to create transaction proxies http://static.springframework.org/spring/docs/2.1.x/reference/transaction.html#transaction-declarative-annotations -->
+  <tx:annotation-driven transaction-manager="transactionManager" />
+
+  <context:annotation-config />
+
+  <context:component-scan base-package="eu.ttbox" scoped-proxy="targetClass" />
+
+
+
+</beans>

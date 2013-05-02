@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Group xmlns:fx="http://ns.adobe.com/mxml/2009"
+         xmlns:s="library://ns.adobe.com/flex/spark"
+         xmlns:mx="library://ns.adobe.com/flex/mx"
+         xmlns:validation="org.granite.validation.*"
+         xmlns:product="eu.ttbox.view.admin.product.*">
+    <fx:Metadata>
+        [Name]
+    </fx:Metadata>
+
+
+    <s:layout>
+        <s:VerticalLayout/>
+    </s:layout>
+
+    <fx:Script>
+        <![CDATA[
+            import eu.ttbox.controler.core.I18nManager;
+            import eu.ttbox.event.admin.product.ProductEvent;
+            import eu.ttbox.model.product.Product;
+
+            import mx.data.utils.Managed;
+            import mx.events.FlexEvent;
+
+            [Bindable]
+            public var product:Product;
+
+            [Bindable]
+            public var msg:I18nManager=I18nManager.getInstance();
+
+
+            private function save():void {
+                dispatchEvent(new ProductEvent(ProductEvent.SAVE, product));
+            }
+
+
+            private function cancel():void {
+                Managed.resetEntity(product);
+                product=null;
+            }
+
+            public function initNewProduct():void {
+                product=new Product();
+            }
+
+            protected function inputPriceHT_creationCompleteHandler(event:FlexEvent):void {
+                inputPriceHT.incrementButton.visible=false;
+                inputPriceHT.incrementButton.includeInLayout=false;
+                inputPriceHT.decrementButton.visible=false;
+                inputPriceHT.decrementButton.includeInLayout=false
+            }
+        ]]>
+    </fx:Script>
+    <fx:Declarations>
+        <!-- Placer ici les éléments non visuels (services et objets de valeur, par exemple). -->
+
+        <validation:FormValidator id="productValidator"
+                                  form="{productEditForm}"
+                                  entity="{product}"/>
+
+        <mx:NumberValidator id="priceValidator"
+                            source="{inputPriceHT}"
+                            property="value"
+                            allowNegative="false"
+                            domain="real"/>
+    </fx:Declarations>
+
+    <s:Form id="productEditForm">
+        <s:FormItem label="{msg.name}">
+            <s:TextInput text="@{product.name}"/>
+        </s:FormItem>
+        <s:FormItem label="{msg.description}">
+            <s:TextArea text="@{product.description}"/>
+        </s:FormItem>
+        <s:FormItem label="{msg.ean}">
+            <s:TextInput text="@{product.ean}"/>
+        </s:FormItem>
+        <s:FormItem label="{msg.picture}">
+            <s:TextInput text="@{product.pictureUrl}"/>
+
+
+            <product:PictureUploader width="250"
+                                     height="250"/>
+
+
+        </s:FormItem>
+        <s:FormItem label="{msg.priceHT}">
+            <s:NumericStepper id="inputPriceHT"
+                              minimum="0"
+                              maximum="9000"
+                              width="100"
+                              value="@{product.priceHT}"
+                              creationComplete="{inputPriceHT_creationCompleteHandler(event)}"/>
+        </s:FormItem>
+
+    </s:Form>
+    <s:HGroup>
+        <s:Button label="{msg.save}"
+                  click="{save()}"/>
+        <s:Button label="{msg.cancel}"
+                  click="{cancel()}"/>
+    </s:HGroup>
+
+</s:Group>

@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Application xmlns:fx="http://ns.adobe.com/mxml/2009"
+			   xmlns:s="library://ns.adobe.com/flex/spark"
+			   xmlns:mx="library://ns.adobe.com/flex/mx"
+			   xmlns:swiz="http://swiz.swizframework.org"
+			   xmlns:view="eu.ttbox.view.*"
+			   xmlns:config="eu.ttbox.config.*" 
+			   preinitialize="preinit()"  
+			   applicationComplete="{init()}"
+			   height="800"
+			   >
+	<s:layout>
+		<s:VerticalLayout horizontalAlign="center"  verticalAlign="middle"/>
+	</s:layout>
+	
+	<fx:Script>
+		<![CDATA[
+			import eu.ttbox.config.TTBoxServiceInitialiser;
+			import eu.ttbox.controller.UserController;
+			import eu.ttbox.model.user.User;
+			
+			import mx.controls.Alert;
+			import mx.events.CloseEvent;
+			import mx.logging.Log;
+			import mx.logging.targets.TraceTarget;
+			
+			import org.granite.tide.Tide;
+			import org.granite.tide.data.Conflicts;
+			import org.granite.tide.data.DataObserver;
+			import org.granite.tide.data.OptimisticLockExceptionHandler;
+			import org.granite.tide.data.events.TideDataConflictsEvent;
+			import org.granite.tide.spring.PagedQuery;
+			import org.granite.tide.spring.Spring;
+			import org.granite.tide.validators.ValidatorExceptionHandler; 
+
+
+ 			
+			private function preinit():void {
+				Spring.getInstance().initApplication(); 
+ 			}
+
+			
+			private function init():void
+			{ 
+				var t:TraceTarget=new TraceTarget();
+				t.filters=["org.granite.*", "eu.ttbox.*"];
+				Log.addTarget(t);
+
+
+ 				var springInstance:Spring   = Spring.getInstance();
+				springInstance.addComponentWithFactory("serviceInitializer", TTBoxServiceInitialiser, {
+					contextRoot: "/ttbox",
+					protocol: "http"
+				
+				});
+
+				// Exeption handling
+				springInstance.addExceptionHandler(ValidatorExceptionHandler);
+				springInstance.addExceptionHandler(OptimisticLockExceptionHandler);
+				
+				// Conflict management
+				springInstance.getContext().addEventListener(
+					TideDataConflictsEvent.DATA_CONFLICTS, conflictsHandler);
+
+				
+				// Gravity
+				springInstance.addComponent("dataTopic", DataObserver, false, true);
+				springInstance.addEventObserver("org.granite.tide.login", "dataTopic", "subscribe");
+				springInstance.addEventObserver("org.granite.tide.logout", "dataTopic", "unsubscribe");
+
+				springInstance.addEventObserver("org.granite.tide.login", "ttboxApp", "loginSuccess");
+				springInstance.addEventObserver("org.granite.tide.logout", "ttboxApp", "logout");
+ 
+				// Pagined Search
+ 				springInstance.addComponentWithFactory("userListService", PagedQuery, 
+					{ remoteComponentName: "userService", 
+						useController: false,
+						filterClass: User,
+						elementClass: User , 
+						methodName : "findUsers",
+						maxResults: 6 }
+					, false, true, Tide.RESTRICT_YES
+				); 
+				
+				
+				// Init Service
+				springInstance.addComponent("userControler", UserController, false, true, Tide.RESTRICT_YES); 
+				
+ 			}
+			
+
+			
+			private var _conflicts:Conflicts;
+			
+			private function conflictsHandler(event:TideDataConflictsEvent):void {
+				_conflicts = event.conflicts;
+				Alert.show("Keep local state ?", "Data conflict", 
+					Alert.YES|Alert.NO, null, conflictsCloseHandler);
+			}
+			
+			private function conflictsCloseHandler(event:CloseEvent):void {
+				if (event.detail == Alert.YES)
+					_conflicts.acceptAllClient();
+				else
+					_conflicts.acceptAllServer();
+			}
+		
+		]]>
+	</fx:Script>
+
+	<fx:Declarations>
+		<!-- Placer ici les éléments non visuels (services et objets de valeur, par exemple). -->
+ 
+	</fx:Declarations>
+
+ 
+	
+	<view:TTboxApp id="ttboxApp" />
+
+<!--	<view:Chat id="chat"  width="100%" height="100%" />-->
+
+</s:Application>

@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Group xmlns:fx="http://ns.adobe.com/mxml/2009" 
+		 xmlns:s="library://ns.adobe.com/flex/spark" 
+		 xmlns:mx="library://ns.adobe.com/flex/mx" width="400" height="300" xmlns:validation="org.granite.validation.*" xmlns:validators="org.granite.tide.validators.*">
+
+	<s:layout>
+		<s:VerticalLayout />
+	</s:layout>
+	
+	<fx:Metadata>
+		[Name]
+	</fx:Metadata>
+	
+	<fx:Script>
+		<![CDATA[
+			import eu.ttbox.controller.UserController;
+			import eu.ttbox.event.UserEvent;
+			
+			import org.granite.tide.events.TideUIEvent;
+			import org.granite.tide.spring.Context;
+			import org.granite.tide.spring.Identity;
+			[Inject]
+			[Bindable]
+			public var userControler:UserController;
+			
+			[Inject]
+			[Bindable]
+			public var tideContext:Context;
+			
+			[In]
+			[Bindable]
+			public var identity:Identity;
+			
+
+ 
+			private function doSaveUser():void { 
+				if (fValidator.validateEntity()) {
+					// actually save the validated person entity...
+					 dispatchEvent(new TideUIEvent(UserEvent.SAVE_USER_REQUESTED, userControler.currentUser));
+					//userControler.saveCurrentUser();
+					//iEmail.errorString=null;
+				}
+			}
+			
+			
+			private function doCreateUser():void { 
+				if (fValidator.validateEntity()) {
+					// actually save the validated person entity...
+					dispatchEvent(new TideUIEvent(UserEvent.CREATE_USER_REQUESTED , userControler.currentUser));
+					//userControler.saveCurrentUser();
+					//iEmail.errorString=null;
+				}
+			}
+			
+			private function doResetUser():void { 
+				dispatchEvent(new TideUIEvent(UserEvent.RESET_USER_REQUESTED, userControler.currentUser));
+			}
+		]]>
+	</fx:Script>
+	
+	<fx:Declarations>
+		<!-- Placer ici les éléments non visuels (services et objets de valeur, par exemple). -->
+		
+		<validation:FormValidator id="fValidator"
+								  form="{userForm}"
+								  entity="{userControler.currentUser}"/>
+		
+		<validators:TideEntityValidator id="tideValidator"
+										entity="{userControler.currentUser}"
+										property="email"
+										listener="{iEmail}"/>
+	</fx:Declarations>	
+	
+	<mx:Form id="userForm">
+		<s:Label text="{fValidator.unhandledViolationsMessage}"/>
+ 
+		<mx:FormItem label="First Name">
+			<s:TextInput id="iFirstName"
+						 validationSubField="firstName"
+						 text="@{userControler.currentUser.firstName}"/>
+		</mx:FormItem>
+		<mx:FormItem label="Last Name">
+			<s:TextInput id="iLastName"
+						 validationSubField="lastName"
+						 text="@{userControler.currentUser.lastName}"/>
+		</mx:FormItem>
+		<mx:FormItem label="Email">
+			<s:TextInput id="iEmail"
+						 validationSubField="email"
+						 text="@{userControler.currentUser.email}"/>
+		</mx:FormItem> 
+		<mx:FormItem label="Matricule">
+			<s:TextInput id="iMatricule"
+						 validationSubField="matricule"
+						 text="@{userControler.currentUser.matricule}"/>
+		</mx:FormItem>
+		<mx:FormItem label="Password">
+			<s:TextInput id="iPassword"
+						 validationSubField="password"
+						 text="@{userControler.currentUser.password}"/>
+		</mx:FormItem>
+		
+	</mx:Form>
+	
+	
+	<mx:DataGrid dataProvider="{userControler.currentUser.groups}">
+		<mx:columns>
+			<mx:DataGridColumn headerText="id"
+							   dataField="id"/>
+			<mx:DataGridColumn headerText="name"
+							   dataField="name"/>
+			<mx:DataGridColumn headerText="version"
+							   dataField="version"/>
+		</mx:columns>
+	</mx:DataGrid>
+	
+	
+	<s:HGroup>
+		<mx:Button label="Add User"
+				   click="{doCreateUser()}" 
+				   visible="{identity.ifAllGranted('ROLE_ADMIN')}"/>
+		<mx:Button label="Save"
+				   click="{doSaveUser()}" 
+				   enabled="{tideContext.meta_dirty}"
+				   visible="{identity.ifAllGranted('ROLE_ADMIN')}"/>
+		<mx:Button label="Cancel"
+				   click="{doResetUser()}"
+				   enabled="{tideContext.meta_dirty}"/>
+		<mx:Button label="Add New User"
+				   click="{userControler.createNewUser()}"
+				   visible="{identity.ifAllGranted('ROLE_USER')}"/>
+	</s:HGroup>
+
+	
+	
+</s:Group>

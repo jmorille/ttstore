@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:c="http://java.sun.com/jstl/core"
+                xmlns:p="http://primefaces.prime.com.tr/ui"
+                template="/admin/templates/layout-macosx.xhtml">`
+
+
+    <ui:define name="content">
+        <f:loadBundle basename="eu.ttbox.admin" var="msg" />
+
+        <p:dialog header="#{admin.menuRole}" draggable="true" visible="true"
+                  widgetVar="rolePanel">
+
+            <p:panel header="Create a new rôle _ #{msg.menuRole}">
+                <h:form id="form">`
+                    <h:messages showDetail="true"/>
+                    <h:panelGrid id="paneledit" columns="3">
+                        <h:outputLabel value="Id : *" for="roleId"></h:outputLabel>
+                        <h:inputText id="roleId" value="#{roleManagedBean.currentRole.id}"
+                                     required="true" >
+                            <f:validateLength minimum="2" maximum="30" />
+                        </h:inputText>
+                        <h:message styleClass="error"  id="roleIdMessage" for="roleId" />
+
+                        <h:outputLabel value="Name : *" for="txt_roleName"></h:outputLabel>
+                        <h:inputText id="txt_roleName" required="true"
+                                     value="#{roleManagedBean.currentRole.description}" >
+                            <f:validateLength minimum="2" maximum="30" />
+                        </h:inputText>
+                        <h:message styleClass="error"  id="txt_roleNameMessage" for="txt_roleName"   />
+
+                        <p:commandButton value="Reset" type="reset" action="#{roleManagedBean.addRole}" />
+                        <p:commandButton value="Add" update="roles,paneledit"  async="true"
+                                         action="#{roleManagedBean.addRole}">
+                        </p:commandButton>
+                        <h:commandButton value="ajouter" action="#{roleManagedBean.addRole}" class="button">
+                        </h:commandButton>
+                    </h:panelGrid>
+                </h:form>
+            </p:panel>
+
+            <p:ajaxStatus style="width:16px;height:16px;">
+                <f:facet name="start">
+                    <h:graphicImage value="/images/ajaxloading.gif" />
+                </f:facet>
+
+                <f:facet name="complete">
+                    <h:outputText value="" />
+                </f:facet>
+            </p:ajaxStatus>
+
+            <p:outputPanel id="roles" >
+                <p:dataTable value="#{roleManagedBean.roles}" var="role">
+
+                    <p:column>
+                        <f:facet name="header">
+                            <h:outputText value="ID" />
+                        </f:facet>
+                        <h:outputText value="#{role.id}" />
+                    </p:column>
+
+                    <p:column>
+                        <f:facet name="header">
+                            <h:outputText value="Name" />
+                        </f:facet>
+                        <h:outputText value="#{role.description}" />
+                    </p:column>
+
+
+
+                </p:dataTable>
+            </p:outputPanel>
+
+
+        </p:dialog>
+    </ui:define>
+
+
+</ui:composition>

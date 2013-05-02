@@ -1,0 +1,22 @@
+- attributes("title") = "Welcome"
+-@ val webSite : eu.ttbox.model.ui.store.WebSite
+-@ val webPage : eu.ttbox.model.ui.store.WebPage
+-@ val blockBody : eu.ttbox.model.ui.store.fragment.AbstractBlock = webPage.getBlockBody
+-@ val blockSideLeft : eu.ttbox.model.ui.store.fragment.AbstractBlock = webPage.getBlockLeftSide
+-@ val blockSideRight : eu.ttbox.model.ui.store.fragment.AbstractBlock = webPage.getBlockRightSide
+
+-# http://www.csszengarden.com/
+-# http://www.variantes.com/PUZZLES-a-CASSE-TETE-Nouveautes-l-PUZ_NO.html
+-# http://www.w3schools.com/css/css_examples.asp
+
+-# http://www.alistapart.com/articles/previewofhtml5
+
+%header#header.header
+ %h1 Bienvenu sur  #{webSite.getName}
+
+%aside#blockLeft.blockSide
+ - view(blockSideLeft)
+%section#blockBody.blockBody
+ - view(blockBody)
+%aside#blockRight.blockSide
+ - view(blockSideRight)

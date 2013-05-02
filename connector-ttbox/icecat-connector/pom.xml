@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>eu.ttbox.connector</groupId>
+    <artifactId>connector-ttbox</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+  </parent>
+
+  <groupId>eu.ttbox.connector.icecat</groupId>
+  <artifactId>icecat-connector</artifactId>
+  <packaging>pom</packaging>
+
+  <name>[ICE] Icecat JAXB API - Reactor</name>
+
+
+
+  <modules>
+    <module>icecat-jaxb-api</module>
+    <module>icecat-files-index-jaxb-api</module>
+    <module>icecat-product-mapping-jaxb-api</module>
+    <module>icecat-supplier-jaxb-api</module>
+    <module>icecat-relations-jaxb-api</module>
+    <module>icecat-campaigns-jaxb-api</module>
+  </modules>
+
+
+
+  <properties>
+    <maven-jaxb2-plugin.version>0.8.0</maven-jaxb2-plugin.version> <!-- 0.7.5 -->
+    <jaxb2-basics.version>0.6.2</jaxb2-basics.version> <!-- 0.6.1 -->
+    <jaxb2-fluent-api>3.0</jaxb2-fluent-api>
+  </properties>
+
+
+
+  <dependencies>
+    <dependency>
+      <groupId>org.jvnet.jaxb2_commons</groupId>
+      <artifactId>jaxb2-basics-runtime</artifactId>
+      <version>${jaxb2-basics.version}</version>
+    </dependency>
+  </dependencies>
+  <build>
+    <defaultGoal>install</defaultGoal>
+    <pluginManagement>
+      <plugins>
+        <!-- http://download.oracle.com/docs/cd/E17802_01/webservices/webservices/docs/1.5/tutorial/doc/JAXBUsing4.html#wp148206 -->
+        <!-- http://confluence.highsource.org/display/MJIIP/Maven+JAXB2+Plugin -->
+        <!-- http://confluence.highsource.org/display/J2B/Annotate+Plugin -->
+        <plugin>
+          <groupId>org.jvnet.jaxb2.maven2</groupId>
+          <artifactId>maven-jaxb2-plugin</artifactId>
+          <version>${maven-jaxb2-plugin.version}</version>
+          <executions>
+            <execution>
+              <goals>
+                <goal>generate</goal>
+              </goals>
+              <configuration>
+                <forceRegenerate>true</forceRegenerate>
+                <extension>true</extension>
+                <verbose>false</verbose>
+                <debug>false</debug>
+                <!-- <schemas> </schemas> -->
+                <!-- <bindings></bindings> -->
+                <args>
+                  <arg>-XtoString</arg>
+                  <arg>-Xequals</arg>
+                  <arg>-XhashCode</arg>
+                  <!-- <arg>-Xcopyable</arg> -->
+                  <arg>-Xannotate</arg>
+                  <arg>-Xfluent-api</arg>
+                  <!-- <args>-Xxew</args> -->
+                </args>
+                <plugins>
+                  <plugin>
+                    <groupId>org.jvnet.jaxb2_commons</groupId>
+                    <artifactId>jaxb2-basics</artifactId>
+                    <version>${jaxb2-basics.version}</version>
+                  </plugin>
+                  <plugin>
+                    <groupId>org.jvnet.jaxb2_commons</groupId>
+                    <artifactId>jaxb2-basics-annotate</artifactId>
+                    <version>${jaxb2-basics.version}</version>
+                  </plugin>
+                  <plugin>
+                    <groupId>org.jvnet.jaxb2_commons</groupId>
+                    <artifactId>jaxb2-fluent-api</artifactId>
+                    <version>${jaxb2-fluent-api}</version>
+                  </plugin>
+                </plugins>
+              </configuration>
+            </execution>
+          </executions>
+          <!-- <dependencies> -->
+          <!-- JAXB @XMLElementWrapper Plugin : http://www.conspicio.dk/projects/overview -->
+          <!-- <dependency> -->
+          <!-- <groupId>dk.conspicio</groupId> -->
+          <!-- <artifactId>xew</artifactId> -->
+          <!-- <version>1.3</version> -->
+          <!-- <scope>runtime</scope> -->
+          <!-- </dependency> -->
+          <!-- </dependencies> -->
+        </plugin>
+
+
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-source-plugin</artifactId>
+          <version>2.1.2</version>
+          <inherited>true</inherited>
+          <executions>
+            <execution>
+              <id>attach-sources</id>
+              <phase>package</phase>
+              <goals>
+                <goal>jar</goal>
+              </goals>
+            </execution>
+          </executions>
+        </plugin>
+
+      </plugins>
+    </pluginManagement>
+  </build>
+</project>

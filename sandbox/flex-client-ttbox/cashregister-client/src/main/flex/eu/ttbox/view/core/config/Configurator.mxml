@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Group xmlns:fx="http://ns.adobe.com/mxml/2009"
+         xmlns:s="library://ns.adobe.com/flex/spark"
+         xmlns:mx="library://ns.adobe.com/flex/mx"
+         width="400"
+         height="300"
+         xmlns:validation="org.granite.validation.*">
+    <s:layout>
+        <s:VerticalLayout/>
+    </s:layout>
+
+    <fx:Script>
+        <![CDATA[
+            import eu.ttbox.config.AppConfigLoader;
+            import eu.ttbox.config.model.ApplicationDescriptorModel;
+            import eu.ttbox.config.model.ConnexionConfig;
+            import eu.ttbox.config.model.TTBoxConfigModel;
+            import eu.ttbox.controler.core.I18nManager;
+
+            import mx.collections.ArrayCollection;
+
+            [Bindable]
+            public var msg:I18nManager=I18nManager.getInstance();
+
+            [Bindable]
+            private var configControler:AppConfigLoader=AppConfigLoader.getInstance();
+
+            [Bindable]
+            private var applicationDescriptor:ApplicationDescriptorModel=configControler.getApplicationDescriptor();
+
+            [Bindable]
+            private var protocoles:ArrayCollection=new ArrayCollection(["http", "https"]);
+
+            [Bindable]
+            private var configModel:TTBoxConfigModel=configControler.config;
+
+            [Bindable]
+            private var configConnectorModel:ConnexionConfig=configModel.connector;
+
+            [Bindable]
+            private var message:String;
+
+            private function save():void {
+                var isValid:Boolean=true;
+                if (!formConnectorValidator.validateEntity()) {
+
+                }
+                if (isValid) {
+                    configControler.save();
+                }
+            }
+        ]]>
+    </fx:Script>
+
+
+    <fx:Declarations>
+        <!-- Placer ici les éléments non visuels (services et objets de valeur, par exemple). -->
+        <validation:FormValidator id="formConnectorValidator"
+                                  form="{formConnector}"
+                                  entity="{configModel}"/>
+    </fx:Declarations>
+
+    <mx:HBox>
+        <s:Button label="{msg.save}"
+                  click="{configControler.save()}"/>
+        <s:Label text="{msg.getString(message)}"
+                 visible="{message!=null}"/>
+    </mx:HBox>
+
+    <mx:Accordion id="configAccordion"
+                  width="100%"
+                  height="100%">
+        <s:NavigatorContent id="navConnector"
+                            label="{msg.connector}">
+            <s:Form id="formConnector">
+                <s:FormItem label="{msg.protocol}">
+                    <s:DropDownList dataProvider="{protocoles}"
+                                    prompt="{msg.selectItem}"
+                                    selectedItem="@{configModel.connector.protocol}"/>
+
+                </s:FormItem>
+                <s:FormItem label="{msg.serverHost}">
+                    <s:TextInput text="@{configModel.connector.serverHost}"/>
+                </s:FormItem>
+                <s:FormItem label="{msg.serverPort}">
+                    <s:TextInput text="@{configModel.connector.serverPort}"/>
+                </s:FormItem>
+                <s:FormItem label="{msg.contextRoot}">
+                    <s:TextInput text="@{configModel.connector.contextRoot}"/>
+                </s:FormItem>
+            </s:Form>
+        </s:NavigatorContent>
+
+        <s:NavigatorContent label="{msg.Screen}">
+            <s:Label text="Accordion container panel 2"/>
+        </s:NavigatorContent>
+
+        <s:NavigatorContent label="{msg.Version}">
+            <s:layout>
+                <s:VerticalLayout/>
+            </s:layout>
+            <s:Label text="App Id : {applicationDescriptor.appId}"/>
+            <s:Label text="Name : {applicationDescriptor.appName}"/>
+            <s:Label text="Version : {applicationDescriptor.appVersion}"/>
+        </s:NavigatorContent>
+
+    </mx:Accordion>
+</s:Group>

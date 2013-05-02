@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Group xmlns:fx="http://ns.adobe.com/mxml/2009"
+         xmlns:s="library://ns.adobe.com/flex/spark"
+         xmlns:mx="library://ns.adobe.com/flex/mx">
+    <s:layout>
+        <s:VerticalLayout/>
+    </s:layout>
+    <fx:Script>
+        <![CDATA[
+            import eu.ttbox.controler.core.I18nManager;
+
+            [Bindable]
+            public var msg:I18nManager=I18nManager.getInstance();
+        ]]>
+    </fx:Script>
+    <fx:Declarations>
+        <!-- Placer ici les éléments non visuels (services et objets de valeur, par exemple). -->
+    </fx:Declarations>
+
+    <s:Button label="{msg.valide}"
+              width="100%"
+              height="60"/>
+
+    <s:TileGroup width="100%"
+                 height="100%"
+                 horizontalCenter="0"
+                 horizontalAlign="center"
+                 orientation="rows"
+                 requestedColumnCount="3"
+                 horizontalGap="0"
+                 verticalGap="0"
+                 rowHeight="60"
+                 columnWidth="90">
+
+        <s:Button label="7"
+                  width="100%"
+                  height="100%"/>
+        <s:Button label="8"
+                  width="100%"
+                  height="100%"/>
+        <s:Button label="9"
+                  width="100%"
+                  height="100%"/>
+        <s:Button label="4"
+                  width="100%"
+                  height="100%"/>
+        <s:Button label="5"
+                  width="100%"
+                  height="100%"/>
+        <s:Button label="6"
+                  width="100%"
+                  height="100%"/>
+        <s:Button label="1"
+                  width="100%"
+                  height="100%"/>
+        <s:Button label="2"
+                  width="100%"
+                  height="100%"/>
+        <s:Button label="3"
+                  width="100%"
+                  height="100%"/>
+        <s:Button label="0"
+                  width="100%"
+                  height="100%"/>
+        <s:Button label=","
+                  width="100%"
+                  height="100%"/>
+        <s:Button label="X"
+                  width="100%"
+                  height="100%"/>
+    </s:TileGroup>
+
+
+
+
+</s:Group>

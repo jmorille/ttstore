@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>eu.ttbox.serveur</groupId>
+    <artifactId>serveur-ttbox</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+  </parent>
+  <!-- <groupId>com.j3.icecat.domain</groupId> -->
+  <artifactId>search-service-ttbox</artifactId>
+  <packaging>jar</packaging>
+
+  <name>[SER] Search Service - Elasticsearch</name>
+
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>eu.ttbox.bom</groupId>
+        <artifactId>bom-ttbox</artifactId>
+        <version>${project.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+
+
+  <dependencies>
+
+    <!-- Test -->
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <scope>test</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-test</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-context</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <!-- <dependency> -->
+    <!-- <groupId>org.springframework</groupId> -->
+    <!-- <artifactId>spring-tx</artifactId> -->
+    <!-- <scope>test</scope> -->
+    <!-- </dependency> -->
+
+    <!-- Spring -->
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-beans</artifactId>
+    </dependency>
+
+    <!-- Logging -->
+    <dependency>
+      <groupId>eu.ttbox.composant</groupId>
+      <artifactId>logging-comp</artifactId>
+      <version>0.0.1-SNAPSHOT</version>
+      <type>pom</type>
+    </dependency>
+
+
+    <!-- elastic search -->
+    <dependency>
+      <groupId>org.elasticsearch</groupId>
+      <artifactId>elasticsearch</artifactId>
+    </dependency>
+
+
+    <!-- Json -->
+    <dependency>
+      <groupId>org.codehaus.jackson</groupId>
+      <artifactId>jackson-mapper-asl</artifactId>
+    </dependency>
+
+    <!-- Monitoring -->
+    <!-- <dependency> -->
+    <!-- <groupId>org.hyperic.sigar</groupId> -->
+    <!-- <artifactId>com.springsource.org.hyperic.sigar</artifactId> -->
+    <!-- <version>1.6.3</version> -->
+    <!-- </dependency> -->
+
+
+  </dependencies>
+<!-- -->
+  <build>
+    <testResources>
+      <testResource>
+	    <directory>src/test/resources</directory>
+        <includes>
+          <include>**/*.*</include>
+        </includes>
+      </testResource>
+    </testResources>
+  </build>
+
+</project>

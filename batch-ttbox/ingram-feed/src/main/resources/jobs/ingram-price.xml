@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:b="http://www.springframework.org/schema/beans" xmlns:batch="http://www.springframework.org/schema/util"
+  xmlns:p="http://www.springframework.org/schema/p" xmlns:util="http://www.springframework.org/schema/util" xmlns:oxm="http://www.springframework.org/schema/oxm" xmlns:task="http://www.springframework.org/schema/task"
+  xsi:schemaLocation="
+	       http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd
+           http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+           http://www.springframework.org/schema/oxm http://www.springframework.org/schema/oxm/spring-oxm.xsd
+           http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task.xsd
+           http://www.springframework.org/schema/batch http://www.springframework.org/schema/batch/spring-batch.xsd">
+
+
+  <import resource="classpath:/META-INF/ingram/ingram-applicationContext.xml" />
+
+  <bean id="completionPolicy" class="org.springframework.batch.repeat.policy.DefaultResultCompletionPolicy" />
+
+  <job id="priceIngramJob" xmlns="http://www.springframework.org/schema/batch">
+    <step id="priceIngramDownloadStep" next="priceIngramUnzipStep">
+      <tasklet>
+        <chunk processor="priceDownloadIngramItemProcessor" writer="ingramUnzipItemWriter" chunk-completion-policy="completionPolicy">
+          <reader>
+            <b:bean class="org.springframework.batch.item.database.HibernateCursorItemReader" p:sessionFactory-ref="ttboxSessionFactory"
+              p:queryString="from SalespointSupplier s where s.supplier = 'INGRAM' and s.status=1 order by s.supplierId" />
+          </reader>
+        </chunk>
+      </tasklet>
+    </step>
+    <step id="priceIngramUnzipStep" next="priceIngramSortedStep">
+      <tasklet>
+        <chunk writer="ingramUnzipItemWriter" chunk-completion-policy="completionPolicy">
+          <reader>
+            <b:bean class="eu.ttbox.batch.core.reader.LocalFilenamePatternProxyCacheItemReader" p:fileComparator-ref="FILE_COMPARATOR_LAST_MODIFIED_DESC" p:filenamePattern="(?i)fusion_fr_([a-z]+)_price\.zip?"
+              p:workingLocalFolder-ref="workingLocalFolderIngram" />
+          </reader>
+        </chunk>
+      </tasklet>
+    </step>
+    <step id="priceIngramSortedStep" next="priceIngramImporterStep">  <!-- -->
+      <tasklet>
+        <chunk writer="priceSortItemWriter" chunk-completion-policy="completionPolicy">
+          <reader>
+            <b:bean class="eu.ttbox.batch.core.reader.LocalFilenamePatternProxyCacheItemReader" p:fileComparator-ref="FILE_COMPARATOR_LAST_MODIFIED_DESC" p:filenamePattern="(?i)fusion_fr_([a-z]+)_price\.txt(\.gz)?"
+              p:workingLocalFolder-ref="workingLocalFolderIngram" />
+          </reader>
+        </chunk>
+      </tasklet>
+    </step>
+    <step id="priceIngramImporterStep">
+      <tasklet>
+        <chunk writer="priceIngramItemWriter" commit-interval="1">
+          <reader>
+            <b:bean class="eu.ttbox.batch.ingram.price.list.FileDomainListItemReader" p:fileIdGroupId="1" p:filenamePattern="(?i)fusion_fr_([a-z]+)_price-sorted\.txt(\.gz)?"
+              p:workingLocalFolder-ref="workingLocalFolderIngram">
+              <b:property name="itemReaderResourceMaster">
+                <b:bean class="org.springframework.batch.item.database.HibernateCursorItemReader" p:sessionFactory-ref="ttboxSessionFactory"
+                  p:queryString="from SalespointSupplier s inner join fetch s.salespoint left join fetch s.lastFeedStatus where s.supplier = 'INGRAM' and s.status=1 order by s.supplierId" />
+               </b:property>
+            </b:bean>
+          </reader>
+          <processor>
+            <b:bean class="eu.ttbox.batch.ingram.price.list.PriceListItemProcessor" p:filenamePattern="(?i)fusion_fr_([a-z]+)_price-sorted\.txt(\.gz)?" p:differentialItemReader-ref="priceIngramDifferentialItemReader"
+              p:itemProcessor-ref="supplierPriceIngramItemProcessor" />
+          </processor>
+        </chunk>
+      </tasklet>
+    </step>
+
+  </job>
+
+  <!-- Differential File -->
+  <bean id="priceIngramDifferentialItemReader" class="eu.ttbox.batch.core.reader.differential.DifferentialFileHibernateItemReader" p:comparator-ref="priceIngramItemComparator"
+    p:itemReaderResourceJoin-ref="priceIngramFlatFileItemReader" p:itemFactory-ref="priceIngramDifferentialItemVOFactory">
+    <property name="itemReaderResourceMaster">
+      <bean class="org.springframework.batch.item.database.HibernateCursorItemReader" p:sessionFactory-ref="ttboxSessionFactory"
+        p:queryString="from SupplierPrice p inner join fetch p.product left join fetch p.product.srcs where p.supplier= :supplier and p.supplierId= :supplierId order by p.supplierProductId" />
+    </property>
+  </bean>
+
+  <!-- File -->
+
+  <util:constant id="FILE_COMPARATOR_LAST_MODIFIED_DESC" static-field="eu.ttbox.batch.core.reader.LocalFilenamePatternProxyCacheItemReader.FILE_COMPARATOR_LAST_MODIFIED_ASC" />
+
+  <util:constant id="DELIMITER_TAB" static-field="org.springframework.batch.item.file.transform.DelimitedLineTokenizer.DELIMITER_TAB" />
+
+  <util:constant id="priceIngramFields" static-field="eu.ttbox.batch.ingram.price.PriceFieldEnum.FIELDS_NAMES" />
+  <util:constant id="priceIngramFieldIds" static-field="eu.ttbox.batch.ingram.price.PriceFieldEnum.FIELDS_IDS" />
+  <util:constant id="priceIngramFieldsAddAll" static-field="eu.ttbox.batch.ingram.price.PriceFieldEnum.FIELDS_NAMES_ADD_ALL" />
+
+  <bean id="priceIngramFlatFileItemReader" class="org.springframework.batch.item.file.FlatFileItemReader">
+    <property name="lineMapper">
+      <bean class="org.springframework.batch.item.file.mapping.DefaultLineMapper">
+        <property name="lineTokenizer">
+          <bean class="org.springframework.batch.item.file.transform.DelimitedLineTokenizer" p:delimiter="," p:names-ref="priceIngramFields" />
+        </property>
+        <property name="fieldSetMapper">
+          <bean class="org.springframework.batch.item.file.mapping.PassThroughFieldSetMapper" />
+        </property>
+      </bean>
+    </property>
+  </bean>
+
+  <!-- Downloader -->
+  <!-- <bean id="priceIngramProxyCacheFtpConnector" parent="ingramProxyCacheFtpConnector"> -->
+  <!-- <property name="filterFactory"> -->
+  <!-- <bean class="eu.ttbox.batch.ingram.price.filter.SupplierPriceIdFilterFactory" p:groupId="1" p:patternString="(?i)Price_Feed_([0-9]+)(-sorted)?\.txt(\.gz)?" /> -->
+  <!-- </property> -->
+  <!-- </bean> -->
+
+  <!-- Sorter -->
+  <bean id="priceSortItemWriter" class="eu.ttbox.batch.core.writer.sorter.SortFileServiceItemWriter">
+    <property name="itemReader">
+      <bean class="org.springframework.batch.item.file.FlatFileItemReader">
+        <property name="lineMapper">
+          <bean class="org.springframework.batch.item.file.mapping.DefaultLineMapper">
+            <property name="lineTokenizer">
+              <bean class="eu.ttbox.batch.core.writer.sorter.tokenizer.AddUntokeniseLineDelimitedLineTokenizer" p:delimiter="," p:names-ref="priceIngramFieldsAddAll" />
+            </property>
+            <property name="fieldSetMapper">
+              <bean class="eu.ttbox.batch.core.writer.sorter.tokenizer.SortVOFieldSetMapper" p:line="ALL" p:keys-ref="priceIngramFieldIds" />
+            </property>
+          </bean>
+        </property>
+      </bean>
+    </property>
+  </bean>
+
+  <!-- unzipper -->
+  <bean id="ingramUnzipItemWriter" class="eu.ttbox.batch.core.writer.unzip.UnZipItemWriter" p:compress="true" />
+
+
+</beans>

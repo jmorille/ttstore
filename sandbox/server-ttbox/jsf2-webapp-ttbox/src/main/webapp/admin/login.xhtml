@@ -1,0 +1,50 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.prime.com.tr/ui"
+	xmlns:ez="java.sun.com/jsf/composite/ezcomp"
+	
+	>
+
+<f:view contentType="text/html" encoding="UTF-8">
+	<h:head>
+		<title><ui:insert name="title">TTBox</ui:insert></title>
+		<meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+		<link type="text/css" rel="stylesheet"
+			href="#{request.contextPath}/themes/sam/skin.css" />
+		<link type="text/css" rel="stylesheet"
+			href="#{request.contextPath}/syntaxhighlighter/css/syntaxhighlighter.css"></link>
+		<style type="text/css">
+			body {
+				background: url(../images/macosx/macback.png);
+				margin: 0;
+				padding: 0;
+				font-family: geneva, arial, helvetica, sans-serif;
+				font-size: 80%;
+			}
+			
+			.appleIcon {
+				background: url(../images/macosx/apple.png) no-repeat 20%;
+				padding-left: 22px !important;
+			}
+		</style>
+	</h:head>
+
+	<h:body>
+
+
+		<ui:define name="content">
+			<h:form>
+				<ez:loginPanel>
+					<f:actionListener for="loginAction" binding="#{}"/>
+				</ez:loginPanel>
+			</h:form>
+		</ui:define>
+
+
+	</h:body>
+</f:view>
+</html>

@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jxb:bindings version="2.0" xmlns:jxb="http://java.sun.com/xml/ns/jaxb" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  xmlns:annox="http://annox.dev.java.net" xmlns:xjc="http://java.sun.com/xml/ns/jaxb/xjc" jxb:extensionBindingPrefixes="xjc">
+
+
+  <jxb:bindings schemaLocation="ICECAT-interface_response.xsd" node="/xs:schema">
+
+
+    <jxb:schemaBindings>
+      <jxb:package name="biz.icecat.referential.v1" />
+    </jxb:schemaBindings>
+
+    <jxb:bindings node="//xs:element[@name='ICECAT-interface']">
+      <jxb:class name="ICECATRefInterface" />
+    </jxb:bindings>
+
+    <jxb:bindings node="//xs:element[@name='files']">
+      <jxb:class name="ICECATRefFiles" />
+    </jxb:bindings>
+
+    <jxb:bindings node="//xs:complexType[@name='Product_related']">
+      <jxb:class name="ProductRelating" />
+    </jxb:bindings>
+
+    <!-- XmlRootElement -->
+    <jxb:bindings node="//xs:complexType[@name='LanguageList']/xs:sequence/xs:element[@name='Language']/xs:complexType">
+      <annox:annotate>
+        <annox:annotate annox:class="javax.xml.bind.annotation.XmlRootElement" name="Language" />
+      </annox:annotate>
+    </jxb:bindings>
+
+    <jxb:bindings node="//xs:complexType[@name='Measure']">
+      <annox:annotate>
+        <annox:annotate annox:class="javax.xml.bind.annotation.XmlRootElement" name="Measure" />
+      </annox:annotate>
+    </jxb:bindings>
+
+    <jxb:bindings node="//xs:complexType[@name='Supplier']">
+      <annox:annotate>
+        <annox:annotate annox:class="javax.xml.bind.annotation.XmlRootElement" name="Supplier" />
+      </annox:annotate>
+    </jxb:bindings>
+
+    <jxb:bindings node="//xs:complexType[@name='Category']">
+      <annox:annotate>
+        <annox:annotate annox:class="javax.xml.bind.annotation.XmlRootElement" name="Category" />
+      </annox:annotate>
+    </jxb:bindings>
+
+    <jxb:bindings node="//xs:complexType[@name='Feature']">
+      <annox:annotate>
+        <annox:annotate annox:class="javax.xml.bind.annotation.XmlRootElement" name="Feature" />
+      </annox:annotate>
+    </jxb:bindings>
+
+    <jxb:bindings node="//xs:complexType[@name='ProductFamily']">
+      <annox:annotate>
+        <annox:annotate annox:class="javax.xml.bind.annotation.XmlRootElement" name="ProductFamily" />
+      </annox:annotate>
+    </jxb:bindings>
+
+    <jxb:bindings
+      node="//xs:complexType[@name='FeatureValuesVocabularyList']/xs:sequence/xs:element[@name='FeatureValuesVocabulary']/xs:complexType">
+      <annox:annotate>
+        <annox:annotate annox:class="javax.xml.bind.annotation.XmlRootElement" name="FeatureValuesVocabulary" />
+      </annox:annotate>
+    </jxb:bindings>
+
+
+    <jxb:bindings node="//xs:complexType[@name='DistributorList']/xs:sequence/xs:element[@name='Distributor']/xs:complexType">
+      <annox:annotate>
+        <annox:annotate annox:class="javax.xml.bind.annotation.XmlRootElement" name="Distributor" />
+      </annox:annotate>
+    </jxb:bindings>
+
+
+    <!-- Remap -->
+
+
+    <jxb:bindings node="//xs:complexType[@name='Measure']/xs:attribute[@name='Sign']">
+      <jxb:property name="signAttribute" />
+    </jxb:bindings>
+
+
+    <jxb:bindings node="//xs:complexType[@name='Category']/xs:sequence/xs:element[@name='Names']">
+      <jxb:property name="namesList" />
+    </jxb:bindings>
+
+    <jxb:bindings node="//xs:complexType[@name='Category']/xs:attribute[@name='UNCATID']">
+      <jxb:property name="attributeUNCATID" />
+    </jxb:bindings>
+
+
+    <jxb:bindings node="//xs:complexType[@name='Feature']/xs:sequence/xs:element[@name='Names']">
+      <jxb:property name="namesList" />
+    </jxb:bindings>
+
+    <jxb:bindings node="//xs:complexType[@name='Feature']/xs:sequence/xs:element[@name='RestrictedValues']">
+      <jxb:property name="restrictedListValues" />
+    </jxb:bindings>
+
+
+    <jxb:bindings node="//xs:complexType[@name='CategoryFeatureGroup']/xs:attribute[@name='FeatureGroup']">
+      <jxb:property name="attributeFeatureGroup" />
+    </jxb:bindings>
+
+    <jxb:bindings node="//xs:complexType[@name='Sign']/xs:simpleContent/xs:extension/xs:attribute[@name='Value']">
+      <jxb:property name="attributeValue" />
+    </jxb:bindings>
+
+    <jxb:bindings node="//xs:complexType[@name='Name']/xs:simpleContent/xs:extension/xs:attribute[@name='Value']">
+      <jxb:property name="attributeValue" />
+    </jxb:bindings>
+
+    <jxb:bindings node="//xs:complexType[@name='Description']/xs:attribute[@name='Value']">
+      <jxb:property name="attributeValue" />
+    </jxb:bindings>
+
+
+
+  </jxb:bindings>
+
+
+</jxb:bindings>

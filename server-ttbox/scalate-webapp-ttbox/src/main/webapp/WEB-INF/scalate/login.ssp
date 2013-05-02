@@ -1,0 +1,31 @@
+<html>
+<head>
+  <title>OpenID Login</title>
+<!-- Simple OpenID Selector -->
+<link rel="stylesheet" href="uri('/css/openid.css')" />
+<script type="text/javascript"
+	src="uri('/js/jquery-1.4.4.min.js')"></script>
+<script type="text/javascript"
+	src="uri('/js/openid-jquery.js')"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+		openid.init('openid_identifier');
+		//   openid.setDemoMode(true); Stops form submission for client javascript-only test purposes
+	});
+</script>
+<!-- /Simple OpenID Selector -->
+<style type="text/css">
+/* Basic page formatting. */
+body {
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+</style>
+</head>
+<body>
+  <p>layout header goes here...</p>
+
+ 
+
+  <p>layout footer goes here...</p>
+</body>
+</html>

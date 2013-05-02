@@ -1,0 +1,412 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>eu.ttbox.reactor</groupId>
+	<artifactId>root-ttbox</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+
+	<packaging>pom</packaging>
+
+	<name>TTBox POM Parent</name>
+	<url>http://www.ttstore.eu</url>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+
+		<sourceEncoding>UTF-8</sourceEncoding>
+		<compileSource>1.6</compileSource>
+		<maven.build.timestamp.format>yyyyMMdd-HHmm</maven.build.timestamp.format>
+
+		<jetty.version>6.1.26</jetty.version>  <!-- 6.1.25, 7.2.1.v20101111 -->
+		<jetty7.version>7.2.1.v20101111</jetty7.version>  <!-- 6.1.25, 7.2.1.v20101111 -->
+
+		<postgresql.version>9.0-801.jdbc4</postgresql.version>
+
+		<!-- Plugin -->
+		<maven-compiler-plugin.version>2.3.2</maven-compiler-plugin.version>
+		<maven-resources-plugin.version>2.5</maven-resources-plugin.version>
+		<maven-dependency-plugin.version>2.3</maven-dependency-plugin.version>
+		<maven-assembly-plugin.version>2.2.1</maven-assembly-plugin.version>
+		<maven-deploy-plugin.version>2.6</maven-deploy-plugin.version>
+        <maven-war-plugin.version>2.1.1</maven-war-plugin.version>
+        
+        
+		<maven-enforcer-plugin.version>1.0.1</maven-enforcer-plugin.version>
+		<dbunit-maven-plugin.verion>1.0-beta-3</dbunit-maven-plugin.verion>
+        
+		<maven-eclipse-plugin.version>2.8</maven-eclipse-plugin.version>
+		<maven-apt-plugin.version>1.0</maven-apt-plugin.version>
+
+
+		<versions-maven-plugin.version>1.2</versions-maven-plugin.version>
+
+	</properties>
+
+
+
+	<prerequisites>
+		<maven>2.2.1</maven>
+	</prerequisites>
+
+
+	<!-- les 3 modules, dans l'ordre de compilation -->
+	<modules>
+		<module>bom-ttbox</module>
+		<module>connector-ttbox</module>
+		<module>batch-ttbox</module>
+		<module>composant-ttbox</module>
+		<module>server-ttbox</module>
+	</modules>
+
+	<build>
+		<defaultGoal>install</defaultGoal>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-dependency-plugin</artifactId>
+					<version>${maven-dependency-plugin.version}</version>
+					<configuration>
+						<encoding>${project.build.sourceEncoding}</encoding>
+					</configuration>
+				</plugin>
+				<!-- le plugin qui nous permettra de créer le zip contenant les ressources 
+					communes aux projets Flex et Java -->
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-assembly-plugin</artifactId>
+					<version>${maven-assembly-plugin.version}</version>
+					<configuration>
+						<encoding>${project.build.sourceEncoding}</encoding>
+					</configuration>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-compiler-plugin</artifactId>
+					<version>${maven-compiler-plugin.version}</version>
+					<configuration>
+						<source>${compileSource}</source>
+						<target>${compileSource}</target>
+						<encoding>${project.build.sourceEncoding}</encoding>
+					</configuration>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-resources-plugin</artifactId>
+					<version>${maven-resources-plugin.version}</version>
+					<configuration>
+						<encoding>${project.build.sourceEncoding}</encoding>
+					</configuration>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-deploy-plugin</artifactId>
+					<version>${maven-deploy-plugin.version}</version>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+	                <artifactId>maven-war-plugin</artifactId>
+	                <version>${maven-war-plugin.version}</version>
+				</plugin>
+				<plugin>
+                    <groupId>org.eclipse.m2e</groupId>
+                    <artifactId>lifecycle-mapping</artifactId>
+                    <version>1.0.0</version>
+                </plugin>
+			</plugins>
+		</pluginManagement>
+
+		<plugins>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-enforcer-plugin</artifactId>
+				<version>${maven-enforcer-plugin.version}</version>
+				<executions>
+					<execution>
+						<id>enforce-banned-dependencies</id>
+						<goals>
+							<goal>enforce</goal>
+						</goals>
+						<configuration>
+							<rules>
+								<bannedDependencies>
+									<excludes>
+										<exclude>commons-logging:commons-logging</exclude>
+										<exclude>log4j:log4j</exclude>
+									</excludes>
+								</bannedDependencies>
+							</rules>
+							<fail>true</fail>
+						</configuration>
+					</execution>
+					<execution>
+						<!-- PPG-214 + PPG-313 : on interdit les frameworks xml deja presents 
+							dans le JDK 5 -->
+						<id>enforce-banned-dependencies-jdk-xml-frk</id>
+						<goals>
+							<goal>enforce</goal>
+						</goals>
+						<configuration>
+							<rules>
+								<bannedDependencies>
+									<!-- il faut surement rechercher dans les dependances transitives -->
+									<searchTransitive>true</searchTransitive>
+									<excludes>
+										<exclude>xerces:*</exclude>
+										<exclude>xalan:*</exclude>
+										<exclude>xml-apis:*</exclude>
+									</excludes>
+									<message>JAXP 1.3 est inclu dans JAVA 5+.</message>
+								</bannedDependencies>
+							</rules>
+							<fail>true</fail>
+						</configuration>
+					</execution>
+					<execution>
+						<!-- PPG-214 + PPG-313 : on interdit les frameworks xml deja presents 
+							dans le JDK 5 -->
+						<id>enforce-banned-dependencies-jdk-jaxb-frk</id>
+						<goals>
+							<goal>enforce</goal>
+						</goals>
+						<configuration>
+							<rules>
+								<bannedDependencies>
+									<!-- il faut surement rechercher dans les dependances transitives -->
+									<searchTransitive>true</searchTransitive>
+									<excludes>
+										<exclude>javax.xml.bind:jaxb-api</exclude>
+										<exclude>com.sun.xml.bind:jaxb-impl</exclude>
+									</excludes>
+									<message>Jaxb est inclu dans JAVA 5+.</message>
+								</bannedDependencies>
+							</rules>
+							<fail>true</fail>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+
+
+			<!-- IDE -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-eclipse-plugin</artifactId>
+				<version>${maven-eclipse-plugin.version}</version>  <!-- Note 2.8 does not work with AspectJ aspect path -->
+				<configuration>
+					<downloadSources>false</downloadSources>
+					<downloadJavadocs>false</downloadJavadocs>
+					<wtpversion>2.0</wtpversion>
+					<additionalBuildcommands>
+						<buildCommand>
+							<name>org.eclipse.ajdt.core.ajbuilder</name>
+							<arguments>
+								<aspectPath>org.springframework.aspects</aspectPath>
+							</arguments>
+						</buildCommand>
+						<buildCommand>
+							<name>org.springframework.ide.eclipse.core.springbuilder</name>
+						</buildCommand>
+					</additionalBuildcommands>
+					<additionalProjectnatures>
+						<projectnature>org.eclipse.ajdt.ui.ajnature</projectnature>
+						<projectnature>org.eclipse.jdt.groovy.core.groovyNature</projectnature>
+						<projectnature>org.springframework.ide.eclipse.core.springnature</projectnature>
+					</additionalProjectnatures>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-idea-plugin</artifactId>
+				<version>2.2</version>
+				<configuration>
+					<downloadSources>true</downloadSources>
+					<dependenciesAsLibraries>true</dependenciesAsLibraries>
+				</configuration>
+			</plugin>
+			<!-- Deploy -->
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>tomcat-maven-plugin</artifactId>
+				<version>1.1</version>
+			</plugin>
+			<!-- <plugin> <groupId>org.mortbay.jetty</groupId> <artifactId>maven-jetty-plugin</artifactId> 
+				<version>${jetty.version}</version> <configuration> <scanIntervalSeconds>10</scanIntervalSeconds> 
+				</configuration> </plugin> -->
+			<!-- <plugin> <groupId>org.glassfish</groupId> <artifactId>maven-embedded-glassfish-plugin</artifactId> 
+				<version>3.0.1</version> </plugin> -->
+
+		</plugins>
+		<extensions>
+			<extension>
+				<groupId>org.apache.maven.wagon</groupId>
+				<artifactId>wagon-ftp</artifactId>
+				<version>1.0-alpha-6</version>
+			</extension>
+		</extensions>
+
+	</build>
+
+
+
+	<reporting>
+		<plugins>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>versions-maven-plugin</artifactId>
+				<version>${versions-maven-plugin.version}</version>
+				<reportSets>
+					<reportSet>
+						<reports>
+							<report>dependency-updates-report</report>
+							<report>plugin-updates-report</report>
+							<report>property-updates-report</report>
+						</reports>
+					</reportSet>
+				</reportSets>
+			</plugin>
+		</plugins>
+	</reporting>
+
+	<repositories>
+        <!-- JBoss -->
+		<repository>
+			<id>jboss-public-repository-group</id>
+			<name>JBoss Public Maven Repository Group</name>
+			<url>https://repository.jboss.org/nexus/content/groups/public</url>
+			<layout>default</layout>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+			<snapshots>
+				<enabled>false</enabled>
+				<updatePolicy>never</updatePolicy>
+			</snapshots>
+		</repository>
+		<!-- ElasticSearch Repo -->
+		<repository>
+			<id>oss.sonatype.release</id>
+			<name>OSS sonatype Releases</name>
+			<url>http://oss.sonatype.org/content/repositories/releases</url>
+		</repository>
+        <!--  Spring -->
+		<repository>
+			<id>com.springsource.repository.bundles.release</id>
+			<name>SpringSource Enterprise Bundle Repository - SpringSource Bundle Releases</name>
+			<url>http://repository.springsource.com/maven/bundles/release</url>
+		</repository>
+		<repository>
+			<id>com.springsource.repository.bundles.external</id>
+			<name>SpringSource Enterprise Bundle Repository - External Bundle Releases</name>
+			<url>http://repository.springsource.com/maven/bundles/external</url>
+		</repository>
+
+	</repositories>
+
+	<profiles>
+		<profile>
+			<id>versions</id>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.codehaus.mojo</groupId>
+						<artifactId>versions-maven-plugin</artifactId>
+						<executions>
+							<execution>
+								<phase>install</phase>
+								<configuration>
+									<comparisonMethod>mercury</comparisonMethod>
+								</configuration>
+								<goals>
+									<goal>display-dependency-updates</goal>
+									<goal>display-plugin-updates</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+
+		<profile>
+			<id>repos</id>
+			<!-- Repository is active unless explicitly disabled e.g. -P!jboss-public-repository -->
+
+			<pluginRepositories>
+				<!-- <pluginRepository> <id>sonatype</id> <url>http://repository.sonatype.org/content/groups/flexgroup</url> 
+					<releases> <enabled>true</enabled> </releases> <snapshots> <enabled>true</enabled> 
+					</snapshots> </pluginRepository> -->
+				<pluginRepository>
+					<id>com.springsource.repository.bundles.release</id>
+					<name>SpringSource Enterprise Bundle Repository - SpringSource Bundle Releases</name>
+					<url>http://repository.springsource.com/maven/bundles/release</url>
+				</pluginRepository>
+				<pluginRepository>
+					<id>com.springsource.repository.bundles.external</id>
+					<name>SpringSource Enterprise Bundle Repository - External Bundle Releases</name>
+					<url>http://repository.springsource.com/maven/bundles/external</url>
+				</pluginRepository>
+				<pluginRepository>
+					<id>com.springsource.repository.bundles.milestone</id>
+					<name>SpringSource Enterprise Bundle Repository - External Bundle Milestones</name>
+					<url>http://repository.springsource.com/maven/bundles/milestone</url>
+				</pluginRepository>
+				<pluginRepository>
+					<id>spring-maven-milestone</id>
+					<snapshots>
+						<enabled>true</enabled>
+					</snapshots>
+					<name>Springframework Maven MILESTONE Repository</name>
+					<url>http://maven.springframework.org/milestone</url>
+				</pluginRepository>
+				<pluginRepository>
+					<id>jboss-public-repository-group</id>
+					<name>JBoss Public Maven Repository Group</name>
+					<url>http://repository.jboss.org/nexus/content/groups/public</url>
+					<layout>default</layout>
+					<releases>
+						<enabled>true</enabled>
+						<updatePolicy>never</updatePolicy>
+					</releases>
+					<snapshots>
+						<enabled>true</enabled>
+						<updatePolicy>never</updatePolicy>
+					</snapshots>
+				</pluginRepository>
+
+				<pluginRepository>
+					<id>jetty-with-staging</id>
+					<name>jetty-with-staging</name>
+					<url>http://oss.sonatype.org/content/groups/jetty-with-staging</url>
+					<releases>
+						<enabled>true</enabled>
+						<updatePolicy>never</updatePolicy>
+					</releases>
+					<snapshots>
+						<enabled>true</enabled>
+						<updatePolicy>never</updatePolicy>
+					</snapshots>
+				</pluginRepository>
+
+
+			</pluginRepositories>
+
+
+
+		</profile>
+
+	</profiles>
+
+	<developers>
+		<developer>
+			<id>jmorille</id>
+			<name>Jerome Morille</name>
+			<email>jmorille@gmail.com</email>
+		</developer>
+	</developers>
+
+</project>

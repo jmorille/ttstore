@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Group xmlns:fx="http://ns.adobe.com/mxml/2009"
+         xmlns:s="library://ns.adobe.com/flex/spark"
+         xmlns:mx="library://ns.adobe.com/flex/mx">
+
+    <fx:Metadata>
+		[Name]
+	</fx:Metadata>
+
+    <s:layout>
+        <s:VerticalLayout/>
+    </s:layout>
+
+    <fx:Script>
+        <![CDATA[
+            import eu.ttbox.controler.core.I18nManager;
+            import eu.ttbox.event.core.chat.ChatEvent;
+
+            import mx.collections.ArrayList;
+            import mx.collections.ListCollectionView;
+            import mx.utils.StringUtil;
+
+            import org.granite.tide.events.TideUIEvent;
+
+            [Bindable]
+            public var msg:I18nManager=I18nManager.getInstance();
+
+            [Bindable]
+            [In("#{chatControler.chatMessages}")]
+            public var chatMessages:ArrayList;
+
+
+            private function send():void {
+                var message:String=StringUtil.trim(iNewMessage.text);
+                iNewMessage.text=null;
+                if (message.length > 0) {
+                    dispatchEvent(new TideUIEvent(ChatEvent.SEND_MESSAGE, message));
+                }
+            }
+        ]]>
+    </fx:Script>
+
+    <fx:Declarations>
+        <!-- Placer ici les éléments non visuels (services et objets de valeur, par exemple). -->
+    </fx:Declarations>
+
+    <mx:DataGrid id="chatMessageList"
+                 dataProvider="{chatMessages}"
+                 width="100%"
+                 height="100%">
+        <mx:columns>
+            <mx:DataGridColumn dataField="username"
+                               headerText="{msg.username}"/>
+            <mx:DataGridColumn dataField="message"
+                               headerText="{msg.message}"/>
+        </mx:columns>
+    </mx:DataGrid>
+    <mx:ControlBar height="42"
+                   width="100%">
+        <s:TextInput id="iNewMessage"
+                     enter="send()"
+                     width="100%"/>
+        <s:Button id="bSend"
+                  label="{msg.send}"
+                  click="send()"/>
+    </mx:ControlBar>
+
+</s:Group>

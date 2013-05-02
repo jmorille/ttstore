@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
+             version="2.0">
+ 
+    <persistence-unit name="ttbox-pu"
+                      transaction-type="RESOURCE_LOCAL">
+        <provider>org.hibernate.ejb.HibernatePersistence</provider>
+ 
+         <class>eu.ttbox.model.salespoint.Salespoint</class>
+        <class>eu.ttbox.model.salespoint.SalespointBrand</class>
+        <class>eu.ttbox.model.salespoint.SalespointCategory</class>
+        <class>eu.ttbox.model.salespoint.SalespointSupplier</class>
+
+        <class>eu.ttbox.model.user.User</class>
+        <class>eu.ttbox.model.user.Role</class>
+        <class>eu.ttbox.model.user.GroupRole</class>
+
+        <class>eu.ttbox.model.customer.Customer</class>
+        <class>eu.ttbox.model.customer.company.Company</class> 
+ 
+        <class>eu.ttbox.model.supplier.SupplierPrice</class>
+        <class>eu.ttbox.model.supplier.SupplierFeedStatus</class>
+        <class>eu.ttbox.model.supplier.SupplierStock</class>
+
+        <class>eu.ttbox.model.product.Product</class>
+        <class>eu.ttbox.model.product.brand.Brand</class>
+        <class>eu.ttbox.model.product.category.Category</class>
+        <class>eu.ttbox.model.product.ProductTag</class>
+        <class>eu.ttbox.model.product.ProductGroup</class>
+        <class>eu.ttbox.model.product.ProductType</class>
+
+        <class>eu.ttbox.model.pricing.Pricing</class>
+
+        <class>eu.ttbox.model.catalog.Catalog</class>
+        <class>eu.ttbox.model.catalog.Offer</class> 
+
+        <class>eu.ttbox.model.order.Order</class>
+        <class>eu.ttbox.model.order.OrderItem</class>
+
+ 
+        <class>eu.ttbox.model.ui.store.WebSite</class>
+        <class>eu.ttbox.model.ui.store.WebPage</class>
+<!--         <class>eu.ttbox.model.ui.store.WebFragment</class> -->
+<!--         <class>eu.ttbox.model.ui.store.header.WebHeaderMeta</class> -->
+<!--         <class>eu.ttbox.model.ui.store.header.WebHeaderLink</class> -->
+<!--         <class>eu.ttbox.model.ui.store.header.WebFreeMeta</class> -->
+
+
+        <class>eu.ttbox.model.ui.store.fragment.AbstractBlock</class>
+        <class>eu.ttbox.model.ui.store.fragment.BlockColumn</class>
+        <class>eu.ttbox.model.ui.store.fragment.BlockHtmlText</class>
+        <class>eu.ttbox.model.ui.store.fragment.BlockFlash</class>
+
+        <exclude-unlisted-classes>false</exclude-unlisted-classes>
+
+    </persistence-unit>
+
+</persistence>

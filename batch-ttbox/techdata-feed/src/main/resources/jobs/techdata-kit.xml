@@ -1,0 +1,93 @@
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xmlns:b="http://www.springframework.org/schema/beans" xmlns:batch="http://www.springframework.org/schema/util" xmlns:p="http://www.springframework.org/schema/p" xmlns:util="http://www.springframework.org/schema/util"
+  xmlns:oxm="http://www.springframework.org/schema/oxm" xmlns:task="http://www.springframework.org/schema/task"
+  xsi:schemaLocation="
+	       http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd
+           http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+           http://www.springframework.org/schema/oxm http://www.springframework.org/schema/oxm/spring-oxm.xsd
+           http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task.xsd 
+           http://www.springframework.org/schema/batch http://www.springframework.org/schema/batch/spring-batch.xsd">
+
+
+  <import resource="classpath:/eu/ttbox/batch/techdata/applicationContext.xml" />
+
+  <bean id="completionPolicy" class="org.springframework.batch.repeat.policy.DefaultResultCompletionPolicy" />
+
+  <job id="kitTechdataJob" xmlns="http://www.springframework.org/schema/batch">
+    <step id="kitTechdataDownloadStep" next="kitTechdataSortedStep">
+      <tasklet>
+        <chunk writer="kitSortItemWriter" chunk-completion-policy="completionPolicy">
+          <reader>
+            <b:bean class="eu.ttbox.batch.techdata.price.list.PriceListFtpItemReader" p:filenamePattern="(?i)Kit\.Txt(\.gz)?"
+              p:downloadConnector-ref="techdataProxyCacheFtpConnector" />
+          </reader>
+        </chunk>
+      </tasklet>
+    </step>  
+    <step id="kitTechdataSortedStep" next="kitTechdataImporterStep"> <!-- -->
+      <tasklet>
+        <chunk writer="kitSortItemWriter" chunk-completion-policy="completionPolicy">
+          <reader>
+            <b:bean class="eu.ttbox.batch.core.reader.LocalFilenamePatternProxyCacheItemReader"
+              p:filenamePattern="(?i)Kit\.Txt(\.gz)?" p:downloadConnector-ref="techdataProxyCacheFtpConnector" />
+          </reader>
+        </chunk>
+      </tasklet>
+    </step>
+ 
+    <step id="kitTechdataImporterStep">
+      <tasklet>
+        <chunk reader="kitTechdataItemReader" writer="kitTechdataItemWriter" chunk-completion-policy="completionPolicy" />
+      </tasklet>
+    </step>
+  </job>
+
+
+  <util:constant id="DELIMITER_TAB" static-field="org.springframework.batch.item.file.transform.DelimitedLineTokenizer.DELIMITER_TAB" />
+
+  <util:constant id="kitTechdataFields" static-field="eu.ttbox.batch.techdata.kit.KitFieldEnum.FIELDS_NAMES" />
+  <util:constant id="kitTechdataFieldIds" static-field="eu.ttbox.batch.techdata.kit.KitFieldEnum.FIELDS_IDS" />
+  <util:constant id="kitTechdataFieldsAddAll" static-field="eu.ttbox.batch.techdata.Kit.kitFieldEnum.FIELDS_NAMES_ADD_ALL" />
+
+
+  <bean id="kitTechdataItemReader" class="eu.ttbox.batch.core.reader.ProxyCacheDelegateItemReader" p:relativePath="(?i)Kit.Txt">
+    <property name="downloadConnector">
+      <bean parent="techdataProxyCacheFtpConnector"   />
+    </property>
+    <property name="delegate">
+      <bean class="org.springframework.batch.item.file.FlatFileItemReader">
+        <property name="lineMapper">
+          <bean class="org.springframework.batch.item.file.mapping.DefaultLineMapper">
+            <property name="lineTokenizer">
+              <bean class="org.springframework.batch.item.file.transform.DelimitedLineTokenizer" p:delimiter-ref="DELIMITER_TAB"
+                p:quoteCharacter="\u0000" p:names-ref="kitTechdataFields" />
+            </property>
+            <property name="fieldSetMapper">
+              <bean class="org.springframework.batch.item.file.mapping.PassThroughFieldSetMapper" />
+            </property>
+          </bean>
+        </property>
+      </bean>
+    </property>
+  </bean>
+
+  <bean id="kitSortItemWriter" class="eu.ttbox.batch.techdata.core.sort.SortFileService">
+    <property name="itemReader">
+      <bean class="org.springframework.batch.item.file.FlatFileItemReader">
+        <property name="lineMapper">
+          <bean class="org.springframework.batch.item.file.mapping.DefaultLineMapper">
+            <property name="lineTokenizer">
+              <bean class="eu.ttbox.batch.techdata.core.sort.reader.AddUntokeniseLineDelimitedLineTokenizer"
+                p:delimiter-ref="DELIMITER_TAB" p:quoteCharacter="\u0000" p:names-ref="kitTechdataFieldsAddAll" />
+            </property>
+            <property name="fieldSetMapper">
+              <bean class="eu.ttbox.batch.techdata.core.sort.reader.SortVOFieldSetMapper" p:line="ALL"
+                p:keys-ref="kitTechdataFieldIds" />
+            </property>
+          </bean>
+        </property>
+      </bean>
+    </property>
+  </bean>
+
+</beans>

@@ -1,0 +1,17 @@
+{
+  "france" : {
+    "_source" : { "enabled" : true, "compress" : true },
+     "properties" : { 
+         "country" : {"type":"string","store":"yes","index":"not_analyzed"},
+         "sexe" : {"type":"string","store":"yes","index":"not_analyzed"},
+         "name" : {
+	        "type" : "multi_field",
+	        "fields" : {
+	          "name" : { "type" : "string", "index" : "analyzed" },
+	          "untouched" : {"type" : "string", "index" : "not_analyzed"},
+              "phonetic" : { "type" : "string", "analyzer" : "phonetic_analyzer"}
+	        }
+	      }  
+      }
+   }
+}

@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+
+    <parent>
+        <groupId>com.j3.ttbox</groupId>
+        <artifactId>client-ttbox</artifactId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+
+    <artifactId>supplier-import-module-ttbox</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>swf</packaging>
+
+    <name>TTBox Client Flex - Supplier File Importer</name>
+    <properties>
+        <!-- the application name which must match the main mxml file and application descriptor file names -->
+        <application.name>ProductImporter</application.name>
+        <!-- Sign Air -->
+        <keystore.file>${basedir}/cert.p12</keystore.file>
+        <keystore.password>39#wnetx3tl</keystore.password>
+
+        <sourceDir>src/main/flex</sourceDir>
+    </properties>
+    <build>
+        <sourceDirectory>src/main/flex</sourceDirectory>
+        <testSourceDirectory>src/test/flex</testSourceDirectory>
+
+        <plugins>
+            <plugin>
+                <groupId>org.sonatype.flexmojos</groupId>
+                <artifactId>flexmojos-maven-plugin</artifactId>
+                <version>${flexmojos.version}</version>
+                <extensions>true</extensions>
+                <!--                <executions>-->
+                <!--                    <execution>-->
+                <!--                        <id>do-sign-air</id>-->
+                <!--                        <goals>-->
+                <!--                            <goal>sign-air</goal>-->
+                <!--                        </goals>-->
+                <!--                    </execution> -->
+                <!--                </executions>-->
+                <configuration>
+                    <keystore>${keystore.file}</keystore>
+                    <storepass>${keystore.password}</storepass>
+                    <!-- set this to true to allow the plugin to find the special Flex Builder/Flash
+                         Builder string in the application descriptor which is normally in site the
+                         <content> tag. If you set this to false or omit it entirely, the plugin will
+                         expect there to be an ${output} token in that tag. Placing that token in
+                         the application descriptor will prevent the Export Release Build function
+                         in Flex Builder/Flash Builder for working -->
+                    <flexBuilderCompatibility>true</flexBuilderCompatibility>
+
+                    <sourceFile>${application.name}.mxml</sourceFile>
+                    <descriptorTemplate>${basedir}/src/main/flex/${application.name}-app.xml</descriptorTemplate>
+
+                    <targetPlayer>10.0.0</targetPlayer>
+                    <allowSourcePathOverlap>true</allowSourcePathOverlap>
+                    <optimize>true</optimize>
+
+                    <moduleFiles>
+                        <module>ProductImporterModule.mxml</module>
+                    </moduleFiles>
+                    <!--optionally include files in the AIR package -->
+                    <includeFileSets>
+                        <fileSet>
+                            <directory>${basedir}/src/main/resources</directory>
+                            <includes>
+                                <include>*.*</include>
+                            </includes>
+                        </fileSet>
+                    </includeFileSets>
+                    <keepAs3Metadatas>
+                        <keepAs3Metadata>Bindable</keepAs3Metadata>
+                        <keepAs3Metadata>Managed</keepAs3Metadata>
+                        <keepAs3Metadata>ChangeEvent</keepAs3Metadata>
+                        <keepAs3Metadata>NonCommittingChangeEvent</keepAs3Metadata>
+                        <keepAs3Metadata>Transient</keepAs3Metadata>
+                        <keepAs3Metadata>Id</keepAs3Metadata>
+                        <keepAs3Metadata>Version</keepAs3Metadata>
+                        <keepAs3Metadata>Name</keepAs3Metadata>
+                        <keepAs3Metadata>In</keepAs3Metadata>
+                        <keepAs3Metadata>Inject</keepAs3Metadata>
+                        <keepAs3Metadata>Out</keepAs3Metadata>
+                        <keepAs3Metadata>Observer</keepAs3Metadata>
+                        <keepAs3Metadata>Destroy</keepAs3Metadata>
+                        <keepAs3Metadata>RemoteClass</keepAs3Metadata>
+                        <keepAs3Metadata>AssertFalse</keepAs3Metadata>
+                        <keepAs3Metadata>AssertTrue</keepAs3Metadata>
+                        <keepAs3Metadata>DecimalMax</keepAs3Metadata>
+                        <keepAs3Metadata>DecimalMin</keepAs3Metadata>
+                        <keepAs3Metadata>Digits</keepAs3Metadata>
+                        <keepAs3Metadata>Future</keepAs3Metadata>
+                        <keepAs3Metadata>Max</keepAs3Metadata>
+                        <keepAs3Metadata>Min</keepAs3Metadata>
+                        <keepAs3Metadata>NotNull</keepAs3Metadata>
+                        <keepAs3Metadata>Null</keepAs3Metadata>
+                        <keepAs3Metadata>Past</keepAs3Metadata>
+                        <keepAs3Metadata>Pattern</keepAs3Metadata>
+                        <keepAs3Metadata>Size</keepAs3Metadata>
+                        <keepAs3Metadata>Email</keepAs3Metadata>
+                    </keepAs3Metadatas>
+
+                </configuration>
+
+                <dependencies>
+                    <dependency>
+                        <groupId>com.adobe.flex</groupId>
+                        <artifactId>compiler</artifactId>
+                        <version>${flex.sdk.version}</version>
+                        <type>pom</type>
+                    </dependency>
+                    <dependency>
+                        <groupId>com.adobe.flex.compiler</groupId>
+                        <artifactId>adt</artifactId>
+                        <version>${flex.sdk.version}</version>
+                    </dependency>
+
+                </dependencies>
+
+            </plugin>
+        </plugins>
+    </build>
+
+
+    <dependencies>
+
+        <!-- TTBOX Service -->
+        <dependency>
+            <groupId>com.j3.ttbox</groupId>
+            <artifactId>service-api-flex-ttbox</artifactId>
+            <version>1.0-SNAPSHOT</version>
+            <type>swc</type>
+            <exclusions>
+                <exclusion>
+                    <groupId>com.adobe.flex.framework</groupId>
+                    <artifactId>flex-framework</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+        <!-- Test -->
+        <dependency>
+            <groupId>com.adobe.flexunit</groupId>
+            <artifactId>flexunit</artifactId>
+            <version>${flexunit.version}</version>
+            <type>swc</type>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- Air SDK dependencies -->
+        <dependency>
+            <groupId>com.adobe.flex.framework</groupId>
+            <artifactId>air-framework</artifactId>
+            <version>${flex.sdk.version}</version>
+            <type>pom</type>
+        </dependency>
+
+
+        <!-- Granite DS -->
+        <dependency>
+            <groupId>org.graniteds</groupId>
+            <artifactId>granite-essentials-swc</artifactId>
+            <version>${graniteds.version}</version>
+            <type>swc</type>
+            <scope>internal</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.graniteds</groupId>
+            <artifactId>granite-swc</artifactId>
+            <version>${graniteds.version}</version>
+            <type>swc</type>
+            <scope>internal</scope>
+        </dependency>
+
+
+    </dependencies>
+
+
+</project>

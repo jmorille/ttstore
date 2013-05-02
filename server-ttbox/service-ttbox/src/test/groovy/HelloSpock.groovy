@@ -1,0 +1,19 @@
+import spock.lang.*
+
+import org.junit.runner.RunWith;
+import org.spockframework.runtime.*;
+import spock.lang.Specification;
+
+class HelloSpock extends Specification {
+	
+  def "can you figure out what I'm up to?"() {
+    expect:
+    name.size() == size
+
+    where:
+    name << ["Kirk", "Spock", "Scotty"]
+    size << [4, 5, 6]
+  }
+  
+  
+}

@@ -1,0 +1,70 @@
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:batch="http://www.springframework.org/schema/util" xmlns:p="http://www.springframework.org/schema/p" xmlns:util="http://www.springframework.org/schema/util"
+  xmlns:oxm="http://www.springframework.org/schema/oxm" xmlns:task="http://www.springframework.org/schema/task"
+  xsi:schemaLocation="
+	       http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd
+           http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+           http://www.springframework.org/schema/oxm http://www.springframework.org/schema/oxm/spring-oxm.xsd
+           http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task.xsd
+           http://www.springframework.org/schema/batch http://www.springframework.org/schema/batch/spring-batch.xsd">
+
+
+  <import resource="classpath:/META-INF/icecat/applicationContext.xml" />
+ 
+  <!-- <no-rollback-exception-classes> -->
+  <!-- <include class="org.springframework.batch.item.validator.ValidationException" /> -->
+  <!-- <include class="org.hibernate.LazyInitializationException" /> -->
+  <!-- </no-rollback-exception-classes> -->
+  <!-- <transaction-attributes propagation="REQUIRED" isolation="DEFAULT" /> -->
+  <!-- transaction-manager="icecatTxManager" -->
+<!--         <transaction-attributes propagation="REQUIRES_NEW" isolation="DEFAULT" /> -->
+  <!-- retry-limit="1" <retryable-exception-classes> <include class="org.springframework.dao.DeadlockLoserDataAccessException" 
+    /> </retryable-exception-classes> </chunk> reader-transactional-queue="true" reader-transactional-queue="true" -->
+<!-- org.springframework.orm.hibernate3.HibernateSystemException    processor-transactional="true"  -->
+<!--         <transaction-attributes propagation="REQUIRED" isolation="DEFAULT" /> -->
+<!--   chunk-completion-policy="completionPolicy" -->
+  <job id="indexFilesDiffIcecatJob" xmlns="http://www.springframework.org/schema/batch">
+    <step id="indexFilesDiffIcecatStep">
+      <tasklet   >
+        <chunk reader="indexFilesIcecatDifferentialItemReader" processor="icecatFileDiffProcessor" writer="icecatDifferentialItemWriter"
+       reader-transactional-queue="true"  commit-interval="100"  >  
+        </chunk> 
+        <transaction-attributes propagation="NOT_SUPPORTED" isolation="DEFAULT" />
+        <listeners>
+          <listener ref="openSessionStepListener" />
+          <listener ref="statListener" />
+        </listeners>
+      </tasklet>
+    </step>
+  </job>
+
+  <bean id="statListener" class="eu.ttbox.batch.core.reader.listener.StatItemReadListener" p:logInfoPeriod="100" />
+  <bean id="openSessionStepListener" class="eu.ttbox.batch.core.reader.hibernate.OpenSessionStepListener" p:sessionFactory-ref="icecatSessionFactory" />
+
+  <!-- p:queryString="from IcecatProduct p left join fetch p.category order by p.id" p:queryString="select p from IcecatProduct 
+    p inner join fetch p.brand inner join fetch p.category left join fetch p.eans order by p.id" p:queryString="from IcecatProduct 
+    p order by p.id" p:useStatelessSession="false" -->
+    <!-- org.springframework.batch.item.database.HibernateCursorItemReader -->
+<!--     eu.ttbox.batch.icecat.core.reader.DeferredHibernateCursorItemReader -->
+  <bean id="indexFilesIcecatDifferentialItemReader" class="eu.ttbox.batch.core.reader.differential.DifferentialItemReader"
+    p:comparator-ref="indexFilesIcecatDifferentialComparator" p:itemReaderJoin-ref="indexFilesIcecatReader">
+    <property name="itemReaderMaster">
+      <bean class="eu.ttbox.batch.core.reader.hibernate.HibernateSpringSessionCursorItemReader" p:sessionFactory-ref="icecatSessionFactory" p:useStatelessSession="false"
+        p:queryString="select p from IcecatProduct p  inner join fetch p.brand  inner join fetch p.category  left join fetch p.eans order by p.id" />
+    </property>
+  </bean>
+
+
+
+  <bean id="indexFilesIcecatReader" parent="abstractProxyIndexFileReader" p:relativePath="export/freexml.int/INT/files.index.xml.gz">
+    <property name="delegate">
+      <bean class="org.springframework.batch.item.xml.StaxEventItemReader" p:strict="true" p:unmarshaller-ref="icecatFileIndexMarshaller"
+        p:fragmentRootElementName="file" />
+    </property>
+  </bean>
+
+
+  <oxm:jaxb2-marshaller id="icecatFileIndexMarshaller" contextPath="biz.icecat.files.v1" />
+
+
+</beans>

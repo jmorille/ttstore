@@ -1,0 +1,337 @@
+825  [main] INFO  eu.ttbox.batch.core.BatchJobRunner - Starting for 1 jobs [priceIngramJob]
+909  [main] INFO  eu.ttbox.batch.core.BatchJobRunner -  jobPath [/META-INF/ingram/ingram-job-repository.xml, /jobs/ingram-price.xml]
+16771 [main] DEBUG n.c.socket.nio.NioProviderMetadata - Using the autodetected NIO constraint level: 0
+21303 [main] ERROR eu.ttbox.batch.core.BatchJobRunner - Job Terminated in error: Error creating bean with name 'supplierPriceIngramItemProcessor': Injection of autowired dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Could not autowire field: eu.ttbox.batch.ingram.product.ProductItemProcessor eu.ttbox.batch.ingram.price.diff.SupplierPriceIngramItemProcessor.productItemProcessor; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'productItemProcessor': Injection of autowired dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Could not autowire field: java.lang.String eu.ttbox.batch.ingram.product.ProductItemProcessor.indexType; nested exception is org.springframework.beans.factory.BeanExpressionException: Expression parsing failed; nested exception is org.springframework.expression.spel.SpelEvaluationException: EL1008E:(pos 0): Field or property 'es' cannot be found on object of type 'org.springframework.beans.factory.config.BeanExpressionContext'
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'supplierPriceIngramItemProcessor': Injection of autowired dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Could not autowire field: eu.ttbox.batch.ingram.product.ProductItemProcessor eu.ttbox.batch.ingram.price.diff.SupplierPriceIngramItemProcessor.productItemProcessor; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'productItemProcessor': Injection of autowired dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Could not autowire field: java.lang.String eu.ttbox.batch.ingram.product.ProductItemProcessor.indexType; nested exception is org.springframework.beans.factory.BeanExpressionException: Expression parsing failed; nested exception is org.springframework.expression.spel.SpelEvaluationException: EL1008E:(pos 0): Field or property 'es' cannot be found on object of type 'org.springframework.beans.factory.config.BeanExpressionContext'
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:287) ~[spring-beans-3.1.0.RELEASE.jar:3.1.0.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1106) ~[spring-beans-3.1.0.RELEASE.jar:3.1.0.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:517) ~[spring-beans-3.1.0.RELEASE.jar:3.1.0.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:456) ~[spring-beans-3.1.0.RELEASE.jar:3.1.0.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:294) ~[spring-beans-3.1.0.RELEASE.jar:3.1.0.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:225) ~[spring-beans-3.1.0.RELEASE.jar:3.1.0.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:291) ~[spring-beans-3.1.0.RELEASE.jar:3.1.0.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:193) ~[spring-beans-3.1.0.RELEASE.jar:3.1.0.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:585) ~[spring-beans-3.1.0.RELEASE.jar:3.1.0.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:913) ~[spring-context-3.1.0.RELEASE.jar:3.1.0.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:464) ~[spring-context-3.1.0.RELEASE.jar:3.1.0.RELEASE]
+	at org.springframework.context.support.ClassPathXmlApplicationContext.<init>(ClassPathXmlApplicationContext.java:139) ~[spring-context-3.1.0.RELEASE.jar:3.1.0.RELEASE]
+	at org.springframework.context.support.ClassPathXmlApplicationContext.<init>(ClassPathXmlApplicationContext.java:93) ~[spring-context-3.1.0.RELEASE.jar:3.1.0.RELEASE]
+	at eu.ttbox.batch.core.BatchJobRunner.start(BatchJobRunner.java:162) ~[classes/:na]
+	at eu.ttbox.batch.ingram.IngramRunner.main(IngramRunner.java:34) [classes/:na]
+Caused by: org.springframework.beans.factory.BeanCreationException: Could not autowire field: eu.ttbox.batch.ingram.product.ProductItemProcessor eu.ttbox.batch.ingram.price.diff.SupplierPriceIngramItemProcessor.productItemProcessor; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'productItemProcessor': Injection of autowired dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Could not autowire field: java.lang.String eu.ttbox.batch.ingram.product.ProductItemProcessor.indexType; nested exception is org.springframework.beans.factory.BeanExpressionException: Expression parsing failed; nested exception is org.springframework.expression.spel.SpelEvaluationException: EL1008E:(pos 0): Field or property 'es' cannot be found on object of type 'org.springframework.beans.factory.config.BeanExpressionContext'
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:506) ~[spring-beans-3.1.0.RELEASE.jar:3.1.0.RELEASE]
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:87) ~[spring-beans-3.1.0.RELEASE.jar:3.1.0.RELEASE]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:284) ~[spring-beans-3.1.0.RELEASE.jar:3.1.0.RELEASE]
+	... 14 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'productItemProcessor': Injection of autowired dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Could not autowire field: java.lang.String eu.ttbox.batch.ingram.product.ProductItemProcessor.indexType; nested exception is org.springframework.beans.factory.BeanExpressionException: Expression parsing failed; nested exception is org.springframework.expression.spel.SpelEvaluationException: EL1008E:(pos 0): Field or property 'es' cannot be found on object of type 'org.springframework.beans.factory.config.BeanExpressionContext'
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:287) ~[spring-beans-3.1.0.RELEASE.jar:3.1.0.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1106) ~[spring-beans-3.1.0.RELEASE.jar:3.1.0.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:517) ~[spring-beans-3.1.0.RELEASE.jar:3.1.0.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:456) ~[spring-beans-3.1.0.RELEASE.jar:3.1.0.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:294) ~[spring-beans-3.1.0.RELEASE.jar:3.1.0.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:225) ~[spring-beans-3.1.0.RELEASE.jar:3.1.0.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:291) ~[spring-beans-3.1.0.RELEASE.jar:3.1.0.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:193) ~[spring-beans-3.1.0.RELEASE.jar:3.1.0.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.findAutowireCandidates(DefaultListableBeanFactory.java:848) ~[spring-beans-3.1.0.RELEASE.jar:3.1.0.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:790) ~[spring-beans-3.1.0.RELEASE.jar:3.1.0.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:707) ~[spring-beans-3.1.0.RELEASE.jar:3.1.0.RELEASE]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:478) ~[spring-beans-3.1.0.RELEASE.jar:3.1.0.RELEASE]
+	... 16 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Could not autowire field: java.lang.String eu.ttbox.batch.ingram.product.ProductItemProcessor.indexType; nested exception is org.springframework.beans.factory.BeanExpressionException: Expression parsing failed; nested exception is org.springframework.expression.spel.SpelEvaluationException: EL1008E:(pos 0): Field or property 'es' cannot be found on object of type 'org.springframework.beans.factory.config.BeanExpressionContext'
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:506) ~[spring-beans-3.1.0.RELEASE.jar:3.1.0.RELEASE]
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:87) ~[spring-beans-3.1.0.RELEASE.jar:3.1.0.RELEASE]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:284) ~[spring-beans-3.1.0.RELEASE.jar:3.1.0.RELEASE]
+	... 27 common frames omitted
+Caused by: org.springframework.beans.factory.BeanExpressionException: Expression parsing failed; nested exception is org.springframework.expression.spel.SpelEvaluationException: EL1008E:(pos 0): Field or property 'es' cannot be found on object of type 'org.springframework.beans.factory.config.BeanExpressionContext'
+	at org.springframework.context.expression.StandardBeanExpressionResolver.evaluate(StandardBeanExpressionResolver.java:142) ~[spring-context-3.1.0.RELEASE.jar:3.1.0.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.evaluateBeanDefinitionString(AbstractBeanFactory.java:1299) ~[spring-beans-3.1.0.RELEASE.jar:3.1.0.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:719) ~[spring-beans-3.1.0.RELEASE.jar:3.1.0.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:707) ~[spring-beans-3.1.0.RELEASE.jar:3.1.0.RELEASE]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:478) ~[spring-beans-3.1.0.RELEASE.jar:3.1.0.RELEASE]
+	... 29 common frames omitted
+Caused by: org.springframework.expression.spel.SpelEvaluationException: EL1008E:(pos 0): Field or property 'es' cannot be found on object of type 'org.springframework.beans.factory.config.BeanExpressionContext'
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference.readProperty(PropertyOrFieldReference.java:208) ~[spring-expression-3.1.0.RELEASE.jar:3.1.0.RELEASE]
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference.getValueInternal(PropertyOrFieldReference.java:72) ~[spring-expression-3.1.0.RELEASE.jar:3.1.0.RELEASE]
+	at org.springframework.expression.spel.ast.CompoundExpression.getValueInternal(CompoundExpression.java:52) ~[spring-expression-3.1.0.RELEASE.jar:3.1.0.RELEASE]
+	at org.springframework.expression.spel.ast.SpelNodeImpl.getValue(SpelNodeImpl.java:93) ~[spring-expression-3.1.0.RELEASE.jar:3.1.0.RELEASE]
+	at org.springframework.expression.spel.standard.SpelExpression.getValue(SpelExpression.java:88) ~[spring-expression-3.1.0.RELEASE.jar:3.1.0.RELEASE]
+	at org.springframework.context.expression.StandardBeanExpressionResolver.evaluate(StandardBeanExpressionResolver.java:139) ~[spring-context-3.1.0.RELEASE.jar:3.1.0.RELEASE]
+	... 33 common frames omitted
+719  [main] INFO  eu.ttbox.batch.core.BatchJobRunner - Starting for 1 jobs [priceIngramJob]
+726  [main] INFO  eu.ttbox.batch.core.BatchJobRunner -  jobPath [/META-INF/ingram/ingram-job-repository.xml, /jobs/ingram-price.xml]
+14863 [main] DEBUG n.c.socket.nio.NioProviderMetadata - Using the autodetected NIO constraint level: 0
+18819 [main] INFO  eu.ttbox.batch.core.BatchJobRunner - Starting job 1 / 1 : priceIngramJob
+21706 [main] INFO  e.t.b.c.download.ftp.FtpConnector - Connected to FTP ftpsecure.ingrammicro.com : Reply code 230 User GLOHA logged in
+
+22013 [main] INFO  e.t.b.c.download.ftp.FtpConnector - FTP transfert as BINARY_FILE_TYPE
+22167 [main] INFO  e.t.b.c.download.ftp.FtpConnector - Transfert Compress mode false
+22988 [main] INFO  e.t.b.c.download.ftp.FtpConnector - Need to download 1 files
+34593 [main] INFO  e.t.b.c.download.ftp.FtpConnector - Copy file 1/1 to Destination File /Users/jmorille/repository-ttbox/ingram/ingram-2012-01-21/fusion_fr_gloha_price.zip in 11605 ms  (size 3611663 bytes)
+34746 [main] INFO  e.t.b.c.download.ftp.FtpConnector - Deconnected to FTP ftpsecure.ingrammicro.com : null
+36509 [main] INFO  e.t.b.c.w.unzip.UnZipItemWriter - File /Users/jmorille/repository-ttbox/ingram/ingram-2012-01-21/fusion_fr_gloha_price.zip contains entry PRICE.TXT as unzip as /Users/jmorille/repository-ttbox/ingram/ingram-2012-01-21/fusion_fr_gloha_price.txt.gz
+42890 [main] INFO  e.t.b.c.w.s.SortFileServiceItemWriter - Sort file 1/1 : Sorted /Users/jmorille/repository-ttbox/ingram/ingram-2012-01-21/fusion_fr_gloha_price.txt.gz of 63891 lines in 6202 ms  (size 2283088 bytes)
+43134 [main] INFO  e.t.b.i.p.l.FileDomainListItemReader - Register 1 files to ItemReader
+43226 [main] INFO  e.t.b.i.p.l.FileDomainListItemReader - Read MasterItem SalespointSupplier{id=1, version=0, supplier=INGRAM, supplierId=gloha, password=********, status=ON, salespoint=Salespoint{id=1, name=TTBox}} associated to Local File /Users/jmorille/repository-ttbox/ingram/ingram-2012-01-21/fusion_fr_gloha_price-sorted.txt.gz
+43243 [main] INFO  e.t.b.i.p.l.PriceListItemProcessor - SupplierPrice[gloha] with filemname /Users/jmorille/repository-ttbox/ingram/ingram-2012-01-21/fusion_fr_gloha_price-sorted.txt.gz
+146212 [main] INFO  e.t.b.i.p.l.PriceListItemProcessor - SupplierPrice[gloha] : 63891 Lines read in 98408 ms
+146213 [main] INFO  e.t.b.i.p.l.PriceListItemProcessor - Supplier Price file Id gloha as PriceDifferentialVO{ingramId=gloha, products=ProductEntityDifferentialVO{=ProductEntityDifferentialVO{creates=0, updates=219, deletes=0}, ignoreLicence=0, ignoreNotSellable=7526}}
+146255 [main] INFO  e.t.b.i.price.list.PriceItemWriter - StopWatch 'gloha': running time (millis) = 40
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+00040  100 %  Update 219 products
+
+147003 [main] INFO  eu.ttbox.batch.core.BatchJobRunner - Job priceIngramJob end with code : 0
+147004 [main] INFO  eu.ttbox.batch.core.BatchJobRunner - Job Start at Sat Jan 21 16:55:05 CET 2012 and end at Sat Jan 21 16:57:13 CET 2012
+147004 [main] INFO  eu.ttbox.batch.core.BatchJobRunner - StopWatch '': running time (millis) = 128185
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+128185  100 %  1 / 1 : priceIngramJob
+
+315  [main] INFO  eu.ttbox.batch.core.BatchJobRunner - Starting for 1 jobs [priceIngramJob]
+318  [main] INFO  eu.ttbox.batch.core.BatchJobRunner -  jobPath [/META-INF/ingram/ingram-job-repository.xml, /jobs/ingram-price.xml]
+287  [main] INFO  eu.ttbox.batch.core.BatchJobRunner - Starting for 1 jobs [priceIngramJob]
+291  [main] INFO  eu.ttbox.batch.core.BatchJobRunner -  jobPath [/META-INF/ingram/ingram-job-repository.xml, /jobs/ingram-price.xml]
+7404 [main] DEBUG n.c.socket.nio.NioProviderMetadata - Using the autodetected NIO constraint level: 0
+10982 [main] INFO  eu.ttbox.batch.core.BatchJobRunner - Starting job 1 / 1 : priceIngramJob
+14526 [main] INFO  e.t.b.c.download.ftp.FtpConnector - Connected to FTP ftpsecure.ingrammicro.com : Reply code 230 User GLOHA logged in
+
+14832 [main] INFO  e.t.b.c.download.ftp.FtpConnector - FTP transfert as BINARY_FILE_TYPE
+14985 [main] INFO  e.t.b.c.download.ftp.FtpConnector - Transfert Compress mode false
+15926 [main] INFO  e.t.b.c.download.ftp.FtpConnector - Deconnected to FTP ftpsecure.ingrammicro.com : null
+16094 [main] INFO  e.t.b.i.p.l.FileDomainListItemReader - Register 1 files to ItemReader
+16123 [main] INFO  e.t.b.i.p.l.FileDomainListItemReader - Read MasterItem SalespointSupplier{id=1, version=0, supplier=INGRAM, supplierId=gloha, password=********, status=ON, salespoint=Salespoint{id=1, name=TTBox}} associated to Local File /Users/jmorille/repository-ttbox/ingram/ingram-2012-01-21/fusion_fr_gloha_price-sorted.txt.gz
+16124 [main] INFO  e.t.b.i.p.l.PriceListItemProcessor - SupplierPrice[gloha] with filemname /Users/jmorille/repository-ttbox/ingram/ingram-2012-01-21/fusion_fr_gloha_price-sorted.txt.gz
+18233 [main] ERROR o.s.batch.core.step.AbstractStep - Encountered an error executing the step
+org.elasticsearch.action.ActionRequestValidationException: Validation Failed: 1: id is missing;
+	at org.elasticsearch.action.Actions.addValidationError(Actions.java:29) ~[elasticsearch-0.18.7.jar:na]
+	at org.elasticsearch.action.get.GetRequest.validate(GetRequest.java:89) ~[elasticsearch-0.18.7.jar:na]
+	at org.elasticsearch.action.support.BaseAction.execute(BaseAction.java:55) ~[elasticsearch-0.18.7.jar:na]
+	at org.elasticsearch.client.node.NodeClient.get(NodeClient.java:162) ~[elasticsearch-0.18.7.jar:na]
+	at org.elasticsearch.client.action.get.GetRequestBuilder.doExecute(GetRequestBuilder.java:125) ~[elasticsearch-0.18.7.jar:na]
+	at org.elasticsearch.client.action.support.BaseRequestBuilder.execute(BaseRequestBuilder.java:56) ~[elasticsearch-0.18.7.jar:na]
+	at org.elasticsearch.client.action.support.BaseRequestBuilder.execute(BaseRequestBuilder.java:51) ~[elasticsearch-0.18.7.jar:na]
+	at eu.ttbox.batch.ingram.product.EsProductSCopyIdxToRefItemWriter.write(EsProductSCopyIdxToRefItemWriter.java:72) ~[classes/:na]
+	at eu.ttbox.batch.ingram.product.ProductItemProcessor.isUpdateProductIcecat(ProductItemProcessor.java:168) ~[classes/:na]
+	at eu.ttbox.batch.ingram.product.ProductItemProcessor.process(ProductItemProcessor.java:115) ~[classes/:na]
+	at eu.ttbox.batch.ingram.price.diff.SupplierPriceIngramItemProcessor.process(SupplierPriceIngramItemProcessor.java:50) ~[classes/:na]
+	at eu.ttbox.batch.ingram.price.list.PriceListItemProcessor.process(PriceListItemProcessor.java:77) ~[classes/:na]
+	at eu.ttbox.batch.ingram.price.list.PriceListItemProcessor.process(PriceListItemProcessor.java:1) ~[classes/:na]
+	at org.springframework.batch.core.step.item.SimpleChunkProcessor.doProcess(SimpleChunkProcessor.java:125) ~[spring-batch-core-2.1.8.RELEASE.jar:na]
+	at org.springframework.batch.core.step.item.SimpleChunkProcessor.transform(SimpleChunkProcessor.java:288) ~[spring-batch-core-2.1.8.RELEASE.jar:na]
+	at org.springframework.batch.core.step.item.SimpleChunkProcessor.process(SimpleChunkProcessor.java:187) ~[spring-batch-core-2.1.8.RELEASE.jar:na]
+	at org.springframework.batch.core.step.item.ChunkOrientedTasklet.execute(ChunkOrientedTasklet.java:74) ~[spring-batch-core-2.1.8.RELEASE.jar:na]
+	at org.springframework.batch.core.step.tasklet.TaskletStep$ChunkTransactionCallback.doInTransaction(TaskletStep.java:386) ~[spring-batch-core-2.1.8.RELEASE.jar:na]
+	at org.springframework.transaction.support.TransactionTemplate.execute(TransactionTemplate.java:130) ~[spring-tx-3.1.0.RELEASE.jar:3.1.0.RELEASE]
+	at org.springframework.batch.core.step.tasklet.TaskletStep$2.doInChunkContext(TaskletStep.java:264) ~[spring-batch-core-2.1.8.RELEASE.jar:na]
+	at org.springframework.batch.core.scope.context.StepContextRepeatCallback.doInIteration(StepContextRepeatCallback.java:76) ~[spring-batch-core-2.1.8.RELEASE.jar:na]
+	at org.springframework.batch.repeat.support.RepeatTemplate.getNextResult(RepeatTemplate.java:367) ~[spring-batch-infrastructure-2.1.8.RELEASE.jar:na]
+	at org.springframework.batch.repeat.support.RepeatTemplate.executeInternal(RepeatTemplate.java:214) ~[spring-batch-infrastructure-2.1.8.RELEASE.jar:na]
+	at org.springframework.batch.repeat.support.RepeatTemplate.iterate(RepeatTemplate.java:143) ~[spring-batch-infrastructure-2.1.8.RELEASE.jar:na]
+	at org.springframework.batch.core.step.tasklet.TaskletStep.doExecute(TaskletStep.java:250) ~[spring-batch-core-2.1.8.RELEASE.jar:na]
+	at org.springframework.batch.core.step.AbstractStep.execute(AbstractStep.java:195) ~[spring-batch-core-2.1.8.RELEASE.jar:na]
+	at org.springframework.batch.core.job.SimpleStepHandler.handleStep(SimpleStepHandler.java:135) [spring-batch-core-2.1.8.RELEASE.jar:na]
+	at org.springframework.batch.core.job.flow.JobFlowExecutor.executeStep(JobFlowExecutor.java:61) [spring-batch-core-2.1.8.RELEASE.jar:na]
+	at org.springframework.batch.core.job.flow.support.state.StepState.handle(StepState.java:60) [spring-batch-core-2.1.8.RELEASE.jar:na]
+	at org.springframework.batch.core.job.flow.support.SimpleFlow.resume(SimpleFlow.java:144) [spring-batch-core-2.1.8.RELEASE.jar:na]
+	at org.springframework.batch.core.job.flow.support.SimpleFlow.start(SimpleFlow.java:124) [spring-batch-core-2.1.8.RELEASE.jar:na]
+	at org.springframework.batch.core.job.flow.FlowJob.doExecute(FlowJob.java:135) [spring-batch-core-2.1.8.RELEASE.jar:na]
+	at org.springframework.batch.core.job.AbstractJob.execute(AbstractJob.java:281) [spring-batch-core-2.1.8.RELEASE.jar:na]
+	at org.springframework.batch.core.launch.support.SimpleJobLauncher$1.run(SimpleJobLauncher.java:120) [spring-batch-core-2.1.8.RELEASE.jar:na]
+	at org.springframework.core.task.SyncTaskExecutor.execute(SyncTaskExecutor.java:48) [spring-core-3.1.0.RELEASE.jar:3.1.0.RELEASE]
+	at org.springframework.batch.core.launch.support.SimpleJobLauncher.run(SimpleJobLauncher.java:114) [spring-batch-core-2.1.8.RELEASE.jar:na]
+	at eu.ttbox.batch.core.BatchJobRunner.start(BatchJobRunner.java:194) [classes/:na]
+	at eu.ttbox.batch.ingram.IngramRunner.main(IngramRunner.java:34) [classes/:na]
+18248 [main] INFO  eu.ttbox.batch.core.BatchJobRunner - Job priceIngramJob end with code : 1
+18249 [main] INFO  eu.ttbox.batch.core.BatchJobRunner - Job Start at Sat Jan 21 21:11:36 CET 2012 and end at Sat Jan 21 21:11:43 CET 2012
+287  [main] INFO  eu.ttbox.batch.core.BatchJobRunner - Starting for 1 jobs [priceIngramJob]
+291  [main] INFO  eu.ttbox.batch.core.BatchJobRunner -  jobPath [/META-INF/ingram/ingram-job-repository.xml, /jobs/ingram-price.xml]
+6592 [main] DEBUG n.c.socket.nio.NioProviderMetadata - Using the autodetected NIO constraint level: 0
+10108 [main] INFO  eu.ttbox.batch.core.BatchJobRunner - Starting job 1 / 1 : priceIngramJob
+12776 [main] INFO  e.t.b.c.download.ftp.FtpConnector - Connected to FTP ftpsecure.ingrammicro.com : Reply code 230 User GLOHA logged in
+
+13083 [main] INFO  e.t.b.c.download.ftp.FtpConnector - FTP transfert as BINARY_FILE_TYPE
+13236 [main] INFO  e.t.b.c.download.ftp.FtpConnector - Transfert Compress mode false
+14174 [main] INFO  e.t.b.c.download.ftp.FtpConnector - Deconnected to FTP ftpsecure.ingrammicro.com : null
+14346 [main] INFO  e.t.b.i.p.l.FileDomainListItemReader - Register 1 files to ItemReader
+14373 [main] INFO  e.t.b.i.p.l.FileDomainListItemReader - Read MasterItem SalespointSupplier{id=1, version=0, supplier=INGRAM, supplierId=gloha, password=********, status=ON, salespoint=Salespoint{id=1, name=TTBox}} associated to Local File /Users/jmorille/repository-ttbox/ingram/ingram-2012-01-21/fusion_fr_gloha_price-sorted.txt.gz
+14374 [main] INFO  e.t.b.i.p.l.PriceListItemProcessor - SupplierPrice[gloha] with filemname /Users/jmorille/repository-ttbox/ingram/ingram-2012-01-21/fusion_fr_gloha_price-sorted.txt.gz
+16474 [main] ERROR o.s.batch.core.step.AbstractStep - Encountered an error executing the step
+org.elasticsearch.action.ActionRequestValidationException: Validation Failed: 1: id is missing;
+	at org.elasticsearch.action.Actions.addValidationError(Actions.java:29) ~[elasticsearch-0.18.7.jar:na]
+	at org.elasticsearch.action.get.GetRequest.validate(GetRequest.java:89) ~[elasticsearch-0.18.7.jar:na]
+	at org.elasticsearch.action.support.BaseAction.execute(BaseAction.java:55) ~[elasticsearch-0.18.7.jar:na]
+	at org.elasticsearch.client.node.NodeClient.get(NodeClient.java:162) ~[elasticsearch-0.18.7.jar:na]
+	at org.elasticsearch.client.action.get.GetRequestBuilder.doExecute(GetRequestBuilder.java:125) ~[elasticsearch-0.18.7.jar:na]
+	at org.elasticsearch.client.action.support.BaseRequestBuilder.execute(BaseRequestBuilder.java:56) ~[elasticsearch-0.18.7.jar:na]
+	at org.elasticsearch.client.action.support.BaseRequestBuilder.execute(BaseRequestBuilder.java:51) ~[elasticsearch-0.18.7.jar:na]
+	at eu.ttbox.batch.ingram.product.EsProductSCopyIdxToRefItemWriter.write(EsProductSCopyIdxToRefItemWriter.java:76) ~[classes/:na]
+	at eu.ttbox.batch.ingram.product.ProductItemProcessor.isUpdateProductIcecat(ProductItemProcessor.java:168) ~[classes/:na]
+	at eu.ttbox.batch.ingram.product.ProductItemProcessor.process(ProductItemProcessor.java:115) ~[classes/:na]
+	at eu.ttbox.batch.ingram.price.diff.SupplierPriceIngramItemProcessor.process(SupplierPriceIngramItemProcessor.java:50) ~[classes/:na]
+	at eu.ttbox.batch.ingram.price.list.PriceListItemProcessor.process(PriceListItemProcessor.java:77) ~[classes/:na]
+	at eu.ttbox.batch.ingram.price.list.PriceListItemProcessor.process(PriceListItemProcessor.java:1) ~[classes/:na]
+	at org.springframework.batch.core.step.item.SimpleChunkProcessor.doProcess(SimpleChunkProcessor.java:125) ~[spring-batch-core-2.1.8.RELEASE.jar:na]
+	at org.springframework.batch.core.step.item.SimpleChunkProcessor.transform(SimpleChunkProcessor.java:288) ~[spring-batch-core-2.1.8.RELEASE.jar:na]
+	at org.springframework.batch.core.step.item.SimpleChunkProcessor.process(SimpleChunkProcessor.java:187) ~[spring-batch-core-2.1.8.RELEASE.jar:na]
+	at org.springframework.batch.core.step.item.ChunkOrientedTasklet.execute(ChunkOrientedTasklet.java:74) ~[spring-batch-core-2.1.8.RELEASE.jar:na]
+	at org.springframework.batch.core.step.tasklet.TaskletStep$ChunkTransactionCallback.doInTransaction(TaskletStep.java:386) ~[spring-batch-core-2.1.8.RELEASE.jar:na]
+	at org.springframework.transaction.support.TransactionTemplate.execute(TransactionTemplate.java:130) ~[spring-tx-3.1.0.RELEASE.jar:3.1.0.RELEASE]
+	at org.springframework.batch.core.step.tasklet.TaskletStep$2.doInChunkContext(TaskletStep.java:264) ~[spring-batch-core-2.1.8.RELEASE.jar:na]
+	at org.springframework.batch.core.scope.context.StepContextRepeatCallback.doInIteration(StepContextRepeatCallback.java:76) ~[spring-batch-core-2.1.8.RELEASE.jar:na]
+	at org.springframework.batch.repeat.support.RepeatTemplate.getNextResult(RepeatTemplate.java:367) ~[spring-batch-infrastructure-2.1.8.RELEASE.jar:na]
+	at org.springframework.batch.repeat.support.RepeatTemplate.executeInternal(RepeatTemplate.java:214) ~[spring-batch-infrastructure-2.1.8.RELEASE.jar:na]
+	at org.springframework.batch.repeat.support.RepeatTemplate.iterate(RepeatTemplate.java:143) ~[spring-batch-infrastructure-2.1.8.RELEASE.jar:na]
+	at org.springframework.batch.core.step.tasklet.TaskletStep.doExecute(TaskletStep.java:250) ~[spring-batch-core-2.1.8.RELEASE.jar:na]
+	at org.springframework.batch.core.step.AbstractStep.execute(AbstractStep.java:195) ~[spring-batch-core-2.1.8.RELEASE.jar:na]
+	at org.springframework.batch.core.job.SimpleStepHandler.handleStep(SimpleStepHandler.java:135) [spring-batch-core-2.1.8.RELEASE.jar:na]
+	at org.springframework.batch.core.job.flow.JobFlowExecutor.executeStep(JobFlowExecutor.java:61) [spring-batch-core-2.1.8.RELEASE.jar:na]
+	at org.springframework.batch.core.job.flow.support.state.StepState.handle(StepState.java:60) [spring-batch-core-2.1.8.RELEASE.jar:na]
+	at org.springframework.batch.core.job.flow.support.SimpleFlow.resume(SimpleFlow.java:144) [spring-batch-core-2.1.8.RELEASE.jar:na]
+	at org.springframework.batch.core.job.flow.support.SimpleFlow.start(SimpleFlow.java:124) [spring-batch-core-2.1.8.RELEASE.jar:na]
+	at org.springframework.batch.core.job.flow.FlowJob.doExecute(FlowJob.java:135) [spring-batch-core-2.1.8.RELEASE.jar:na]
+	at org.springframework.batch.core.job.AbstractJob.execute(AbstractJob.java:281) [spring-batch-core-2.1.8.RELEASE.jar:na]
+	at org.springframework.batch.core.launch.support.SimpleJobLauncher$1.run(SimpleJobLauncher.java:120) [spring-batch-core-2.1.8.RELEASE.jar:na]
+	at org.springframework.core.task.SyncTaskExecutor.execute(SyncTaskExecutor.java:48) [spring-core-3.1.0.RELEASE.jar:3.1.0.RELEASE]
+	at org.springframework.batch.core.launch.support.SimpleJobLauncher.run(SimpleJobLauncher.java:114) [spring-batch-core-2.1.8.RELEASE.jar:na]
+	at eu.ttbox.batch.core.BatchJobRunner.start(BatchJobRunner.java:194) [classes/:na]
+	at eu.ttbox.batch.ingram.IngramRunner.main(IngramRunner.java:34) [classes/:na]
+16489 [main] INFO  eu.ttbox.batch.core.BatchJobRunner - Job priceIngramJob end with code : 1
+16489 [main] INFO  eu.ttbox.batch.core.BatchJobRunner - Job Start at Sat Jan 21 21:13:43 CET 2012 and end at Sat Jan 21 21:13:49 CET 2012
+294  [main] INFO  eu.ttbox.batch.core.BatchJobRunner - Starting for 1 jobs [priceIngramJob]
+297  [main] INFO  eu.ttbox.batch.core.BatchJobRunner -  jobPath [/META-INF/ingram/ingram-job-repository.xml, /jobs/ingram-price.xml]
+8450 [main] DEBUG n.c.socket.nio.NioProviderMetadata - Using the autodetected NIO constraint level: 0
+11988 [main] INFO  eu.ttbox.batch.core.BatchJobRunner - Starting job 1 / 1 : priceIngramJob
+14445 [main] INFO  e.t.b.c.download.ftp.FtpConnector - Connected to FTP ftpsecure.ingrammicro.com : Reply code 230 User GLOHA logged in
+
+14752 [main] INFO  e.t.b.c.download.ftp.FtpConnector - FTP transfert as BINARY_FILE_TYPE
+14905 [main] INFO  e.t.b.c.download.ftp.FtpConnector - Transfert Compress mode false
+15837 [main] INFO  e.t.b.c.download.ftp.FtpConnector - Deconnected to FTP ftpsecure.ingrammicro.com : null
+16001 [main] INFO  e.t.b.i.p.l.FileDomainListItemReader - Register 1 files to ItemReader
+16031 [main] INFO  e.t.b.i.p.l.FileDomainListItemReader - Read MasterItem SalespointSupplier{id=1, version=0, supplier=INGRAM, supplierId=gloha, password=********, status=ON, salespoint=Salespoint{id=1, name=TTBox}} associated to Local File /Users/jmorille/repository-ttbox/ingram/ingram-2012-01-21/fusion_fr_gloha_price-sorted.txt.gz
+16032 [main] INFO  e.t.b.i.p.l.PriceListItemProcessor - SupplierPrice[gloha] with filemname /Users/jmorille/repository-ttbox/ingram/ingram-2012-01-21/fusion_fr_gloha_price-sorted.txt.gz
+18269 [main] ERROR o.s.batch.core.step.AbstractStep - Encountered an error executing the step
+org.elasticsearch.action.ActionRequestValidationException: Validation Failed: 1: id is missing;
+	at org.elasticsearch.action.Actions.addValidationError(Actions.java:29) ~[elasticsearch-0.18.7.jar:na]
+	at org.elasticsearch.action.get.GetRequest.validate(GetRequest.java:89) ~[elasticsearch-0.18.7.jar:na]
+	at org.elasticsearch.action.support.BaseAction.execute(BaseAction.java:55) ~[elasticsearch-0.18.7.jar:na]
+	at org.elasticsearch.client.node.NodeClient.get(NodeClient.java:162) ~[elasticsearch-0.18.7.jar:na]
+	at org.elasticsearch.client.action.get.GetRequestBuilder.doExecute(GetRequestBuilder.java:125) ~[elasticsearch-0.18.7.jar:na]
+	at org.elasticsearch.client.action.support.BaseRequestBuilder.execute(BaseRequestBuilder.java:56) ~[elasticsearch-0.18.7.jar:na]
+	at org.elasticsearch.client.action.support.BaseRequestBuilder.execute(BaseRequestBuilder.java:51) ~[elasticsearch-0.18.7.jar:na]
+	at eu.ttbox.batch.ingram.product.EsProductSCopyIdxToRefItemWriter.write(EsProductSCopyIdxToRefItemWriter.java:76) ~[classes/:na]
+	at eu.ttbox.batch.ingram.product.ProductItemProcessor.isUpdateProductIcecat(ProductItemProcessor.java:168) ~[classes/:na]
+	at eu.ttbox.batch.ingram.product.ProductItemProcessor.process(ProductItemProcessor.java:115) ~[classes/:na]
+	at eu.ttbox.batch.ingram.price.diff.SupplierPriceIngramItemProcessor.process(SupplierPriceIngramItemProcessor.java:50) ~[classes/:na]
+	at eu.ttbox.batch.ingram.price.list.PriceListItemProcessor.process(PriceListItemProcessor.java:77) ~[classes/:na]
+	at eu.ttbox.batch.ingram.price.list.PriceListItemProcessor.process(PriceListItemProcessor.java:1) ~[classes/:na]
+	at org.springframework.batch.core.step.item.SimpleChunkProcessor.doProcess(SimpleChunkProcessor.java:125) ~[spring-batch-core-2.1.8.RELEASE.jar:na]
+	at org.springframework.batch.core.step.item.SimpleChunkProcessor.transform(SimpleChunkProcessor.java:288) ~[spring-batch-core-2.1.8.RELEASE.jar:na]
+	at org.springframework.batch.core.step.item.SimpleChunkProcessor.process(SimpleChunkProcessor.java:187) ~[spring-batch-core-2.1.8.RELEASE.jar:na]
+	at org.springframework.batch.core.step.item.ChunkOrientedTasklet.execute(ChunkOrientedTasklet.java:74) ~[spring-batch-core-2.1.8.RELEASE.jar:na]
+	at org.springframework.batch.core.step.tasklet.TaskletStep$ChunkTransactionCallback.doInTransaction(TaskletStep.java:386) ~[spring-batch-core-2.1.8.RELEASE.jar:na]
+	at org.springframework.transaction.support.TransactionTemplate.execute(TransactionTemplate.java:130) ~[spring-tx-3.1.0.RELEASE.jar:3.1.0.RELEASE]
+	at org.springframework.batch.core.step.tasklet.TaskletStep$2.doInChunkContext(TaskletStep.java:264) ~[spring-batch-core-2.1.8.RELEASE.jar:na]
+	at org.springframework.batch.core.scope.context.StepContextRepeatCallback.doInIteration(StepContextRepeatCallback.java:76) ~[spring-batch-core-2.1.8.RELEASE.jar:na]
+	at org.springframework.batch.repeat.support.RepeatTemplate.getNextResult(RepeatTemplate.java:367) ~[spring-batch-infrastructure-2.1.8.RELEASE.jar:na]
+	at org.springframework.batch.repeat.support.RepeatTemplate.executeInternal(RepeatTemplate.java:214) ~[spring-batch-infrastructure-2.1.8.RELEASE.jar:na]
+	at org.springframework.batch.repeat.support.RepeatTemplate.iterate(RepeatTemplate.java:143) ~[spring-batch-infrastructure-2.1.8.RELEASE.jar:na]
+	at org.springframework.batch.core.step.tasklet.TaskletStep.doExecute(TaskletStep.java:250) ~[spring-batch-core-2.1.8.RELEASE.jar:na]
+	at org.springframework.batch.core.step.AbstractStep.execute(AbstractStep.java:195) ~[spring-batch-core-2.1.8.RELEASE.jar:na]
+	at org.springframework.batch.core.job.SimpleStepHandler.handleStep(SimpleStepHandler.java:135) [spring-batch-core-2.1.8.RELEASE.jar:na]
+	at org.springframework.batch.core.job.flow.JobFlowExecutor.executeStep(JobFlowExecutor.java:61) [spring-batch-core-2.1.8.RELEASE.jar:na]
+	at org.springframework.batch.core.job.flow.support.state.StepState.handle(StepState.java:60) [spring-batch-core-2.1.8.RELEASE.jar:na]
+	at org.springframework.batch.core.job.flow.support.SimpleFlow.resume(SimpleFlow.java:144) [spring-batch-core-2.1.8.RELEASE.jar:na]
+	at org.springframework.batch.core.job.flow.support.SimpleFlow.start(SimpleFlow.java:124) [spring-batch-core-2.1.8.RELEASE.jar:na]
+	at org.springframework.batch.core.job.flow.FlowJob.doExecute(FlowJob.java:135) [spring-batch-core-2.1.8.RELEASE.jar:na]
+	at org.springframework.batch.core.job.AbstractJob.execute(AbstractJob.java:281) [spring-batch-core-2.1.8.RELEASE.jar:na]
+	at org.springframework.batch.core.launch.support.SimpleJobLauncher$1.run(SimpleJobLauncher.java:120) [spring-batch-core-2.1.8.RELEASE.jar:na]
+	at org.springframework.core.task.SyncTaskExecutor.execute(SyncTaskExecutor.java:48) [spring-core-3.1.0.RELEASE.jar:3.1.0.RELEASE]
+	at org.springframework.batch.core.launch.support.SimpleJobLauncher.run(SimpleJobLauncher.java:114) [spring-batch-core-2.1.8.RELEASE.jar:na]
+	at eu.ttbox.batch.core.BatchJobRunner.start(BatchJobRunner.java:194) [classes/:na]
+	at eu.ttbox.batch.ingram.IngramRunner.main(IngramRunner.java:34) [classes/:na]
+18282 [main] INFO  eu.ttbox.batch.core.BatchJobRunner - Job priceIngramJob end with code : 1
+18282 [main] INFO  eu.ttbox.batch.core.BatchJobRunner - Job Start at Sat Jan 21 21:15:15 CET 2012 and end at Sat Jan 21 21:15:21 CET 2012
+290  [main] INFO  eu.ttbox.batch.core.BatchJobRunner - Starting for 1 jobs [priceIngramJob]
+295  [main] INFO  eu.ttbox.batch.core.BatchJobRunner -  jobPath [/META-INF/ingram/ingram-job-repository.xml, /jobs/ingram-price.xml]
+6690 [main] DEBUG n.c.socket.nio.NioProviderMetadata - Using the autodetected NIO constraint level: 0
+10209 [main] INFO  eu.ttbox.batch.core.BatchJobRunner - Starting job 1 / 1 : priceIngramJob
+12708 [main] INFO  e.t.b.c.download.ftp.FtpConnector - Connected to FTP ftpsecure.ingrammicro.com : Reply code 230 User GLOHA logged in
+
+13017 [main] INFO  e.t.b.c.download.ftp.FtpConnector - FTP transfert as BINARY_FILE_TYPE
+13169 [main] INFO  e.t.b.c.download.ftp.FtpConnector - Transfert Compress mode false
+14097 [main] INFO  e.t.b.c.download.ftp.FtpConnector - Deconnected to FTP ftpsecure.ingrammicro.com : null
+14254 [main] INFO  e.t.b.i.p.l.FileDomainListItemReader - Register 1 files to ItemReader
+14284 [main] INFO  e.t.b.i.p.l.FileDomainListItemReader - Read MasterItem SalespointSupplier{id=1, version=0, supplier=INGRAM, supplierId=gloha, password=********, status=ON, salespoint=Salespoint{id=1, name=TTBox}} associated to Local File /Users/jmorille/repository-ttbox/ingram/ingram-2012-01-21/fusion_fr_gloha_price-sorted.txt.gz
+14285 [main] INFO  e.t.b.i.p.l.PriceListItemProcessor - SupplierPrice[gloha] with filemname /Users/jmorille/repository-ttbox/ingram/ingram-2012-01-21/fusion_fr_gloha_price-sorted.txt.gz
+16398 [main] ERROR o.s.batch.core.step.AbstractStep - Encountered an error executing the step
+org.elasticsearch.action.ActionRequestValidationException: Validation Failed: 1: id is missing;
+	at org.elasticsearch.action.Actions.addValidationError(Actions.java:29) ~[elasticsearch-0.18.7.jar:na]
+	at org.elasticsearch.action.get.GetRequest.validate(GetRequest.java:89) ~[elasticsearch-0.18.7.jar:na]
+	at org.elasticsearch.action.support.BaseAction.execute(BaseAction.java:55) ~[elasticsearch-0.18.7.jar:na]
+	at org.elasticsearch.client.node.NodeClient.get(NodeClient.java:162) ~[elasticsearch-0.18.7.jar:na]
+	at org.elasticsearch.client.action.get.GetRequestBuilder.doExecute(GetRequestBuilder.java:125) ~[elasticsearch-0.18.7.jar:na]
+	at org.elasticsearch.client.action.support.BaseRequestBuilder.execute(BaseRequestBuilder.java:56) ~[elasticsearch-0.18.7.jar:na]
+	at org.elasticsearch.client.action.support.BaseRequestBuilder.execute(BaseRequestBuilder.java:51) ~[elasticsearch-0.18.7.jar:na]
+	at eu.ttbox.batch.ingram.product.EsProductSCopyIdxToRefItemWriter.write(EsProductSCopyIdxToRefItemWriter.java:76) ~[classes/:na]
+	at eu.ttbox.batch.ingram.product.ProductItemProcessor.isUpdateProductIcecat(ProductItemProcessor.java:168) ~[classes/:na]
+	at eu.ttbox.batch.ingram.product.ProductItemProcessor.process(ProductItemProcessor.java:115) ~[classes/:na]
+	at eu.ttbox.batch.ingram.price.diff.SupplierPriceIngramItemProcessor.process(SupplierPriceIngramItemProcessor.java:50) ~[classes/:na]
+	at eu.ttbox.batch.ingram.price.list.PriceListItemProcessor.process(PriceListItemProcessor.java:77) ~[classes/:na]
+	at eu.ttbox.batch.ingram.price.list.PriceListItemProcessor.process(PriceListItemProcessor.java:1) ~[classes/:na]
+	at org.springframework.batch.core.step.item.SimpleChunkProcessor.doProcess(SimpleChunkProcessor.java:125) ~[spring-batch-core-2.1.8.RELEASE.jar:na]
+	at org.springframework.batch.core.step.item.SimpleChunkProcessor.transform(SimpleChunkProcessor.java:288) ~[spring-batch-core-2.1.8.RELEASE.jar:na]
+	at org.springframework.batch.core.step.item.SimpleChunkProcessor.process(SimpleChunkProcessor.java:187) ~[spring-batch-core-2.1.8.RELEASE.jar:na]
+	at org.springframework.batch.core.step.item.ChunkOrientedTasklet.execute(ChunkOrientedTasklet.java:74) ~[spring-batch-core-2.1.8.RELEASE.jar:na]
+	at org.springframework.batch.core.step.tasklet.TaskletStep$ChunkTransactionCallback.doInTransaction(TaskletStep.java:386) ~[spring-batch-core-2.1.8.RELEASE.jar:na]
+	at org.springframework.transaction.support.TransactionTemplate.execute(TransactionTemplate.java:130) ~[spring-tx-3.1.0.RELEASE.jar:3.1.0.RELEASE]
+	at org.springframework.batch.core.step.tasklet.TaskletStep$2.doInChunkContext(TaskletStep.java:264) ~[spring-batch-core-2.1.8.RELEASE.jar:na]
+	at org.springframework.batch.core.scope.context.StepContextRepeatCallback.doInIteration(StepContextRepeatCallback.java:76) ~[spring-batch-core-2.1.8.RELEASE.jar:na]
+	at org.springframework.batch.repeat.support.RepeatTemplate.getNextResult(RepeatTemplate.java:367) ~[spring-batch-infrastructure-2.1.8.RELEASE.jar:na]
+	at org.springframework.batch.repeat.support.RepeatTemplate.executeInternal(RepeatTemplate.java:214) ~[spring-batch-infrastructure-2.1.8.RELEASE.jar:na]
+	at org.springframework.batch.repeat.support.RepeatTemplate.iterate(RepeatTemplate.java:143) ~[spring-batch-infrastructure-2.1.8.RELEASE.jar:na]
+	at org.springframework.batch.core.step.tasklet.TaskletStep.doExecute(TaskletStep.java:250) ~[spring-batch-core-2.1.8.RELEASE.jar:na]
+	at org.springframework.batch.core.step.AbstractStep.execute(AbstractStep.java:195) ~[spring-batch-core-2.1.8.RELEASE.jar:na]
+	at org.springframework.batch.core.job.SimpleStepHandler.handleStep(SimpleStepHandler.java:135) [spring-batch-core-2.1.8.RELEASE.jar:na]
+	at org.springframework.batch.core.job.flow.JobFlowExecutor.executeStep(JobFlowExecutor.java:61) [spring-batch-core-2.1.8.RELEASE.jar:na]
+	at org.springframework.batch.core.job.flow.support.state.StepState.handle(StepState.java:60) [spring-batch-core-2.1.8.RELEASE.jar:na]
+	at org.springframework.batch.core.job.flow.support.SimpleFlow.resume(SimpleFlow.java:144) [spring-batch-core-2.1.8.RELEASE.jar:na]
+	at org.springframework.batch.core.job.flow.support.SimpleFlow.start(SimpleFlow.java:124) [spring-batch-core-2.1.8.RELEASE.jar:na]
+	at org.springframework.batch.core.job.flow.FlowJob.doExecute(FlowJob.java:135) [spring-batch-core-2.1.8.RELEASE.jar:na]
+	at org.springframework.batch.core.job.AbstractJob.execute(AbstractJob.java:281) [spring-batch-core-2.1.8.RELEASE.jar:na]
+	at org.springframework.batch.core.launch.support.SimpleJobLauncher$1.run(SimpleJobLauncher.java:120) [spring-batch-core-2.1.8.RELEASE.jar:na]
+	at org.springframework.core.task.SyncTaskExecutor.execute(SyncTaskExecutor.java:48) [spring-core-3.1.0.RELEASE.jar:3.1.0.RELEASE]
+	at org.springframework.batch.core.launch.support.SimpleJobLauncher.run(SimpleJobLauncher.java:114) [spring-batch-core-2.1.8.RELEASE.jar:na]
+	at eu.ttbox.batch.core.BatchJobRunner.start(BatchJobRunner.java:194) [classes/:na]
+	at eu.ttbox.batch.ingram.IngramRunner.main(IngramRunner.java:34) [classes/:na]
+16415 [main] INFO  eu.ttbox.batch.core.BatchJobRunner - Job priceIngramJob end with code : 1
+16416 [main] INFO  eu.ttbox.batch.core.BatchJobRunner - Job Start at Sat Jan 21 21:17:44 CET 2012 and end at Sat Jan 21 21:17:50 CET 2012
+282  [main] INFO  eu.ttbox.batch.core.BatchJobRunner - Starting for 1 jobs [priceIngramJob]
+285  [main] INFO  eu.ttbox.batch.core.BatchJobRunner -  jobPath [/META-INF/ingram/ingram-job-repository.xml, /jobs/ingram-price.xml]
+6703 [main] DEBUG n.c.socket.nio.NioProviderMetadata - Using the autodetected NIO constraint level: 0
+10219 [main] INFO  eu.ttbox.batch.core.BatchJobRunner - Starting job 1 / 1 : priceIngramJob
+13030 [main] INFO  e.t.b.c.download.ftp.FtpConnector - Connected to FTP ftpsecure.ingrammicro.com : Reply code 230 User GLOHA logged in
+
+13335 [main] INFO  e.t.b.c.download.ftp.FtpConnector - FTP transfert as BINARY_FILE_TYPE
+13487 [main] INFO  e.t.b.c.download.ftp.FtpConnector - Transfert Compress mode false
+14408 [main] INFO  e.t.b.c.download.ftp.FtpConnector - Deconnected to FTP ftpsecure.ingrammicro.com : null
+14576 [main] INFO  e.t.b.i.p.l.FileDomainListItemReader - Register 1 files to ItemReader
+14601 [main] INFO  e.t.b.i.p.l.FileDomainListItemReader - Read MasterItem SalespointSupplier{id=1, version=0, supplier=INGRAM, supplierId=gloha, password=********, status=ON, salespoint=Salespoint{id=1, name=TTBox}} associated to Local File /Users/jmorille/repository-ttbox/ingram/ingram-2012-01-21/fusion_fr_gloha_price-sorted.txt.gz
+14603 [main] INFO  e.t.b.i.p.l.PriceListItemProcessor - SupplierPrice[gloha] with filemname /Users/jmorille/repository-ttbox/ingram/ingram-2012-01-21/fusion_fr_gloha_price-sorted.txt.gz
+53776 [main] INFO  e.t.b.i.p.l.PriceListItemProcessor - SupplierPrice[gloha] : 63891 Lines read in 37191 ms
+53776 [main] INFO  e.t.b.i.p.l.PriceListItemProcessor - Supplier Price file Id gloha as PriceDifferentialVO{ingramId=gloha, products=ProductEntityDifferentialVO{=ProductEntityDifferentialVO{creates=0, updates=55016, deletes=0}, ignoreLicence=0, ignoreNotSellable=7526}}
+54964 [main] INFO  e.t.b.i.price.list.PriceItemWriter - StopWatch 'gloha': running time (millis) = 1186
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+01186  100 %  Update 55016 products
+
+70980 [main] INFO  eu.ttbox.batch.core.BatchJobRunner - Job priceIngramJob end with code : 0
+70981 [main] INFO  eu.ttbox.batch.core.BatchJobRunner - Job Start at Sat Jan 21 21:19:15 CET 2012 and end at Sat Jan 21 21:20:16 CET 2012
+70981 [main] INFO  eu.ttbox.batch.core.BatchJobRunner - StopWatch '': running time (millis) = 60762
+-----------------------------------------
+ms     %     Task name
+-----------------------------------------
+60762  100 %  1 / 1 : priceIngramJob
+

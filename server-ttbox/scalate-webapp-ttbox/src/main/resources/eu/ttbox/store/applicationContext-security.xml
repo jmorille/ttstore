@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<b:beans xmlns="http://www.springframework.org/schema/security"
+         xmlns:b="http://www.springframework.org/schema/beans"
+         xmlns:p="http://www.springframework.org/schema/p"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+                        http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security-3.1.xsd">
+
+
+    <http pattern="/*" security="none"/>
+    <http pattern="/login*" security="none"/>
+    <http pattern="/openidlogin.jsp*" security="none"/>
+    <http pattern="/images/*" security="none"/>
+    <http pattern="/css/*" security="none"/>
+    <http pattern="/js/*" security="none"/>
+
+    <b:bean id="filterChainProxy" class="org.springframework.security.web.FilterChainProxy">
+        <filter-chain-map path-type="ant">
+            <filter-chain pattern="/store/*" filters="webSiteSelectorFilter"/>
+        </filter-chain-map>
+    </b:bean>
+   
+
+
+    <http>
+        <custom-filter ref="filterChainProxy" before="FIRST"/>
+        <logout/>
+        <openid-login login-page="/login.html"
+                      user-service-ref="registeringUserService"
+                      authentication-failure-url="/login.html?login_error=true">
+            <attribute-exchange identifier-match="https://www.google.com/.*">
+                <openid-attribute name="email"
+                                  type="http://axschema.org/contact/email" required="true" count="1"/>
+                <openid-attribute name="firstname"
+                                  type="http://axschema.org/namePerson/first" required="true"/>
+                <openid-attribute name="lastname"
+                                  type="http://axschema.org/namePerson/last" required="true"/>
+            </attribute-exchange>
+            <attribute-exchange identifier-match=".*yahoo.com.*">
+                <openid-attribute name="email"
+                                  type="http://axschema.org/contact/email" required="true"/>
+                <openid-attribute name="fullname"
+                                  type="http://axschema.org/namePerson" required="true"/>
+            </attribute-exchange>
+            <attribute-exchange identifier-match=".*myopenid.com.*">
+                <openid-attribute name="email"
+                                  type="http://schema.openid.net/contact/email" required="true"/>
+                <openid-attribute name="fullname"
+                                  type="http://schema.openid.net/namePerson" required="true"/>
+            </attribute-exchange>
+        </openid-login>
+        <remember-me token-repository-ref="tokenRepo" user-service-ref="registeringUserService"/>
+    </http>
+
+    <b:bean id="tokenRepo"
+            class="org.springframework.security.web.authentication.rememberme.InMemoryTokenRepositoryImpl"/>
+
+    <authentication-manager alias="authenticationManager"/>
+
+
+    <user-service id="userService">
+        <user name="admin" password="admin"
+              authorities="ROLE_USER,ROLE_ADMIN,ROLE_UPDATE_PROCESSUS,ROLE_UPDATE_ETAPE"/>
+        <user name="user" password="user" authorities="ROLE_USER"/>
+        <user name="dam" password="dam" authorities="ROLE_DAM"/>
+        <user name="http://luke.taylor.myopenid.com/" authorities="ROLE_SUPERVISOR,ROLE_USER"/>
+        <user name="http://luke.taylor.openid.cn/" authorities="ROLE_SUPERVISOR,ROLE_USER"/>
+        <user name="http://raykrueger.blogspot.com/" authorities="ROLE_SUPERVISOR,ROLE_USER"/>
+        <user name="http://spring.security.test.myopenid.com/"
+              authorities="ROLE_SUPERVISOR,ROLE_USER"/>
+    </user-service>
+
+
+    <!-- <b:bean id="identity" class="org.granite.tide.spring.service..Identity3"
+         /> -->
+    <!---->
+    <!-- <global-method-service. secured-annotations="enabled" -->
+    <!-- jsr250-annotations="enabled" /> -->
+
+</b:beans>

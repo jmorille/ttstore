@@ -1,0 +1,22 @@
+{ 
+    "index" : {
+ 	"number_of_shards" : 1,
+    "number_of_replicas" : 0,    
+        "analysis" : {
+            "analyzer" : {
+                "suggest_analyzer" : {
+                    "tokenizer" : "standard",
+                    "filter" : ["standard", "lowercase", "asciifolding", "edgeNGram_filter" ]
+                }
+            },
+            "filter" : {
+                "edgeNGram_filter" : { 
+                	"type" : "edgeNGram",
+                    "min_gram" : "1",
+                    "max_gram" : "20",
+                    "side" : "front"
+                }
+            }
+        }
+    } 
+}

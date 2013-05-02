@@ -1,0 +1,76 @@
+@charset "utf-8";
+/**********STRUCTURE****************/
+.body {
+	background:url(/ttbox/images/store/main_bg.jpg);
+	width:auto;
+	height:auto;
+	background-repeat:repeat;
+}
+
+.body a {
+	text-decoration:none;
+	font-weight:600;
+
+}
+
+.body a:hover {
+	text-decoration:none;
+
+}
+
+img {
+	border:none;
+}
+
+
+
+
+.blockSide{
+	border-color:#E2E1DE;
+	border-top-style:solid;
+	border-top-width:thin;
+	width:280px;
+	height:auto;
+	float:left;
+	background-color: transparent;
+	margin-left:1%;
+}
+
+.blockBody{
+    width:40%;
+    padding:1px;
+    border:1px solid black;
+    margin:5px;
+    display:inline-block;
+    float:left;
+}
+
+
+
+#header{
+	margin-left: auto;
+    margin-right: auto;
+    background-position: center top;
+    background-image:url(images/template/fond_header_centre.jpg);
+    background-repeat:no-repeat;
+    background-color:#FFF;
+	width:1024px;
+	height:110px;
+	color: #FFF;
+	}
+
+
+
+
+
+
+.footer{
+	width:882px;
+	height:20px;
+	height:auto;
+	font-family:Verdana;
+	font-size:smaller;
+	text-align:center;
+	color:#333;
+
+}

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jxb:bindings version="2.0" xmlns:jxb="http://java.sun.com/xml/ns/jaxb" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  xmlns:annox="http://annox.dev.java.net" xmlns:xjc="http://java.sun.com/xml/ns/jaxb/xjc" jxb:extensionBindingPrefixes="xjc">
+
+
+  <jxb:bindings schemaLocation="ICECAT-campaigns.xsd" node="/xs:schema">
+
+
+    <jxb:schemaBindings>
+      <jxb:package name="biz.icecat.campaigns.v1">
+      </jxb:package>
+    </jxb:schemaBindings>
+
+
+    <jxb:bindings node="//xs:element[@name='ICECAT-interface']">
+      <jxb:class name="ICECATCampaignsInterface" />
+    </jxb:bindings>
+
+
+    <jxb:bindings node="//xs:complexType[@name='Campaign']">
+      <annox:annotate>
+        <annox:annotate annox:class="javax.xml.bind.annotation.XmlRootElement" name="Campaign" />
+      </annox:annotate>
+    </jxb:bindings>
+
+	
+  </jxb:bindings>
+</jxb:bindings>

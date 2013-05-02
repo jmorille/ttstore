@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+http://docs.codehaus.org/display/JETTY/JNDI
+ -->
+ <Configure class="org.mortbay.jetty.webapp.WebAppContext">
+    <Set name="contextPath">/dev</Set>
+    <New id="ttboxDS" class="org.mortbay.jetty.plus.naming.Resource">
+         <Arg>jdbc/ttbox</Arg>
+         <Arg>
+              <New class="org.apache.commons.dbcp.BasicDataSource">
+                    <Set name="Url">jdbc:postgresql://localhost:5432/postgres</Set>
+                    <Set name="DriverClassName">org.postgresql.Driver</Set>
+                    <Set name="Username">ttbox</Set>
+                    <Set name="Password">ttbox</Set>
+                    <Set name="MaxActive">30</Set>
+                    <Set name="MaxIdle">10</Set>
+                    <Set name="MinIdle">2</Set>
+                    <Set name="MaxWait">5000</Set>
+                    <Set name="MinEvictableIdleTimeMillis">25000</Set>
+                    <Set name="TimeBetweenEvictionRunsMillis">30000</Set>
+             </New>
+         </Arg>
+    </New>
+</Configure>

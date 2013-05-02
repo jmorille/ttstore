@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:context="http://www.springframework.org/schema/context" xmlns:batch="http://www.springframework.org/schema/batch"
+   xmlns:util="http://www.springframework.org/schema/util"
+  xmlns:p="http://www.springframework.org/schema/p"
+  xsi:schemaLocation="
+  http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd
+    http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+    http://www.springframework.org/schema/batch http://www.springframework.org/schema/batch/spring-batch.xsd">
+
+  <context:annotation-config />
+
+  <context:component-scan base-package="eu.ttbox.batch.techdata" />
+
+  <import resource="classpath:/eu/ttbox/batch/techdata/domain/ressourceAdaptator.spring.xml" />
+  <import resource="classpath:/eu/ttbox/batch/techdata/domain/ttbox-domain.spring.xml" />
+
+  <bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+    <property name="ignoreUnresolvablePlaceholders" value="true" />
+    <property name="locations">
+      <list>
+        <value>classpath:/ttbox-feed.properties</value>
+      </list>
+    </property>
+  </bean>
+
+  <bean id="folderPartitionner" class="eu.ttbox.batch.core.fs.partitionner.NowDatePartitionner" p:partitionPattern="/tech-{1,date,yyyy-MM-dd}/{0}" />
+ 
+  <bean id="aliasFolderPartitionner" class="eu.ttbox.batch.core.fs.partitionner.AliasFilenamePartitionner" >
+    <property name="suffixAliases">
+      <util:list id="suffixAliases">
+        <value>-sorted</value>
+        <value>-bad</value>
+      </util:list>
+    </property>
+  </bean>
+ 
+
+  <!-- Techdata --> 
+    <bean id="workingLocalFolderTechdata" class="eu.ttbox.batch.core.fs.WorkingLocalFileSystemAccessor" 
+  p:compressionGzip="true" p:cacheFolder="${connector.techdata.cacheFolder}" p:filePartitionner-ref="folderPartitionner"  />
+  
+  
+  <bean id="techdataProxyCacheFtpConnector" class="eu.ttbox.batch.techdata.core.fs.TechdataCacheDownloadConnector"
+    p:workingLocalFolder-ref="workingLocalFolderTechdata"
+    p:aliasFilenamePartitionner-ref="aliasFolderPartitionner">
+    <property name="ftpConnector">
+      <bean class="eu.ttbox.batch.core.download.ftp.FtpConnector" p:hostname="${techdata.ftp.host}" p:username="${techdata.ftp.username}"
+        p:password="${techdata.ftp.password}"   />
+    </property>
+  </bean>
+
+
+
+ 
+
+
+</beans>

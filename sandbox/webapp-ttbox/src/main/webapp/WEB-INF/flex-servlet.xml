@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:flex="http://www.springframework.org/schema/flex" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+		http://www.springframework.org/schema/beans
+		http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+        http://www.springframework.org/schema/context   http://www.springframework.org/schema/context/spring-context-3.0.xsd
+		http://www.springframework.org/schema/flex 
+		http://www.springframework.org/schema/flex/spring-flex-1.0.xsd">
+
+	<context:annotation-config />
+	<context:component-scan base-package="eu.ttbox" />
+
+	<!-- <flex:mapping pattern="/messagebroker/*" /> <flex:message-service default-channels="my-streaming-amf,my-longpolling-amf,my-polling-amf" 
+	
+		<flex:config-processor ref="ttboxConfigProcessor" />
+		/> -->
+	<flex:message-broker services-config-path="/WEB-INF/flex/services-config.xml">
+	
+		<flex:remoting-service default-adapter-id="hibernate-object" />
+		<flex:message-service default-adapter-id="hibernate-object"
+			default-channels="my-streaming-amf,my-longpolling-amf,my-polling-amf" />
+		<flex:secured />
+	</flex:message-broker>
+
+	<!-- <flex:message-destination id="chat" /> -->
+	<!-- <flex:message-destination id="secured-chat" /> -->
+	<flex:jms-message-destination id="jms-chat"
+		jms-destination="chatTopic" /> 	<!-- See configuration of "chatTopic" in /WEB-INF/spring/infrastructure-config.xml -->
+	<!-- <flex:integration-message-destination id="si-receive" message-channel="toFlex"/> 
+		See configuration of "toFlex" in /WEB-INF/spring/integration-config.xml -->
+	<!-- <flex:integration-message-destination id="si-send" message-channel="fromFlex"/> 
+		See configuration of "fromFlex" in /WEB-INF/spring/integration-config.xml -->
+
+
+	<bean id="defaultMessageTemplate" class="org.springframework.flex.messaging.MessageTemplate" />
+
+	<bean id="ttboxConfigProcessor"
+		class="org.springframework.flex.core.io.JpaHibernateConfigProcessor">
+	</bean>
+
+	<bean class="net.sf.gilead.core.hibernate.spring.HibernateSpringUtil"
+		factory-method="getInstance">
+		<property name="sessionFactory" ref="ttboxSessionFactory" />
+	</bean>
+
+	<bean id="hibernate-object"
+		class="org.springframework.flex.core.ManageableComponentFactoryBean"
+		depends-on="ttboxSessionFactory">
+		<constructor-arg value="net.sf.gilead.blazeds.adapter.PersistentAdapter" />
+		<property name="properties">
+			<value>
+				{"persistence-factory":
+				{"class":"net.sf.gilead.core.hibernate.spring.HibernateSpringUtil",
+				"singleton" :"true",
+				"method":"getSessionFactory"
+				},
+				"stateless":"true" }
+           </value>
+		</property>
+	</bean>
+
+</beans>

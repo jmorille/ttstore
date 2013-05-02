@@ -1,0 +1,25 @@
+{ 
+    "index" : {
+ 	"number_of_shards" : 1,
+    "number_of_replicas" : 0,    
+        "analysis" : {
+            "analyzer" : {
+                "phonetic_analyzer" : {
+                    "tokenizer" : "standard",
+                    "filter" : ["standard", "phonetic"]
+                },
+                "email_analyzer" : {
+                    "tokenizer" : "uax_url_email",
+                    "filter" : ["standard", "lowercase"]
+                }
+            },
+            "filter" : {
+                "phonetic" : {
+                    "type" : "phonetic",
+                    "encoder" : "double_metaphone",
+                    "replace" : "false"
+                }
+            }
+        }
+    } 
+}

@@ -1,0 +1,21 @@
+{ 
+    "index" : {
+ 	"number_of_shards" : 1,
+    "number_of_replicas" : 0,    
+        "analysis" : {
+            "analyzer" : {
+                "phonetic_analyzer" : {
+                    "tokenizer" : "standard",
+                    "filter" : ["standard", "phonetic"]
+                }
+            },
+            "filter" : {
+                "phonetic" : {
+                    "type" : "phonetic",
+                    "encoder" : "caverphone",
+                    "replace" : "true"
+                }
+            }
+        }
+    } 
+}

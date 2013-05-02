@@ -1,0 +1,66 @@
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:batch="http://www.springframework.org/schema/util" xmlns:p="http://www.springframework.org/schema/p" xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="
+	       http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd
+           http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+           http://www.springframework.org/schema/batch http://www.springframework.org/schema/batch/spring-batch.xsd">
+
+
+	<job id="techPriceDownloaderJob" xmlns="http://www.springframework.org/schema/batch">
+		<step id="techPriceDownload">
+			<tasklet>
+				<chunk reader="techFtpFileReader" writer="itemWriter" commit-interval="10" />
+			</tasklet>
+			<listeners>
+				<listener ref="jobParameterListener" />
+				<listener ref="promotionListener" />
+			</listeners>
+		</step>
+	</job>
+
+	<bean id="promotionListener" class="org.springframework.batch.core.listener.ExecutionContextPromotionListener">
+		<property name="keys" value="destinationFolder" />
+	</bean>
+
+	<bean id="jobParameterListener" class="org.springframework.batch.core.listener.JobParameterExecutionContextCopyListener">
+		<property name="keys" value="destinationFolder" />
+	</bean>
+
+
+	<bean id="techFtpFileReader" class="eu.ttbox.feed.core.download.FtpDownloaderItemReader" p:sessionFactory-ref="ftpClientFactory"
+		p:filter-ref="techPriceFilter" p:filterLocal-ref="techPriceLocalFolderFilter" p:localFolderProvider-ref="techdataLocalFolderProvider" />
+		
+	<bean id="itemWriter" class="eu.ttbox.feed.core.download.FtpDownloaderItemWriter" p:sessionFactory-ref="ftpClientFactory"
+		p:gzipOutputCompressed="true" />
+
+	<bean id="techPriceLocalFolderFilter" class="eu.ttbox.feed.core.download.filters.local.FtpAcceptOneLocalFileNameListFilter">
+		<constructor-arg index="0" value="${feed.techdata.price.filePattern}" /> 
+	</bean>
+	
+	<bean id="techPriceFilter" class="org.springframework.integration.file.filters.CompositeFileListFilter">
+		<constructor-arg>
+			<list>
+				<bean class="eu.ttbox.feed.core.download.filters.FtpTodayFilter" />
+<!-- 				<bean class="org.springframework.integration.ftp.filters.FtpRegexPatternFileListFilter"> -->
+<!-- 					<constructor-arg value="${feed.techdata.price.filePattern}" /> -->
+<!-- 				</bean> -->
+				<bean class="eu.ttbox.feed.core.download.filters.FtpFilePatternFilter">
+					<constructor-arg value="${feed.techdata.price.filePattern}" />
+					<constructor-arg value="1" />
+				</bean>				
+				<bean class="eu.ttbox.feed.core.download.filters.FtpAcceptOneFtpFileNameLowerCaseListFilter" />
+			</list>
+		</constructor-arg>
+	</bean>
+ 
+
+	<!-- </util:list> -->
+
+	<bean id="ftpClientFactory" class="org.springframework.integration.ftp.session.DefaultFtpSessionFactory" p:host="${techdata.ftp.host}"
+		p:port="${techdata.ftp.port}" p:username="${techdata.ftp.username}" p:password="${techdata.ftp.password}"
+		p:clientMode="0" p:fileType="0" p:bufferSize="100000" />
+
+	<bean id="techdataLocalFolderProvider" class="eu.ttbox.feed.core.download.folder.LocalFolderByDateProvider"
+		p:rootFolder="${feed.rootFolder}" p:localfolderPattern="tech-%1$tY-%1$tm-%1$td" />
+
+</beans>

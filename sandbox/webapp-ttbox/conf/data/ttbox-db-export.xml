@@ -1,0 +1,75 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<dataset>
+  <table name="B_GROUP">
+    <column>id</column>
+    <column>name</column>
+    <column>version</column>
+    <row>
+      <value>1</value>
+      <value>Dieu</value>
+      <value>0</value>
+    </row>
+  </table>
+  <table name="B_ROLE">
+    <column>id</column>
+    <column>name</column>
+    <row>
+      <value>ROLE_ADMIN</value>
+      <value><![CDATA[Administraeur connecté]]></value>
+    </row>
+    <row>
+      <value>ROLE_USER</value>
+      <value><![CDATA[Utilisateur connecté]]></value>
+    </row>
+  </table>
+  <table name="B_GROUP_ROLE">
+    <column>group_id</column>
+    <column>role_id</column>
+    <row>
+      <value>1</value>
+      <value>ROLE_ADMIN</value>
+    </row>
+  </table>
+  <table name="B_USER">
+    <column>id</column>
+    <column>sec_account_non_expired</column>
+    <column>sec_account_non_locked</column>
+    <column>version_created_agentid</column>
+    <column>version_created_date</column>
+    <column>version_agentid</column>
+    <column>version_date</column>
+    <column>sec_credential_non_expired</column>
+    <column>email</column>
+    <column>sec_enabled</column>
+    <column>firstname</column>
+    <column>lastname</column>
+    <column>matricule</column>
+    <column>password</column>
+    <column>version</column>
+    <row>
+      <value>1</value>
+      <value>true</value>
+      <value>true</value>
+      <value>init</value>
+      <value><![CDATA[2010-01-01 00:00:00.0]]></value>
+      <value>init</value>
+      <value><![CDATA[2010-01-01 00:00:00.0]]></value>
+      <value>true</value>
+      <value>jmorille@gmail.com</value>
+      <value>true</value>
+      <value>Jerome</value>
+      <value>Morille</value>
+      <value>007</value>
+      <value>jmorille</value>
+      <value>0</value>
+    </row>    
+  </table>
+  <table name="B_USER_GROUP">
+    <column>user_id</column>
+    <column>group_id</column>
+    <row>
+      <value>1</value>
+      <value>1</value>
+    </row>
+  </table>
+</dataset>

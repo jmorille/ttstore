@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration scan="true"
+               debug="false">
+    <!-- TODO in production mode disable the scan -->
+
+    <contextName>ttbox</contextName>
+    <jmxConfigurator/>
+
+    <appender name="FILE"
+              class="ch.qos.logback.core.FileAppender">
+        <File>target/application.log</File>
+        <Append>true</Append>
+
+        <encoder>
+            <Pattern>%-4relative [%thread] %-5level %logger{40} - %msg%n</Pattern>
+        </encoder>
+    </appender>
+
+    <appender name="STDOUT"
+              class="ch.qos.logback.core.ConsoleAppender">
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <pattern>%date %-5level %logger{35} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <logger name="eu.ttbox">
+        <level value="DEBUG"/>
+    </logger>
+
+    <logger name="atomikos">
+        <level value="WARN"/>
+    </logger>
+
+    <logger name="httpclient.wire">
+        <level value="INFO"/>
+    </logger>
+
+    <logger name="org">
+        <level value="INFO"/>
+    </logger>
+
+    <logger name="org.springframework">
+        <level value="INFO"/>
+    </logger>
+
+    <logger name="org.fusesource.scalate.spring">
+        <level value="DEBUG"/>
+    </logger>
+
+    <logger name="org.granite">
+        <level value="INFO"/>
+    </logger>
+
+    <logger name="org.granite.messaging.webapp.AMFMessageServlet">
+        <level value="DEBUG"/>
+    </logger>
+
+
+    <logger name="org.granite.messaging.amf.io.AMF3Serialiser">
+        <level value="INFO"/>
+    </logger>
+
+    <root>
+        <level value="DEBUG"/>
+        <appender-ref ref="FILE"/>
+        <appender-ref ref="STDOUT"/>
+        <!--appender-ref ref="FILE" /-->
+    </root>
+</configuration>

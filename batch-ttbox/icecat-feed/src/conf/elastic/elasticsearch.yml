@@ -1,0 +1,48 @@
+# Cluster Settings
+cluster:
+#  name: elasticsearch
+  name: grosseberta
+
+# Path Settings
+#path:
+#  conf: /path/to/conf
+#  data: /path/to/data
+#  work: /path/to/work
+#  logs: /path/to/logs
+  data: /home/a000cqp/repository-elacticsearch/data
+  logs: /home/a000cqp/repository-elacticsearch/log
+
+# Gateway Settings
+#gateway:
+#  recover_after_nodes: 1
+#  recover_after_time: 5m
+#  expected_nodes: 2
+gateway:
+  recover_after_nodes: 1
+  recover_after_time: 5m
+  expected_nodes: 1
+  type : fs
+  fs:
+#    location: /mnt/elastic-sav
+    location: /home/a000cqp/repository-elacticsearch/sav
+
+
+# Force all memory to be locked, forcing JVM to never swap
+#  (make sure to set MIN and MAX mem to the same value)
+bootstrap:
+  mlockall: true
+
+# Unicast Discovery (disable multicast)
+#discovery:
+#  zen:
+#    minimum_master_nodes: 1
+#    ping.timeout: 3s
+#    ping.multicast.enabled: false
+#    ping.unicast.hosts: ["host1", "host2"]
+
+
+index:
+  memory:
+    enabled: true
+  store:
+    type: niofs

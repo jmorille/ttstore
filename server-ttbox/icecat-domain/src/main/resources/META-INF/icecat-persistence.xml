@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
+  version="2.0">
+
+  <persistence-unit name="icecat-pu" transaction-type="RESOURCE_LOCAL">
+    <provider>org.hibernate.ejb.HibernatePersistence</provider>
+
+    <class>eu.ttbox.icecat.model.product.IcecatProduct</class>
+    <class>eu.ttbox.icecat.model.product.IcecatProductBundled</class>
+    <class>eu.ttbox.icecat.model.product.IcecatProductDescription</class>
+    <class>eu.ttbox.icecat.model.product.IcecatProductFeature</class>
+    <class>eu.ttbox.icecat.model.product.IcecatProductFeatureLocal</class>
+    <class>eu.ttbox.icecat.model.product.IcecatProductGallery</class>
+    <class>eu.ttbox.icecat.model.product.IcecatProductLine</class>
+    <class>eu.ttbox.icecat.model.product.IcecatProductMultimediaObject</class>
+    <class>eu.ttbox.icecat.model.product.IcecatProductRelated</class>
+    <class>eu.ttbox.icecat.model.product.IcecatProductSummaryDescription</class>
+
+
+    <class>eu.ttbox.icecat.model.referential.IcecatBrand</class>
+    <class>eu.ttbox.icecat.model.referential.IcecatCategory</class>
+    <class>eu.ttbox.icecat.model.referential.IcecatCategoryFeature</class>
+    <class>eu.ttbox.icecat.model.referential.IcecatCategoryFeatureGroup</class>
+    <class>eu.ttbox.icecat.model.referential.IcecatCategoryKeywords</class>
+    <class>eu.ttbox.icecat.model.referential.IcecatFeature</class>
+    <class>eu.ttbox.icecat.model.referential.IcecatFeatureGroup</class>
+    <class>eu.ttbox.icecat.model.referential.IcecatFeatureGroup</class>
+    <class>eu.ttbox.icecat.model.referential.IcecatFeatureGroup</class>
+    <class>eu.ttbox.icecat.model.referential.IcecatTex</class>
+    <class>eu.ttbox.icecat.model.referential.IcecatVocabulary</class>
+    <class>eu.ttbox.icecat.model.referential.IcecatMeasure</class>
+
+    <class>eu.ttbox.icecat.model.relations.IcecatRelation</class>
+    <class>eu.ttbox.icecat.model.relations.IcecatRelationExactValues</class>
+    <class>eu.ttbox.icecat.model.relations.IcecatRelationGroup</class>
+    <class>eu.ttbox.icecat.model.relations.IcecatRelationRule</class>
+    <class>eu.ttbox.icecat.model.relations.IcecatRelationSet</class>
+
+    <class>eu.ttbox.icecat.model.campaign.IcecatCampaign</class>
+    <class>eu.ttbox.icecat.model.campaign.IcecatCampaignGallery</class>
+    <class>eu.ttbox.icecat.model.campaign.IcecatCampaignKit</class>
+
+    <exclude-unlisted-classes>false</exclude-unlisted-classes>
+
+  </persistence-unit>
+
+</persistence>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:context="http://www.springframework.org/schema/context" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:util="http://www.springframework.org/schema/util" xmlns:jee="http://www.springframework.org/schema/jee"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd
+                           http://www.springframework.org/schema/context
+                           http://www.springframework.org/schema/context/spring-context.xsd
+                           http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.0.xsd
+                           http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-3.0.xsd
+                           http://www.springframework.org/schema/tx
+                           http://www.springframework.org/schema/tx/spring-tx.xsd">
+
+
+	<!-- Hibernate statistic http://internna.blogspot.com/2007/08/hibernate-statistics-in-enterprise-5.html 
+		<jee:jndi-lookup id="server" jndi-name="java:comp/env/jmx/runtime"/> <jee:jndi-lookup 
+		id="hibernateSessionFactory" jndi-name="SessionFactory"/> <bean id="hibernateStatistics" 
+		class="org.hibernate.jmx.StatisticsService"> <property name="statisticsEnabled" 
+		value="true"/> <property name="sessionFactory" ref="hibernateSessionFactory"/> 
+		</bean> -->
+
+	<!-- Mbean Exporter -->
+
+	<bean id="exporter" class="org.springframework.jmx.export.MBeanExporter"
+		p:assembler-ref="assembler" p:namingStrategy-ref="namingStrategy"
+		p:autodetect="true">
+		<!-- <property name="beans"> -->
+		<!-- <map> -->
+		<!-- <entry key="ttbox:Hibernate=statistics" -->
+		<!-- value-ref="hibernateStatistics"/> -->
+		<!-- </map> -->
+		<!-- </property> -->
+	</bean>
+
+	<bean id="jmxAttributeSource"
+		class="org.springframework.jmx.export.annotation.AnnotationJmxAttributeSource" />
+
+	<!-- will create management interface using annotation metadata -->
+	<bean id="assembler"
+		class="org.springframework.jmx.export.assembler.MetadataMBeanInfoAssembler"
+		p:attributeSource-ref="jmxAttributeSource" />
+
+	<!-- will pick up the ObjectName from the annotation -->
+	<bean id="namingStrategy"
+		class="org.springframework.jmx.export.naming.MetadataNamingStrategy"
+		p:attributeSource-ref="jmxAttributeSource" />
+
+
+
+</beans>

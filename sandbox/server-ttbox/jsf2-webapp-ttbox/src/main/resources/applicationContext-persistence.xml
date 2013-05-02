@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:context="http://www.springframework.org/schema/context"  xmlns:jee="http://www.springframework.org/schema/jee"
+  xmlns:tx="http://www.springframework.org/schema/tx"
+  xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd
+                           http://www.springframework.org/schema/context
+                           http://www.springframework.org/schema/context/spring-context.xsd
+                           http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-3.0.xsd
+                           http://www.springframework.org/schema/tx
+                           http://www.springframework.org/schema/tx/spring-tx.xsd">
+
+
+<!-- 
+http://docs.codehaus.org/display/JETTY/Annotations
+ http://springtips.blogspot.com/2008/06/spring-entitymanagerfactory-in-jta-and.html
+http://blog.developpez.com/djo-mos/p5255/java/spring/spring-framework/mise-en-place-de-jpa-manage-par-spring/
+  <context:load-time-weaver />
+    <jee:jndi-lookup id="ttboxDS" jndi-name="jdbc/ttbox" />
+  
+-->
+  <tx:annotation-driven />
+
+  <bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
+    <property name="entityManagerFactory" ref="entityManagerFactory" />
+  </bean>
+  
+  <!-- 
+  <jee:jndi-lookup id="dataSource" jndi-name="jdbc/ttbox" />
+   -->
+
+  <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+    <property name="driverClassName" value="org.postgresql.Driver" />
+    <property name="url" value="jdbc:postgresql://localhost:5432/postgres" />
+    <property name="username" value="ttbox" />
+    <property name="password" value="ttbox" />
+  </bean>
+
+
+<!--    <property name="persistenceXmlLocation" value="classpath:META-INF/persistence.xml" />-->
+  <bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+    <property name="dataSource" ref="dataSource" />
+    <property name="persistenceUnitName" value="ttboxPU" />
+    <property name="jpaVendorAdapter">
+      <bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter">
+         <property name="generateDdl" value="true" />
+        <property name="database" value="POSTGRESQL" />
+      </bean>
+    </property>
+    <!-- On spécifie ici le tisseur utilisée pour la modification du ByteCode, cf documentation de Spring pour plus de précisions 
+    <property name="loadTimeWeaver">
+      <bean class="org.springframework.instrument.classloading.InstrumentationLoadTimeWeaver" />
+    </property>
+    -->
+  </bean>
+
+  <bean class="org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor" />
+  
+  
+
+</beans>
+        

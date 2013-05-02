@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:WindowedApplication xmlns:fx="http://ns.adobe.com/mxml/2009"
+                       xmlns:s="library://ns.adobe.com/flex/spark"
+                       xmlns:mx="library://ns.adobe.com/flex/mx"
+                       preinitialize="TTBoxConfig.getInstance().applicationPreinitialize()"
+                       creationComplete="TTBoxConfig.getInstance().applicationCreationComplete()"
+                       applicationComplete="{init()}"
+                       xmlns:view="eu.ttbox.view.*">
+    <fx:Metadata>
+        [ResourceBundle("ttbox_message")]
+		[Name]
+    </fx:Metadata>
+
+    <s:layout>
+        <s:VerticalLayout/>
+    </s:layout>
+
+    <fx:Script>
+        <![CDATA[
+            import eu.ttbox.config.TTBoxConfig;
+            import eu.ttbox.controler.admin.AdminTideError;
+
+            import org.granite.tide.spring.Identity;
+
+            [Inject]
+            [Bindable]
+            public var identity:Identity;
+
+            private function init():void {
+                // Center main AIR app window on the screen
+                // nativeWindow.x=(Capabilities.screenResolutionX - nativeWindow.width) / 2;
+                // nativeWindow.y=(Capabilities.screenResolutionY - nativeWindow.height) / 2;
+
+                //.stage.displayState=StageDisplayState.FULL_SCREEN;
+                //Login 
+                identity.login("admin", "admin", AdminTideError.saveResultHandler, AdminTideError.saveResultHandler);
+                //identity.login("dam", "dam");
+            }
+        ]]>
+    </fx:Script>
+    <fx:Declarations>
+        <!-- Placer ici les éléments non visuels (services et objets de valeur, par exemple). -->
+    </fx:Declarations>
+
+    <view:TTBoxApp width="100%"
+                   height="100%"/>
+
+</s:WindowedApplication>

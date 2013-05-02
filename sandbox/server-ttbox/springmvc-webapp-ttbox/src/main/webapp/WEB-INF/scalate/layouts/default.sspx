@@ -1,0 +1,16 @@
+<%@ var body: String %>
+<%@ var head: String = "" %>
+<%@ var title: String = "this is the default value" %>
+<html>
+<head>
+  <title>${title}</title>
+  ${unescape(head)}
+</head>
+<body>
+  <p>layout header goes here...</p>
+
+  ${unescape(body)}
+
+  <p>layout footer goes here...</p>
+</body>
+</html>

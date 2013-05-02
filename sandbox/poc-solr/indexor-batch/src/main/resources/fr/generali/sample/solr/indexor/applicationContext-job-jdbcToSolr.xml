@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:batch="http://www.springframework.org/schema/batch"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+		http://www.springframework.org/schema/batch http://www.springframework.org/schema/batch/spring-batch-2.1.xsd">
+
+
+    <description>Example for JDBC Query to Solr Batch</description>
+
+
+    <job id="jdbcToSolrJob"
+         job-repository="jobRepository"
+         restartable="false"
+         xmlns="http://www.springframework.org/schema/batch">
+        <step id="index"
+              next="optimize">
+            <tasklet transaction-manager="transactionManager">
+                <chunk reader="clientSrcJdbcSelectItemReader"
+                       processor="solrItemProcessor"
+                       writer="solrItemWriter"
+                       retry-limit="10"
+                       skip-limit="0"
+                       commit-interval="20000">
+                    <!-- <skippable-exception-classes> -->
+                    <!-- <include class="java.lang.RuntimeException" /> -->
+                    <!-- </skippable-exception-classes> -->
+                    <batch:retryable-exception-classes>
+                        <batch:include class="java.lang.RuntimeException"/>
+                        <batch:include class="org.apache.solr.client.solrj.SolrServerException"/>
+                    </batch:retryable-exception-classes>
+                </chunk>
+            </tasklet>
+        </step>
+        <step id="optimize">
+            <tasklet ref="optimizeTasklet"/>
+        </step>
+    </job>
+
+    <bean id="clientSrcJdbcSelectItemReader"
+          class="org.springframework.batch.item.database.JdbcCursorItemReader">
+        <property name="sql"
+                  value="Select NUMPERS, NOMPERS, TITREPERS TYPEPERS, PRENOMPERS DATENAISSANCE, NATUREPERSONNE ,SIREN ,STATUTJURIDIQUE ,NIC ,SOUSTYPEPERSMORALE ,INDSIRENNICVALIDE ,ADRESSE1 ,ADRESSE2 ,ADRESSE3 ,ADRESSE4 ,VILLE ,CODEPOSTAL ,REFROLE ,CODEROLE ,DATEMAJ ,ID_INTERMEDIAIRE ,CODE_RESEAU ,ID_CLIENT_AGENT ,CODEPAYS ,MOTIFINVALIDITE ,DATEINVALIDITE ,SOURCENPAI from persdonneesgeneriques"/>
+        <property name="dataSource"
+                  ref="dataSource"/>
+        <property name="rowMapper">
+            <bean class="org.springframework.jdbc.core.ColumnMapRowMapper"/>
+        </property>
+    </bean>
+
+
+</beans>

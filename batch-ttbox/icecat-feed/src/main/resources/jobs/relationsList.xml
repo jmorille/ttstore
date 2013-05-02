@@ -1,0 +1,36 @@
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:batch="http://www.springframework.org/schema/util" xmlns:p="http://www.springframework.org/schema/p" xmlns:util="http://www.springframework.org/schema/util"
+  xmlns:oxm="http://www.springframework.org/schema/oxm" xmlns:task="http://www.springframework.org/schema/task"
+  xsi:schemaLocation="
+	       http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd
+           http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+           http://www.springframework.org/schema/oxm http://www.springframework.org/schema/oxm/spring-oxm.xsd
+           http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task.xsd
+           http://www.springframework.org/schema/batch http://www.springframework.org/schema/batch/spring-batch.xsd">
+
+
+  <import resource="classpath:/META-INF/icecat/applicationContext.xml" />
+
+
+  <job id="relationListIcecatJob" xmlns="http://www.springframework.org/schema/batch">
+    <step id="relationListIcecatStep">
+      <tasklet>
+        <chunk reader="relationListIcecatItemReader" writer="relationListIcecatItemWriter" chunk-completion-policy="completionPolicy"  />
+      </tasklet>
+    </step>
+  </job>
+
+ 
+
+  <bean id="relationListIcecatItemReader" parent="abstractProxyIndexFileReader" p:relativePath="export/freexml.int/refs/RelationsList.xml">
+    <property name="delegate">
+      <bean class="org.springframework.batch.item.xml.StaxEventItemReader" p:strict="true" p:unmarshaller-ref="icecatRelationMarshaller"
+        p:fragmentRootElementName="RelationGroup" />
+    </property>
+  </bean>
+
+  <oxm:jaxb2-marshaller id="icecatRelationMarshaller" contextPath="biz.icecat.relations.v1" />
+
+ 
+
+</beans>

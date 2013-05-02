@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:WindowedApplication xmlns:fx="http://ns.adobe.com/mxml/2009"
+                       xmlns:s="library://ns.adobe.com/flex/spark"
+                       xmlns:mx="library://ns.adobe.com/flex/mx"
+                       preinitialize="TTBoxConfig.getInstance().applicationPreinitialize()"
+                       creationComplete="TTBoxConfig.getInstance().applicationCreationComplete()"
+                       xmlns:view="eu.ttbox.view.*"
+                       xmlns:cashregister="eu.ttbox.view.cashregister.*"
+                       xmlns:core="eu.ttbox.view.core.*">
+    <fx:Metadata>
+        [ResourceBundle("ttbox_message")]
+    </fx:Metadata>
+
+    <fx:Script>
+        <![CDATA[
+            import eu.ttbox.config.TTBoxConfig;
+
+            import mx.controls.Alert;
+            import mx.events.CloseEvent;
+
+            import org.granite.tide.data.Conflicts;
+            import org.granite.tide.data.events.TideDataConflictsEvent;
+            import org.granite.tide.spring.Identity;
+            import org.granite.tide.spring.Spring;
+
+
+            [Bindable]
+            [In]
+            public var identity:Identity;
+
+
+            private function init():void {
+                identity.isLoggedIn();
+
+                // Enter Fullscreen Interactive State
+                //		nativeWindow.maximize();
+
+
+                // Enter Fullscreen Interactive State
+                //stage.displayState=StageDisplayState.FULL_SCREEN;
+                // Enter Standard Fullscreen State
+                // stage.displayState = StageDisplayState.FULL_SCREEN;
+                // Enter Normal State
+                // stage.displayState = StageDisplayState.NORMAL;
+
+                // Conflict management
+                Spring.getInstance().getContext().addEventListener(TideDataConflictsEvent.DATA_CONFLICTS, conflictsHandler);
+
+            }
+
+            // Conflict Handler
+            private var _conflicts:Conflicts;
+
+            private function conflictsHandler(event:TideDataConflictsEvent):void {
+                _conflicts=event.conflicts;
+                Alert.show("Keep local state ?", "Data conflict", Alert.YES | Alert.NO, null, conflictsCloseHandler);
+            }
+
+            private function conflictsCloseHandler(event:CloseEvent):void {
+                if (event.detail == Alert.YES)
+                    _conflicts.acceptAllClient();
+                else
+                    _conflicts.acceptAllServer();
+            }
+        ]]>
+    </fx:Script>
+    <fx:Declarations>
+
+        <!-- Placer ici les éléments non visuels (services et objets de valeur, par exemple). -->
+    </fx:Declarations>
+
+    <s:Rect top="0"
+            bottom="0"
+            left="0"
+            right="0">
+        <s:fill>
+            <s:LinearGradient rotation="90">
+                <s:GradientEntry color="0xFFFFFF"/>
+                <s:GradientEntry color="0xDDDDDD"/>
+            </s:LinearGradient>
+        </s:fill>
+    </s:Rect>
+
+
+    <mx:ViewStack id="appView"
+                  selectedIndex="{identity.loggedIn ? 1 : 0}"
+                  width="100%"
+                  height="100%">
+        <mx:VBox verticalAlign="middle"
+                 horizontalAlign="center">
+            <view:LoginPanel id="loginView"
+                             title="Identification"/>
+        </mx:VBox>
+        <mx:VBox id="loggedInView">
+            <view:TTBoxApp width="100%"
+                           height="100%"/>
+        </mx:VBox>
+    </mx:ViewStack>
+
+
+</s:WindowedApplication>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:WindowedApplication xmlns:fx="http://ns.adobe.com/mxml/2009"
+					   xmlns:s="library://ns.adobe.com/flex/spark"
+					   xmlns:mx="library://ns.adobe.com/flex/mx"
+					   xmlns:views="views.*"
+					   applicationComplete="init()">
+	<s:layout>
+		<s:VerticalLayout horizontalAlign="center" />
+	</s:layout>
+	
+	<fx:Script>
+		<![CDATA[
+			private function init():void
+			{
+				// Enter Fullscreen Interactive State
+				nativeWindow.maximize();
+				//stage.displayState=StageDisplayState.FULL_SCREEN_INTERACTIVE;
+				//stage.name = "TTBox";
+				//stage.displayState=StageDisplayState.NORMAL;
+			}
+		]]>
+	</fx:Script>
+
+	<fx:Declarations>
+		<!-- Placer ici les éléments non visuels (services et objets de valeur, par exemple). -->
+	</fx:Declarations>
+
+	<s:Panel >
+		<s:layout>
+			<s:VerticalLayout />
+		</s:layout>
+		<s:Label text="Je doit lire mon code barre dans la boite ci-dessous" />
+		<s:TextInput id="barCode" />
+		
+	</s:Panel>
+
+</s:WindowedApplication>

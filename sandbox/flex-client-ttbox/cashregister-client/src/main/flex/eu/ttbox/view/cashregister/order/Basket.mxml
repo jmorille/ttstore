@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Group xmlns:fx="http://ns.adobe.com/mxml/2009"
+         xmlns:s="library://ns.adobe.com/flex/spark"
+         xmlns:mx="library://ns.adobe.com/flex/mx"
+         width="100%"
+         height="100%">
+    <fx:Metadata>
+		[Name]
+	</fx:Metadata>
+
+    <s:layout>
+        <s:VerticalLayout/>
+    </s:layout>
+
+    <fx:Script>
+        <![CDATA[
+            import eu.ttbox.controler.cashregister.BasketControler;
+            import eu.ttbox.controler.core.I18nManager;
+            import eu.ttbox.model.catalog.Offer;
+
+            import mx.collections.ArrayCollection;
+
+            [Bindable]
+            public var msg:I18nManager=I18nManager.getInstance();
+
+            [Inject]
+            [Bindable]
+            public var basketControler:BasketControler;
+
+            [Bindable]
+            [In("#{basketControler.offers}")]
+            public var offers:ArrayCollection;
+        ]]>
+    </fx:Script>
+    <fx:Declarations>
+        <!-- Placer ici les éléments non visuels (services et objets de valeur, par exemple). -->
+    </fx:Declarations>
+
+
+    <s:DataGrid width="100%"
+                height="100%"
+                dataProvider="{basketControler.offers}">
+        <s:columns>
+            <s:ArrayList>
+                <s:GridColumn dataField="product.name"
+                              headerText="{msg.product}"/>
+                <s:GridColumn dataField="priceHT"
+                              headerText="{msg.priceHT}"/>
+            </s:ArrayList>
+        </s:columns>
+    </s:DataGrid>
+
+
+</s:Group>

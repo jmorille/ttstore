@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>eu.ttbox.serveur</groupId>
+    <artifactId>serveur-ttbox</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+  </parent>
+  <!-- <groupId>com.j3.icecat.domain</groupId> -->
+  <artifactId>icecat-domain</artifactId>
+  <packaging>jar</packaging>
+
+  <name>[ICE] Icecat Domain - Icecat Domain</name>
+
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>eu.ttbox.bom</groupId>
+        <artifactId>bom-ttbox</artifactId>
+        <version>${project.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+
+
+  <dependencies>
+
+    <!-- Test -->
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <scope>test</scope>
+    </dependency> 
+    <dependency>
+      <groupId>com.h2database</groupId>
+      <artifactId>h2</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.juli</groupId>
+      <artifactId>tomcat-juli-slf4j</artifactId> 
+      <scope>test</scope>
+    </dependency> 
+    <dependency>
+      <groupId>org.apache.tomcat</groupId>
+      <artifactId>jdbc-pool</artifactId> 
+      <scope>test</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-test</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-context</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-tx</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-orm</artifactId>
+      <scope>test</scope>
+    </dependency>
+
+    <!-- Logging -->
+    <dependency>
+      <groupId>eu.ttbox.composant</groupId>
+      <artifactId>logging-comp</artifactId>
+      <version>0.0.1-SNAPSHOT</version>
+      <type>pom</type>
+    </dependency>
+
+
+    <!-- Tools -->
+    <dependency>
+      <groupId>com.google.guava</groupId>
+      <artifactId>guava</artifactId>
+    </dependency>
+
+    <!-- Persistance -->
+    <dependency>
+      <groupId>org.hibernate.javax.persistence</groupId>
+      <artifactId>hibernate-jpa-2.0-api</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.hibernate</groupId>
+      <artifactId>hibernate-core</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.hibernate</groupId>
+      <artifactId>hibernate-entitymanager</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.hibernate</groupId>
+      <artifactId>hibernate-validator</artifactId>
+    </dependency>
+
+    <!-- Query Dsl -->
+    <dependency>
+      <groupId>com.mysema.querydsl</groupId>
+      <artifactId>querydsl-apt</artifactId>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.mysema.querydsl</groupId>
+      <artifactId>querydsl-jpa</artifactId>
+    </dependency>
+
+    <!-- Json -->
+    <dependency>
+      <groupId>org.codehaus.jackson</groupId>
+      <artifactId>jackson-mapper-asl</artifactId>
+    </dependency>
+
+
+  </dependencies>
+
+<!--   <build> -->
+<!--     <plugins> -->
+	<!-- https://bugs.launchpad.net/querydsl/+bug/761674 -->
+    <!-- https://bugs.eclipse.org/bugs/show_bug.cgi?id=349935 -->
+    <!-- http://wiki.eclipse.org/M2E_plugin_execution_not_covered -->
+<!--       <plugin> -->
+<!--         <groupId>com.mysema.maven</groupId> -->
+<!--         <artifactId>maven-apt-plugin</artifactId> -->
+<!--         <version>${maven-apt-plugin}</version> -->
+<!--         <executions> -->
+<!--           <execution> -->
+<!--             <goals> -->
+<!--               <goal>process</goal> -->
+<!--             </goals> -->
+<!--             <configuration> -->
+<!--               <outputDirectory>target/generated-sources/java</outputDirectory> -->
+<!--               <processor>com.mysema.query.apt.jpa.JPAAnnotationProcessor</processor> -->
+<!--             </configuration> -->
+<!--           </execution> -->
+<!--         </executions> -->
+<!--       </plugin> -->
+<!--     </plugins> --> 
+<!--   </build> -->
+
+</project>

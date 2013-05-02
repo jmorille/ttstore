@@ -1,0 +1,119 @@
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:b="http://www.springframework.org/schema/beans" xmlns:batch="http://www.springframework.org/schema/util"
+  xmlns:p="http://www.springframework.org/schema/p" xmlns:util="http://www.springframework.org/schema/util" xmlns:oxm="http://www.springframework.org/schema/oxm"
+  xmlns:task="http://www.springframework.org/schema/task"
+  xsi:schemaLocation="
+	       http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd
+           http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+           http://www.springframework.org/schema/oxm http://www.springframework.org/schema/oxm/spring-oxm.xsd
+           http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task.xsd
+           http://www.springframework.org/schema/batch http://www.springframework.org/schema/batch/spring-batch.xsd">
+
+
+  <import resource="classpath:/eu/ttbox/batch/techdata/applicationContext.xml" />
+
+  <bean id="completionPolicy" class="org.springframework.batch.repeat.policy.DefaultResultCompletionPolicy" />
+
+  <!-- chunk-completion-policy="completionPolicy" commit-interval="1000" -->
+
+
+  <job id="materialTechdataJob" xmlns="http://www.springframework.org/schema/batch"> 
+    <step id="materialTechdataDownloadStep" next="materialTechdataSortedStep">
+      <tasklet>
+        <chunk writer="materialSortItemWriter" chunk-completion-policy="completionPolicy">
+          <reader>
+            <b:bean class="eu.ttbox.batch.techdata.price.list.PriceListFtpItemReader" p:filenamePattern="(?i)MaterialFile\.txt(\.gz)?"
+              p:downloadConnector-ref="techdataProxyCacheFtpConnector" />
+          </reader>
+        </chunk>
+      </tasklet>
+    </step>
+    <step id="materialTechdataSortedStep" next="materialTechdataImporterStep"> <!-- -->
+      <tasklet>
+        <chunk writer="materialSortItemWriter" chunk-completion-policy="completionPolicy">
+          <reader>
+            <b:bean class="eu.ttbox.batch.core.reader.LocalFilenamePatternProxyCacheItemReader"
+              p:filenamePattern="(?i)MaterialFile\.txt(\.gz)?" p:downloadConnector-ref="techdataProxyCacheFtpConnector" />
+          </reader>
+        </chunk>
+      </tasklet>
+    </step>
+    <step id="materialTechdataImporterStep">
+      <tasklet>
+        <chunk reader="materialTechdataDifferentialItemReader" writer="ttboxDifferentialItemWriter" processor="materialTechdataProcessor"
+          reader-transactional-queue="true" processor-transactional="true" commit-interval="1000">
+        </chunk>
+        <transaction-attributes propagation="REQUIRES_NEW" isolation="DEFAULT" />
+        <listeners>
+          <listener ref="statListener" />
+        </listeners>
+      </tasklet>
+    </step> 
+  </job>
+
+
+  <bean id="materialTechdataDifferentialItemReader" class="eu.ttbox.batch.core.reader.differential.DifferentialItemReader"
+    p:comparator-ref="materialTechdataItemComparator">
+    <property name="itemReaderMaster">
+      <bean class="org.springframework.batch.item.database.HibernateCursorItemReader" p:sessionFactory-ref="ttboxSessionFactory"
+        p:queryString="from Product p where p.extIds.techId is not null order by p.extIds.techId" />
+    </property>
+    <property name="itemReaderJoin">
+      <bean class="eu.ttbox.batch.core.reader.ProxyCacheDelegateItemReader" p:online="false" p:relativePath="materialfile-sorted.txt.gz"
+        p:delegate-ref="materialTechdataFlatFileItemReader">
+        <property name="downloadConnector">
+          <bean parent="techdataProxyCacheFtpConnector" />
+        </property>
+      </bean>
+    </property>
+  </bean>
+
+
+  <bean id="statListener" class="eu.ttbox.batch.core.reader.listener.StatItemReadListener" p:logInfoPeriod="1000" />
+
+
+  <util:constant id="DELIMITER_TAB" static-field="org.springframework.batch.item.file.transform.DelimitedLineTokenizer.DELIMITER_TAB" />
+
+  <util:constant id="materialFields" static-field="eu.ttbox.batch.techdata.material.MaterialFieldEnum.FIELDS_NAMES" />
+  <util:constant id="materialFieldIds" static-field="eu.ttbox.batch.techdata.material.MaterialFieldEnum.FIELDS_IDS" />
+  <util:constant id="materialFieldsAddAll" static-field="eu.ttbox.batch.techdata.material.MaterialFieldEnum.FIELDS_NAMES_ADD_ALL" />
+
+
+
+
+
+
+  <bean id="materialTechdataFlatFileItemReader" class="org.springframework.batch.item.file.FlatFileItemReader">
+    <property name="lineMapper">
+      <bean class="org.springframework.batch.item.file.mapping.DefaultLineMapper">
+        <property name="lineTokenizer">
+          <bean class="org.springframework.batch.item.file.transform.DelimitedLineTokenizer" p:delimiter-ref="DELIMITER_TAB"
+            p:quoteCharacter="\u0000" p:names-ref="materialFields" />
+        </property>
+        <property name="fieldSetMapper">
+          <bean class="org.springframework.batch.item.file.mapping.PassThroughFieldSetMapper" />
+        </property>
+      </bean>
+    </property>
+  </bean>
+
+  <bean id="materialSortItemWriter" class="eu.ttbox.batch.techdata.core.sort.SortFileService">
+    <property name="itemReader">
+      <bean class="org.springframework.batch.item.file.FlatFileItemReader">
+        <property name="lineMapper">
+          <bean class="org.springframework.batch.item.file.mapping.DefaultLineMapper">
+            <property name="lineTokenizer">
+              <bean class="eu.ttbox.batch.techdata.core.sort.reader.AddUntokeniseLineDelimitedLineTokenizer"
+                p:delimiter-ref="DELIMITER_TAB" p:quoteCharacter="\u0000" p:names-ref="materialFieldsAddAll" />
+            </property>
+            <property name="fieldSetMapper">
+              <bean class="eu.ttbox.batch.techdata.core.sort.reader.SortVOFieldSetMapper" p:line="ALL" p:keys-ref="materialFieldIds" />
+            </property>
+          </bean>
+        </property>
+      </bean>
+    </property>
+  </bean>
+
+
+</beans>

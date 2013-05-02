@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Application xmlns:fx="http://ns.adobe.com/mxml/2009" 
+			   xmlns:s="library://ns.adobe.com/flex/spark" 
+			   xmlns:mx="library://ns.adobe.com/flex/mx"
+			   xmlns:parsley="http://www.spicefactory.org/parsley" 
+			   xmlns:view="com.cestpasdur.view.*"
+			   >
+	<fx:Script>
+		<![CDATA[
+			import com.cestpasdur.context.ApplicationContext;
+		]]>
+	</fx:Script>
+	<fx:Declarations>
+		<parsley:ContextBuilder config="{ApplicationContext}"/>
+		<parsley:Configure/>
+	</fx:Declarations>
+	
+	<view:MainView id="MainView" width="100%" height="100%"/>
+
+	
+</s:Application>

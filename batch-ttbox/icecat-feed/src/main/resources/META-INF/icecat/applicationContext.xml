@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:util="http://www.springframework.org/schema/util" xmlns:context="http://www.springframework.org/schema/context"
+  xmlns:task="http://www.springframework.org/schema/task" xmlns:aop="http://www.springframework.org/schema/aop"
+  xmlns:tx="http://www.springframework.org/schema/tx" xmlns:oxm="http://www.springframework.org/schema/oxm" xmlns:p="http://www.springframework.org/schema/p"
+  xsi:schemaLocation="
+       	http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd 
+       	http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd
+       	http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task.xsd
+        http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd
+        http://www.springframework.org/schema/oxm http://www.springframework.org/schema/oxm/spring-oxm.xsd
+       	http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd"
+  default-lazy-init="true">
+
+  <!-- <context:load-time-weaver /> -->
+
+  <!-- <aop:config /> proxy-target-class="true" -->
+  <!-- <aop:aspectj-autoproxy proxy-target-class="true"/> -->
+
+  <!-- <context:annotation-config /> -->
+
+  <!-- <tx:annotation-driven transaction-manager="icecatTxManager" /> -->
+
+
+  <!-- Config -->
+  <import resource="classpath:/META-INF/icecat/configuration.spring.xml" />
+  <import resource="classpath:/META-INF/icecat/icecat.spring.xml" />
+  <!-- Connecteur -->
+  <import resource="classpath:/META-INF/icecat/ressourceAdaptator.spring.xml" />
+  <import resource="classpath:/META-INF/icecat/icecat-connector-es.spring.xml" />
+
+  <!-- Icecat <import resource="classpath:/eu/ttbox/batch/icecat/domain/icecat.spring.xml" /> <import resource="classpath:/eu/ttbox/batch/icecat/domain/marshalling.spring.xml" 
+    /> -->
+  <context:component-scan base-package="eu.ttbox.batch.icecat" />
+
+
+
+  <!-- Feed Xml -->
+  <!-- filePartitionner -->
+
+  <bean id="workingLocalFolderIcecat" class="eu.ttbox.batch.core.fs.WorkingLocalFileSystemAccessor"
+    p:compressionGzip="true" p:cacheFolder="${connector.icecat.cacheFolder}" p:filePartitionner-ref="icecatFileIndexPartitionner" />
+
+
+  <bean id="icecatProxyCacheHttpConnector" class="eu.ttbox.batch.core.fs.ProxyCacheDownloadConnector" p:online="${connector.icecat.online}"
+    p:workingLocalFolder-ref="workingLocalFolderIcecat">
+    <property name="downloaderConnector">
+      <bean class="eu.ttbox.batch.core.download.http.HttpConnector" p:hostname="data.icecat.biz" p:username="${connector.icecat.login}"
+        p:password="${connector.icecat.password}" p:delayWaitInMs="750" p:proxyHostname="${proxy.http.host}"
+        p:proxyPort="${proxy.http.port}" />
+    </property>
+  </bean>
+
+  <bean id="icecatFileIndexPartitionner" class="eu.ttbox.batch.core.fs.partitionner.FilePartionnerVoter">
+    <property name="decisionManager">
+      <bean class="eu.ttbox.batch.core.voter.FirstVoteBasedDecisionManager">
+        <property name="decisionVoters">
+          <list>
+            <bean class="eu.ttbox.batch.core.fs.partitionner.voter.FilenamePatternVoter" p:pattern=".*export(\\|/)freexml\.int(\\|/)INT(\\|/)([0-9]+)\.xml.*" />
+          </list>
+        </property>
+      </bean>
+    </property>
+    <property name="filePartitionner">
+      <bean class="eu.ttbox.batch.core.fs.partitionner.FsRelocatorPartionner">
+        <property name="filePartitionner">
+          <bean class="eu.ttbox.batch.core.fs.partitionner.FilenameHashPartitionner" p:numPartition="1000" />
+        </property>
+      </bean>
+    </property>
+  </bean>
+
+  <bean id="abstractProxyIndexFileReader" class="eu.ttbox.batch.core.reader.ProxyCacheDelegateItemReader"
+    p:downloadConnector-ref="icecatProxyCacheHttpConnector" abstract="true" />
+
+
+  <oxm:jaxb2-marshaller id="icecatRefMarshaller" contextPath="biz.icecat.referential.v1" />
+
+  <!-- Feed Images -->
+  <bean id="icecatImageProxyCacheHttpConnector" parent="icecatProxyCacheHttpConnector" p:preferLocal="true">
+    <property name="workingLocalFolder">
+      <bean parent="workingLocalFolderIcecat"> 
+        <property name="compressionGzip">
+          <null />
+        </property>
+      </bean>
+    </property>
+    <property name="downloaderConnector">
+      <bean class="eu.ttbox.batch.core.download.http.HttpConnector" p:hostname="images.icecat.biz" p:delayWaitInMs="200" />
+    </property>
+  </bean>
+
+</beans>

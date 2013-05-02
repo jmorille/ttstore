@@ -1,0 +1,38 @@
+<b:beans xmlns="http://www.springframework.org/schema/security"
+	xmlns:b="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+                    http://www.springframework.org/schema/beans/spring-beans.xsd
+                    http://www.springframework.org/schema/security 
+                    http://www.springframework.org/schema/security/spring-security-3.1.xsd">
+
+	<global-method-security secured-annotations="enabled" />
+
+    <b:bean id="filterChainProxy" class="org.springframework.security.web.FilterChainProxy">
+        <filter-chain-map request-matcher="ant">
+            <filter-chain pattern="/store/**" filters="webSiteSelectorFilter"/>
+        </filter-chain-map>
+    </b:bean>
+   
+   
+	<http pattern="/css/**" security="none" />
+
+	<http use-expressions="true">
+	    <custom-filter ref="filterChainProxy" before="FIRST"/>
+		<intercept-url pattern="/store/secure/**" access="isAuthenticated()" />
+		<intercept-url pattern="/store/*" access="permitAll" />
+		<intercept-url pattern="/**" access="denyAll" />
+		<form-login login-page="/store/login" authentication-failure-url="/store/login"  default-target-url="/store/index" />
+		<logout delete-cookies="JSESSIONID" />
+	</http>
+
+	<authentication-manager>
+		<authentication-provider>
+			<user-service>
+				<user name="jimi" password="jimi" authorities="ROLE_USER, ROLE_ADMIN" />
+				<user name="bob" password="bob" authorities="ROLE_USER" />
+			</user-service>
+		</authentication-provider>
+	</authentication-manager>
+
+
+</b:beans>   

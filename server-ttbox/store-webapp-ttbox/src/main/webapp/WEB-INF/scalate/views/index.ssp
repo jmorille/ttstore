@@ -1,0 +1,64 @@
+
+<% attributes("title") = "Welcome ${webSite.getName}"  %> 
+ 
+
+<div id="supportingText">
+	<div id="quickSummary" class="block">
+		<h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h3>
+		<p class="p1">
+		   Fusce imperdiet porta ante, vel tincidunt tortor iaculis ut. Vivamus ut ante leo. Phasellus congue ultricies eleifend. Aenean in lectus et purus malesuada vulputate in et erat. Pellentesque at felis et sem vestibulum tincidunt. Etiam cursus erat a tortor posuere rhoncus. Mauris non mi nisl, id commodo leo. Praesent mi orci, blandit quis luctus et, auctor vitae ligula. Aliquam erat volutpat. Aliquam erat volutpat. Sed vulputate, neque posuere porta dapibus, metus diam venenatis magna, id euismod risus augue nec arcu. Nam ac mi sit amet sem gravida luctus vitae id ante. Vestibulum hendrerit, metus congue placerat luctus, dolor est ornare purus, id semper augue turpis eu justo. Maecenas pulvinar lacus cursus ligula volutpat rhoncus.
+		</p>
+	</div>
+
+	<div id="preamble" class="block"> 
+		<h3>Integer a quam vitae sapien iaculis porta.</h3>
+		<p class="p1">
+		  Phasellus laoreet viverra metus porta rutrum. Nam ultrices est rhoncus dui tincidunt ac dapibus purus dapibus. Proin nec eleifend risus. Donec varius, mi nec tincidunt interdum, risus ipsum interdum diam, vel commodo metus magna varius eros. Sed eget leo lectus, ac volutpat elit. Ut tempus auctor dui, ac malesuada elit fermentum at. Phasellus viverra tristique odio, in venenatis quam mollis vel. Donec ut nibh magna. Phasellus eu magna vitae massa convallis interdum. Quisque placerat varius sem et tempus.
+		</p> 
+	</div>
+
+	<div class="block">
+		<h3>Morbi at risus a libero ullamcorper tincidunt at sit amet enim.</h3>
+		<p class="p1">
+		Fusce varius, ligula in lacinia ullamcorper, sem est imperdiet odio, fermentum congue dui turpis eget lorem. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed eu sollicitudin erat. Sed ac quam odio. Ut vitae elementum quam. Donec mollis aliquam eros, non cursus urna dapibus a. Duis lorem arcu, molestie ut vulputate in, malesuada ac diam. Mauris ornare, sem sed pellentesque eleifend, libero enim porta lacus, in vulputate magna odio nec libero. Vestibulum sodales porttitor ligula sit amet luctus. Sed non scelerisque eros. Duis rutrum dictum magna, sed bibendum dui posuere ac.
+		</p>
+	</div>
+
+	<div class="block">
+		<h3>Praesent auctor venenatis feugiat. Quisque cursus lacinia adipiscing.</h3>
+		<p class="p1">
+		Nullam mollis imperdiet ipsum, malesuada pulvinar elit semper at. Curabitur vitae lacus id mauris mollis dapibus id et tortor. Mauris neque risus, blandit nec fringilla eget, tempor a eros. Aliquam convallis accumsan eros sed molestie. Pellentesque tristique molestie nibh, vel vulputate ipsum euismod et. Quisque facilisis libero vel velit ullamcorper fringilla. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla neque massa, lobortis et laoreet a, blandit in justo. In iaculis metus eget lacus gravida id iaculis purus cursus. Aenean euismod consectetur tincidunt. Vivamus pharetra molestie augue a condimentum. Maecenas ullamcorper, purus eu interdum accumsan, nisi sem viverra ligula, et congue est turpis eu nunc. Ut id felis purus, vel fringilla velit. Mauris placerat, magna sit amet vulputate egestas, sapien justo sagittis massa, et ultrices purus ipsum non ipsum.
+		</p>
+	</div>
+
+	<div class="block">
+		<h3>Quisque ipsum ipsum, hendrerit ut consectetur nec, tristique a elit.</h3>
+		<p class="p1">
+		Ut aliquet purus non lacus dignissim congue. Morbi sed sapien odio, ut gravida felis. Nullam ac lobortis nibh. Suspendisse ut nunc arcu. Pellentesque sit amet fermentum massa. Sed molestie, dolor ut ullamcorper elementum, nisi felis imperdiet ligula, nec egestas augue tortor eu odio. Donec eu elit eu nisi aliquam vehicula vel vitae tortor. Vivamus non mauris at sem euismod venenatis sed non quam. Mauris rutrum eros sed lectus ultricies fermentum. Vivamus massa diam, consectetur vel tempus eget, fringilla quis mauris.
+		</p>
+	</div>
+	
+</div>
+
+
+<div id="linkList">
+	
+	<div class="lblock">
+		<h3>Navigation:</h3>
+		<ul>
+			<li><a href=${uri("/store/search")} title="Search Offer" accesskey="s"><span class="accesskey"></span>Search offers</a></li>
+			<li><a href="http://www.mezzoblue.com/zengarden/alldesigns/" title="View every submission to the Zen Garden. AccessKey: w" accesskey="w">Vie<span class="accesskey">w</span> All Designs</a></li>
+		</ul>
+	</div>
+
+	
+	<div class="lblock">
+		<h3>Resources:</h3>
+		<ul>
+			<li><a href="123/123.css" title="View the source CSS file for the currently-viewed design, AccessKey: v" accesskey="v"><span class="accesskey">V</span>iew This Design&#8217;s <acronym title="Cascading Style Sheets">CSS</acronym></a></li>					<li><a href="http://www.mezzoblue.com/zengarden/resources/" title="Links to great sites with information on using CSS. AccessKey: r" accesskey="r"><acronym title="Cascading Style Sheets">CSS</acronym> <span class="accesskey">R</span>esources</a></li>
+			<li><a href="http://www.mezzoblue.com/zengarden/faq/" title="A list of Frequently Asked Questions about the Zen Garden. AccessKey: q" accesskey="q"><acronym title="Frequently Asked Questions">FA<span class="accesskey">Q</span></acronym></a></li>
+			<li><a href="http://www.mezzoblue.com/zengarden/submit/" title="Send in your own CSS file. AccessKey: s" accesskey="s"><span class="accesskey">S</span>ubmit a Design</a></li>
+			<li><a href="http://www.mezzoblue.com/zengarden/translations/" title="View translated versions of this page. AccessKey: t" accesskey="t"><span class="accesskey">T</span>ranslations</a></li>
+		</ul>
+	</div>			
+</div>

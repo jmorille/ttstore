@@ -1,0 +1,235 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>eu.ttbox.serveur</groupId>
+    <artifactId>serveur-ttbox</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+  </parent>
+
+  <artifactId>domain-ttbox</artifactId>
+  <packaging>jar</packaging>
+
+  <name>TTBox Server - Domain</name>
+
+  <properties>
+    <ttbox.dbunit.dataTypeFactoryName>org.dbunit.ext.postgresql.PostgresqlDataTypeFactory</ttbox.dbunit.dataTypeFactoryName>
+    <ttbox.dbunit.jdbc.driver>org.postgresql.Driver</ttbox.dbunit.jdbc.driver>
+    <ttbox.dbunit.jdbc.url>jdbc:postgresql://localhost:5432/postgres</ttbox.dbunit.jdbc.url>
+    <ttbox.dbunit.jdbc.schema>ttbox</ttbox.dbunit.jdbc.schema>
+    <ttbox.dbunit.jdbc.username>ttbox</ttbox.dbunit.jdbc.username>
+    <ttbox.dbunit.jdbc.password>ttbox</ttbox.dbunit.jdbc.password>
+
+  </properties>
+
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>eu.ttbox.bom</groupId>
+        <artifactId>bom-ttbox</artifactId>
+        <version>${project.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+
+  <dependencies>
+
+    <!-- Test -->
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.dbunit</groupId>
+      <artifactId>dbunit</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-test</artifactId>
+      <scope>test</scope>
+    </dependency> 
+    <dependency>
+      <groupId>com.h2database</groupId>
+      <artifactId>h2</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <!-- Pool DB -->
+    <dependency>
+      <groupId>org.apache.juli</groupId>
+      <artifactId>tomcat-juli-slf4j</artifactId> 
+      <scope>test</scope>
+    </dependency> 
+    <dependency>
+      <groupId>org.apache.tomcat</groupId>
+      <artifactId>jdbc-pool</artifactId> 
+      <scope>test</scope>
+    </dependency>
+
+
+    <!-- Logging -->
+    <dependency>
+      <groupId>eu.ttbox.composant</groupId>
+      <artifactId>logging-comp</artifactId>
+      <version>${project.version}</version>
+      <type>pom</type>
+    </dependency>
+
+
+
+    <!-- Security -->
+    <dependency>
+      <groupId>org.springframework.security</groupId>
+      <artifactId>spring-security-core</artifactId>
+    </dependency>
+
+    <!-- Add service -->
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-core</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-beans</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-aop</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-context</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-context-support</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-tx</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-jdbc</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-orm</artifactId>
+    </dependency>
+
+    <!-- Persistence -->
+    <dependency>
+      <groupId>org.hibernate</groupId>
+      <artifactId>hibernate-core</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.hibernate.javax.persistence</groupId>
+      <artifactId>hibernate-jpa-2.0-api</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.hibernate</groupId>
+      <artifactId>hibernate-entitymanager</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.hibernate</groupId>
+      <artifactId>hibernate-validator</artifactId>
+    </dependency>
+
+    <!-- Tools --> 
+    <dependency>
+      <groupId>com.google.guava</groupId>
+      <artifactId>guava</artifactId>
+    </dependency>
+
+    <!-- Query Dsl -->
+<!--     <dependency> -->
+<!--       <groupId>com.mysema.querydsl</groupId> -->
+<!--       <artifactId>querydsl-apt</artifactId> -->
+<!--       <scope>provided</scope> -->
+<!--     </dependency> -->
+<!--     <dependency> -->
+<!--       <groupId>com.mysema.querydsl</groupId> -->
+<!--       <artifactId>querydsl-jpa</artifactId> -->
+<!--     </dependency> -->
+
+  </dependencies>
+
+
+  <build>
+
+    <plugins>
+    <!-- mvn dbunit:export -->
+    <!-- mvn dbunit:operation -->
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>dbunit-maven-plugin</artifactId>
+        <version>${dbunit-maven-plugin.verion}</version>
+        <!-- common configurations -->
+        <configuration>
+          <dataTypeFactoryName>${ttbox.dbunit.dataTypeFactoryName}</dataTypeFactoryName>
+          <driver>${ttbox.dbunit.jdbc.driver}</driver>
+          <url>${ttbox.dbunit.jdbc.url}</url>
+          <schema>${ttbox.dbunit.jdbc.schema}</schema>
+          <username>${ttbox.dbunit.jdbc.username}</username>
+          <password>${ttbox.dbunit.jdbc.password}</password>
+          <supportBatchStatement>true</supportBatchStatement>
+          <format>flat</format>
+          <ordered>true</ordered>
+          <dest>src/test/resources/data/ttbox-db-export.xml</dest>
+          <src>src/test/resources/data/ttbox-db-export.xml</src>
+          <type>INSERT</type>
+          <tables> 
+            <table>
+              <name>S_SALESPOINT</name>
+            </table> 
+            <table>
+              <name>S_SALESPOINT_SUPPLIER</name>
+            </table> 
+            <table>
+              <name>S_WEBSITE</name>
+            </table> 
+            <table>
+              <name>S_WEBPAGE</name>
+            </table> 
+            <table>
+              <name>S_WEBLOCK</name>
+            </table> 
+          </tables>
+        </configuration>
+        <!--jar file that has the jdbc driver -->
+        <dependencies>
+          <dependency>
+            <groupId>postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <version>${postgresql.version}</version>
+          </dependency>
+        </dependencies>
+      </plugin>
+
+
+<!--       <plugin> -->
+<!--         <groupId>com.mysema.maven</groupId> -->
+<!--         <artifactId>maven-apt-plugin</artifactId> -->
+<!--         <version>${maven-apt-plugin}</version> -->
+<!--         <executions> -->
+<!--           <execution> -->
+<!--             <phase>generate-sources</phase> -->
+<!--             <goals> -->
+<!--               <goal>process</goal> -->
+<!--             </goals> -->
+<!--             <configuration> -->
+<!--               <outputDirectory>target/generated-sources/java</outputDirectory> -->
+<!--               <processor>com.mysema.query.apt.jpa.JPAAnnotationProcessor</processor> -->
+<!--             </configuration> -->
+<!--           </execution> -->
+<!--         </executions> -->
+<!--       </plugin> -->
+ 
+    </plugins>
+  </build>
+
+</project>

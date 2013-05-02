@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<application xmlns="http://ns.adobe.com/air/application/2.0">
+	<id>Main</id>
+	<filename>Main</filename>
+	<name>Main</name>
+        <!-- Note that this will not break Export Release Build but when your build is packaged, its version will be set to the string "${version}". This is fine for testing but would not make sense to leave in the actual release -->
+	<version>${version}</version>
+	<initialWindow>
+           <!-- If you use this syntax, you do not need the flexBuilderCompatibility configuration parameter in the pom.xml. However, this will prevent Export Release Builder in FB from working correctly.-->
+	   <!-- <content>${output}</content>-->
+
+           <!-- When using this syntax, you must set flexBuilderCompatibility configuration parameter to true in the pom.xml. This will also allow Export Release Build to function correctly -->
+           <content>[This value will be overwritten by Flex Builder in the output app.xml]</content>
+ 	</initialWindow>
+</application>

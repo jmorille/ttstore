@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:c="http://java.sun.com/jstl/core"
+	xmlns:p="http://primefaces.prime.com.tr/ui"
+	template="/admin/templates/layout-macosx.xhtml">`
+
+
+	<ui:define name="content">
+		<f:loadBundle basename="eu.ttbox.admin" var="msg" />
+	
+		<p:dialog header="#{admin.menuRole}" draggable="true" visible="true"
+			widgetVar="rolePanel">
+			<h:form id="form">
+
+				<p:panel header="Create a new rôle _ #{msg.menuRole}">
+					<h:panelGrid columns="2">
+						<h:outputLabel value="Id : *" for="txt_title"></h:outputLabel>
+						<h:inputText id="txt_title" value="#{roleHandler.role.id}"
+							required="true" />
+
+						<h:outputLabel value="Name : *" for="txt_author"></h:outputLabel>
+						<h:inputText id="txt_author" required="true"
+							value="#{roleHandler.role.name}" />
+
+						<p:commandButton value="Reset" type="reset" />
+						<p:commandButton value="Add" update="roles"
+							action="#{roleHandler.reinit}">
+							<p:collector value="#{roleHandler.role}"
+								addTo="#{roleHandler.roles}" />
+						</p:commandButton>
+					</h:panelGrid>
+				</p:panel>
+
+				<p:ajaxStatus style="width:16px;height:16px;">
+					<f:facet name="start">
+						<h:graphicImage value="/images/ajaxloading.gif" />
+					</f:facet>
+
+					<f:facet name="complete">
+						<h:outputText value="" />
+					</f:facet>
+				</p:ajaxStatus>
+
+				<p:outputPanel id="roles">
+					<p:dataTable value="#{roleHandler.roles}" var="role">
+
+						<p:column>
+							<f:facet name="header">
+								<h:outputText value="ID" />
+							</f:facet>
+							<h:outputText value="#{role.id}" />
+						</p:column>
+
+						<p:column>
+							<f:facet name="header">
+								<h:outputText value="Name" />
+							</f:facet>
+							<h:outputText value="#{role.name}" />
+						</p:column>
+
+						<p:column>
+							<f:facet name="header">
+								<h:outputText value="Operation" />
+							</f:facet>
+							<p:commandLink value="Remove" update="form:roles">
+								<p:collector value="#{role}"
+									removeFrom="#{roleHandler.roles}" />
+							</p:commandLink>
+						</p:column>
+
+					</p:dataTable>
+				</p:outputPanel>
+
+			</h:form>
+		</p:dialog>
+	</ui:define>
+
+
+</ui:composition>

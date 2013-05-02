@@ -1,0 +1,66 @@
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.prime.com.tr/ui">
+
+<f:view contentType="text/html">
+	<h:head>
+		<title>TTBox</title>
+		<meta content='text/html; charset=UTF-8' http-equiv="Content-Type"/>
+		<link type="text/css" rel="stylesheet" href="#{request.contextPath}/themes/sam/skin.css" />
+	<link type="text/css" rel="stylesheet" href="#{request.contextPath}/syntaxhighlighter/css/syntaxhighlighter.css"></link>
+	<style type="text/css">
+		body {
+			background: url(../images/macosx/macback.png);
+			margin: 0;
+			padding: 0;
+			font-family: geneva, arial, helvetica, sans-serif;
+			font-size:80%;
+		}
+
+		.appleIcon {
+			background: url(../images/macosx/apple.png) no-repeat 20%;
+			padding-left:22px !important;
+		}
+	</style>
+
+	</h:head>
+
+	<h:body>
+
+		<div class="ui-widget ui-widget-header">
+			<div id="logo">
+				<h1>TTBox</h1>
+			</div>
+		</div>
+		
+		<ui:include src="header.xhtml" />
+
+		<div id="content" class="ui-widget">
+		   <div class="post"><ui:insert name="content">...</ui:insert></div>
+		</div>
+
+		<div style="clear: both;">&nbsp;</div>
+
+		<div id="footer" class="ui-widget ui-widget-header ui-corner-all">
+			<ui:include src="footer.xhtml" />
+		</div>
+		
+	<p:dock>
+		<p:menuitem value="Finder" icon="/images/macosx/finder.png" url="#" />
+		<p:menuitem value="Terminal" icon="/images/macosx/terminal.png" url="#" onclick="terminal.show()"/>
+		<p:menuitem value="Safari" icon="/images/macosx/safari.png" url="#" />
+		<p:menuitem value="iTunes" icon="/images/macosx/itunes.png" url="#"/>
+		<p:menuitem value="iChat" icon="/images/macosx/ichat.png" url="#"/>
+		<p:menuitem value="Trash" icon="/images/macosx/trash.png" url="#"/>
+	</p:dock>
+
+		
+	</h:body>
+</f:view>
+</html>

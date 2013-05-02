@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
+  xmlns:context="http://www.springframework.org/schema/context"
+  xsi:schemaLocation="
+       	http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd 
+       	http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd
+       	http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd"
+  default-lazy-init="true">
+
+
+  <bean id="elasticSettingsFactory" class="eu.ttbox.service.search.elasticsearch.ElasticSettingFactory">
+    <property name="settings">
+      <map>
+        <entry key="cluster.name" value="${es.cluster.name}" />
+        <entry key="node.client" value="true" />
+        <entry key="client.transport.sniff" value="true" />
+      </map>
+    </property>
+  </bean>
+
+  <bean id="elasticClient" class="eu.ttbox.service.search.elasticsearch.ElasticClientFactory" >
+    <property name="settings" ref="elasticSettingsFactory" />
+<!--     <property name="transportAdresses"> -->
+<!--       <list> -->
+<!--         <bean class="org.elasticsearch.common.transport.InetSocketTransportAddress"> -->
+<!--           <constructor-arg index="0" value="localhost"/> -->
+<!--           <constructor-arg index="1" value="9300"/> -->
+<!--         </bean> -->
+<!--       </list> -->
+<!--     </property> -->
+  </bean>
+
+
+</beans>

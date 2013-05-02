@@ -1,0 +1,723 @@
+<?xml version="1.0"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+   <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>com.j3.ttbox</groupId>
+    <artifactId>ttbox-parent</artifactId>
+    <version>1.0</version>
+    <relativePath>../pom.xml</relativePath>
+  </parent>
+
+ 
+    <artifactId>webapp-jsf-cdi-ttbox</artifactId>
+   <packaging>war</packaging>
+     <name>TTBox JSF CDI Webapp</name>
+
+   <url>http://www.ttstore.eu/ttbox</url>
+   <licenses>
+      <license>
+         <name>Apache License, Version 2.0</name>
+         <distribution>repo</distribution>
+         <url>http://www.apache.org/licenses/LICENSE-2.0.html</url>
+      </license>
+   </licenses>
+
+  <properties>
+      <jsf.version>2.0.2-FCS</jsf.version> <!-- 2.0.2, 2.1.0-b02, 2.0.2-FCS -->
+      <jstl.version>1.2</jstl.version>
+      
+      <jsr250.version>1.0</jsr250.version>
+      <cdi.version>1.0-SP1</cdi.version>
+      
+      <weld.version>1.0.1-Final</weld.version>  <!-- 1.0.1-Final, 1.1.0-SNAPSHOT  -->
+      <weld.api.version>1.0-SP1</weld.api.version> <!-- 1.0-SP1,  1.1-SNAPSHOT -->
+      <weld.spi.version>1.0-SP1</weld.spi.version>
+      <weld.wicket.version>1.0.1-Final</weld.wicket.version>
+      <weld.se.version>1.0.1-Final</weld.se.version>
+      <weld.servlet.version>1.0.1-Final</weld.servlet.version>
+      <jetty.version>6.1.25</jetty.version>
+      <uel.glassfish.version>2.1.2-b04</uel.glassfish.version>
+      
+      <atomikos.version>3.6.4</atomikos.version>
+      <!-- Testing deps -->
+      <testng.version>5.10</testng.version>
+      <selenium.java.client.version>1.0.1</selenium.java.client.version>
+      <selenium.maven.plugin.version>1.0</selenium.maven.plugin.version>
+      <cargo.maven2.plugin.version>1.0</cargo.maven2.plugin.version>
+      <maven.antrun.plugin.version>1.3</maven.antrun.plugin.version>
+      <failsafe.maven.plugin.version>2.4.3-alpha-1</failsafe.maven.plugin.version>
+      <ant.junit.version>1.6.2</ant.junit.version>
+      <ftest.version.discriminator />
+      <selenium.browser>*firefoxproxy</selenium.browser>
+      <selenium.browser.url>http://localhost:8080</selenium.browser.url>
+      <selenium.server.port>14444</selenium.server.port>
+      <selenium.server.host>localhost</selenium.server.host>
+      <selenium.speed>0</selenium.speed>
+      <selenium.timeout>30000</selenium.timeout>
+      <selenium.debug>false</selenium.debug>
+      <application.deploy.timeout>300</application.deploy.timeout>   
+      
+
+      <jetty.http.port>9090</jetty.http.port>
+      <jetty.debug.port>9190</jetty.debug.port>
+      <tomcat.http.port>8080</tomcat.http.port>
+      <embedded-tomcat.http.port>9090</embedded-tomcat.http.port>
+      <embedded-tomcat.debug.port>9190</embedded-tomcat.debug.port>
+         
+   </properties>
+   
+   <!-- Common dependencies only -->
+   <dependencies>
+
+
+    <dependency>
+      <groupId>org.primefaces</groupId>
+      <artifactId>primefaces</artifactId>
+      <version>2.1</version>
+    </dependency>
+
+    <!-- Atmosphere (Comet) https://atmosphere.dev.java.net/
+    <dependency>
+      <groupId>org.atmosphere</groupId>
+      <artifactId>atmosphere-runtime</artifactId>
+      <version>0.5</version>
+    </dependency>
+     -->
+     <!-- 0.6.1 -->
+<!--      <dependency>-->
+<!--         <groupId>org.testng</groupId>-->
+<!--         <artifactId>testng</artifactId>-->
+<!--         <version>${testng.version}</version>-->
+<!--         <scope>test</scope>-->
+<!--         <classifier>jdk15</classifier>-->
+<!--      </dependency>-->
+
+      <dependency>
+         <groupId>javax.enterprise</groupId>
+         <artifactId>cdi-api</artifactId>
+         <version>${cdi.version}</version> 
+      </dependency>
+
+      <dependency>
+         <groupId>javax.annotation</groupId>
+         <artifactId>jsr250-api</artifactId>
+         <version>${jsr250.version}</version>
+      </dependency>
+
+      <dependency>
+         <groupId>javax.faces</groupId>
+         <artifactId>jsf-api</artifactId>
+          <version>${jsf.version}</version>
+      </dependency>
+
+<dependency>
+  <groupId>javassist</groupId>
+  <artifactId>javassist</artifactId>
+  <version>3.9.0.GA</version>
+</dependency>
+<dependency>
+  <groupId>dom4j</groupId>
+  <artifactId>dom4j</artifactId>
+  <version>1.6.1</version>
+  <exclusions>
+      <exclusion>
+        <groupId>xml-apis</groupId>
+        <artifactId>xml-apis</artifactId>
+      </exclusion>
+  </exclusions>
+</dependency>
+
+
+    <!-- Logging -->
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-api</artifactId>
+      <version>${slf4j.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-ext</artifactId>
+      <version>${slf4j.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>jcl-over-slf4j</artifactId>
+      <version>${slf4j.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>jul-to-slf4j</artifactId>
+      <version>${slf4j.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>log4j-over-slf4j</artifactId>
+      <version>${slf4j.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>ch.qos.logback</groupId>
+      <artifactId>logback-classic</artifactId>
+      <version>${logback.version}</version>
+    </dependency>
+    
+   </dependencies>
+ <profiles>
+      <profile>
+         <id>tomcat</id>
+         <dependencies>
+
+      <dependency>
+         <groupId>javax.enterprise</groupId>
+         <artifactId>cdi-api</artifactId>
+         <version>${cdi.version}</version>
+      </dependency>
+      
+            <dependency>
+               <groupId>javax.annotation</groupId>
+               <artifactId>jsr250-api</artifactId>
+               <version>${jsr250.version}</version>
+            </dependency>
+
+            <dependency>
+               <groupId>javax.faces</groupId>
+               <artifactId>jsf-api</artifactId>
+                <version>${jsf.version}</version>
+            </dependency>
+
+            <dependency>
+               <groupId>javax.faces</groupId>
+               <artifactId>jsf-impl</artifactId>
+                <version>${jsf.version}</version>
+               <scope>runtime</scope>
+            </dependency>
+
+            <dependency>
+               <groupId>javax.servlet</groupId>
+               <artifactId>jstl</artifactId>
+               <version>${jstl.version}</version>
+               <scope>runtime</scope>
+            </dependency>
+
+            <dependency>
+              <groupId>org.jboss.weld</groupId>
+              <artifactId>weld-api</artifactId>
+              <version>${weld.api.version}</version>
+            </dependency>
+            <dependency>
+              <groupId>org.jboss.weld</groupId>
+              <artifactId>weld-core</artifactId>
+              <version>${weld.version}</version>
+            </dependency>
+            <dependency>
+              <groupId>org.jboss.weld</groupId>
+              <artifactId>weld-spi</artifactId>
+              <version>${weld.spi.version}</version>
+            </dependency>
+
+            <dependency>
+               <groupId>org.jboss.weld.servlet</groupId>
+               <artifactId>weld-tomcat-support</artifactId>
+               <version>${weld.servlet.version}</version>
+               <scope>runtime</scope>
+            </dependency>
+
+            <dependency>
+               <groupId>org.jboss.weld.servlet</groupId>
+               <artifactId>weld-servlet-int</artifactId>
+               <version>${weld.servlet.version}</version>
+               <scope>runtime</scope>
+            </dependency>
+
+            <dependency>
+               <groupId>org.glassfish.web</groupId>
+               <artifactId>el-impl</artifactId>
+               <version>${uel.glassfish.version}</version>
+               <scope>runtime</scope>
+               <exclusions>
+                  <exclusion>
+                     <groupId>javax.el</groupId>
+                     <artifactId>el-api</artifactId>
+                  </exclusion>
+               </exclusions>
+            </dependency>
+
+         </dependencies>
+         <build>
+            <plugins>
+               <plugin>
+                  <groupId>org.apache.maven.plugins</groupId>
+                  <artifactId>maven-war-plugin</artifactId>
+                  <configuration>
+                     <webResources>
+                        <resource>
+                           <directory>src/main/webapp-tomcat</directory>
+                           <filtering>false</filtering>
+                        </resource>
+                     </webResources>
+                  </configuration>
+               </plugin>
+            </plugins>
+         </build>
+      </profile>
+
+      <profile>
+         <id>jetty</id>
+         <dependencies>
+
+            <dependency>
+               <groupId>javax.annotation</groupId>
+               <artifactId>jsr250-api</artifactId>
+							<version>${jsr250.version}</version>
+            </dependency>
+
+            <dependency>
+               <groupId>javax.faces</groupId>
+               <artifactId>jsf-api</artifactId>
+                <version>${jsf.version}</version>
+            </dependency>
+
+            <dependency>
+               <groupId>javax.faces</groupId>
+               <artifactId>jsf-impl</artifactId>
+                <version>${jsf.version}</version>
+               <scope>runtime</scope>
+            </dependency>
+
+            <dependency>
+               <groupId>javax.servlet</groupId>
+               <artifactId>jstl</artifactId>
+               <version>${jstl.version}</version>
+               <scope>runtime</scope>
+            </dependency>
+
+          <!-- http://repo2.maven.org/maven2/com/atomikos/
+          <dependency>
+            <groupId>com.atomikos</groupId>
+            <artifactId>transactions-jta</artifactId>
+            <version>${atomikos.version}</version>
+            <scope>runtime</scope>
+          </dependency>
+            <dependency>
+              <groupId>com.atomikos</groupId>
+              <artifactId>transactions-jdbc</artifactId>
+              <version>${atomikos.version}</version>
+              <scope>runtime</scope>
+            </dependency>
+            <dependency>
+              <groupId>javax.transaction</groupId>
+              <artifactId>jta</artifactId>
+              <version>1.1</version>
+              <scope>runtime</scope>
+            </dependency>
+ -->
+            <dependency>
+              <groupId>org.jboss.weld</groupId>
+              <artifactId>weld-api</artifactId>
+              <version>${weld.api.version}</version>
+            </dependency>
+            <dependency>
+              <groupId>org.jboss.weld</groupId>
+              <artifactId>weld-core</artifactId>
+              <version>${weld.version}</version>
+            </dependency>
+            <dependency>
+              <groupId>org.jboss.weld</groupId>
+              <artifactId>weld-spi</artifactId>
+              <version>${weld.spi.version}</version>
+            </dependency>
+            <dependency>
+               <groupId>org.jboss.weld.servlet</groupId>
+               <artifactId>weld-servlet-int</artifactId>
+               <version>${weld.servlet.version}</version>
+               <scope>runtime</scope>
+            </dependency>
+
+            <dependency>
+               <groupId>org.glassfish.web</groupId>
+               <artifactId>el-impl</artifactId>
+            <version>${uel.glassfish.version}</version>
+               <scope>runtime</scope>
+               <exclusions>
+                  <exclusion>
+                     <groupId>javax.el</groupId>
+                     <artifactId>el-api</artifactId>
+                  </exclusion>
+               </exclusions>
+            </dependency>
+
+         </dependencies>
+
+         <build>
+            <plugins>
+               <plugin>
+                  <groupId>org.apache.maven.plugins</groupId>
+                  <artifactId>maven-war-plugin</artifactId>
+                  <configuration>
+                     <webResources>
+                        <resource>
+                           <directory>src/main/webapp-jetty</directory>
+                           <filtering>false</filtering>
+                        </resource>
+                     </webResources>
+                  </configuration>
+               </plugin>
+            </plugins>
+         </build>
+      </profile>
+      <profile>
+         <id>gae</id>
+         <dependencies>
+
+            <!-- Use JSF 1.2, JSF 2 has issues on GAE still -->
+
+            <dependency>
+               <groupId>javax.faces</groupId>
+               <artifactId>jsf-api</artifactId>
+                <version>${jsf.version}</version>
+            </dependency>
+
+            <dependency>
+               <groupId>javax.faces</groupId>
+               <artifactId>jsf-impl</artifactId>
+               <scope>runtime</scope>
+                <version>${jsf.version}</version>
+            </dependency>
+
+            <dependency>
+               <groupId>org.jboss.weld.servlet</groupId>
+               <artifactId>weld-servlet</artifactId>
+               <version>${weld.servlet.version}</version>
+               <scope>runtime</scope>
+            </dependency>
+
+            <dependency>
+               <groupId>com.sun.facelets</groupId>
+               <artifactId>jsf-facelets</artifactId>
+               <version>1.1.15.B1</version>
+            </dependency>
+
+            <dependency>
+               <groupId>javax.el</groupId>
+               <artifactId>el-api</artifactId>
+               <version>1.2</version>
+            </dependency>
+
+            <dependency>
+               <groupId>javax.el</groupId>
+               <artifactId>el-ri</artifactId>
+               <version>1.2</version>
+            </dependency>
+
+         </dependencies>
+         <build>
+            <plugins>
+               <plugin>
+                  <groupId>org.apache.maven.plugins</groupId>
+                  <artifactId>maven-war-plugin</artifactId>
+                  <configuration>
+                     <webResources>
+                        <resource>
+                           <directory>src/main/webapp-gae</directory>
+                           <filtering>false</filtering>
+                        </resource>
+                     </webResources>
+                  </configuration>
+               </plugin>
+               <plugin>
+                  <groupId>com.pyx4j</groupId>
+                  <artifactId>maven-junction-plugin</artifactId>
+                  <executions>
+                     <execution>
+                        <phase>initialize</phase>
+                        <goals>
+                           <goal>link</goal>
+                        </goals>
+                     </execution>
+                  </executions>
+               </plugin>
+               <plugin>
+                  <groupId>org.apache.maven.plugins</groupId>
+                  <artifactId>maven-eclipse-plugin</artifactId>
+                  <configuration>
+                     <classpathContainers>
+                        <classpathContainer>org.eclipse.jdt.launching.JRE_CONTAINER</classpathContainer>
+                        <classpathContainer>com.google.appengine.eclipse.core.GAE_CONTAINER</classpathContainer>
+                     </classpathContainers>
+                     <additionalBuildcommands>
+                        <buildcommand>com.google.appengine.eclipse.core.projectValidator</buildcommand>
+                     </additionalBuildcommands>
+                     <additionalProjectnatures>
+                        <projectnature>com.google.appengine.eclipse.core.gaeNature</projectnature>
+                     </additionalProjectnatures>
+                     <additionalConfig>
+                        <file>
+                           <name>.settings/com.google.appengine.eclipse.core.prefs</name>
+                           <content>
+<![CDATA[#Wed Sep 23 16:29:55 BST 2009
+eclipse.preferences.version=1
+filesCopiedToWebInfLib=appengine-api-1.0-sdk-1.2.5.jar|appengine-api-labs-1.2.5.jar|datanucleus-appengine-1.0.3.jar|datanucleus-core-1.1.5.jar|datanucleus-jpa-1.1.5.jar|geronimo-jpa_3.0_spec-1.1.1.jar|geronimo-jta_1.1_spec-1.1.1.jar|jdo2-api-2.3-eb.jar]]>
+                           </content>
+                        </file>
+                     </additionalConfig>
+                     <buildOutputDirectory>
+                        src/main/webapp/WEB-INF/classes
+                     </buildOutputDirectory>
+                  </configuration>
+               </plugin>
+            </plugins>
+         </build>
+      </profile>
+
+      <profile>
+         <id>jetty-ide</id>
+         <dependencies>
+
+            <dependency>
+               <groupId>javax.annotation</groupId>
+               <artifactId>jsr250-api</artifactId>
+							 <version>${jsr250.version}</version>
+               <scope>provided</scope>
+            </dependency>
+
+            <dependency>
+               <groupId>javax.faces</groupId>
+               <artifactId>jsf-api</artifactId>
+                <version>${jsf.version}</version>
+               <scope>provided</scope>
+            </dependency>
+
+            <dependency>
+               <groupId>javax.faces</groupId>
+               <artifactId>jsf-impl</artifactId>
+                <version>${jsf.version}</version>
+               <scope>provided</scope>
+            </dependency>
+
+            <dependency>
+               <groupId>org.jboss.weld.servlet</groupId>
+               <artifactId>weld-servlet</artifactId>
+               <version>${weld.servlet.version}</version>
+               <scope>provided</scope>
+            </dependency>
+
+            <dependency>
+               <groupId>javax.servlet</groupId>
+               <artifactId>jstl</artifactId>
+               <version>${jstl.version}</version>
+               <scope>provided</scope>
+            </dependency>
+
+            <dependency>
+               <groupId>org.glassfish.web</groupId>
+               <artifactId>el-impl</artifactId>
+            <version>${uel.glassfish.version}</version>
+               <scope>provided</scope>
+               <exclusions>
+                  <exclusion>
+                     <groupId>javax.el</groupId>
+                     <artifactId>el-api</artifactId>
+                  </exclusion>
+               </exclusions>
+            </dependency>
+
+            <!--  JETTY DEPENDENCIES FOR IN IDE TESTING  -->
+
+            <dependency>
+               <groupId>org.mortbay.jetty</groupId>
+               <artifactId>jetty</artifactId>
+               <version>${jetty.version}</version>
+               <scope>test</scope>
+            </dependency>
+
+            <dependency>
+               <groupId>org.mortbay.jetty</groupId>
+               <artifactId>jetty-plus</artifactId>
+               <version>${jetty.version}</version>
+               <scope>test</scope>
+            </dependency>
+
+            <dependency>
+               <groupId>org.mortbay.jetty</groupId>
+               <artifactId>jsp-2.1-jetty</artifactId>
+               <version>${jetty.version}</version>
+               <scope>test</scope>
+            </dependency>
+
+         </dependencies>
+
+         <build>
+
+            <resources>
+               <resource>
+                  <directory>src/jetty/resources</directory>
+               </resource>
+               <resource>
+                  <directory>src/main/webapp</directory>
+               </resource>
+            </resources>
+            <plugins>
+               <plugin>
+                  <groupId>org.apache.maven.plugins</groupId>
+                  <artifactId>maven-war-plugin</artifactId>
+                  <configuration>
+                     <webResources>
+                        <resource>
+                           <directory>src/main/webapp-jetty</directory>
+                           <filtering>false</filtering>
+                        </resource>
+                     </webResources>
+                  </configuration>
+               </plugin>
+               <plugin>
+                  <groupId>org.apache.maven.plugins</groupId>
+                  <artifactId>maven-eclipse-plugin</artifactId>
+                  <configuration>
+                     <useProjectReferences>false</useProjectReferences>
+                     <classpathContainers>
+                        <classpathContainer>org.eclipse.jdt.launching.JRE_CONTAINER</classpathContainer>
+                     </classpathContainers>
+                  </configuration>
+               </plugin>
+            </plugins>
+
+         </build>
+      </profile>
+ 
+   </profiles>
+
+   <build>
+     <!-- <finalName>weld-numberguess</finalName> -->
+      <plugins>
+         <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-war-plugin</artifactId>
+            <configuration>
+               <warSourceExcludes>WEB-INF/classes/**,WEB-INF/lib/**</warSourceExcludes>
+            </configuration>
+         </plugin>
+         <plugin>
+            <groupId>com.pyx4j</groupId>
+            <artifactId>maven-junction-plugin</artifactId>
+            <executions>
+               <execution>
+                  <id>unlink</id>
+                  <phase>clean</phase>
+                  <goals>
+                     <goal>unlink</goal>
+                  </goals>
+               </execution>
+            </executions>
+            <configuration>
+               <links>
+                  <!-- link src/main/webapp -> war/ for IDEs -->
+                  <link>
+                     <dst>${basedir}/war</dst>
+                     <src>${basedir}/src/main/webapp</src>
+                  </link>
+               </links>
+            </configuration>
+         </plugin>
+         <plugin>
+            <artifactId>maven-clean-plugin</artifactId>
+            <configuration>
+               <failOnError>false</failOnError>
+               <filesets>
+                  <fileset>
+                     <!-- clean up files from war:inplace -->
+                     <directory>src/main/webapp</directory>
+                     <includes>
+                        <include>WEB-INF/classes/**</include>
+                        <include>WEB-INF/lib/**</include>
+                        <include>META-INF/context.xml</include>
+                        <include>WEB-INF/web.xml</include>
+                        <include>WEB-INF/jetty-env.xml</include>
+                        <include>WEB-INF/appengine-web.xml</include>
+                        <include>WEB-INF/logging.properties</include>
+                     </includes>
+                     <followSymlinks>false</followSymlinks>
+                  </fileset>
+               </filesets>
+            </configuration>
+         </plugin>
+
+         <plugin>
+            <groupId>org.codehaus.mojo</groupId>
+            <artifactId>tomcat-maven-plugin</artifactId>
+            <configuration>
+               <path>/ttbox</path>
+               <!--
+               <path>/${project.build.finalName}</path>
+                  uncomment to use server configuration override; see
+                  readme.txt for details
+               -->
+               <!--<server>tomcat</server>-->
+               <url>http://localhost:${tomcat.http.port}/manager</url>
+               <port>${embedded-tomcat.http.port}</port>
+               <!--
+                  port for embedded Tomcat only (putting this
+                  configuration in the execution for the run goal
+                  doesn't work)
+               -->
+               <!-- if you don't want to use war:inplace, use this path instead -->
+               <!--
+                  <warSourceDirectory>${project.build.directory}/${project.build.finalName}</warSourceDirectory>
+               -->
+            </configuration>
+         </plugin>
+
+         <plugin>
+            <groupId>org.mortbay.jetty</groupId>
+            <artifactId>maven-jetty-plugin</artifactId>
+             <version>${jetty.version}</version>
+            <configuration>
+               <connectors>
+                  <connector implementation="org.mortbay.jetty.nio.SelectChannelConnector">
+                     <port>${jetty.http.port}</port>
+                     <maxIdleTime>3600000</maxIdleTime>
+                  </connector>
+               </connectors>
+               <scanIntervalSeconds>10</scanIntervalSeconds>
+                <jettyEnvXml>${basedir}/src/main/webapp-jetty/WEB-INF/jetty-env.xml</jettyEnvXml>
+               <webAppConfig>
+                 <!-- <contextPath>/${project.build.finalName}</contextPath> -->
+                  <contextPath>/ttbox</contextPath>
+               </webAppConfig>
+               <!-- if you don't want to use war:inplace, use this path instead -->
+               <!--
+                  <webAppSourceDirectory>${project.build.directory}/${project.build.finalName}</webAppSourceDirectory>
+               -->
+            </configuration>
+         </plugin>
+
+         <plugin>
+            <groupId>org.twdata.maven</groupId>
+            <artifactId>maven-cli-plugin</artifactId>
+            <version>0.6.9</version>
+            <configuration>
+               <userAliases>
+                  <runjetty>compile
+                     org.apache.maven.plugins:maven-war-plugin:inplace
+                     org.mortbay.jetty:maven-jetty-plugin:run</runjetty>
+                  <runtomcat>compile
+                     org.apache.maven.plugins:maven-war-plugin:inplace
+                     org.codehaus.mojo:tomcat-maven-plugin:run</runtomcat>
+                  <explode>compile
+                     org.apache.maven.plugins:maven-war-plugin:inplace
+                     -o</explode>
+               </userAliases>
+            </configuration>
+         </plugin>
+
+      </plugins>
+   </build>
+
+
+   <scm>
+      <connection>scm:svn:http://anonsvn.jboss.org/repos/weld/examples/tags/1.0.1-Final/jsf/numberguess</connection>
+      <developerConnection>scm:svn:https://svn.jboss.org/repos/weld/examples/tags/1.0.1-Final/jsf/numberguess</developerConnection>
+     <url>http://fisheye.jboss.org/browse/weld/examples/tags/1.0.1-Final/jsf/numberguess</url>
+  </scm>
+
+</project>
+

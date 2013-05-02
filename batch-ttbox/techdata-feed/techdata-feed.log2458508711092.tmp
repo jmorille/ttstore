@@ -1,0 +1,319 @@
+3564 [main] INFO  o.h.t.TransactionFactoryFactory - Transaction strategy: org.springframework.orm.hibernate3.SpringTransactionFactory
+3605 [main] INFO  o.h.t.TransactionManagerLookupFactory - No TransactionManagerLookup configured (in JTA environment, use of read-write or transactional second-level cache is not recommended)
+6720 [main] ERROR o.s.test.context.TestContextManager - Caught exception while allowing TestExecutionListener [org.springframework.test.context.support.DependencyInjectionTestExecutionListener@9de832] to prepare test instance [eu.ttbox.feed.techdata.PriceTechdataJobTest@f72f09]
+java.lang.IllegalStateException: Failed to load ApplicationContext
+	at org.springframework.test.context.TestContext.getApplicationContext(TestContext.java:308) ~[spring-test-3.0.6.RELEASE.jar:3.0.6.RELEASE]
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.injectDependencies(DependencyInjectionTestExecutionListener.java:109) ~[spring-test-3.0.6.RELEASE.jar:3.0.6.RELEASE]
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.prepareTestInstance(DependencyInjectionTestExecutionListener.java:75) ~[spring-test-3.0.6.RELEASE.jar:3.0.6.RELEASE]
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:321) ~[spring-test-3.0.6.RELEASE.jar:3.0.6.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:211) [spring-test-3.0.6.RELEASE.jar:3.0.6.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:287) [spring-test-3.0.6.RELEASE.jar:3.0.6.RELEASE]
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:15) [junit-4.10.jar:na]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:289) [spring-test-3.0.6.RELEASE.jar:3.0.6.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:231) [spring-test-3.0.6.RELEASE.jar:3.0.6.RELEASE]
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:47) [junit-4.10.jar:na]
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:231) [junit-4.10.jar:na]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:60) [junit-4.10.jar:na]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:229) [junit-4.10.jar:na]
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:50) [junit-4.10.jar:na]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:222) [junit-4.10.jar:na]
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61) [spring-test-3.0.6.RELEASE.jar:3.0.6.RELEASE]
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70) [spring-test-3.0.6.RELEASE.jar:3.0.6.RELEASE]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:300) [junit-4.10.jar:na]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:174) [spring-test-3.0.6.RELEASE.jar:3.0.6.RELEASE]
+	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:50) [.cp/:na]
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38) [.cp/:na]
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:467) [.cp/:na]
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:683) [.cp/:na]
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:390) [.cp/:na]
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:197) [.cp/:na]
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'priceTechdataDownloadStep': Cannot create inner bean 'eu.ttbox.batch.techdata.price.list.PriceListFtpItemReader#0' of type [eu.ttbox.batch.techdata.price.list.PriceListFtpItemReader] while setting bean property 'itemReader'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'eu.ttbox.batch.techdata.price.list.PriceListFtpItemReader#0' defined in class path resource [jobs/techdata-price.xml]: Cannot resolve reference to bean 'pricetechdataProxyCacheFtpConnector' while setting bean property 'downloadConnector'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'pricetechdataProxyCacheFtpConnector' defined in class path resource [jobs/techdata-price.xml]: Cannot create inner bean 'eu.ttbox.batch.techdata.price.filter#17918f0' of type [eu.ttbox.batch.techdata.price.filter] while setting bean property 'filterFactory'; nested exception is org.springframework.beans.factory.CannotLoadBeanClassException: Cannot find class [eu.ttbox.batch.techdata.price.filter] for bean with name 'eu.ttbox.batch.techdata.price.filter#17918f0' defined in class path resource [jobs/techdata-price.xml]; nested exception is java.lang.ClassNotFoundException: eu.ttbox.batch.techdata.price.filter
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveInnerBean(BeanDefinitionValueResolver.java:281) ~[spring-beans-3.0.6.RELEASE.jar:3.0.6.RELEASE]
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:120) ~[spring-beans-3.0.6.RELEASE.jar:3.0.6.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1325) ~[spring-beans-3.0.6.RELEASE.jar:3.0.6.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1086) ~[spring-beans-3.0.6.RELEASE.jar:3.0.6.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:517) ~[spring-beans-3.0.6.RELEASE.jar:3.0.6.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:456) ~[spring-beans-3.0.6.RELEASE.jar:3.0.6.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:293) ~[spring-beans-3.0.6.RELEASE.jar:3.0.6.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222) ~[spring-beans-3.0.6.RELEASE.jar:3.0.6.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:290) ~[spring-beans-3.0.6.RELEASE.jar:3.0.6.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:192) ~[spring-beans-3.0.6.RELEASE.jar:3.0.6.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:567) ~[spring-beans-3.0.6.RELEASE.jar:3.0.6.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:895) ~[spring-context-3.0.6.RELEASE.jar:3.0.6.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:425) ~[spring-context-3.0.6.RELEASE.jar:3.0.6.RELEASE]
+	at org.springframework.test.context.support.AbstractGenericContextLoader.loadContext(AbstractGenericContextLoader.java:84) ~[spring-test-3.0.6.RELEASE.jar:3.0.6.RELEASE]
+	at org.springframework.test.context.support.AbstractGenericContextLoader.loadContext(AbstractGenericContextLoader.java:1) ~[spring-test-3.0.6.RELEASE.jar:3.0.6.RELEASE]
+	at org.springframework.test.context.TestContext.loadApplicationContext(TestContext.java:280) ~[spring-test-3.0.6.RELEASE.jar:3.0.6.RELEASE]
+	at org.springframework.test.context.TestContext.getApplicationContext(TestContext.java:304) ~[spring-test-3.0.6.RELEASE.jar:3.0.6.RELEASE]
+	... 24 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'eu.ttbox.batch.techdata.price.list.PriceListFtpItemReader#0' defined in class path resource [jobs/techdata-price.xml]: Cannot resolve reference to bean 'pricetechdataProxyCacheFtpConnector' while setting bean property 'downloadConnector'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'pricetechdataProxyCacheFtpConnector' defined in class path resource [jobs/techdata-price.xml]: Cannot create inner bean 'eu.ttbox.batch.techdata.price.filter#17918f0' of type [eu.ttbox.batch.techdata.price.filter] while setting bean property 'filterFactory'; nested exception is org.springframework.beans.factory.CannotLoadBeanClassException: Cannot find class [eu.ttbox.batch.techdata.price.filter] for bean with name 'eu.ttbox.batch.techdata.price.filter#17918f0' defined in class path resource [jobs/techdata-price.xml]; nested exception is java.lang.ClassNotFoundException: eu.ttbox.batch.techdata.price.filter
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:328) ~[spring-beans-3.0.6.RELEASE.jar:3.0.6.RELEASE]
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:106) ~[spring-beans-3.0.6.RELEASE.jar:3.0.6.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1325) ~[spring-beans-3.0.6.RELEASE.jar:3.0.6.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1086) ~[spring-beans-3.0.6.RELEASE.jar:3.0.6.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:517) ~[spring-beans-3.0.6.RELEASE.jar:3.0.6.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:456) ~[spring-beans-3.0.6.RELEASE.jar:3.0.6.RELEASE]
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveInnerBean(BeanDefinitionValueResolver.java:270) ~[spring-beans-3.0.6.RELEASE.jar:3.0.6.RELEASE]
+	... 40 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'pricetechdataProxyCacheFtpConnector' defined in class path resource [jobs/techdata-price.xml]: Cannot create inner bean 'eu.ttbox.batch.techdata.price.filter#17918f0' of type [eu.ttbox.batch.techdata.price.filter] while setting bean property 'filterFactory'; nested exception is org.springframework.beans.factory.CannotLoadBeanClassException: Cannot find class [eu.ttbox.batch.techdata.price.filter] for bean with name 'eu.ttbox.batch.techdata.price.filter#17918f0' defined in class path resource [jobs/techdata-price.xml]; nested exception is java.lang.ClassNotFoundException: eu.ttbox.batch.techdata.price.filter
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveInnerBean(BeanDefinitionValueResolver.java:281) ~[spring-beans-3.0.6.RELEASE.jar:3.0.6.RELEASE]
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:120) ~[spring-beans-3.0.6.RELEASE.jar:3.0.6.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1325) ~[spring-beans-3.0.6.RELEASE.jar:3.0.6.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1086) ~[spring-beans-3.0.6.RELEASE.jar:3.0.6.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:517) ~[spring-beans-3.0.6.RELEASE.jar:3.0.6.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:456) ~[spring-beans-3.0.6.RELEASE.jar:3.0.6.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:293) ~[spring-beans-3.0.6.RELEASE.jar:3.0.6.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222) ~[spring-beans-3.0.6.RELEASE.jar:3.0.6.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:290) ~[spring-beans-3.0.6.RELEASE.jar:3.0.6.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:192) ~[spring-beans-3.0.6.RELEASE.jar:3.0.6.RELEASE]
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:322) ~[spring-beans-3.0.6.RELEASE.jar:3.0.6.RELEASE]
+	... 46 common frames omitted
+Caused by: org.springframework.beans.factory.CannotLoadBeanClassException: Cannot find class [eu.ttbox.batch.techdata.price.filter] for bean with name 'eu.ttbox.batch.techdata.price.filter#17918f0' defined in class path resource [jobs/techdata-price.xml]; nested exception is java.lang.ClassNotFoundException: eu.ttbox.batch.techdata.price.filter
+	at org.springframework.beans.factory.support.AbstractBeanFactory.resolveBeanClass(AbstractBeanFactory.java:1261) ~[spring-beans-3.0.6.RELEASE.jar:3.0.6.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:433) ~[spring-beans-3.0.6.RELEASE.jar:3.0.6.RELEASE]
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveInnerBean(BeanDefinitionValueResolver.java:270) ~[spring-beans-3.0.6.RELEASE.jar:3.0.6.RELEASE]
+	... 56 common frames omitted
+Caused by: java.lang.ClassNotFoundException: eu.ttbox.batch.techdata.price.filter
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:202) ~[na:1.6.0_26]
+	at java.security.AccessController.doPrivileged(Native Method) ~[na:1.6.0_26]
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:190) ~[na:1.6.0_26]
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:306) ~[na:1.6.0_26]
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:301) ~[na:1.6.0_26]
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:247) ~[na:1.6.0_26]
+	at org.springframework.util.ClassUtils.forName(ClassUtils.java:257) ~[spring-core-3.0.6.RELEASE.jar:3.0.6.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanDefinition.resolveBeanClass(AbstractBeanDefinition.java:408) ~[spring-beans-3.0.6.RELEASE.jar:3.0.6.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doResolveBeanClass(AbstractBeanFactory.java:1282) ~[spring-beans-3.0.6.RELEASE.jar:3.0.6.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.resolveBeanClass(AbstractBeanFactory.java:1253) ~[spring-beans-3.0.6.RELEASE.jar:3.0.6.RELEASE]
+	... 58 common frames omitted
+2014 [main] INFO  o.h.t.TransactionFactoryFactory - Transaction strategy: org.springframework.orm.hibernate3.SpringTransactionFactory
+2018 [main] INFO  o.h.t.TransactionManagerLookupFactory - No TransactionManagerLookup configured (in JTA environment, use of read-write or transactional second-level cache is not recommended)
+4457 [main] ERROR o.s.test.context.TestContextManager - Caught exception while allowing TestExecutionListener [org.springframework.test.context.support.DependencyInjectionTestExecutionListener@1b1deea] to prepare test instance [eu.ttbox.feed.techdata.PriceTechdataJobTest@a1e2da]
+java.lang.IllegalStateException: Failed to load ApplicationContext
+	at org.springframework.test.context.TestContext.getApplicationContext(TestContext.java:308) ~[spring-test-3.0.6.RELEASE.jar:3.0.6.RELEASE]
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.injectDependencies(DependencyInjectionTestExecutionListener.java:109) ~[spring-test-3.0.6.RELEASE.jar:3.0.6.RELEASE]
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.prepareTestInstance(DependencyInjectionTestExecutionListener.java:75) ~[spring-test-3.0.6.RELEASE.jar:3.0.6.RELEASE]
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:321) ~[spring-test-3.0.6.RELEASE.jar:3.0.6.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:211) [spring-test-3.0.6.RELEASE.jar:3.0.6.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:287) [spring-test-3.0.6.RELEASE.jar:3.0.6.RELEASE]
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:15) [junit-4.10.jar:na]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:289) [spring-test-3.0.6.RELEASE.jar:3.0.6.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:231) [spring-test-3.0.6.RELEASE.jar:3.0.6.RELEASE]
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:47) [junit-4.10.jar:na]
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:231) [junit-4.10.jar:na]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:60) [junit-4.10.jar:na]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:229) [junit-4.10.jar:na]
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:50) [junit-4.10.jar:na]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:222) [junit-4.10.jar:na]
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61) [spring-test-3.0.6.RELEASE.jar:3.0.6.RELEASE]
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70) [spring-test-3.0.6.RELEASE.jar:3.0.6.RELEASE]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:300) [junit-4.10.jar:na]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:174) [spring-test-3.0.6.RELEASE.jar:3.0.6.RELEASE]
+	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:50) [.cp/:na]
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38) [.cp/:na]
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:467) [.cp/:na]
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:683) [.cp/:na]
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:390) [.cp/:na]
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:197) [.cp/:na]
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'priceTechdataDownloadStep': Cannot create inner bean 'eu.ttbox.batch.techdata.price.list.PriceListFtpItemReader#0' of type [eu.ttbox.batch.techdata.price.list.PriceListFtpItemReader] while setting bean property 'itemReader'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'eu.ttbox.batch.techdata.price.list.PriceListFtpItemReader#0' defined in class path resource [jobs/techdata-price.xml]: Cannot resolve reference to bean 'pricetechdataProxyCacheFtpConnector' while setting bean property 'downloadConnector'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'pricetechdataProxyCacheFtpConnector' defined in class path resource [jobs/techdata-price.xml]: Cannot create inner bean 'eu.ttbox.batch.techdata.price.filter#64023c' of type [eu.ttbox.batch.techdata.price.filter] while setting bean property 'filterFactory'; nested exception is org.springframework.beans.factory.CannotLoadBeanClassException: Cannot find class [eu.ttbox.batch.techdata.price.filter] for bean with name 'eu.ttbox.batch.techdata.price.filter#64023c' defined in class path resource [jobs/techdata-price.xml]; nested exception is java.lang.ClassNotFoundException: eu.ttbox.batch.techdata.price.filter
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveInnerBean(BeanDefinitionValueResolver.java:281) ~[spring-beans-3.0.6.RELEASE.jar:3.0.6.RELEASE]
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:120) ~[spring-beans-3.0.6.RELEASE.jar:3.0.6.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1325) ~[spring-beans-3.0.6.RELEASE.jar:3.0.6.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1086) ~[spring-beans-3.0.6.RELEASE.jar:3.0.6.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:517) ~[spring-beans-3.0.6.RELEASE.jar:3.0.6.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:456) ~[spring-beans-3.0.6.RELEASE.jar:3.0.6.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:293) ~[spring-beans-3.0.6.RELEASE.jar:3.0.6.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222) ~[spring-beans-3.0.6.RELEASE.jar:3.0.6.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:290) ~[spring-beans-3.0.6.RELEASE.jar:3.0.6.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:192) ~[spring-beans-3.0.6.RELEASE.jar:3.0.6.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:567) ~[spring-beans-3.0.6.RELEASE.jar:3.0.6.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:895) ~[spring-context-3.0.6.RELEASE.jar:3.0.6.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:425) ~[spring-context-3.0.6.RELEASE.jar:3.0.6.RELEASE]
+	at org.springframework.test.context.support.AbstractGenericContextLoader.loadContext(AbstractGenericContextLoader.java:84) ~[spring-test-3.0.6.RELEASE.jar:3.0.6.RELEASE]
+	at org.springframework.test.context.support.AbstractGenericContextLoader.loadContext(AbstractGenericContextLoader.java:1) ~[spring-test-3.0.6.RELEASE.jar:3.0.6.RELEASE]
+	at org.springframework.test.context.TestContext.loadApplicationContext(TestContext.java:280) ~[spring-test-3.0.6.RELEASE.jar:3.0.6.RELEASE]
+	at org.springframework.test.context.TestContext.getApplicationContext(TestContext.java:304) ~[spring-test-3.0.6.RELEASE.jar:3.0.6.RELEASE]
+	... 24 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'eu.ttbox.batch.techdata.price.list.PriceListFtpItemReader#0' defined in class path resource [jobs/techdata-price.xml]: Cannot resolve reference to bean 'pricetechdataProxyCacheFtpConnector' while setting bean property 'downloadConnector'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'pricetechdataProxyCacheFtpConnector' defined in class path resource [jobs/techdata-price.xml]: Cannot create inner bean 'eu.ttbox.batch.techdata.price.filter#64023c' of type [eu.ttbox.batch.techdata.price.filter] while setting bean property 'filterFactory'; nested exception is org.springframework.beans.factory.CannotLoadBeanClassException: Cannot find class [eu.ttbox.batch.techdata.price.filter] for bean with name 'eu.ttbox.batch.techdata.price.filter#64023c' defined in class path resource [jobs/techdata-price.xml]; nested exception is java.lang.ClassNotFoundException: eu.ttbox.batch.techdata.price.filter
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:328) ~[spring-beans-3.0.6.RELEASE.jar:3.0.6.RELEASE]
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:106) ~[spring-beans-3.0.6.RELEASE.jar:3.0.6.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1325) ~[spring-beans-3.0.6.RELEASE.jar:3.0.6.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1086) ~[spring-beans-3.0.6.RELEASE.jar:3.0.6.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:517) ~[spring-beans-3.0.6.RELEASE.jar:3.0.6.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:456) ~[spring-beans-3.0.6.RELEASE.jar:3.0.6.RELEASE]
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveInnerBean(BeanDefinitionValueResolver.java:270) ~[spring-beans-3.0.6.RELEASE.jar:3.0.6.RELEASE]
+	... 40 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'pricetechdataProxyCacheFtpConnector' defined in class path resource [jobs/techdata-price.xml]: Cannot create inner bean 'eu.ttbox.batch.techdata.price.filter#64023c' of type [eu.ttbox.batch.techdata.price.filter] while setting bean property 'filterFactory'; nested exception is org.springframework.beans.factory.CannotLoadBeanClassException: Cannot find class [eu.ttbox.batch.techdata.price.filter] for bean with name 'eu.ttbox.batch.techdata.price.filter#64023c' defined in class path resource [jobs/techdata-price.xml]; nested exception is java.lang.ClassNotFoundException: eu.ttbox.batch.techdata.price.filter
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveInnerBean(BeanDefinitionValueResolver.java:281) ~[spring-beans-3.0.6.RELEASE.jar:3.0.6.RELEASE]
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:120) ~[spring-beans-3.0.6.RELEASE.jar:3.0.6.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1325) ~[spring-beans-3.0.6.RELEASE.jar:3.0.6.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1086) ~[spring-beans-3.0.6.RELEASE.jar:3.0.6.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:517) ~[spring-beans-3.0.6.RELEASE.jar:3.0.6.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:456) ~[spring-beans-3.0.6.RELEASE.jar:3.0.6.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:293) ~[spring-beans-3.0.6.RELEASE.jar:3.0.6.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222) ~[spring-beans-3.0.6.RELEASE.jar:3.0.6.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:290) ~[spring-beans-3.0.6.RELEASE.jar:3.0.6.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:192) ~[spring-beans-3.0.6.RELEASE.jar:3.0.6.RELEASE]
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:322) ~[spring-beans-3.0.6.RELEASE.jar:3.0.6.RELEASE]
+	... 46 common frames omitted
+Caused by: org.springframework.beans.factory.CannotLoadBeanClassException: Cannot find class [eu.ttbox.batch.techdata.price.filter] for bean with name 'eu.ttbox.batch.techdata.price.filter#64023c' defined in class path resource [jobs/techdata-price.xml]; nested exception is java.lang.ClassNotFoundException: eu.ttbox.batch.techdata.price.filter
+	at org.springframework.beans.factory.support.AbstractBeanFactory.resolveBeanClass(AbstractBeanFactory.java:1261) ~[spring-beans-3.0.6.RELEASE.jar:3.0.6.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:433) ~[spring-beans-3.0.6.RELEASE.jar:3.0.6.RELEASE]
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveInnerBean(BeanDefinitionValueResolver.java:270) ~[spring-beans-3.0.6.RELEASE.jar:3.0.6.RELEASE]
+	... 56 common frames omitted
+Caused by: java.lang.ClassNotFoundException: eu.ttbox.batch.techdata.price.filter
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:202) ~[na:1.6.0_26]
+	at java.security.AccessController.doPrivileged(Native Method) ~[na:1.6.0_26]
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:190) ~[na:1.6.0_26]
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:306) ~[na:1.6.0_26]
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:301) ~[na:1.6.0_26]
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:247) ~[na:1.6.0_26]
+	at org.springframework.util.ClassUtils.forName(ClassUtils.java:257) ~[spring-core-3.0.6.RELEASE.jar:3.0.6.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanDefinition.resolveBeanClass(AbstractBeanDefinition.java:408) ~[spring-beans-3.0.6.RELEASE.jar:3.0.6.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doResolveBeanClass(AbstractBeanFactory.java:1282) ~[spring-beans-3.0.6.RELEASE.jar:3.0.6.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.resolveBeanClass(AbstractBeanFactory.java:1253) ~[spring-beans-3.0.6.RELEASE.jar:3.0.6.RELEASE]
+	... 58 common frames omitted
+2016 [main] INFO  o.h.t.TransactionFactoryFactory - Transaction strategy: org.springframework.orm.hibernate3.SpringTransactionFactory
+2020 [main] INFO  o.h.t.TransactionManagerLookupFactory - No TransactionManagerLookup configured (in JTA environment, use of read-write or transactional second-level cache is not recommended)
+4455 [main] ERROR o.s.test.context.TestContextManager - Caught exception while allowing TestExecutionListener [org.springframework.test.context.support.DependencyInjectionTestExecutionListener@1aaf194] to prepare test instance [eu.ttbox.feed.techdata.PriceTechdataJobTest@1da5362]
+java.lang.IllegalStateException: Failed to load ApplicationContext
+	at org.springframework.test.context.TestContext.getApplicationContext(TestContext.java:308) ~[spring-test-3.0.6.RELEASE.jar:3.0.6.RELEASE]
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.injectDependencies(DependencyInjectionTestExecutionListener.java:109) ~[spring-test-3.0.6.RELEASE.jar:3.0.6.RELEASE]
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.prepareTestInstance(DependencyInjectionTestExecutionListener.java:75) ~[spring-test-3.0.6.RELEASE.jar:3.0.6.RELEASE]
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:321) ~[spring-test-3.0.6.RELEASE.jar:3.0.6.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:211) [spring-test-3.0.6.RELEASE.jar:3.0.6.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:287) [spring-test-3.0.6.RELEASE.jar:3.0.6.RELEASE]
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:15) [junit-4.10.jar:na]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:289) [spring-test-3.0.6.RELEASE.jar:3.0.6.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:231) [spring-test-3.0.6.RELEASE.jar:3.0.6.RELEASE]
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:47) [junit-4.10.jar:na]
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:231) [junit-4.10.jar:na]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:60) [junit-4.10.jar:na]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:229) [junit-4.10.jar:na]
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:50) [junit-4.10.jar:na]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:222) [junit-4.10.jar:na]
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61) [spring-test-3.0.6.RELEASE.jar:3.0.6.RELEASE]
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70) [spring-test-3.0.6.RELEASE.jar:3.0.6.RELEASE]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:300) [junit-4.10.jar:na]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:174) [spring-test-3.0.6.RELEASE.jar:3.0.6.RELEASE]
+	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:50) [.cp/:na]
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38) [.cp/:na]
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:467) [.cp/:na]
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:683) [.cp/:na]
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:390) [.cp/:na]
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:197) [.cp/:na]
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'priceTechdataDownloadStep': Cannot create inner bean 'eu.ttbox.batch.techdata.price.list.PriceListFtpItemReader#0' of type [eu.ttbox.batch.techdata.price.list.PriceListFtpItemReader] while setting bean property 'itemReader'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'eu.ttbox.batch.techdata.price.list.PriceListFtpItemReader#0' defined in class path resource [jobs/techdata-price.xml]: Cannot resolve reference to bean 'pricetechdataProxyCacheFtpConnector' while setting bean property 'downloadConnector'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'pricetechdataProxyCacheFtpConnector' defined in class path resource [jobs/techdata-price.xml]: Cannot create inner bean 'eu.ttbox.batch.techdata.price.filter#1f08ed8' of type [eu.ttbox.batch.techdata.price.filter] while setting bean property 'filterFactory'; nested exception is org.springframework.beans.factory.CannotLoadBeanClassException: Cannot find class [eu.ttbox.batch.techdata.price.filter] for bean with name 'eu.ttbox.batch.techdata.price.filter#1f08ed8' defined in class path resource [jobs/techdata-price.xml]; nested exception is java.lang.ClassNotFoundException: eu.ttbox.batch.techdata.price.filter
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveInnerBean(BeanDefinitionValueResolver.java:281) ~[spring-beans-3.0.6.RELEASE.jar:3.0.6.RELEASE]
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:120) ~[spring-beans-3.0.6.RELEASE.jar:3.0.6.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1325) ~[spring-beans-3.0.6.RELEASE.jar:3.0.6.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1086) ~[spring-beans-3.0.6.RELEASE.jar:3.0.6.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:517) ~[spring-beans-3.0.6.RELEASE.jar:3.0.6.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:456) ~[spring-beans-3.0.6.RELEASE.jar:3.0.6.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:293) ~[spring-beans-3.0.6.RELEASE.jar:3.0.6.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222) ~[spring-beans-3.0.6.RELEASE.jar:3.0.6.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:290) ~[spring-beans-3.0.6.RELEASE.jar:3.0.6.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:192) ~[spring-beans-3.0.6.RELEASE.jar:3.0.6.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:567) ~[spring-beans-3.0.6.RELEASE.jar:3.0.6.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:895) ~[spring-context-3.0.6.RELEASE.jar:3.0.6.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:425) ~[spring-context-3.0.6.RELEASE.jar:3.0.6.RELEASE]
+	at org.springframework.test.context.support.AbstractGenericContextLoader.loadContext(AbstractGenericContextLoader.java:84) ~[spring-test-3.0.6.RELEASE.jar:3.0.6.RELEASE]
+	at org.springframework.test.context.support.AbstractGenericContextLoader.loadContext(AbstractGenericContextLoader.java:1) ~[spring-test-3.0.6.RELEASE.jar:3.0.6.RELEASE]
+	at org.springframework.test.context.TestContext.loadApplicationContext(TestContext.java:280) ~[spring-test-3.0.6.RELEASE.jar:3.0.6.RELEASE]
+	at org.springframework.test.context.TestContext.getApplicationContext(TestContext.java:304) ~[spring-test-3.0.6.RELEASE.jar:3.0.6.RELEASE]
+	... 24 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'eu.ttbox.batch.techdata.price.list.PriceListFtpItemReader#0' defined in class path resource [jobs/techdata-price.xml]: Cannot resolve reference to bean 'pricetechdataProxyCacheFtpConnector' while setting bean property 'downloadConnector'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'pricetechdataProxyCacheFtpConnector' defined in class path resource [jobs/techdata-price.xml]: Cannot create inner bean 'eu.ttbox.batch.techdata.price.filter#1f08ed8' of type [eu.ttbox.batch.techdata.price.filter] while setting bean property 'filterFactory'; nested exception is org.springframework.beans.factory.CannotLoadBeanClassException: Cannot find class [eu.ttbox.batch.techdata.price.filter] for bean with name 'eu.ttbox.batch.techdata.price.filter#1f08ed8' defined in class path resource [jobs/techdata-price.xml]; nested exception is java.lang.ClassNotFoundException: eu.ttbox.batch.techdata.price.filter
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:328) ~[spring-beans-3.0.6.RELEASE.jar:3.0.6.RELEASE]
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:106) ~[spring-beans-3.0.6.RELEASE.jar:3.0.6.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1325) ~[spring-beans-3.0.6.RELEASE.jar:3.0.6.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1086) ~[spring-beans-3.0.6.RELEASE.jar:3.0.6.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:517) ~[spring-beans-3.0.6.RELEASE.jar:3.0.6.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:456) ~[spring-beans-3.0.6.RELEASE.jar:3.0.6.RELEASE]
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveInnerBean(BeanDefinitionValueResolver.java:270) ~[spring-beans-3.0.6.RELEASE.jar:3.0.6.RELEASE]
+	... 40 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'pricetechdataProxyCacheFtpConnector' defined in class path resource [jobs/techdata-price.xml]: Cannot create inner bean 'eu.ttbox.batch.techdata.price.filter#1f08ed8' of type [eu.ttbox.batch.techdata.price.filter] while setting bean property 'filterFactory'; nested exception is org.springframework.beans.factory.CannotLoadBeanClassException: Cannot find class [eu.ttbox.batch.techdata.price.filter] for bean with name 'eu.ttbox.batch.techdata.price.filter#1f08ed8' defined in class path resource [jobs/techdata-price.xml]; nested exception is java.lang.ClassNotFoundException: eu.ttbox.batch.techdata.price.filter
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveInnerBean(BeanDefinitionValueResolver.java:281) ~[spring-beans-3.0.6.RELEASE.jar:3.0.6.RELEASE]
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:120) ~[spring-beans-3.0.6.RELEASE.jar:3.0.6.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1325) ~[spring-beans-3.0.6.RELEASE.jar:3.0.6.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1086) ~[spring-beans-3.0.6.RELEASE.jar:3.0.6.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:517) ~[spring-beans-3.0.6.RELEASE.jar:3.0.6.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:456) ~[spring-beans-3.0.6.RELEASE.jar:3.0.6.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:293) ~[spring-beans-3.0.6.RELEASE.jar:3.0.6.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222) ~[spring-beans-3.0.6.RELEASE.jar:3.0.6.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:290) ~[spring-beans-3.0.6.RELEASE.jar:3.0.6.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:192) ~[spring-beans-3.0.6.RELEASE.jar:3.0.6.RELEASE]
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:322) ~[spring-beans-3.0.6.RELEASE.jar:3.0.6.RELEASE]
+	... 46 common frames omitted
+Caused by: org.springframework.beans.factory.CannotLoadBeanClassException: Cannot find class [eu.ttbox.batch.techdata.price.filter] for bean with name 'eu.ttbox.batch.techdata.price.filter#1f08ed8' defined in class path resource [jobs/techdata-price.xml]; nested exception is java.lang.ClassNotFoundException: eu.ttbox.batch.techdata.price.filter
+	at org.springframework.beans.factory.support.AbstractBeanFactory.resolveBeanClass(AbstractBeanFactory.java:1261) ~[spring-beans-3.0.6.RELEASE.jar:3.0.6.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:433) ~[spring-beans-3.0.6.RELEASE.jar:3.0.6.RELEASE]
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveInnerBean(BeanDefinitionValueResolver.java:270) ~[spring-beans-3.0.6.RELEASE.jar:3.0.6.RELEASE]
+	... 56 common frames omitted
+Caused by: java.lang.ClassNotFoundException: eu.ttbox.batch.techdata.price.filter
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:202) ~[na:1.6.0_26]
+	at java.security.AccessController.doPrivileged(Native Method) ~[na:1.6.0_26]
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:190) ~[na:1.6.0_26]
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:306) ~[na:1.6.0_26]
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:301) ~[na:1.6.0_26]
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:247) ~[na:1.6.0_26]
+	at org.springframework.util.ClassUtils.forName(ClassUtils.java:257) ~[spring-core-3.0.6.RELEASE.jar:3.0.6.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanDefinition.resolveBeanClass(AbstractBeanDefinition.java:408) ~[spring-beans-3.0.6.RELEASE.jar:3.0.6.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doResolveBeanClass(AbstractBeanFactory.java:1282) ~[spring-beans-3.0.6.RELEASE.jar:3.0.6.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.resolveBeanClass(AbstractBeanFactory.java:1253) ~[spring-beans-3.0.6.RELEASE.jar:3.0.6.RELEASE]
+	... 58 common frames omitted
+1992 [main] INFO  o.h.t.TransactionFactoryFactory - Transaction strategy: org.springframework.orm.hibernate3.SpringTransactionFactory
+1996 [main] INFO  o.h.t.TransactionManagerLookupFactory - No TransactionManagerLookup configured (in JTA environment, use of read-write or transactional second-level cache is not recommended)
+4174 [main] INFO  e.t.b.c.download.ftp.FtpConnector - Connected to FTP exportftp.techdata.fr : Reply code 230 User bestofmicro logged in.
+
+4220 [main] INFO  e.t.b.c.download.ftp.FtpConnector - Transfert Compress mode false
+4640 [main] INFO  e.t.b.c.download.ftp.FtpConnector - Deconnected to FTP exportftp.techdata.fr : null
+4641 [main] INFO  e.t.b.t.p.l.PriceListFtpItemReader - Register 0 files to ItemReader
+4681 [main] INFO  e.t.b.c.r.LocalFilenamePatternProxyCacheItemReader - Register 0 files to ItemReader
+4700 [main] INFO  e.t.b.c.r.LocalFilenamePatternProxyCacheItemReader - Register 0 files to ItemReader
+4706 [main] INFO  e.t.f.techdata.PriceTechdataJobTest - Job end exitCode=COMPLETED;exitDescription= in 1142 ms.
+2099 [main] INFO  o.h.t.TransactionFactoryFactory - Transaction strategy: org.springframework.orm.hibernate3.SpringTransactionFactory
+2102 [main] INFO  o.h.t.TransactionManagerLookupFactory - No TransactionManagerLookup configured (in JTA environment, use of read-write or transactional second-level cache is not recommended)
+4144 [main] INFO  e.t.b.c.download.ftp.FtpConnector - Connected to FTP exportftp.techdata.fr : Reply code 230 User bestofmicro logged in.
+
+4191 [main] INFO  e.t.b.c.download.ftp.FtpConnector - Transfert Compress mode false
+4622 [main] INFO  e.t.b.c.download.ftp.FtpConnector - Deconnected to FTP exportftp.techdata.fr : null
+4623 [main] INFO  e.t.b.t.c.f.TechdataCacheDownloadConnector - 475729, 475804, 475881, 475890, 476065, 476149, 476196, 476367, 476383, 476392, 476432, 476482, 476725, 476765, 476843, 476958, 477049, 477118, 477128, 477145, 477167, 477211, 477258, 477304, 477413, 477416, 477571, 477717, 477843, 477900, 477934, 478011, 478044, 478135, 478302, 478313, 478340, 478465, 478479, 478623, 478690, 478716, 478772, 478777, 478796, 478871, 478949, 478987, 479023, 479091, 479328, 479351, 479383, 479638, 479676, 479699, 479718, 480257, 480297, 480310, 480315, 480481, 480676, 480727, 481419, 481444, 481446, 481616, 481951, 482364, 482464, 482474, 482503, 482550, 482629, 482682, 482749, 482767, 482780, 482827, 482910, 482956, 483101, 483138, 483195, 483305, 483489, 483517, 483745, 483769, 483925, 484007, 484023, 484054, 484103, 484104, 484440, 484669, 484671, 484766, 484878, 484956, 484959, 485043, 485300, 485329, 485406, 485679, 485856, 485936, 485994, 486018, 486074, 486094, 486107, 486120, 486126, 486234, 486291, 486435, 486458, 486818, 486935, 486956, 487187, 487210, 487269, 487290, 487784, 487910, 488047, 488154, 488226, 488354, 488415, 488453, 488630, 488634, 488766, 488778, 488790, 488860, 488951, 488981, 489100, 489175, 489203, 489396, 489478, 489618, 489973, 489982, 490008, 490370, 490491, 490544, 490575, 490621, 490744, 490761, 490900, 491079, 491138, 491151, 491160, 491357, 491492, 491518, 491544, 493622, 494886, 496119, 497999, 501800, 510337, 513550, 517001, 520958, 521179, 521356, 521373, 522542, 523163, 523307, 523368, 523728, 524235, 524564, 527340, 527395, 533168, 534208, 534293, 534304, 535979, 538049, 538234, 539650, 550056, 550093, 551557, 552032, 552278, 552362, 552890, 553884, 556707, 557106, 557313, 558131, 558560, 558690, 560205, 560248, 563474, 564357, 564492, 564510, 565150, 565625, 565732, 566394, 566432, 566756, 566762, 566791, 571302, 571929, 572825, 575851, 576369, 580903, 583652, 584638, 587630, 589098, 589234, 589489, 590163, 595129, 595289, 606879, 608491, 610985, 612077, 612186, 620029, 620087, 623171, 623206, 623271, 624663, 624825
+
+4623 [main] INFO  e.t.b.t.p.l.PriceListFtpItemReader - Register 0 files to ItemReader
+4664 [main] INFO  e.t.b.c.r.LocalFilenamePatternProxyCacheItemReader - Register 0 files to ItemReader
+4683 [main] INFO  e.t.b.c.r.LocalFilenamePatternProxyCacheItemReader - Register 0 files to ItemReader
+4690 [main] INFO  e.t.f.techdata.PriceTechdataJobTest - Job end exitCode=COMPLETED;exitDescription= in 1025 ms.
+2024 [main] INFO  o.h.t.TransactionFactoryFactory - Transaction strategy: org.springframework.orm.hibernate3.SpringTransactionFactory
+2027 [main] INFO  o.h.t.TransactionManagerLookupFactory - No TransactionManagerLookup configured (in JTA environment, use of read-write or transactional second-level cache is not recommended)
+4079 [main] INFO  e.t.b.c.download.ftp.FtpConnector - Connected to FTP exportftp.techdata.fr : Reply code 230 User bestofmicro logged in.
+
+4124 [main] INFO  e.t.b.c.download.ftp.FtpConnector - Transfert Compress mode false
+4537 [main] INFO  e.t.b.c.download.ftp.FtpConnector - Deconnected to FTP exportftp.techdata.fr : null
+4538 [main] INFO  e.t.b.t.c.f.TechdataCacheDownloadConnector - Ignore File Ids  :475729, 475804, 475881, 475890, 476065, 476149, 476196, 476367, 476383, 476392, 476432, 476482, 476725, 476765, 476843, 476958, 477049, 477118, 477128, 477145, 477167, 477211, 477258, 477304, 477413, 477416, 477571, 477717, 477843, 477900, 477934, 478011, 478044, 478135, 478302, 478313, 478340, 478465, 478479, 478623, 478690, 478716, 478772, 478777, 478796, 478871, 478949, 478987, 479023, 479091, 479328, 479351, 479383, 479638, 479676, 479699, 479718, 480257, 480297, 480310, 480315, 480481, 480676, 480727, 481419, 481444, 481446, 481616, 481951, 482364, 482464, 482474, 482503, 482550, 482629, 482682, 482749, 482767, 482780, 482827, 482910, 482956, 483101, 483138, 483195, 483305, 483489, 483517, 483745, 483769, 483925, 484007, 484023, 484054, 484103, 484104, 484440, 484669, 484671, 484766, 484878, 484956, 484959, 485043, 485300, 485329, 485406, 485679, 485856, 485936, 485994, 486018, 486074, 486094, 486107, 486120, 486126, 486234, 486291, 486435, 486458, 486818, 486935, 486956, 487187, 487210, 487269, 487290, 487784, 487910, 488047, 488154, 488226, 488354, 488415, 488453, 488630, 488634, 488766, 488778, 488790, 488860, 488951, 488981, 489100, 489175, 489203, 489396, 489478, 489618, 489973, 489982, 490008, 490370, 490491, 490544, 490575, 490621, 490744, 490761, 490900, 491079, 491138, 491151, 491160, 491357, 491492, 491518, 491544, 493622, 494886, 496119, 497999, 501800, 510337, 513550, 517001, 520958, 521179, 521356, 521373, 522542, 523163, 523307, 523368, 523728, 524235, 524564, 527340, 527395, 533168, 534208, 534293, 534304, 535979, 538049, 538234, 539650, 550056, 550093, 551557, 552032, 552278, 552362, 552890, 553884, 556707, 557106, 557313, 558131, 558560, 558690, 560205, 560248, 563474, 564357, 564492, 564510, 565150, 565625, 565732, 566394, 566432, 566756, 566762, 566791, 571302, 571929, 572825, 575851, 576369, 580903, 583652, 584638, 587630, 589098, 589234, 589489, 590163, 595129, 595289, 606879, 608491, 610985, 612077, 612186, 620029, 620087, 623171, 623206, 623271, 624663, 624825
+
+4538 [main] INFO  e.t.b.t.p.l.PriceListFtpItemReader - Register 0 files to ItemReader
+4578 [main] INFO  e.t.b.c.r.LocalFilenamePatternProxyCacheItemReader - Register 0 files to ItemReader
+4598 [main] INFO  e.t.b.c.r.LocalFilenamePatternProxyCacheItemReader - Register 0 files to ItemReader
+4604 [main] INFO  e.t.f.techdata.PriceTechdataJobTest - Job end exitCode=COMPLETED;exitDescription= in 1007 ms.
+2017 [main] INFO  o.h.t.TransactionFactoryFactory - Transaction strategy: org.springframework.orm.hibernate3.SpringTransactionFactory
+2021 [main] INFO  o.h.t.TransactionManagerLookupFactory - No TransactionManagerLookup configured (in JTA environment, use of read-write or transactional second-level cache is not recommended)
+4080 [main] INFO  e.t.b.c.download.ftp.FtpConnector - Connected to FTP exportftp.techdata.fr : Reply code 230 User bestofmicro logged in.
+
+4127 [main] INFO  e.t.b.c.download.ftp.FtpConnector - Transfert Compress mode false
+4548 [main] INFO  e.t.b.c.download.ftp.FtpConnector - Deconnected to FTP exportftp.techdata.fr : null
+4549 [main] INFO  e.t.b.t.c.f.TechdataCacheDownloadConnector - Ignore File Ids  : [475729, 475804, 475881, 475890, 476065, 476149, 476196, 476367, 476383, 476392, 476432, 476482, 476725, 476765, 476843, 476958, 477049, 477118, 477128, 477145, 477167, 477211, 477258, 477304, 477413, 477416, 477571, 477717, 477843, 477900, 477934, 478011, 478044, 478135, 478302, 478313, 478340, 478465, 478479, 478623, 478690, 478716, 478772, 478777, 478796, 478871, 478949, 478987, 479023, 479091, 479328, 479351, 479383, 479638, 479676, 479699, 479718, 480257, 480297, 480310, 480315, 480481, 480676, 480727, 481419, 481444, 481446, 481616, 481951, 482364, 482464, 482474, 482503, 482550, 482629, 482682, 482749, 482767, 482780, 482827, 482910, 482956, 483101, 483138, 483195, 483305, 483489, 483517, 483745, 483769, 483925, 484007, 484023, 484054, 484103, 484104, 484440, 484669, 484671, 484766, 484878, 484956, 484959, 485043, 485300, 485329, 485406, 485679, 485856, 485936, 485994, 486018, 486074, 486094, 486107, 486120, 486126, 486234, 486291, 486435, 486458, 486818, 486935, 486956, 487187, 487210, 487269, 487290, 487784, 487910, 488047, 488154, 488226, 488354, 488415, 488453, 488630, 488634, 488766, 488778, 488790, 488860, 488951, 488981, 489100, 489175, 489203, 489396, 489478, 489618, 489973, 489982, 490008, 490370, 490491, 490544, 490575, 490621, 490744, 490761, 490900, 491079, 491138, 491151, 491160, 491357, 491492, 491518, 491544, 493622, 494886, 496119, 497999, 501800, 510337, 513550, 517001, 520958, 521179, 521356, 521373, 522542, 523163, 523307, 523368, 523728, 524235, 524564, 527340, 527395, 533168, 534208, 534293, 534304, 535979, 538049, 538234, 539650, 550056, 550093, 551557, 552032, 552278, 552362, 552890, 553884, 556707, 557106, 557313, 558131, 558560, 558690, 560205, 560248, 563474, 564357, 564492, 564510, 565150, 565625, 565732, 566394, 566432, 566756, 566762, 566791, 571302, 571929, 572825, 575851, 576369, 580903, 583652, 584638, 587630, 589098, 589234, 589489, 590163, 595129, 595289, 606879, 608491, 610985, 612077, 612186, 620029, 620087, 623171, 623206, 623271, 624663, 624825]
+
+4549 [main] INFO  e.t.b.t.p.l.PriceListFtpItemReader - Register 0 files to ItemReader
+4590 [main] INFO  e.t.b.c.r.LocalFilenamePatternProxyCacheItemReader - Register 0 files to ItemReader
+4609 [main] INFO  e.t.b.c.r.LocalFilenamePatternProxyCacheItemReader - Register 0 files to ItemReader
+4615 [main] INFO  e.t.f.techdata.PriceTechdataJobTest - Job end exitCode=COMPLETED;exitDescription= in 1021 ms.
+2003 [main] INFO  o.h.t.TransactionFactoryFactory - Transaction strategy: org.springframework.orm.hibernate3.SpringTransactionFactory
+2007 [main] INFO  o.h.t.TransactionManagerLookupFactory - No TransactionManagerLookup configured (in JTA environment, use of read-write or transactional second-level cache is not recommended)
+4057 [main] INFO  e.t.b.c.download.ftp.FtpConnector - Connected to FTP exportftp.techdata.fr : Reply code 230 User bestofmicro logged in.
+
+4104 [main] INFO  e.t.b.c.download.ftp.FtpConnector - Transfert Compress mode false
+4533 [main] INFO  e.t.b.c.download.ftp.FtpConnector - Deconnected to FTP exportftp.techdata.fr : null
+4533 [main] INFO  e.t.b.t.c.f.TechdataCacheDownloadConnector - Ignore 253 Files Ids  : [475729, 475804, 475881, 475890, 476065, 476149, 476196, 476367, 476383, 476392, 476432, 476482, 476725, 476765, 476843, 476958, 477049, 477118, 477128, 477145, 477167, 477211, 477258, 477304, 477413, 477416, 477571, 477717, 477843, 477900, 477934, 478011, 478044, 478135, 478302, 478313, 478340, 478465, 478479, 478623, 478690, 478716, 478772, 478777, 478796, 478871, 478949, 478987, 479023, 479091, 479328, 479351, 479383, 479638, 479676, 479699, 479718, 480257, 480297, 480310, 480315, 480481, 480676, 480727, 481419, 481444, 481446, 481616, 481951, 482364, 482464, 482474, 482503, 482550, 482629, 482682, 482749, 482767, 482780, 482827, 482910, 482956, 483101, 483138, 483195, 483305, 483489, 483517, 483745, 483769, 483925, 484007, 484023, 484054, 484103, 484104, 484440, 484669, 484671, 484766, 484878, 484956, 484959, 485043, 485300, 485329, 485406, 485679, 485856, 485936, 485994, 486018, 486074, 486094, 486107, 486120, 486126, 486234, 486291, 486435, 486458, 486818, 486935, 486956, 487187, 487210, 487269, 487290, 487784, 487910, 488047, 488154, 488226, 488354, 488415, 488453, 488630, 488634, 488766, 488778, 488790, 488860, 488951, 488981, 489100, 489175, 489203, 489396, 489478, 489618, 489973, 489982, 490008, 490370, 490491, 490544, 490575, 490621, 490744, 490761, 490900, 491079, 491138, 491151, 491160, 491357, 491492, 491518, 491544, 493622, 494886, 496119, 497999, 501800, 510337, 513550, 517001, 520958, 521179, 521356, 521373, 522542, 523163, 523307, 523368, 523728, 524235, 524564, 527340, 527395, 533168, 534208, 534293, 534304, 535979, 538049, 538234, 539650, 550056, 550093, 551557, 552032, 552278, 552362, 552890, 553884, 556707, 557106, 557313, 558131, 558560, 558690, 560205, 560248, 563474, 564357, 564492, 564510, 565150, 565625, 565732, 566394, 566432, 566756, 566762, 566791, 571302, 571929, 572825, 575851, 576369, 580903, 583652, 584638, 587630, 589098, 589234, 589489, 590163, 595129, 595289, 606879, 608491, 610985, 612077, 612186, 620029, 620087, 623171, 623206, 623271, 624663, 624825]
+
+4533 [main] INFO  e.t.b.t.p.l.PriceListFtpItemReader - Register 0 files to ItemReader
+4574 [main] INFO  e.t.b.c.r.LocalFilenamePatternProxyCacheItemReader - Register 0 files to ItemReader
+4593 [main] INFO  e.t.b.c.r.LocalFilenamePatternProxyCacheItemReader - Register 0 files to ItemReader
+4599 [main] INFO  e.t.f.techdata.PriceTechdataJobTest - Job end exitCode=COMPLETED;exitDescription= in 1027 ms.

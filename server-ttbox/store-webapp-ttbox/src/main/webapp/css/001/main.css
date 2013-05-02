@@ -1,0 +1,103 @@
+
+/* /////////////// basic elements /////////////// */
+html {
+	margin: 0;
+	padding: 0;
+	}
+body { 
+	font: 75% georgia, sans-serif;
+	line-height: 1.88889;
+	color: #555753; 
+	background: #fff url(/ttbox/css/001/body_bg.jpg) no-repeat bottom right; 
+	margin: 0; 
+	padding: 0;
+	}
+p { 
+	margin-top: 0; 
+	text-align: justify;
+	}
+h3 { 
+	font: italic normal 1.4em georgia, sans-serif;
+	letter-spacing: 1px; 
+	margin-bottom: 0; 
+	color: #7D775C;
+	}
+a:link { 
+	font-weight: bold; 
+	text-decoration: none; 
+	color: #B7A5DF;
+	}
+a:visited { 
+	font-weight: bold; 
+	text-decoration: none; 
+	color: #D4CDDC;
+	}
+a:hover, a:active { 
+	text-decoration: underline; 
+	color: #9685BA;
+	}
+acronym {
+	border-bottom: none;
+	}
+	
+/* specific divs */
+
+/* ////////////// Header ///////////////// */
+
+#pageHeader {
+	padding-top: 20px;
+}
+
+
+	
+/* ////////////// Container ///////////////// */
+
+#container { 
+	background: url(/ttbox/css/001/container_bg.jpg) no-repeat top left; 
+	padding: 0 175px 0 110px;  
+	margin: 0; 
+	position: relative;
+	}
+
+#supportingText {	
+	padding-left: 10px; 
+	margin-bottom: 40px;
+	}
+
+ #quickSummary {
+	padding-top: 10px; 
+	}
+/* ////////////// Side ///////////////// */
+
+#linkList {
+	margin-left: 600px; 
+	position: absolute; 
+	top: 0; 
+	right: 0;
+	}
+
+	
+#linkList ul {
+	margin: 0;
+	padding: 0;
+	}
+#linkList li {
+	line-height: 2.5ex; 
+	background: transparent url(ttbox/css/001/cr1.gif) no-repeat top center; 
+	display: block; 
+	padding-top: 5px; 
+	margin-bottom: 5px;
+	list-style-type: none;
+	}
+#linkList li a:link {
+	color: #988F5E;
+	}
+
+/* ////////////// Footer ///////////////// */
+
+#footer { 
+	text-align: center; 
+	}
+#footer a:link, #footer a:visited { 
+	margin-right: 20px; 
+	}
