@@ -9,7 +9,7 @@ import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.dialect.Dialect;
-import org.hibernate.engine.spi.SessionFactoryImplementor;
+import org.hibernate.impl.SessionFactoryImpl;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -37,7 +37,7 @@ public class NextValSequenceDAOImpl implements SequenceDAO {
 	@PostConstruct
 	protected void initDao() throws Exception {
 
-		final Dialect dialect = ((SessionFactoryImplementor) sessionFactory).getDialect();
+		final Dialect dialect = ((SessionFactoryImpl) sessionFactory).getDialect();
 		// A BEtter way ?Dialect dialect =
 		// Dialect.getDialect(getHibernateTemplate().getConfiguration().getProperties());
 		try {

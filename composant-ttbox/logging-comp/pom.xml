@@ -20,8 +20,8 @@
   <dependencyManagement>
     <dependencies>
       <dependency>
-	<groupId>eu.ttbox.bom</groupId>
-  	<artifactId>bom-ttbox</artifactId>
+	    <groupId>eu.ttbox.bom</groupId>
+  	    <artifactId>bom-ttbox</artifactId>
         <version>${project.version}</version>
         <type>pom</type>
         <scope>import</scope>
