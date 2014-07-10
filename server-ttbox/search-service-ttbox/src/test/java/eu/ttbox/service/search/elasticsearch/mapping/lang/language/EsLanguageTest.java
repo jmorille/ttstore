@@ -68,7 +68,7 @@ public class EsLanguageTest {
 		for (String search : new String[] { "guilaume", "guyaume", "Gerôme", "Jérôme", "Ophélie", "sophie" }) {
 			QueryBuilder queryBuilder = QueryBuilders.termQuery("name.phonetic", search);
 			SearchResponse response = client.prepareSearch(indexName).setQuery(queryBuilder).addSort(SortBuilders.scoreSort()).execute().actionGet();
-			log.info("Elastic search {} : {} items in {}", new Object[] { search, response.getHits().totalHits(), response.took() });
+			log.info("Elastic search {} : {} items in {}", new Object[] { search, response.getHits().totalHits(), response.getTook() });
 			int i = 0;
 			for (SearchHit hit : response.getHits()) {
 				log.info("Phonetic {} : {} =  {}", new Object[] { ++i, search, hit.sourceAsString() });

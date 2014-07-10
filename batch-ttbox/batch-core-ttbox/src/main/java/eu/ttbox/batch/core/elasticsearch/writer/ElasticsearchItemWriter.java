@@ -2,9 +2,9 @@ package eu.ttbox.batch.core.elasticsearch.writer;
 
 import java.util.List;
 
+import org.elasticsearch.action.bulk.BulkRequestBuilder;
 import org.elasticsearch.action.bulk.BulkResponse;
 import org.elasticsearch.client.Client;
-import org.elasticsearch.client.action.bulk.BulkRequestBuilder;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.batch.item.ItemWriter;
@@ -35,7 +35,7 @@ public class ElasticsearchItemWriter implements ItemWriter<ElasticPersonItem> {
 			// process failures by iterating through each bulk response item
 			log.error(bulkResponse.buildFailureMessage());
 		} else {
-			log.info("Elasticsearch Index succefully in {} ms.", bulkResponse.tookInMillis());
+			log.info("Elasticsearch Index succefully in {} ms.", bulkResponse.getTookInMillis());
 		}
 	}
 

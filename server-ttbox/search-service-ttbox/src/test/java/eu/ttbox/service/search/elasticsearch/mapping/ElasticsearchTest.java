@@ -51,13 +51,13 @@ public class ElasticsearchTest {
 		// Do a seach
 		QueryBuilder queryBuilderF = QueryBuilders.termQuery("sexe", "F");
 		CountResponse countResponseFemale = elasticClient.prepareCount(indexName).setQuery(queryBuilderF).setTypes("japon").execute().actionGet();
-		log.info("Elasticsearch Count Female response in {} items.", countResponseFemale.count());
-		Assert.assertEquals(351, countResponseFemale.count());
+		log.info("Elasticsearch Count Female response in {} items.", countResponseFemale.getCount());
+		Assert.assertEquals(351, countResponseFemale.getCount());
 
 		QueryBuilder queryBuilderM = QueryBuilders.termQuery("sexe", "M");
 		CountResponse countResponseMale = elasticClient.prepareCount(indexName).setQuery(queryBuilderM).setTypes("japon").execute().actionGet();
-		log.info("Elasticsearch Count Male response in {} items.", countResponseMale.count());
-		Assert.assertEquals(393, countResponseMale.count());
+		log.info("Elasticsearch Count Male response in {} items.", countResponseMale.getCount());
+		Assert.assertEquals(393, countResponseMale.getCount());
 
 		// Destroy index
 		// deleteIndex(indexName);

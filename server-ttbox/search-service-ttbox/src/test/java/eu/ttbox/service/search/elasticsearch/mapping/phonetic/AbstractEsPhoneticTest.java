@@ -65,9 +65,9 @@ public abstract class AbstractEsPhoneticTest {
 
 		// Do a seach
 		for (String search : getSearchString() ) {
-			QueryBuilder queryBuilder = QueryBuilders.fieldQuery("name.phonetic", search);
+			QueryBuilder queryBuilder = QueryBuilders.queryString( search).field("name.phonetic");
 			SearchResponse response = client.prepareSearch(indexName).setQuery(queryBuilder).addSort(SortBuilders.scoreSort()).execute().actionGet();
-			log.info("Elastic search {} : {} items in {}", new Object[] { search, response.getHits().totalHits(), response.took() });
+			log.info("Elastic search {} : {} items in {}", new Object[] { search, response.getHits().totalHits(), response.getTook() });
 			int i = 0;
 			for (SearchHit hit : response.getHits()) {
 				log.info("Phonetic {} : {} =  {}", new Object[] { ++i, search, hit.sourceAsString() });

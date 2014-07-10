@@ -73,7 +73,7 @@ public class EsSuggestTest {
 		for (String search : new String[] { "s", "so", "sop", "soph", "sophi", "sophie" }) {
 			QueryBuilder queryBuilder = QueryBuilders.termQuery("name.suggest", search);
 			SearchResponse response = client.prepareSearch(indexName).setQuery(queryBuilder).addSort(SortBuilders.scoreSort()).execute().actionGet();
-			log.info("Elastic search {} : {} items in {}", new Object[] { search, response.getHits().totalHits(), response.took() });
+			log.info("Elastic search {} : {} items in {}", new Object[] { search, response.getHits().totalHits(), response.getTook() });
 			int i = 0;
 			for (SearchHit hit : response.getHits()) {
 				log.info("Suggest {} : {} =  {}", new Object[] { ++i, search, hit.sourceAsString() });
@@ -85,7 +85,7 @@ public class EsSuggestTest {
 			QueryBuilder startQueryBuilder = QueryBuilders.termQuery("name.suggest", search);
 			QueryBuilder queryBuilder =  QueryBuilders.boolQuery().must(sexeQuery).must(startQueryBuilder);
 			SearchResponse response = client.prepareSearch(indexName).setQuery(queryBuilder).addSort(SortBuilders.scoreSort()).setSize(500).execute().actionGet();
-			log.info("Elastic search {} : {} items in {}", new Object[] { search, response.getHits().totalHits(), response.took() });
+			log.info("Elastic search {} : {} items in {}", new Object[] { search, response.getHits().totalHits(), response.getTook() });
 			int i = 0;
 			for (SearchHit hit : response.getHits()) {
 				log.info("Suggest {} : {} =  {}", new Object[] { ++i, search, hit.sourceAsString() });

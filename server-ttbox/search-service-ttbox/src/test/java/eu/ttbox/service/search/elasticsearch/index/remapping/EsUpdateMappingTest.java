@@ -89,7 +89,7 @@ public class EsUpdateMappingTest {
 	}
 	
 	private long testSearchOnIndex(String indexName) {
-		QueryBuilder queryBuilder = QueryBuilders.fieldQuery("sexe","F");
+		QueryBuilder queryBuilder = QueryBuilders.queryString("F").field("sexe");
 		CountResponse response =  client.prepareCount(indexName).setQuery(queryBuilder).execute().actionGet();
 		return response.getCount();
 	}

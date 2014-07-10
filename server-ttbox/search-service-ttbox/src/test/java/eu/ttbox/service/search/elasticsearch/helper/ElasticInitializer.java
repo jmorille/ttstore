@@ -5,37 +5,42 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 import junit.framework.Assert;
 
+import org.elasticsearch.action.admin.cluster.state.ClusterStateRequestBuilder;
 import org.elasticsearch.action.admin.cluster.state.ClusterStateResponse;
+import org.elasticsearch.action.admin.indices.alias.IndicesAliasesRequestBuilder;
 import org.elasticsearch.action.admin.indices.alias.IndicesAliasesResponse;
+import org.elasticsearch.action.admin.indices.create.CreateIndexRequestBuilder;
 import org.elasticsearch.action.admin.indices.create.CreateIndexResponse;
 import org.elasticsearch.action.admin.indices.delete.DeleteIndexResponse;
+import org.elasticsearch.action.admin.indices.mapping.put.PutMappingRequestBuilder;
 import org.elasticsearch.action.admin.indices.mapping.put.PutMappingResponse;
+import org.elasticsearch.action.admin.indices.optimize.OptimizeRequestBuilder;
 import org.elasticsearch.action.admin.indices.optimize.OptimizeResponse;
 import org.elasticsearch.action.admin.indices.refresh.RefreshRequest;
 import org.elasticsearch.action.admin.indices.template.delete.DeleteIndexTemplateResponse;
+import org.elasticsearch.action.admin.indices.template.put.PutIndexTemplateRequestBuilder;
 import org.elasticsearch.action.admin.indices.template.put.PutIndexTemplateResponse;
+import org.elasticsearch.action.bulk.BulkRequestBuilder;
 import org.elasticsearch.action.bulk.BulkResponse;
+import org.elasticsearch.action.index.IndexRequestBuilder;
 import org.elasticsearch.client.Client;
-import org.elasticsearch.client.action.admin.cluster.state.ClusterStateRequestBuilder;
-import org.elasticsearch.client.action.admin.indices.alias.IndicesAliasesRequestBuilder;
-import org.elasticsearch.client.action.admin.indices.create.CreateIndexRequestBuilder;
-import org.elasticsearch.client.action.admin.indices.delete.DeleteIndexRequestBuilder;
-import org.elasticsearch.client.action.admin.indices.mapping.put.PutMappingRequestBuilder;
-import org.elasticsearch.client.action.admin.indices.optimize.OptimizeRequestBuilder;
-import org.elasticsearch.client.action.admin.indices.template.put.PutIndexTemplateRequestBuilder;
-import org.elasticsearch.client.action.bulk.BulkRequestBuilder;
-import org.elasticsearch.client.action.index.IndexRequestBuilder;
+
 import org.elasticsearch.cluster.metadata.AliasAction;
 import org.elasticsearch.cluster.metadata.IndexMetaData;
 import org.elasticsearch.cluster.metadata.MappingMetaData;
 import org.elasticsearch.common.base.Strings;
 import org.elasticsearch.common.collect.ImmutableMap;
+import org.elasticsearch.common.collect.ImmutableOpenMap;
+import org.elasticsearch.common.collect.UnmodifiableIterator;
+import org.elasticsearch.common.hppc.ObjectContainer;
 import org.elasticsearch.common.io.Streams;
 import org.elasticsearch.indices.IndexMissingException;
+import org.elasticsearch.search.aggregations.metrics.percentiles.InternalPercentiles;
 import org.junit.rules.MethodRule;
 import org.junit.runners.model.FrameworkMethod;
 import org.junit.runners.model.Statement;
@@ -178,7 +183,7 @@ public class ElasticInitializer implements MethodRule {
 				aliasesRequestBuilder.addAliasAction(new AliasAction(alias.action(), indexName, alias.value()));
 			}
 			IndicesAliasesResponse response = aliasesRequestBuilder.execute().actionGet();
-			Assert.assertTrue(response.acknowledged());
+			Assert.assertTrue(response.isAcknowledged());
 		}
 	}
 
@@ -255,7 +260,7 @@ public class ElasticInitializer implements MethodRule {
 	public void deleteTemplate(String templateName) {
 		try {
 			DeleteIndexTemplateResponse response = client.admin().indices().prepareDeleteTemplate(templateName).execute().actionGet();
-			Assert.assertTrue(response.acknowledged());
+			Assert.assertTrue(response.isAcknowledged());
 		} catch (Exception e) {
 			log.debug("Not found template {} for delete operation", templateName);
 		}
@@ -285,7 +290,7 @@ public class ElasticInitializer implements MethodRule {
 
 		// Send Template
 		PutIndexTemplateResponse response = templateBuilder.execute().actionGet();
-		Assert.assertTrue(response.acknowledged());
+		Assert.assertTrue(response.isAcknowledged());
 	}
 
 	private void manageLoadData(ElasticInitializerData dataLoad, ElasticInitializerSetting config, Object target) throws Exception {
@@ -316,7 +321,7 @@ public class ElasticInitializer implements MethodRule {
 	public void deleteIndex(String... indexName)   {
 		try {
 			DeleteIndexResponse response =  client.admin().indices().prepareDelete(indexName).execute().actionGet();
-			log.debug("Delete Index {} : {}", indexName, response.acknowledged());
+			log.debug("Delete Index {} : {}", indexName, response.isAcknowledged());
 		} catch (IndexMissingException e) {
 			log.debug("Delete Index {} : false ( {} )", indexName, e.getMessage());
 		}
@@ -330,7 +335,7 @@ public class ElasticInitializer implements MethodRule {
 			createIndx.setSettings(settingContent);
 		}
 		CreateIndexResponse response = createIndx.execute().actionGet();
-		Assert.assertTrue(response.acknowledged());
+		Assert.assertTrue(response.isAcknowledged());
 	}
 
 	public void createMapping(String indexName, String indexType, String mappingContent) throws Exception {
@@ -343,7 +348,7 @@ public class ElasticInitializer implements MethodRule {
 
 		PutMappingResponse response = request.execute().actionGet();
 		log.debug("Create Mapping for {} / {} ", indexName, indexType);
-		Assert.assertTrue(response.acknowledged());
+		Assert.assertTrue(response.isAcknowledged());
 	}
 
 	public void loadDatas(String indexName, String indexType, byte[] datas) throws Exception {
@@ -364,14 +369,14 @@ public class ElasticInitializer implements MethodRule {
 			// process failures by iterating through each bulk response item
 			log.error(bulkResponse.buildFailureMessage());
 		} else {
-			log.debug("Elasticsearch Add data in Index {} succefully in {} ms.", indexName, bulkResponse.tookInMillis());
+			log.debug("Elasticsearch Add data in Index {} succefully in {} ms.", indexName, bulkResponse.getTookInMillis());
 		}
 	}
 
 	public void optimize(String indexName) throws Exception {
 		OptimizeRequestBuilder optimizeRequest = client.admin().indices().prepareOptimize(indexName).setMaxNumSegments(1);
 		OptimizeResponse optimizeRes = optimizeRequest.execute().actionGet();
-		Assert.assertTrue(optimizeRes.failedShards() < 1);
+		Assert.assertTrue(optimizeRes.getFailedShards() < 1);
 	}
 
 	public void refresh(String indexName) throws Exception {
@@ -388,12 +393,15 @@ public class ElasticInitializer implements MethodRule {
 		// System.out.println(new String(out.copiedByteArray()));
 		// System.out.println("**************************************");
 
-		ImmutableMap<String, IndexMetaData> map = response.state().metaData().indices();
-		for (String key : map.keySet()) {
-			IndexMetaData val = map.get(key);
-			ImmutableMap<String, MappingMetaData> mappings = val.mappings();
-			for (String mappingKey : mappings.keySet()) {
-				MappingMetaData mapping = mappings.get(mappingKey);
+        ImmutableOpenMap<String, IndexMetaData> map = response.getState().metaData().indices();
+        UnmodifiableIterator<IndexMetaData> mapIt = map.valuesIt();
+        while( mapIt.hasNext()) {
+            IndexMetaData val = mapIt.next();
+            ImmutableOpenMap<String, MappingMetaData> mappings = val.mappings();
+            // Mapping
+            UnmodifiableIterator<MappingMetaData> mappingIt = mappings.valuesIt();
+            while( mappingIt.hasNext()) {
+	   		    MappingMetaData mapping = mappingIt.next();
 				System.out.println(mapping.source());
 			}
 		}

@@ -62,8 +62,8 @@ public class EsFirstnameTemplateTest {
                 .setQuery(termQuery("country", "FR"))
                 .addField("country").addField("sexe")
                 .execute().actionGet();
-        if (searchResponse.failedShards() > 0) {
-            logger.warn("failed search " + Arrays.toString(searchResponse.shardFailures()));
+        if (searchResponse.getFailedShards() > 0) {
+            logger.warn("failed search " + Arrays.toString(searchResponse.getShardFailures()));
         }
 //        clean()	;
     }

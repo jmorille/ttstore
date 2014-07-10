@@ -46,7 +46,7 @@ public class SearchIcecatProductTest {
  		// Search
 		TermQueryBuilder query = QueryBuilders.termQuery("eans", ean);
 		SearchResponse response = esClient.prepareSearch(indexName).setQuery(query).setSize(1).execute().actionGet();
-		SearchHits hits = response.hits();
+		SearchHits hits = response.getHits();
 		// Check result
 		Assert.assertEquals(1, hits.totalHits() );
 		if (hits.totalHits() == 1) {
