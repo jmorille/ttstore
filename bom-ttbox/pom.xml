@@ -31,8 +31,8 @@
     <postgresql.version>9.1-901.jdbc4</postgresql.version> <!-- 9.0-801.jdbc4 -->
 
     <!-- Logging -->
-    <slf4j.version>1.6.4</slf4j.version>
-    <logback.version>1.0.1</logback.version>
+    <slf4j.version>1.7.7</slf4j.version>
+    <logback.version>1.1.2</logback.version>
 
     <!-- Search -->
     <elasticsearch.version>1.2.2</elasticsearch.version>
@@ -40,7 +40,7 @@
     <jackson-module-hibernate.version>1.8.5</jackson-module-hibernate.version>
     
     <!-- Spring -->
-    <spring.version>3.1.1.RELEASE</spring.version> <!--  3.0.6.RELEASE, 3.1.0.RELEASE -->
+    <spring.version>3.2.9.RELEASE</spring.version> <!--  3.0.6.RELEASE, 3.1.0.RELEASE -->
     <spring.security.version>3.1.0.RELEASE</spring.security.version> <!-- 3.0.7.RELEASE, 3.1.0.RC3 -->
     <spring-batch.version>2.1.8.RELEASE</spring-batch.version> <!-- -->
     <spring-integration.version>2.0.5.RELEASE</spring-integration.version>
