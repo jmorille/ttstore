@@ -1,15 +1,15 @@
 package eu.ttbox.batch.icecat.dao.audit;
 
-import java.io.Serializable;
-import java.util.HashMap;
-import java.util.Map;
-
 import org.hibernate.EmptyInterceptor;
 import org.hibernate.Transaction;
 import org.hibernate.type.Type;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
+
+import java.io.Serializable;
+import java.util.HashMap;
+import java.util.Map;
 
 @Service("auditInterceptor")
 public class EntityAuditInterceptor extends EmptyInterceptor {

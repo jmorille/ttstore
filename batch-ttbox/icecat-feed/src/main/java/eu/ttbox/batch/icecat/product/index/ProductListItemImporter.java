@@ -1,10 +1,11 @@
 package eu.ttbox.batch.icecat.product.index;
 
-import java.io.IOException;
-import java.util.Date;
-
-import javax.validation.ConstraintViolationException;
-
+import biz.icecat.files.v1.IcecatFile;
+import eu.ttbox.batch.core.fs.ProxyCacheDownloadConnector;
+import eu.ttbox.batch.icecat.dao.IcecatDAO;
+import eu.ttbox.batch.icecat.product.detail.model.ProductHelper;
+import eu.ttbox.batch.icecat.product.detail.model.ProductSynchroniser;
+import eu.ttbox.icecat.model.product.IcecatProduct;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,12 +16,9 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
-import biz.icecat.files.v1.IcecatFile;
-import eu.ttbox.batch.core.fs.ProxyCacheDownloadConnector;
-import eu.ttbox.batch.icecat.dao.IcecatDAO;
-import eu.ttbox.batch.icecat.product.detail.model.ProductHelper;
-import eu.ttbox.batch.icecat.product.detail.model.ProductSynchroniser;
-import eu.ttbox.icecat.model.product.IcecatProduct;
+import javax.validation.ConstraintViolationException;
+import java.io.IOException;
+import java.util.Date;
 
 @Service
 public class ProductListItemImporter {

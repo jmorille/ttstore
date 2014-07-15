@@ -4,7 +4,6 @@ import com.beust.jcommander.IParameterValidator;
 import com.beust.jcommander.ParameterException;
 import com.google.common.base.Joiner;
 import com.google.common.base.Strings;
-
 import eu.ttbox.batch.icecat.IcecatFeedEnum;
 
 public class IcecatFeedEnumValidador implements IParameterValidator {

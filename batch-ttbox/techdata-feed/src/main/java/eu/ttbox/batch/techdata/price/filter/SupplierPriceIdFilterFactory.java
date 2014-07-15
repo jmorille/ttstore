@@ -1,13 +1,11 @@
 package eu.ttbox.batch.techdata.price.filter;
 
-import java.util.List;
-
-import org.springframework.beans.factory.FactoryBean;
-import org.springframework.beans.factory.annotation.Autowired;
-
 import eu.ttbox.batch.techdata.core.fs.filter.FtpFileIdFileListFilter;
 import eu.ttbox.batch.techdata.dao.TTBoxDAO;
 import eu.ttbox.model.supplier.SupplierEnum;
+import org.springframework.beans.factory.annotation.Autowired;
+
+import java.util.List;
 
 public class SupplierPriceIdFilterFactory //implements FactoryBean<FtpFileIdFileListFilter>
 {

@@ -1,16 +1,5 @@
 package eu.ttbox.feed.core.download;
 
-import java.io.BufferedOutputStream;
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.List;
-import java.util.zip.GZIPOutputStream;
-
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.apache.commons.net.ftp.FTPFile;
@@ -22,6 +11,12 @@ import org.springframework.integration.file.remote.session.SessionFactory;
 import org.springframework.integration.file.remote.synchronizer.InboundFileSynchronizer;
 import org.springframework.util.Assert;
 import org.springframework.util.ObjectUtils;
+
+import java.io.*;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.List;
+import java.util.zip.GZIPOutputStream;
 
 public class FtpInboundFileSynchronizer implements InboundFileSynchronizer, InitializingBean {
 

@@ -1,10 +1,9 @@
 package eu.ttbox.batch.techdata.core.sort.reader;
 
+import eu.ttbox.batch.techdata.core.sort.SortVO;
 import org.springframework.batch.item.file.mapping.FieldSetMapper;
 import org.springframework.batch.item.file.transform.FieldSet;
 import org.springframework.validation.BindException;
-
-import eu.ttbox.batch.techdata.core.sort.SortVO;
 
 public class SortVOFieldSetMapper implements FieldSetMapper<SortVO> {
 

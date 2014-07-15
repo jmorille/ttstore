@@ -1,12 +1,11 @@
 package eu.ttbox.batch.icecat.campaign.dependency;
 
-import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
-
 import biz.icecat.campaigns.v1.Image;
 import eu.ttbox.batch.icecat.referential.dependency.AbstractDependencyDifferential;
 import eu.ttbox.icecat.model.campaign.IcecatCampaign;
 import eu.ttbox.icecat.model.campaign.IcecatCampaignGallery;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 @Transactional
 @Service("icecatCampaignGalleryDifferential")

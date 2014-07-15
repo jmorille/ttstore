@@ -1,16 +1,5 @@
 package eu.ttbox.batch.icecat.campaign.model;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
-
 import biz.icecat.campaigns.v1.Campaign;
 import biz.icecat.campaigns.v1.Image;
 import biz.icecat.campaigns.v1.Product;
@@ -20,6 +9,16 @@ import eu.ttbox.batch.icecat.referential.model.AbstractIcecatModelCreatorImpl;
 import eu.ttbox.icecat.model.campaign.IcecatCampaign;
 import eu.ttbox.icecat.model.campaign.IcecatCampaignGallery;
 import eu.ttbox.icecat.model.campaign.IcecatCampaignKit;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
 
 @Transactional
 @Service("icecatCampaignModelCreator")

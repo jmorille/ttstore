@@ -1,14 +1,13 @@
 package eu.ttbox.batch.techdata.price;
 
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-
-import org.springframework.batch.item.file.transform.FieldSet;
-
 import eu.ttbox.batch.core.reader.differential.DifferentialItem.CUDStatus;
 import eu.ttbox.batch.techdata.price.diff.PriceDifferentialItem;
 import eu.ttbox.model.supplier.SupplierPrice;
+import org.springframework.batch.item.file.transform.FieldSet;
+
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
 
 public class PriceDifferentialVO {
 	

@@ -1,7 +1,8 @@
 package eu.ttbox.batch.icecat.referential.model;
 
-import java.lang.reflect.ParameterizedType;
-
+import eu.ttbox.batch.icecat.dao.IcecatDAO;
+import eu.ttbox.batch.icecat.referential.dependency.IIcecatTexDifferential;
+import eu.ttbox.batch.icecat.referential.dependency.IIcecatVocabularyDifferential;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,9 +10,7 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
-import eu.ttbox.batch.icecat.dao.IcecatDAO;
-import eu.ttbox.batch.icecat.referential.dependency.IIcecatTexDifferential;
-import eu.ttbox.batch.icecat.referential.dependency.IIcecatVocabularyDifferential;
+import java.lang.reflect.ParameterizedType;
 
 @SuppressWarnings("unchecked")
 public abstract class AbstractIcecatModelCreatorImpl<REF, FEED> implements IIcecatModelCreator<REF, FEED> {

@@ -1,10 +1,9 @@
 package eu.ttbox.batch.techdata.price;
 
-import org.springframework.batch.item.file.transform.FieldSet;
-import org.springframework.stereotype.Service;
-
 import eu.ttbox.batch.core.reader.differential.DifferentialComparator;
 import eu.ttbox.model.supplier.SupplierPrice;
+import org.springframework.batch.item.file.transform.FieldSet;
+import org.springframework.stereotype.Service;
 
 @Service("priceTechdataItemComparator")
 public class PriceItemComparator implements DifferentialComparator<SupplierPrice, FieldSet> {

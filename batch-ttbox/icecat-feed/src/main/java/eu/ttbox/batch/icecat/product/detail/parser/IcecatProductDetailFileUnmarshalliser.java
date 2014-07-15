@@ -1,15 +1,8 @@
 package eu.ttbox.batch.icecat.product.detail.parser;
 
-import java.io.BufferedInputStream;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.io.InputStream;
-import java.util.zip.GZIPInputStream;
-
-import javax.xml.transform.stream.StreamSource;
-
+import biz.icecat.referential.v1.ICECATRefInterface;
+import biz.icecat.referential.v1.Product;
+import eu.ttbox.batch.core.fs.FileUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,9 +11,9 @@ import org.springframework.oxm.MarshallingException;
 import org.springframework.oxm.jaxb.Jaxb2Marshaller;
 import org.springframework.stereotype.Service;
 
-import biz.icecat.referential.v1.ICECATRefInterface;
-import biz.icecat.referential.v1.Product;
-import eu.ttbox.batch.core.fs.FileUtils;
+import javax.xml.transform.stream.StreamSource;
+import java.io.*;
+import java.util.zip.GZIPInputStream;
 
 @Service
 public class IcecatProductDetailFileUnmarshalliser {

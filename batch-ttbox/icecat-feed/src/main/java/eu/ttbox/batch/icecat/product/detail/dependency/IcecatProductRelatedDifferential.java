@@ -1,14 +1,5 @@
 package eu.ttbox.batch.icecat.product.detail.dependency;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
-import javax.annotation.Resource;
-
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.stereotype.Service;
-
 import biz.icecat.referential.v1.Product;
 import biz.icecat.referential.v1.ProductRelated;
 import eu.ttbox.batch.icecat.product.detail.ProductImporter;
@@ -18,6 +9,13 @@ import eu.ttbox.icecat.model.product.IcecatProduct;
 import eu.ttbox.icecat.model.product.IcecatProductRelated;
 import eu.ttbox.icecat.model.product.QualityEnum;
 import eu.ttbox.icecat.model.referential.IcecatCategory;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Service;
+
+import javax.annotation.Resource;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  * Note: If ProductRelated_ID = 0, it means, that this relation was generated dynamically, according to RelationsList.xml rules.

@@ -1,13 +1,12 @@
 package eu.ttbox.batch.icecat.referential.dependency;
 
-import org.apache.commons.lang.StringUtils;
-import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
-
 import biz.icecat.referential.v1.Keywords;
 import eu.ttbox.icecat.model.referential.IcecatCategory;
 import eu.ttbox.icecat.model.referential.IcecatCategoryKeywords;
 import eu.ttbox.icecat.model.referential.IcecatLanguageEnum;
+import org.apache.commons.lang.StringUtils;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 @Transactional
 @Service("icecatCategoryKeywordsDifferential")

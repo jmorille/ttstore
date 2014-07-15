@@ -1,26 +1,24 @@
 package eu.ttbox.batch.techdata.price.list;
 
-import java.io.File;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
+import eu.ttbox.batch.core.fs.GzipResource;
+import eu.ttbox.batch.core.reader.differential.DifferentialFileHibernateItemReader;
+import eu.ttbox.batch.techdata.price.PriceDifferentialVO;
+import eu.ttbox.batch.techdata.price.PriceItemProcessor;
+import eu.ttbox.batch.techdata.price.diff.PriceDifferentialItem;
+import eu.ttbox.model.supplier.SupplierEnum;
+import eu.ttbox.model.supplier.SupplierPrice;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.batch.item.ExecutionContext;
 import org.springframework.batch.item.ItemProcessor;
 import org.springframework.batch.item.file.transform.FieldSet;
 
-import eu.ttbox.batch.core.fs.GzipResource;
-import eu.ttbox.batch.core.reader.differential.DifferentialFileHibernateItemReader;
-import eu.ttbox.batch.core.reader.differential.DifferentialItem;
-import eu.ttbox.batch.techdata.price.PriceDifferentialVO;
-import eu.ttbox.batch.techdata.price.PriceItemProcessor;
-import eu.ttbox.batch.techdata.price.diff.PriceDifferentialItem;
-import eu.ttbox.model.supplier.SupplierEnum;
-import eu.ttbox.model.supplier.SupplierPrice;
+import java.io.File;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
  
 public class PriceListItemProcessor implements ItemProcessor<File, PriceDifferentialVO>{

@@ -1,8 +1,7 @@
 package eu.ttbox.batch.techdata.kit;
 
-import org.springframework.batch.item.file.transform.FieldSet;
-
 import com.google.common.base.Joiner;
+import org.springframework.batch.item.file.transform.FieldSet;
 
 public enum KitFieldEnum {
 

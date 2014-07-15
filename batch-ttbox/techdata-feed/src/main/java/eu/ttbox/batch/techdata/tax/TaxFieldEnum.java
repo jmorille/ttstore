@@ -1,10 +1,9 @@
 package eu.ttbox.batch.techdata.tax;
 
-import java.math.BigDecimal;
-
+import com.google.common.base.Joiner;
 import org.springframework.batch.item.file.transform.FieldSet;
 
-import com.google.common.base.Joiner;
+import java.math.BigDecimal;
 
 public enum TaxFieldEnum {
 

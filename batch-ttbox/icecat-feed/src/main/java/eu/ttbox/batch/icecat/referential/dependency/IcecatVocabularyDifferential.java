@@ -1,17 +1,16 @@
 package eu.ttbox.batch.icecat.referential.dependency;
 
-import java.util.ArrayList;
-import java.util.List;
-
+import biz.icecat.referential.v1.Name;
+import biz.icecat.referential.v1.Names;
+import eu.ttbox.icecat.model.referential.IcecatLanguageEnum;
+import eu.ttbox.icecat.model.referential.IcecatVocabulary;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
-import biz.icecat.referential.v1.Name;
-import biz.icecat.referential.v1.Names;
-import eu.ttbox.icecat.model.referential.IcecatLanguageEnum;
-import eu.ttbox.icecat.model.referential.IcecatVocabulary;
+import java.util.ArrayList;
+import java.util.List;
 
 @Service("icecatVocabularyDifferential")
 @Transactional(propagation = Propagation.REQUIRED)

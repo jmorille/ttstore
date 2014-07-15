@@ -1,8 +1,8 @@
 package eu.ttbox.batch.icecat.referential.dependency;
 
-import java.util.List;
-
 import eu.ttbox.icecat.model.IIcecatPersistantModelObject;
+
+import java.util.List;
 
 public interface IDependencyDifferential<MASTER, REF extends IIcecatPersistantModelObject, FEED> {
 

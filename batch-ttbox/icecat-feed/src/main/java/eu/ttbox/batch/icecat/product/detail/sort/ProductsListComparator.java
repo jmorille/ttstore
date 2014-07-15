@@ -1,9 +1,9 @@
 package eu.ttbox.batch.icecat.product.detail.sort;
 
+import biz.icecat.files.v1.IcecatFile;
+
 import java.io.Serializable;
 import java.util.Comparator;
-
-import biz.icecat.files.v1.IcecatFile;
 
 public class ProductsListComparator implements Serializable, Comparator<IcecatFile> {
 

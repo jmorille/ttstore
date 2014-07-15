@@ -1,12 +1,5 @@
 package eu.ttbox.batch.icecat.referential.supplier;
 
-import java.util.List;
-
-import org.springframework.batch.item.ItemWriter;
-import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Propagation;
-import org.springframework.transaction.annotation.Transactional;
-
 import biz.icecat.referential.v1.ParentProductFamily;
 import biz.icecat.referential.v1.ProductFamily;
 import biz.icecat.referential.v1.Supplier;
@@ -14,6 +7,12 @@ import eu.ttbox.batch.icecat.referential.AbstractReferentialItemWriter;
 import eu.ttbox.icecat.model.product.IcecatProductLine;
 import eu.ttbox.icecat.model.referential.IcecatBrand;
 import eu.ttbox.icecat.model.referential.IcecatCategory;
+import org.springframework.batch.item.ItemWriter;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
+
+import java.util.List;
 
 @Service("supplierProductFamiliesListIcecatItemWriter")
 public class SupplierProductFamiliesListItemWriter extends AbstractReferentialItemWriter<ProductFamily> implements ItemWriter<ProductFamily> {

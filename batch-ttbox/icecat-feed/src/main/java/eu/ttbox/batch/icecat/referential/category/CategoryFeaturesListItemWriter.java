@@ -1,15 +1,5 @@
 package eu.ttbox.batch.icecat.referential.category;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import org.springframework.batch.item.ItemWriter;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Propagation;
-import org.springframework.transaction.annotation.Transactional;
-
 import biz.icecat.referential.v1.Category;
 import biz.icecat.referential.v1.CategoryFeatureGroup;
 import biz.icecat.referential.v1.Feature;
@@ -20,6 +10,15 @@ import eu.ttbox.icecat.model.referential.IcecatCategory;
 import eu.ttbox.icecat.model.referential.IcecatCategoryFeature;
 import eu.ttbox.icecat.model.referential.IcecatCategoryFeatureGroup;
 import eu.ttbox.icecat.model.referential.IcecatMeasure;
+import org.springframework.batch.item.ItemWriter;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Service("categoryFeaturesListIcecatItemWriter")
 public class CategoryFeaturesListItemWriter extends AbstractReferentialItemWriter<Category> implements ItemWriter<Category> {

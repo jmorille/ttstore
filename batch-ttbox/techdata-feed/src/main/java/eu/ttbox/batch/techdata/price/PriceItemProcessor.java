@@ -1,18 +1,6 @@
 package eu.ttbox.batch.techdata.price;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.springframework.batch.item.ItemProcessor;
-import org.springframework.batch.item.file.transform.FieldSet;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-
 import com.google.common.base.Objects;
-
-import eu.ttbox.batch.core.reader.differential.DifferentialItem;
 import eu.ttbox.batch.techdata.core.converter.ProductConverter;
 import eu.ttbox.batch.techdata.price.diff.PriceDifferentialItem;
 import eu.ttbox.model.pricing.CurrencyEnum;
@@ -21,6 +9,15 @@ import eu.ttbox.model.product.Product;
 import eu.ttbox.model.supplier.SupplierEnum;
 import eu.ttbox.model.supplier.SupplierPrice;
 import eu.ttbox.model.supplier.SupplierPromoDetail;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.batch.item.ItemProcessor;
+import org.springframework.batch.item.file.transform.FieldSet;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import java.math.BigDecimal;
+import java.util.Date;
 
 @Service("priceTechdataItemProcessor")
 public class PriceItemProcessor implements

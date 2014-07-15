@@ -1,8 +1,8 @@
 package eu.ttbox.batch.icecat.product.detail.sort;
 
-import java.util.Comparator;
-
 import biz.icecat.files.v1.IcecatFile;
+
+import java.util.Comparator;
 
 public enum ProductsListComparatorEnum {
 

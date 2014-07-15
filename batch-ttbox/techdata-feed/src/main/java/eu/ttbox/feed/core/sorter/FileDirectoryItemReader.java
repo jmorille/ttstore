@@ -1,10 +1,6 @@
 package eu.ttbox.feed.core.sorter;
 
-import java.io.File;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
-
+import eu.ttbox.feed.core.download.folder.LocalFolderByDateProvider;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.batch.item.ItemReader;
@@ -14,7 +10,10 @@ import org.springframework.batch.item.UnexpectedInputException;
 import org.springframework.integration.file.filters.FileListFilter;
 import org.springframework.util.ObjectUtils;
 
-import eu.ttbox.feed.core.download.folder.LocalFolderByDateProvider;
+import java.io.File;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 
 public class FileDirectoryItemReader implements ItemReader<File> {
 

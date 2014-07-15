@@ -1,25 +1,25 @@
 package eu.ttbox.batch.icecat.product.diff.elasticsearch;
 
-import java.io.StringWriter;
-import java.util.List;
-
-import org.codehaus.jackson.map.ObjectMapper;
-import org.elasticsearch.action.ActionListener;
-import org.elasticsearch.action.bulk.BulkResponse;
-import org.elasticsearch.client.Client;
-import org.elasticsearch.client.action.bulk.BulkRequestBuilder;
-import org.elasticsearch.client.action.delete.DeleteRequestBuilder;
-import org.elasticsearch.client.action.index.IndexRequestBuilder;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.springframework.batch.item.ItemWriter;
-import org.springframework.beans.factory.InitializingBean;
-
 import biz.icecat.files.v1.IcecatFile;
 import eu.ttbox.batch.core.reader.differential.DifferentialItem;
 import eu.ttbox.batch.core.reader.differential.DifferentialItem.CUDStatus;
 import eu.ttbox.icecat.model.IProductIndex;
 import eu.ttbox.icecat.model.product.IcecatProduct;
+import org.codehaus.jackson.map.ObjectMapper;
+import org.elasticsearch.action.ActionListener;
+import org.elasticsearch.action.bulk.BulkRequestBuilder;
+import org.elasticsearch.action.bulk.BulkResponse;
+import org.elasticsearch.action.delete.DeleteRequestBuilder;
+import org.elasticsearch.action.index.IndexRequestBuilder;
+import org.elasticsearch.client.Client;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.batch.item.ItemWriter;
+import org.springframework.beans.factory.InitializingBean;
+
+import java.io.StringWriter;
+import java.util.List;
 
 public class EsProductIndexWriter implements ItemWriter<DifferentialItem<IcecatProduct, IcecatFile>>, InitializingBean {
 
@@ -99,7 +99,7 @@ public class EsProductIndexWriter implements ItemWriter<DifferentialItem<IcecatP
 				@Override
 				public void onResponse(BulkResponse response) {
 
-					LOG.debug("index {} requests success in {}", response.items().length, response.getTook());
+					LOG.debug("index {} requests success in {}", response.getItems().length, response.getTook());
 				}
 
 				@Override

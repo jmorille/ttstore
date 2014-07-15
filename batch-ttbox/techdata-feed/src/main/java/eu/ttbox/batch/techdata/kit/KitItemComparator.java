@@ -1,10 +1,9 @@
 package eu.ttbox.batch.techdata.kit;
 
-import org.springframework.batch.item.file.transform.FieldSet;
-import org.springframework.stereotype.Service;
-
 import eu.ttbox.batch.core.reader.differential.DifferentialComparator;
 import eu.ttbox.model.product.Product;
+import org.springframework.batch.item.file.transform.FieldSet;
+import org.springframework.stereotype.Service;
 
 @Service("kitTechdataItemComparator")
 public class KitItemComparator implements DifferentialComparator<Product, FieldSet> {

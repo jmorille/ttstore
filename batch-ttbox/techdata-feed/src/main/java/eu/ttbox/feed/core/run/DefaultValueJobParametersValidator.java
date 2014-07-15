@@ -1,11 +1,11 @@
 package eu.ttbox.feed.core.run;
 
-import java.util.Map;
-
 import org.springframework.batch.core.JobParameter;
 import org.springframework.batch.core.JobParameters;
 import org.springframework.batch.core.JobParametersInvalidException;
 import org.springframework.batch.core.job.DefaultJobParametersValidator;
+
+import java.util.Map;
 
 public class DefaultValueJobParametersValidator extends DefaultJobParametersValidator {
 

@@ -1,21 +1,13 @@
 package eu.ttbox.batch.icecat.product.update;
 
-import java.io.StringWriter;
-import java.util.Date;
-import java.util.List;
-import java.util.concurrent.ExecutionException;
-import java.util.concurrent.TimeUnit;
-import java.util.concurrent.TimeoutException;
-
+import eu.ttbox.icecat.model.IProductDetail;
+import eu.ttbox.icecat.model.product.IcecatProduct;
 import org.codehaus.jackson.map.ObjectMapper;
 import org.elasticsearch.action.ActionListener;
+import org.elasticsearch.action.bulk.BulkRequestBuilder;
 import org.elasticsearch.action.bulk.BulkResponse;
-import org.elasticsearch.action.get.GetResponse;
+import org.elasticsearch.action.index.IndexRequestBuilder;
 import org.elasticsearch.client.Client;
-import org.elasticsearch.client.action.bulk.BulkRequestBuilder;
-import org.elasticsearch.client.action.get.GetRequestBuilder;
-import org.elasticsearch.client.action.index.IndexRequestBuilder;
-import org.elasticsearch.index.get.GetField;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.batch.item.ItemWriter;
@@ -24,8 +16,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
-import eu.ttbox.icecat.model.IProductDetail;
-import eu.ttbox.icecat.model.product.IcecatProduct;
+import java.io.StringWriter;
+import java.util.List;
 
 @Service
 public class EsIcecatProductItemWriter implements ItemWriter<IcecatProduct>, InitializingBean {
@@ -50,7 +42,7 @@ public class EsIcecatProductItemWriter implements ItemWriter<IcecatProduct>, Ini
 
 		@Override
 		public void onResponse(BulkResponse response) {
-			LOG.info("index {} requests success in {} : [{}]", new Object[] { response.items().length, response.getTook(), response.buildFailureMessage() });
+			LOG.info("index {} requests success in {} : [{}]", new Object[] { response.getItems().length, response.getTook(), response.buildFailureMessage() });
 		}
 
 		@Override

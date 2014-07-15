@@ -1,16 +1,15 @@
 package eu.ttbox.batch.icecat.referential.feature;
 
+import biz.icecat.referential.v1.Feature;
+import eu.ttbox.batch.icecat.referential.AbstractReferentialItemWriter;
+import eu.ttbox.batch.icecat.referential.model.IIcecatModelCreator;
+import eu.ttbox.icecat.model.referential.IcecatFeature;
 import org.springframework.batch.item.ItemWriter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
-
-import biz.icecat.referential.v1.Feature;
-import eu.ttbox.batch.icecat.referential.AbstractReferentialItemWriter;
-import eu.ttbox.batch.icecat.referential.model.IIcecatModelCreator;
-import eu.ttbox.icecat.model.referential.IcecatFeature;
 
 @Service("featureListIcecatItemWriter")
 public class FeatureListItemWriter extends AbstractReferentialItemWriter<Feature> implements ItemWriter<Feature> {

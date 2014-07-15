@@ -1,18 +1,17 @@
 package eu.ttbox.batch.icecat.product.detail.dependency;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-
-import org.apache.commons.lang.StringUtils;
-import org.springframework.beans.factory.InitializingBean;
-import org.springframework.stereotype.Service;
-
 import biz.icecat.referential.v1.ProductMultimediaObject.MultimediaObject;
 import eu.ttbox.batch.icecat.referential.dependency.AbstractDependencyDifferential;
 import eu.ttbox.icecat.model.product.IcecatProduct;
 import eu.ttbox.icecat.model.product.IcecatProductMultimediaObject;
 import eu.ttbox.icecat.model.referential.IcecatLanguageEnum;
+import org.apache.commons.lang.StringUtils;
+import org.springframework.beans.factory.InitializingBean;
+import org.springframework.stereotype.Service;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 @Service("icecatProductMultimediaObjectDifferential")
 public class IcecatProductMultimediaObjectDifferential extends AbstractDependencyDifferential<IcecatProduct, IcecatProductMultimediaObject, MultimediaObject>

@@ -1,9 +1,8 @@
 package eu.ttbox.batch.techdata.price.diff;
 
-import org.springframework.stereotype.Service;
-
 import eu.ttbox.batch.core.reader.differential.DifferentialItem.CUDStatus;
 import eu.ttbox.batch.core.reader.differential.DifferentialItemFactory;
+import org.springframework.stereotype.Service;
 
 @Service("priceTechdataDifferentialItemVOFactory")
 public class PriceDifferentialItemVOFactory<MASTER, JOIN> implements DifferentialItemFactory<MASTER, JOIN> {

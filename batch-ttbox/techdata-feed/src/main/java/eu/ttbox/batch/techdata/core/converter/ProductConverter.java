@@ -1,18 +1,17 @@
 package eu.ttbox.batch.techdata.core.converter;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
+import eu.ttbox.batch.techdata.dao.TTBoxDAO;
+import eu.ttbox.model.product.CatalogSrcEnum;
+import eu.ttbox.model.product.Product;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.DisposableBean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import eu.ttbox.batch.techdata.dao.TTBoxDAO;
-import eu.ttbox.model.product.CatalogSrcEnum;
-import eu.ttbox.model.product.Product;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 @Service
 public class ProductConverter implements DisposableBean {

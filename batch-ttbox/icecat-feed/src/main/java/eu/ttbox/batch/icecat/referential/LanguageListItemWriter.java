@@ -1,13 +1,12 @@
 package eu.ttbox.batch.icecat.referential;
 
+import biz.icecat.referential.v1.LanguageList.Language;
+import eu.ttbox.icecat.model.referential.IcecatLanguage;
+import eu.ttbox.icecat.model.referential.IcecatLanguageEnum;
 import org.springframework.batch.item.ItemWriter;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
-
-import biz.icecat.referential.v1.LanguageList.Language;
-import eu.ttbox.icecat.model.referential.IcecatLanguage;
-import eu.ttbox.icecat.model.referential.IcecatLanguageEnum;
 
 @Service("languageListsIcecatItemWriter")
 public class LanguageListItemWriter extends AbstractReferentialItemWriter<Language> implements ItemWriter<Language> {

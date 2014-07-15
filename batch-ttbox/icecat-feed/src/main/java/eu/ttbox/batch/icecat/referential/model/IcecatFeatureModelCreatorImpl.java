@@ -1,15 +1,14 @@
 package eu.ttbox.batch.icecat.referential.model;
 
-import org.apache.commons.lang.StringUtils;
-import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
-
 import biz.icecat.referential.v1.Descriptions;
 import biz.icecat.referential.v1.Feature;
 import biz.icecat.referential.v1.Measure;
 import biz.icecat.referential.v1.Names;
 import eu.ttbox.icecat.model.referential.IcecatFeature;
 import eu.ttbox.icecat.model.referential.IcecatMeasure;
+import org.apache.commons.lang.StringUtils;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 @Transactional
 @Service("icecatFeatureModelCreator")

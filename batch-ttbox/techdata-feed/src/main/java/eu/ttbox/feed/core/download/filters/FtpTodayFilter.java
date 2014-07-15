@@ -1,11 +1,11 @@
 package eu.ttbox.feed.core.download.filters;
 
+import org.apache.commons.net.ftp.FTPFile;
+import org.springframework.integration.file.filters.FileListFilter;
+
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
-
-import org.apache.commons.net.ftp.FTPFile;
-import org.springframework.integration.file.filters.FileListFilter;
 
 public class FtpTodayFilter implements FileListFilter<FTPFile> {
 

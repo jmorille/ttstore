@@ -1,8 +1,8 @@
 package eu.ttbox.batch.icecat.indexor;
 
-import java.io.Serializable;
-
 import org.elasticsearch.common.xcontent.XContentBuilder;
+
+import java.io.Serializable;
 
 @SuppressWarnings("serial")
 public class ElasticItem implements Serializable {

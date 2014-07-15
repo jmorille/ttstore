@@ -1,7 +1,12 @@
 package eu.ttbox.batch.techdata.stock;
 
-import java.util.Date;
-
+import com.google.common.base.Objects;
+import eu.ttbox.batch.core.reader.differential.DifferentialItem;
+import eu.ttbox.batch.core.reader.differential.DifferentialItem.CUDStatus;
+import eu.ttbox.batch.techdata.core.converter.ProductConverter;
+import eu.ttbox.model.product.Product;
+import eu.ttbox.model.supplier.SupplierEnum;
+import eu.ttbox.model.supplier.SupplierStock;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.batch.item.ItemProcessor;
@@ -9,15 +14,7 @@ import org.springframework.batch.item.file.transform.FieldSet;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.google.common.base.Objects;
-
-import eu.ttbox.batch.core.reader.differential.DifferentialItem;
-import eu.ttbox.batch.core.reader.differential.DifferentialItem.CUDStatus;
-import eu.ttbox.batch.techdata.core.converter.ProductConverter;
-import eu.ttbox.model.product.CatalogSrcEnum;
-import eu.ttbox.model.product.Product;
-import eu.ttbox.model.supplier.SupplierEnum;
-import eu.ttbox.model.supplier.SupplierStock;
+import java.util.Date;
 
 @Service("stockTechdataItemProcessor")
 public class StockItemProcessor implements

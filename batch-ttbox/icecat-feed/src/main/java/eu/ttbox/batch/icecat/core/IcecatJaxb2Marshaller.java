@@ -1,19 +1,17 @@
 package eu.ttbox.batch.icecat.core;
 
-import java.io.File;
-import java.io.IOException;
-import java.io.InputStream;
-
-import javax.xml.transform.stream.StreamSource;
-
+import biz.icecat.referential.v1.ICECATRefInterface;
+import biz.icecat.referential.v1.Product;
+import eu.ttbox.batch.core.fs.GzipResource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.oxm.jaxb.Jaxb2Marshaller;
 import org.springframework.stereotype.Service;
 
-import biz.icecat.referential.v1.ICECATRefInterface;
-import biz.icecat.referential.v1.Product;
-import eu.ttbox.batch.core.fs.GzipResource;
+import javax.xml.transform.stream.StreamSource;
+import java.io.File;
+import java.io.IOException;
+import java.io.InputStream;
 
 @Service
 public class IcecatJaxb2Marshaller {

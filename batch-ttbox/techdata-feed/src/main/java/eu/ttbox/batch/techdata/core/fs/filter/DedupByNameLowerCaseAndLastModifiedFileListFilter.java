@@ -1,16 +1,13 @@
 package eu.ttbox.batch.techdata.core.fs.filter;
 
+import eu.ttbox.batch.core.download.ftp.FtpFileDownloadRequest;
+import eu.ttbox.batch.core.download.ftp.listfilter.FileListFilter;
+import org.apache.commons.net.ftp.FTPFile;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
-import org.apache.commons.net.ftp.FTPFile;
-
-import com.google.common.base.Joiner;
-
-import eu.ttbox.batch.core.download.ftp.FtpFileDownloadRequest;
-import eu.ttbox.batch.core.download.ftp.listfilter.FileListFilter;
 
 public class DedupByNameLowerCaseAndLastModifiedFileListFilter implements FileListFilter<FtpFileDownloadRequest> {
 

@@ -1,11 +1,18 @@
 package eu.ttbox.batch.icecat.product.detail;
 
-import java.io.File;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-
+import biz.icecat.files.v1.CountryMarkets;
+import biz.icecat.files.v1.EANUPCS;
+import biz.icecat.files.v1.IcecatFile;
+import biz.icecat.referential.v1.*;
+import biz.icecat.referential.v1.ProductGallery.ProductPicture;
+import biz.icecat.referential.v1.ProductMultimediaObject.MultimediaObject;
+import eu.ttbox.batch.core.fs.ProxyCacheDownloadConnector;
+import eu.ttbox.batch.icecat.dao.IcecatDAO;
+import eu.ttbox.batch.icecat.product.detail.model.ProductHelper;
+import eu.ttbox.batch.icecat.product.detail.model.ProductSynchroniser;
+import eu.ttbox.batch.icecat.product.detail.parser.IcecatProductDetailFileUnmarshalliser;
+import eu.ttbox.batch.icecat.referential.dependency.IDependencyDifferential;
+import eu.ttbox.icecat.model.product.*;
 import org.apache.commons.lang.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -15,36 +22,11 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
-import biz.icecat.files.v1.CountryMarkets;
-import biz.icecat.files.v1.EANUPCS;
-import biz.icecat.files.v1.IcecatFile;
-import biz.icecat.referential.v1.EANCode;
-import biz.icecat.referential.v1.Product;
-import biz.icecat.referential.v1.ProductBundled;
-import biz.icecat.referential.v1.ProductDescription;
-import biz.icecat.referential.v1.ProductFeature;
-import biz.icecat.referential.v1.ProductGallery;
-import biz.icecat.referential.v1.ProductGallery.ProductPicture;
-import biz.icecat.referential.v1.ProductMultimediaObject;
-import biz.icecat.referential.v1.ProductMultimediaObject.MultimediaObject;
-import biz.icecat.referential.v1.ProductRelated;
-import biz.icecat.referential.v1.SummaryDescription;
-import eu.ttbox.batch.core.fs.ProxyCacheDownloadConnector;
-import eu.ttbox.batch.icecat.dao.IcecatDAO;
-import eu.ttbox.batch.icecat.product.detail.model.ProductHelper;
-import eu.ttbox.batch.icecat.product.detail.model.ProductSynchroniser;
-import eu.ttbox.batch.icecat.product.detail.parser.IcecatProductDetailFileUnmarshalliser;
-import eu.ttbox.batch.icecat.referential.dependency.IDependencyDifferential;
-import eu.ttbox.icecat.model.product.IcecatProduct;
-import eu.ttbox.icecat.model.product.IcecatProductBundled;
-import eu.ttbox.icecat.model.product.IcecatProductDescription;
-import eu.ttbox.icecat.model.product.IcecatProductFeature;
-import eu.ttbox.icecat.model.product.IcecatProductFeatureLocal;
-import eu.ttbox.icecat.model.product.IcecatProductGallery;
-import eu.ttbox.icecat.model.product.IcecatProductMultimediaObject;
-import eu.ttbox.icecat.model.product.IcecatProductRelated;
-import eu.ttbox.icecat.model.product.IcecatProductSummaryDescription;
-import eu.ttbox.icecat.model.product.QualityEnum;
+import java.io.File;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
 
 @Transactional
 @Service("productImporter")

@@ -1,16 +1,15 @@
 package eu.ttbox.batch.icecat.referential.category;
 
-import javax.annotation.Resource;
-
+import biz.icecat.referential.v1.Category;
+import eu.ttbox.batch.icecat.referential.AbstractReferentialItemWriter;
+import eu.ttbox.batch.icecat.referential.model.IIcecatModelCreator;
+import eu.ttbox.icecat.model.referential.IcecatCategory;
 import org.springframework.batch.item.ItemWriter;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
-import biz.icecat.referential.v1.Category;
-import eu.ttbox.batch.icecat.referential.AbstractReferentialItemWriter;
-import eu.ttbox.batch.icecat.referential.model.IIcecatModelCreator;
-import eu.ttbox.icecat.model.referential.IcecatCategory;
+import javax.annotation.Resource;
 
 @Service("categoryListIcecatItemWriter")
 public class CategoryListItemWriter extends AbstractReferentialItemWriter<Category> implements ItemWriter<Category> {

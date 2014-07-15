@@ -64,15 +64,22 @@ public class ProxyCacheDownloadConnector {
 	}
 
 	public File downloadFile(String relativePath, Date espectedVersionDate) throws IOException {
+       // log.debug("--- downloadFile relativePath= {} : espectedVersionDate = {}", relativePath, espectedVersionDate);
 		File destFile = workingLocalFolder.getPotentialLocalFile(relativePath);
 		boolean destFilePreExist = destFile.exists();
 		boolean needToDownload = true;
 		boolean manageExpectedDate = espectedVersionDate != null;
 		// Check Version Date
 		if (destFilePreExist) {
+//            log.debug("downloadFile {} : destFilePreExist and preferLocal {}", relativePath, preferLocal);
+//            log.debug("downloadFile {} : destFilePreExist and manageExpectedDate {}", relativePath, manageExpectedDate);
+//            if (manageExpectedDate) {
+//                log.debug("lastModified {} // espectedVersionDate  {}", new Date(destFile.lastModified()), new Date(espectedVersionDate.getTime()));
+//                log.debug("lastModified - espectedVersionDate = {} ==> {}", (destFile.lastModified()- espectedVersionDate.getTime()), (destFile.lastModified() >= espectedVersionDate.getTime()) );
+//            }
 			if (preferLocal) {
 				needToDownload = false;
-			} else if (manageExpectedDate && (destFile.lastModified() >= espectedVersionDate.getTime())) {
+			} else if (manageExpectedDate && (destFile.lastModified()+999 >= espectedVersionDate.getTime())) { // lastModified as precise as secondes
 				needToDownload = false;
 				if (log.isInfoEnabled()) {
 					SimpleDateFormat sfToLog = FileUtils.getDateFormatForLog();
@@ -82,6 +89,7 @@ public class ProxyCacheDownloadConnector {
 			}
 		}
 		// Download It
+  //      log.debug("downloadFile {} : needToDownload {}", relativePath, needToDownload);
 		if (needToDownload && online) {
 			destFile = downloaderConnector.downloadFile(relativePath, destFile);
 			if (manageExpectedDate && (destFile.lastModified() < espectedVersionDate.getTime())) {

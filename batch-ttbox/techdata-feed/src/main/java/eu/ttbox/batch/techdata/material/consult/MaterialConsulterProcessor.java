@@ -1,11 +1,10 @@
 package eu.ttbox.batch.techdata.material.consult;
 
+import eu.ttbox.model.product.Product;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.batch.item.ItemProcessor;
 import org.springframework.stereotype.Service;
-
-import eu.ttbox.model.product.Product;
 
 @Service
 public class MaterialConsulterProcessor implements ItemProcessor<Product, Product>{

@@ -1,15 +1,14 @@
 package eu.ttbox.batch.icecat.referential;
 
-import java.util.List;
-
+import eu.ttbox.batch.icecat.dao.IcecatDAO;
+import eu.ttbox.batch.icecat.referential.dependency.IIcecatTexDifferential;
+import eu.ttbox.batch.icecat.referential.dependency.IIcecatVocabularyDifferential;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.batch.item.ItemWriter;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import eu.ttbox.batch.icecat.dao.IcecatDAO;
-import eu.ttbox.batch.icecat.referential.dependency.IIcecatTexDifferential;
-import eu.ttbox.batch.icecat.referential.dependency.IIcecatVocabularyDifferential;
+import java.util.List;
 
 public abstract class AbstractReferentialItemWriter<T> implements ItemWriter<T> {
 

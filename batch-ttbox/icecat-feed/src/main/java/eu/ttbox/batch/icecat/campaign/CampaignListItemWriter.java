@@ -1,7 +1,9 @@
 package eu.ttbox.batch.icecat.campaign;
 
-import java.util.List;
-
+import biz.icecat.campaigns.v1.Campaign;
+import eu.ttbox.batch.icecat.dao.IcecatDAO;
+import eu.ttbox.batch.icecat.referential.model.IIcecatModelCreator;
+import eu.ttbox.icecat.model.campaign.IcecatCampaign;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.batch.item.ItemWriter;
@@ -9,10 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
-import biz.icecat.campaigns.v1.Campaign;
-import eu.ttbox.batch.icecat.dao.IcecatDAO;
-import eu.ttbox.batch.icecat.referential.model.IIcecatModelCreator;
-import eu.ttbox.icecat.model.campaign.IcecatCampaign;
+import java.util.List;
 
 @Service("campaignListIcecatItemWriter")
 public class CampaignListItemWriter implements ItemWriter<Campaign> {

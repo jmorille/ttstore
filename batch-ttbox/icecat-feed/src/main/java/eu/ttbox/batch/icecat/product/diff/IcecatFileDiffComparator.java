@@ -1,12 +1,11 @@
 package eu.ttbox.batch.icecat.product.diff;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.springframework.stereotype.Service;
-
 import biz.icecat.files.v1.IcecatFile;
 import eu.ttbox.batch.core.reader.differential.DifferentialComparator;
 import eu.ttbox.icecat.model.product.IcecatProduct;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Service;
 
 @Service("indexFilesIcecatDifferentialComparator")
 public class IcecatFileDiffComparator implements DifferentialComparator<IcecatProduct, IcecatFile> {

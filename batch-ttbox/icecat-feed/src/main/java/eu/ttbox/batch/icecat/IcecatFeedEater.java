@@ -1,22 +1,16 @@
 package eu.ttbox.batch.icecat;
 
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.List;
-import java.util.TreeSet;
-
+import eu.ttbox.batch.icecat.dao.audit.EntityAuditInterceptor;
 import joptsimple.OptionException;
 import joptsimple.OptionParser;
 import joptsimple.OptionSet;
 import joptsimple.ValueConverter;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.util.StopWatch;
 
-import eu.ttbox.batch.icecat.dao.audit.EntityAuditInterceptor;
+import java.io.IOException;
+import java.util.*;
 
 public class IcecatFeedEater {
 

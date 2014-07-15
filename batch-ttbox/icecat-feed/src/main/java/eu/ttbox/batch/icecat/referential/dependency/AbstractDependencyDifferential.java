@@ -1,10 +1,7 @@
 package eu.ttbox.batch.icecat.referential.dependency;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
+import eu.ttbox.batch.icecat.dao.IcecatDAO;
+import eu.ttbox.icecat.model.IIcecatPersistantModelObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.InitializingBean;
@@ -13,8 +10,10 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
-import eu.ttbox.batch.icecat.dao.IcecatDAO;
-import eu.ttbox.icecat.model.IIcecatPersistantModelObject;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public abstract class AbstractDependencyDifferential<MASTER, REF extends IIcecatPersistantModelObject, FEED> implements
 		IDependencyDifferential<MASTER, REF, FEED>, InitializingBean {

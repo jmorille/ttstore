@@ -1,14 +1,13 @@
 package eu.ttbox.batch.techdata.core.fs.filter;
 
+import com.google.common.base.Joiner;
+import eu.ttbox.batch.core.download.ftp.FtpFileDownloadRequest;
+import eu.ttbox.batch.core.download.ftp.listfilter.FileListFilter;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-
-import com.google.common.base.Joiner;
-
-import eu.ttbox.batch.core.download.ftp.FtpFileDownloadRequest;
-import eu.ttbox.batch.core.download.ftp.listfilter.FileListFilter;
 
 public class FtpFileIdFileListFilter implements
 		FileListFilter<FtpFileDownloadRequest> {

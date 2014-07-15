@@ -1,20 +1,18 @@
 package eu.ttbox.batch.icecat.referential.dependency;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import javax.annotation.Resource;
-
-import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Propagation;
-import org.springframework.transaction.annotation.Transactional;
-
 import biz.icecat.relations.v1.Relation;
 import biz.icecat.relations.v1.Rule;
 import biz.icecat.relations.v1.Rules;
 import eu.ttbox.icecat.model.relations.IcecatRelation;
 import eu.ttbox.icecat.model.relations.IcecatRelationGroup;
 import eu.ttbox.icecat.model.relations.IcecatRelationRule;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
+
+import javax.annotation.Resource;
+import java.util.ArrayList;
+import java.util.List;
 
 @Service("icecatRelationDifferential")
 @Transactional(propagation = Propagation.REQUIRED)

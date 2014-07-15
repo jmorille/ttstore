@@ -1,11 +1,10 @@
 package eu.ttbox.batch.icecat.product.detail.dependency;
 
-import org.springframework.stereotype.Service;
-
 import biz.icecat.referential.v1.ProductGallery.ProductPicture;
 import eu.ttbox.batch.icecat.referential.dependency.AbstractDependencyDifferential;
 import eu.ttbox.icecat.model.product.IcecatProduct;
 import eu.ttbox.icecat.model.product.IcecatProductGallery;
+import org.springframework.stereotype.Service;
 
 @Service("icecatProductGalleryDifferential")
 public class IcecatProductGalleryDifferential extends AbstractDependencyDifferential<IcecatProduct, IcecatProductGallery, ProductPicture> {

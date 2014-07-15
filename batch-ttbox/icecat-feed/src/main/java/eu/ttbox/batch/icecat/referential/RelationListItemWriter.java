@@ -1,8 +1,10 @@
 package eu.ttbox.batch.icecat.referential;
 
-import java.util.ArrayList;
-import java.util.List;
-
+import biz.icecat.relations.v1.Relation;
+import biz.icecat.relations.v1.RelationGroup;
+import eu.ttbox.batch.icecat.referential.dependency.IDependencyDifferential;
+import eu.ttbox.icecat.model.relations.IcecatRelation;
+import eu.ttbox.icecat.model.relations.IcecatRelationGroup;
 import org.springframework.batch.item.ItemWriter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -10,11 +12,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
-import biz.icecat.relations.v1.Relation;
-import biz.icecat.relations.v1.RelationGroup;
-import eu.ttbox.batch.icecat.referential.dependency.IDependencyDifferential;
-import eu.ttbox.icecat.model.relations.IcecatRelation;
-import eu.ttbox.icecat.model.relations.IcecatRelationGroup;
+import java.util.ArrayList;
+import java.util.List;
 
 @Service("relationListIcecatItemWriter")
 public class RelationListItemWriter extends AbstractReferentialItemWriter<RelationGroup> implements ItemWriter<RelationGroup> {

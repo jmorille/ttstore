@@ -1,18 +1,5 @@
 package eu.ttbox.batch.techdata.core.fs;
 
-import java.io.File;
-import java.io.IOException;
-import java.rmi.UnexpectedException;
-import java.util.ArrayList;
-import java.util.List;
-
-import org.apache.commons.net.ftp.FTPClient;
-import org.apache.commons.net.ftp.FTPFile;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.FactoryBean;
-import org.springframework.beans.factory.annotation.Autowired;
-
 import eu.ttbox.batch.core.download.ftp.FtpConnector;
 import eu.ttbox.batch.core.download.ftp.FtpFileDownloadRequest;
 import eu.ttbox.batch.core.download.ftp.filter.ChainFtpFileFilter;
@@ -24,9 +11,19 @@ import eu.ttbox.batch.core.fs.FileUtils;
 import eu.ttbox.batch.core.fs.ProxyCacheDownloadConnector;
 import eu.ttbox.batch.core.fs.partitionner.AliasFilenamePartitionner;
 import eu.ttbox.batch.techdata.core.fs.filter.DedupByNameLowerCaseAndLastModifiedFileListFilter;
-import eu.ttbox.batch.techdata.core.fs.filter.FtpFileIdFileListFilter;
 import eu.ttbox.batch.techdata.core.sort.SortFileService;
 import eu.ttbox.batch.techdata.price.filter.SupplierPriceIdFilterFactory;
+import org.apache.commons.net.ftp.FTPClient;
+import org.apache.commons.net.ftp.FTPFile;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+
+import java.io.File;
+import java.io.IOException;
+import java.rmi.UnexpectedException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class TechdataCacheDownloadConnector extends ProxyCacheDownloadConnector {
 

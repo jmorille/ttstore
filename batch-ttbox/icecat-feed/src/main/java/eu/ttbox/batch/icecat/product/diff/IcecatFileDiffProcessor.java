@@ -1,17 +1,16 @@
 package eu.ttbox.batch.icecat.product.diff;
 
+import biz.icecat.files.v1.IcecatFile;
+import eu.ttbox.batch.core.reader.differential.DifferentialItem;
+import eu.ttbox.batch.core.reader.differential.DifferentialItem.CUDStatus;
+import eu.ttbox.batch.icecat.product.detail.model.ProductSynchroniser;
+import eu.ttbox.icecat.model.product.IcecatProduct;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.batch.item.ItemProcessor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
-
-import biz.icecat.files.v1.IcecatFile;
-import eu.ttbox.batch.core.reader.differential.DifferentialItem;
-import eu.ttbox.batch.core.reader.differential.DifferentialItem.CUDStatus;
-import eu.ttbox.batch.icecat.product.detail.model.ProductSynchroniser;
-import eu.ttbox.icecat.model.product.IcecatProduct;
 
 @Service("icecatFileDiffProcessor")
 public class IcecatFileDiffProcessor implements ItemProcessor<DifferentialItem<IcecatProduct, IcecatFile>, DifferentialItem<IcecatProduct, IcecatFile>> {

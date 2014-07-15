@@ -1,9 +1,5 @@
 package eu.ttbox.batch.icecat.dao.sequence;
 
-import java.math.BigInteger;
-
-import javax.annotation.PostConstruct;
-
 import org.hibernate.MappingException;
 import org.hibernate.Query;
 import org.hibernate.Session;
@@ -16,6 +12,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Repository;
+
+import javax.annotation.PostConstruct;
+import java.math.BigInteger;
 
 @Repository("nextValSequenceDAO")
 @Scope("singleton")

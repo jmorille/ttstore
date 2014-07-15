@@ -1,13 +1,12 @@
 package eu.ttbox.batch.techdata;
 
-import java.util.HashSet;
-import java.util.Set;
-
 import com.beust.jcommander.JCommander;
 import com.beust.jcommander.ParameterException;
-
 import eu.ttbox.batch.core.BatchJobRunner;
 import eu.ttbox.batch.techdata.core.cmd.TechdataFeedEaterParams;
+
+import java.util.HashSet;
+import java.util.Set;
 
 public class TechdataRunner {
 

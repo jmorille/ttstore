@@ -1,17 +1,15 @@
 package eu.ttbox.batch.icecat.referential.model;
 
-import java.util.Date;
-
-import javax.xml.datatype.XMLGregorianCalendar;
-
-import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
-
 import biz.icecat.relations.v1.Rule;
 import eu.ttbox.icecat.model.referential.IcecatBrand;
 import eu.ttbox.icecat.model.referential.IcecatCategory;
 import eu.ttbox.icecat.model.referential.IcecatFeature;
 import eu.ttbox.icecat.model.relations.IcecatRelationRule;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import javax.xml.datatype.XMLGregorianCalendar;
+import java.util.Date;
 
 @Transactional
 @Service("icecatRelationRuleModelCreator")

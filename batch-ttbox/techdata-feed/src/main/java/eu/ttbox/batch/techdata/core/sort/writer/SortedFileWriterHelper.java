@@ -1,23 +1,15 @@
 package eu.ttbox.batch.techdata.core.sort.writer;
 
-import java.io.BufferedOutputStream;
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.OutputStream;
-import java.io.OutputStreamWriter;
-import java.nio.charset.Charset;
-import java.util.Collection;
-import java.util.zip.GZIPOutputStream;
-
+import com.google.common.base.Charsets;
+import eu.ttbox.batch.techdata.core.sort.SortVO;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.batch.item.util.FileUtils;
 
-import com.google.common.base.Charsets;
-
-import eu.ttbox.batch.techdata.core.sort.SortVO;
+import java.io.*;
+import java.nio.charset.Charset;
+import java.util.Collection;
+import java.util.zip.GZIPOutputStream;
 
 public class SortedFileWriterHelper {
 

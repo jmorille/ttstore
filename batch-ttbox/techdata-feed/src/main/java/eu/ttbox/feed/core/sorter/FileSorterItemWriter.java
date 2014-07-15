@@ -1,16 +1,15 @@
 package eu.ttbox.feed.core.sorter;
 
-import java.io.File;
-import java.io.IOException;
-import java.util.List;
-
+import eu.ttbox.batch.core.fs.GzipResource;
 import org.springframework.batch.item.ExecutionContext;
 import org.springframework.batch.item.ItemWriter;
 import org.springframework.batch.item.file.ResourceAwareItemWriterItemStream;
 import org.springframework.core.io.FileSystemResource;
 import org.springframework.core.io.Resource;
 
-import eu.ttbox.batch.core.fs.GzipResource;
+import java.io.File;
+import java.io.IOException;
+import java.util.List;
 
 public class FileSorterItemWriter<I> implements ItemWriter<FileSorterVO<I>> {
 

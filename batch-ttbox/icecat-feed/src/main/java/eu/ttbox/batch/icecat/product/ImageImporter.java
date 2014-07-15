@@ -1,14 +1,13 @@
 package eu.ttbox.batch.icecat.product;
 
-import java.io.IOException;
-
+import biz.icecat.files.v1.IcecatFile;
+import eu.ttbox.batch.core.fs.ProxyCacheDownloadConnector;
 import org.apache.commons.lang.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import biz.icecat.files.v1.IcecatFile;
-import eu.ttbox.batch.core.fs.ProxyCacheDownloadConnector;
+import java.io.IOException;
 
 public class ImageImporter {
 

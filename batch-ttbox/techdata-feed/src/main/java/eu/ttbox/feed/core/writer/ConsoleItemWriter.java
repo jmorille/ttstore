@@ -1,8 +1,8 @@
 package eu.ttbox.feed.core.writer;
 
-import java.util.List;
-
 import org.springframework.batch.item.ItemWriter;
+
+import java.util.List;
 
 public class ConsoleItemWriter<T> implements ItemWriter<T> {
 

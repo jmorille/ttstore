@@ -1,10 +1,10 @@
 package eu.ttbox.batch.icecat.referential.dependency;
 
+import eu.ttbox.icecat.model.IIcecatLangModelObject;
+
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
-import eu.ttbox.icecat.model.IIcecatLangModelObject;
 
 public abstract class AbstractLangDependencyDifferential<MASTER, REF extends IIcecatLangModelObject, FEED> extends
 		AbstractDependencyDifferential<MASTER, REF, FEED> {

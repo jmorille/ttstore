@@ -1,23 +1,17 @@
 package eu.ttbox.batch.icecat.referential.model;
 
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-
-import javax.annotation.Resource;
-
+import biz.icecat.referential.v1.*;
+import eu.ttbox.batch.icecat.referential.dependency.IDependencyDifferential;
+import eu.ttbox.icecat.model.referential.IcecatCategory;
+import eu.ttbox.icecat.model.referential.IcecatCategoryKeywords;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import biz.icecat.referential.v1.Category;
-import biz.icecat.referential.v1.Keywords;
-import biz.icecat.referential.v1.Name;
-import biz.icecat.referential.v1.Names;
-import biz.icecat.referential.v1.ParentCategory;
-import eu.ttbox.batch.icecat.referential.dependency.IDependencyDifferential;
-import eu.ttbox.icecat.model.referential.IcecatCategory;
-import eu.ttbox.icecat.model.referential.IcecatCategoryKeywords;
+import javax.annotation.Resource;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
 
 @Transactional
 @Service("icecatCategoryModelCreator")

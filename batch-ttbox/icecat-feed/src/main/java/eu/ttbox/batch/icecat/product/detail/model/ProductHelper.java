@@ -1,15 +1,14 @@
 package eu.ttbox.batch.icecat.product.detail.model;
 
+import biz.icecat.files.v1.IcecatFile;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
 import java.util.TimeZone;
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
-import biz.icecat.files.v1.IcecatFile;
 
 public class ProductHelper {
 

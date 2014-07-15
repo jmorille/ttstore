@@ -1,7 +1,10 @@
 package eu.ttbox.batch.techdata.price;
 
-import java.util.List;
-
+import eu.ttbox.batch.techdata.dao.SupplierOfferDAO;
+import eu.ttbox.batch.techdata.price.diff.PriceDifferentialItem;
+import eu.ttbox.model.supplier.SupplierEnum;
+import eu.ttbox.model.supplier.SupplierFeedStatus;
+import eu.ttbox.model.supplier.SupplierPrice;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.batch.item.ItemWriter;
@@ -9,11 +12,7 @@ import org.springframework.batch.item.file.transform.FieldSet;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import eu.ttbox.batch.techdata.dao.SupplierOfferDAO;
-import eu.ttbox.batch.techdata.price.diff.PriceDifferentialItem;
-import eu.ttbox.model.supplier.SupplierEnum;
-import eu.ttbox.model.supplier.SupplierFeedStatus;
-import eu.ttbox.model.supplier.SupplierPrice;
+import java.util.List;
 
 @Service("priceTechdataItemWriter")
 public class PriceItemWriter implements ItemWriter<PriceDifferentialVO> {

@@ -1,26 +1,20 @@
 package eu.ttbox.batch.techdata.core.sort;
 
+import eu.ttbox.batch.core.fs.FileUtils;
+import eu.ttbox.batch.core.fs.GzipResource;
+import eu.ttbox.batch.techdata.core.sort.writer.SortedFileWriterHelper;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.batch.item.*;
+import org.springframework.batch.item.file.ResourceAwareItemReaderItemStream;
+import org.springframework.beans.factory.InitializingBean;
+import org.springframework.util.Assert;
+
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.springframework.batch.item.ExecutionContext;
-import org.springframework.batch.item.ItemReader;
-import org.springframework.batch.item.ItemWriter;
-import org.springframework.batch.item.NonTransientResourceException;
-import org.springframework.batch.item.ParseException;
-import org.springframework.batch.item.UnexpectedInputException;
-import org.springframework.batch.item.file.ResourceAwareItemReaderItemStream;
-import org.springframework.beans.factory.InitializingBean;
-import org.springframework.util.Assert;
-
-import eu.ttbox.batch.core.fs.FileUtils;
-import eu.ttbox.batch.core.fs.GzipResource;
-import eu.ttbox.batch.techdata.core.sort.writer.SortedFileWriterHelper;
 
 public class SortFileService implements ItemWriter<File>, InitializingBean {
 

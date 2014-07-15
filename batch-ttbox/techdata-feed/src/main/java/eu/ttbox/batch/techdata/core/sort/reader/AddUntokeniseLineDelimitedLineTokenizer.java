@@ -1,8 +1,8 @@
 package eu.ttbox.batch.techdata.core.sort.reader;
 
-import java.util.List;
-
 import org.springframework.batch.item.file.transform.DelimitedLineTokenizer;
+
+import java.util.List;
 
 public class AddUntokeniseLineDelimitedLineTokenizer extends DelimitedLineTokenizer {
 

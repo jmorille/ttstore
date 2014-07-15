@@ -1,8 +1,7 @@
 package eu.ttbox.batch.techdata.core.sort.writer;
 
-import org.springframework.batch.item.file.transform.LineAggregator;
-
 import eu.ttbox.batch.techdata.core.sort.SortVO;
+import org.springframework.batch.item.file.transform.LineAggregator;
 
 public class SortVOLineAggregator implements LineAggregator<SortVO>{
 

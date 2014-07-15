@@ -1,17 +1,5 @@
 package eu.ttbox.batch.icecat.product.detail.model;
 
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-
-import org.apache.commons.lang.StringUtils;
-import org.elasticsearch.common.base.Objects;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.stereotype.Service;
-
 import biz.icecat.files.v1.EANUPCS;
 import biz.icecat.files.v1.IcecatFile;
 import biz.icecat.referential.v1.Product;
@@ -21,6 +9,17 @@ import eu.ttbox.icecat.model.product.IcecatProduct;
 import eu.ttbox.icecat.model.product.IcecatProductLine;
 import eu.ttbox.icecat.model.referential.IcecatBrand;
 import eu.ttbox.icecat.model.referential.IcecatCategory;
+import org.apache.commons.lang.StringUtils;
+import org.elasticsearch.common.base.Objects;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Service;
+
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
 
 @Service("icecatProductSynchroniser")
 public class ProductSynchroniserImpl implements ProductSynchroniser {

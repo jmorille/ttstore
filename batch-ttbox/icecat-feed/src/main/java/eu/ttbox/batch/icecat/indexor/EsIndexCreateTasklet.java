@@ -1,13 +1,12 @@
 package eu.ttbox.batch.icecat.indexor;
 
-import java.io.InputStream;
-import java.io.InputStreamReader;
-
+import eu.ttbox.batch.icecat.product.index.IcecatIndexFileItemWriter;
+import org.elasticsearch.action.admin.indices.create.CreateIndexRequestBuilder;
 import org.elasticsearch.action.admin.indices.create.CreateIndexResponse;
+import org.elasticsearch.action.admin.indices.mapping.put.PutMappingRequestBuilder;
 import org.elasticsearch.action.admin.indices.mapping.put.PutMappingResponse;
 import org.elasticsearch.client.Client;
-import org.elasticsearch.client.action.admin.indices.create.CreateIndexRequestBuilder;
-import org.elasticsearch.client.action.admin.indices.mapping.put.PutMappingRequestBuilder;
+
 import org.elasticsearch.common.base.Strings;
 import org.elasticsearch.common.io.Streams;
 import org.slf4j.Logger;
@@ -18,7 +17,8 @@ import org.springframework.batch.core.step.tasklet.Tasklet;
 import org.springframework.batch.repeat.RepeatStatus;
 import org.springframework.core.io.Resource;
 
-import eu.ttbox.batch.icecat.product.index.IcecatIndexFileItemWriter;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 
 public class EsIndexCreateTasklet implements Tasklet {
 

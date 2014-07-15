@@ -1,13 +1,12 @@
 package eu.ttbox.batch.icecat.referential.supplier;
 
+import biz.icecat.referential.v1.Supplier;
+import eu.ttbox.batch.icecat.referential.AbstractReferentialItemWriter;
+import eu.ttbox.icecat.model.referential.IcecatBrand;
 import org.springframework.batch.item.ItemWriter;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
-
-import biz.icecat.referential.v1.Supplier;
-import eu.ttbox.batch.icecat.referential.AbstractReferentialItemWriter;
-import eu.ttbox.icecat.model.referential.IcecatBrand;
 
 @Service("supplierListIcecatItemWriter")
 public class SupplierListItemWriter extends AbstractReferentialItemWriter<Supplier> implements ItemWriter<Supplier> {

@@ -1,14 +1,6 @@
 package eu.ttbox.feed.core.download;
 
-import java.io.BufferedOutputStream;
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
-import java.util.List;
-import java.util.zip.GZIPOutputStream;
-
+import eu.ttbox.feed.core.download.filters.local.FtpAcceptOneLocalFileNameListFilter;
 import org.apache.commons.net.ftp.FTPFile;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -21,7 +13,9 @@ import org.springframework.integration.file.remote.session.Session;
 import org.springframework.integration.file.remote.session.SessionFactory;
 import org.springframework.util.Assert;
 
-import eu.ttbox.feed.core.download.filters.local.FtpAcceptOneLocalFileNameListFilter;
+import java.io.*;
+import java.util.List;
+import java.util.zip.GZIPOutputStream;
 
 public class FtpDownloaderItemWriter implements ItemWriter<FTPFile> {
 

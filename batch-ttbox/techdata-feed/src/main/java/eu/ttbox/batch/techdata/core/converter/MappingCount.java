@@ -1,11 +1,11 @@
 package eu.ttbox.batch.techdata.core.converter;
 
+import com.google.common.base.Objects;
+import com.google.common.base.Objects.ToStringHelper;
+
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
-
-import com.google.common.base.Objects;
-import com.google.common.base.Objects.ToStringHelper;
 
 public class MappingCount implements Serializable, Comparable<MappingCount> {
 

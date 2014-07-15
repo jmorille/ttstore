@@ -1,18 +1,11 @@
 package eu.ttbox.batch.icecat.product.diff.elasticsearch;
 
+import eu.ttbox.icecat.model.product.IcecatProduct;
 import org.elasticsearch.action.search.SearchResponse;
 import org.elasticsearch.client.Client;
 import org.elasticsearch.search.SearchHit;
-import org.springframework.batch.item.ExecutionContext;
-import org.springframework.batch.item.ItemReader;
-import org.springframework.batch.item.ItemStream;
-import org.springframework.batch.item.ItemStreamException;
-import org.springframework.batch.item.NonTransientResourceException;
-import org.springframework.batch.item.ParseException;
-import org.springframework.batch.item.UnexpectedInputException;
+import org.springframework.batch.item.*;
 import org.springframework.batch.item.support.ListItemReader;
-
-import eu.ttbox.icecat.model.product.IcecatProduct;
 
 public class EsProductIndexItemReader implements ItemReader<IcecatProduct>, ItemStream {
 

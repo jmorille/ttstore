@@ -1,13 +1,12 @@
 package eu.ttbox.batch.techdata.core.cmd;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import com.beust.jcommander.JCommander;
 import com.beust.jcommander.Parameter;
 import com.beust.jcommander.Parameters;
-
 import eu.ttbox.batch.techdata.TechDataFeedEnum;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Parameters(commandDescription = "Icecat Feeds")
 public class TechdataFeedEaterParams {

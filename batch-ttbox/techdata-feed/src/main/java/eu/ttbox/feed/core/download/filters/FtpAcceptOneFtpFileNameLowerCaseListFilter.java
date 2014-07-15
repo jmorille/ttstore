@@ -1,12 +1,12 @@
 package eu.ttbox.feed.core.download.filters;
 
+import org.apache.commons.net.ftp.FTPFile;
+import org.springframework.integration.file.filters.FileListFilter;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
-import org.apache.commons.net.ftp.FTPFile;
-import org.springframework.integration.file.filters.FileListFilter;
 
 public class FtpAcceptOneFtpFileNameLowerCaseListFilter implements FileListFilter<FTPFile> {
 

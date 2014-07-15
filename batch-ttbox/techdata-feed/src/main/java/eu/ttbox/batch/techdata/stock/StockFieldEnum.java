@@ -1,10 +1,9 @@
 package eu.ttbox.batch.techdata.stock;
 
-import java.util.Date;
-
+import com.google.common.base.Joiner;
 import org.springframework.batch.item.file.transform.FieldSet;
 
-import com.google.common.base.Joiner;
+import java.util.Date;
 
 public enum StockFieldEnum {
 

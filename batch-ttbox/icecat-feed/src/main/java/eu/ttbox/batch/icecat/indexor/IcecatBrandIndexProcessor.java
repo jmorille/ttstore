@@ -1,10 +1,9 @@
 package eu.ttbox.batch.icecat.indexor;
 
+import eu.ttbox.icecat.model.referential.IcecatBrand;
 import org.elasticsearch.common.xcontent.XContentBuilder;
 import org.elasticsearch.common.xcontent.XContentFactory;
 import org.springframework.batch.item.ItemProcessor;
-
-import eu.ttbox.icecat.model.referential.IcecatBrand;
 
 public class IcecatBrandIndexProcessor implements ItemProcessor<IcecatBrand, IcecatBrand> {
 

@@ -1,13 +1,12 @@
 package eu.ttbox.batch.icecat.product.detail.dependency;
 
-import org.apache.commons.lang.StringUtils;
-import org.springframework.stereotype.Service;
-
 import biz.icecat.referential.v1.ProductFeature;
 import eu.ttbox.batch.icecat.referential.dependency.AbstractDependencyDifferential;
 import eu.ttbox.icecat.model.product.IcecatProduct;
 import eu.ttbox.icecat.model.product.IcecatProductFeature;
 import eu.ttbox.icecat.model.referential.IcecatCategoryFeature;
+import org.apache.commons.lang.StringUtils;
+import org.springframework.stereotype.Service;
 
 @Service("icecatProductFeatureDifferential")
 public class IcecatProductFeatureDifferential extends AbstractDependencyDifferential<IcecatProduct, IcecatProductFeature, ProductFeature> {

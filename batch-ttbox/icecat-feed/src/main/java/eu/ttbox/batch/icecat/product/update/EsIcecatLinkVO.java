@@ -1,14 +1,14 @@
 package eu.ttbox.batch.icecat.product.update;
 
+import org.elasticsearch.action.ListenableActionFuture;
+import org.elasticsearch.action.get.GetResponse;
+import org.elasticsearch.index.get.GetField;
+
 import java.util.Date;
 import java.util.Map;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
-
-import org.elasticsearch.action.ListenableActionFuture;
-import org.elasticsearch.action.get.GetResponse;
-import org.elasticsearch.index.get.GetField;
 
 public class EsIcecatLinkVO {
 

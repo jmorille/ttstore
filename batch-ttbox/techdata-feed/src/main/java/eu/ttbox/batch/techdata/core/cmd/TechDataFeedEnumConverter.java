@@ -4,7 +4,6 @@ import com.beust.jcommander.ParameterException;
 import com.beust.jcommander.converters.BaseConverter;
 import com.google.common.base.Joiner;
 import com.google.common.base.Strings;
-
 import eu.ttbox.batch.techdata.TechDataFeedEnum;
 
 public class TechDataFeedEnumConverter extends BaseConverter<TechDataFeedEnum> {

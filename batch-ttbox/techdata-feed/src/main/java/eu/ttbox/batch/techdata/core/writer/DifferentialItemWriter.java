@@ -1,8 +1,7 @@
 package eu.ttbox.batch.techdata.core.writer;
 
-import java.util.ArrayList;
-import java.util.List;
-
+import eu.ttbox.batch.core.reader.differential.DifferentialItem;
+import eu.ttbox.batch.techdata.dao.TTBoxDAO;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.batch.item.ItemWriter;
@@ -11,8 +10,8 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StopWatch;
 
-import eu.ttbox.batch.core.reader.differential.DifferentialItem;
-import eu.ttbox.batch.techdata.dao.TTBoxDAO;
+import java.util.ArrayList;
+import java.util.List;
 
 @Service("ttboxDifferentialItemWriter")
 public class DifferentialItemWriter<MASTER, JOIN> implements ItemWriter<DifferentialItem<MASTER, JOIN>> {

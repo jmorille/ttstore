@@ -1,19 +1,12 @@
 package eu.ttbox.batch.icecat.dao;
 
+import eu.ttbox.icecat.model.product.*;
+import eu.ttbox.icecat.model.referential.IcecatTex;
+import eu.ttbox.icecat.model.referential.IcecatVocabulary;
+
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
-
-import eu.ttbox.icecat.model.product.IcecatProduct;
-import eu.ttbox.icecat.model.product.IcecatProductBundled;
-import eu.ttbox.icecat.model.product.IcecatProductDescription;
-import eu.ttbox.icecat.model.product.IcecatProductFeature;
-import eu.ttbox.icecat.model.product.IcecatProductGallery;
-import eu.ttbox.icecat.model.product.IcecatProductMultimediaObject;
-import eu.ttbox.icecat.model.product.IcecatProductRelated;
-import eu.ttbox.icecat.model.product.IcecatProductSummaryDescription;
-import eu.ttbox.icecat.model.referential.IcecatTex;
-import eu.ttbox.icecat.model.referential.IcecatVocabulary;
 
 public interface IcecatDAO {
 

@@ -1,10 +1,9 @@
 package eu.ttbox.batch.icecat.referential.feature;
 
-import org.springframework.batch.item.ItemWriter;
-import org.springframework.stereotype.Service;
-
 import biz.icecat.referential.v1.FeatureValuesVocabularyList.FeatureValuesVocabulary;
 import eu.ttbox.batch.icecat.referential.AbstractReferentialItemWriter;
+import org.springframework.batch.item.ItemWriter;
+import org.springframework.stereotype.Service;
 
 @Service("featureValuesVocabularyListIcecatItemWriter")
 public class FeatureValuesVocabularyListItemWriter extends AbstractReferentialItemWriter<FeatureValuesVocabulary> implements

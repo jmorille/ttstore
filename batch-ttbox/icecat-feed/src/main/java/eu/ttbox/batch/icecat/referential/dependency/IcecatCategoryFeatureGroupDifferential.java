@@ -1,17 +1,16 @@
 package eu.ttbox.batch.icecat.referential.dependency;
 
-import java.util.List;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
-
 import biz.icecat.referential.v1.CategoryFeatureGroup;
 import biz.icecat.referential.v1.FeatureGroup;
 import eu.ttbox.icecat.model.referential.IcecatCategory;
 import eu.ttbox.icecat.model.referential.IcecatCategoryFeatureGroup;
 import eu.ttbox.icecat.model.referential.IcecatFeatureGroup;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import java.util.List;
 
 @Transactional
 @Service("icecatCategoryFeatureGroupDifferential")

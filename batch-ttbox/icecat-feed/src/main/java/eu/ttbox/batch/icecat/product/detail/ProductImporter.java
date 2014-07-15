@@ -1,10 +1,10 @@
 package eu.ttbox.batch.icecat.product.detail;
 
-import java.io.IOException;
-import java.util.Date;
-
 import biz.icecat.files.v1.IcecatFile;
 import eu.ttbox.batch.icecat.referential.AbstractReferentialItemWriter;
+
+import java.io.IOException;
+import java.util.Date;
 
 public interface ProductImporter {
 

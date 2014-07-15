@@ -1,12 +1,10 @@
 package eu.ttbox.batch.techdata.dao;
 
-import java.io.Serializable;
-import java.sql.SQLException;
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
+import eu.ttbox.model.product.CatalogSrcEnum;
+import eu.ttbox.model.product.Product;
+import eu.ttbox.model.product.brand.Brand;
+import eu.ttbox.model.product.category.Category;
+import eu.ttbox.model.supplier.SupplierEnum;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -16,11 +14,12 @@ import org.springframework.orm.hibernate3.HibernateCallback;
 import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 import org.springframework.stereotype.Repository;
 
-import eu.ttbox.model.product.CatalogSrcEnum;
-import eu.ttbox.model.product.Product;
-import eu.ttbox.model.product.brand.Brand;
-import eu.ttbox.model.product.category.Category;
-import eu.ttbox.model.supplier.SupplierEnum;
+import java.io.Serializable;
+import java.sql.SQLException;
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 @Repository("ttboxDAO")
 // @Transactional

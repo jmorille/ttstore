@@ -1,18 +1,17 @@
 package eu.ttbox.batch.icecat.product.index;
 
-import java.util.Date;
-import java.util.List;
-
+import biz.icecat.files.v1.IcecatFile;
+import eu.ttbox.batch.core.fs.ProxyCacheDownloadConnector;
+import eu.ttbox.batch.icecat.product.detail.ProductImporter;
+import eu.ttbox.batch.icecat.product.detail.model.ProductHelper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.batch.item.ItemWriter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import biz.icecat.files.v1.IcecatFile;
-import eu.ttbox.batch.core.fs.ProxyCacheDownloadConnector;
-import eu.ttbox.batch.icecat.product.detail.ProductImporter;
-import eu.ttbox.batch.icecat.product.detail.model.ProductHelper;
+import java.util.Date;
+import java.util.List;
 
 @Service("icecatIndexFileItemWriter")
 public class IcecatIndexFileItemWriter implements ItemWriter<IcecatFile> {

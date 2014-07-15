@@ -1,14 +1,5 @@
 package eu.ttbox.batch.icecat.product.detail.dependency;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
-import javax.annotation.Resource;
-
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.stereotype.Service;
-
 import biz.icecat.referential.v1.Product;
 import biz.icecat.referential.v1.ProductBundled;
 import eu.ttbox.batch.icecat.product.detail.ProductImporter;
@@ -17,6 +8,13 @@ import eu.ttbox.batch.icecat.referential.dependency.AbstractDependencyDifferenti
 import eu.ttbox.icecat.model.product.IcecatProduct;
 import eu.ttbox.icecat.model.product.IcecatProductBundled;
 import eu.ttbox.icecat.model.product.QualityEnum;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Service;
+
+import javax.annotation.Resource;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 @Service("icecatProductBundledDifferential")
 public class IcecatProductBundledDifferentialImpl extends AbstractDependencyDifferential<IcecatProduct, IcecatProductBundled, ProductBundled> {

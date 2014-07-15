@@ -1,10 +1,9 @@
 package eu.ttbox.batch.techdata.stock;
 
-import org.springframework.batch.item.file.transform.FieldSet;
-import org.springframework.stereotype.Service;
-
 import eu.ttbox.batch.core.reader.differential.DifferentialComparator;
 import eu.ttbox.model.supplier.SupplierStock;
+import org.springframework.batch.item.file.transform.FieldSet;
+import org.springframework.stereotype.Service;
 
 @Service("stockTechdataItemComparator")
 public class StockItemComparator implements DifferentialComparator<SupplierStock, FieldSet>{

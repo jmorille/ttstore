@@ -1,19 +1,12 @@
 package eu.ttbox.batch.icecat.product.update;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.util.Date;
-import java.util.Map;
-import java.util.concurrent.ExecutionException;
-import java.util.concurrent.TimeUnit;
-import java.util.concurrent.TimeoutException;
-
-import org.elasticsearch.action.get.GetResponse;
+import biz.icecat.referential.v1.Product;
+import eu.ttbox.batch.core.fs.ProxyCacheDownloadConnector;
+import eu.ttbox.batch.icecat.product.detail.model.ProductSynchroniser;
+import eu.ttbox.batch.icecat.product.detail.parser.IcecatProductDetailFileUnmarshalliser;
+import eu.ttbox.icecat.model.product.IcecatProduct;
 import org.elasticsearch.client.Client;
-import org.elasticsearch.client.action.get.GetRequestBuilder;
 import org.elasticsearch.common.base.Strings;
-import org.elasticsearch.index.get.GetField;
-import org.elasticsearch.search.SearchHit;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.batch.item.ItemProcessor;
@@ -22,11 +15,10 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
-import biz.icecat.referential.v1.Product;
-import eu.ttbox.batch.core.fs.ProxyCacheDownloadConnector;
-import eu.ttbox.batch.icecat.product.detail.model.ProductSynchroniser;
-import eu.ttbox.batch.icecat.product.detail.parser.IcecatProductDetailFileUnmarshalliser;
-import eu.ttbox.icecat.model.product.IcecatProduct;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Date;
+import java.util.Map;
 
 @Service
 public class ProductIcecatUpdaterItemProcessor implements ItemProcessor<EsIcecatLinkVO, IcecatProduct> {

@@ -1,11 +1,10 @@
 package eu.ttbox.batch.techdata.price;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
+import com.google.common.base.Joiner;
 import org.springframework.batch.item.file.transform.FieldSet;
 
-import com.google.common.base.Joiner;
+import java.math.BigDecimal;
+import java.util.Date;
 
 public enum PriceFieldEnum {
 

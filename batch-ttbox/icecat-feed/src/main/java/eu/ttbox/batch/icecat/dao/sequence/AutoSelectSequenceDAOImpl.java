@@ -1,7 +1,5 @@
 package eu.ttbox.batch.icecat.dao.sequence;
 
-import javax.annotation.PostConstruct;
-
 import org.hibernate.MappingException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -10,6 +8,8 @@ import org.hibernate.impl.SessionFactoryImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Repository;
+
+import javax.annotation.PostConstruct;
 
 @Repository("autoSelectSequenceDAO")
 public class AutoSelectSequenceDAOImpl implements SequenceDAO {

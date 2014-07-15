@@ -1,13 +1,12 @@
 package eu.ttbox.batch.icecat.referential.dependency;
 
-import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
-
 import biz.icecat.referential.v1.Feature;
 import eu.ttbox.icecat.model.referential.IcecatCategory;
 import eu.ttbox.icecat.model.referential.IcecatCategoryFeature;
 import eu.ttbox.icecat.model.referential.IcecatCategoryFeatureGroup;
 import eu.ttbox.icecat.model.referential.IcecatFeature;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 @Transactional
 @Service("icecatCategoryFeatureDifferential")

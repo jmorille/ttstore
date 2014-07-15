@@ -1,23 +1,5 @@
 package eu.ttbox.batch.techdata.dao;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
-import org.hibernate.HibernateException;
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.springframework.batch.item.file.transform.FieldSet;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.orm.hibernate3.HibernateCallback;
-import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
-import org.springframework.stereotype.Service;
-import org.springframework.util.StopWatch;
-
 import eu.ttbox.batch.techdata.core.converter.ProductBrandAssosiater;
 import eu.ttbox.batch.techdata.core.converter.ProductCategoryAssosiater;
 import eu.ttbox.batch.techdata.price.diff.PriceDifferentialItem;
@@ -31,6 +13,23 @@ import eu.ttbox.model.salespoint.SalespointCategory;
 import eu.ttbox.model.salespoint.SalespointSupplier;
 import eu.ttbox.model.supplier.SupplierFeedStatus;
 import eu.ttbox.model.supplier.SupplierPrice;
+import org.hibernate.HibernateException;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.batch.item.file.transform.FieldSet;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.orm.hibernate3.HibernateCallback;
+import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
+import org.springframework.stereotype.Service;
+import org.springframework.util.StopWatch;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 @Service
 public class SupplierOfferDAO extends HibernateDaoSupport {

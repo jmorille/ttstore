@@ -1,13 +1,12 @@
 package eu.ttbox.batch.icecat.core.cmd;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import com.beust.jcommander.JCommander;
 import com.beust.jcommander.Parameter;
 import com.beust.jcommander.Parameters;
-
 import eu.ttbox.batch.icecat.IcecatFeedEnum;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Parameters(commandDescription = "Icecat Feeds")
 public class IcecatFeedEaterParams {
