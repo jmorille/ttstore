@@ -1,5 +1,9 @@
 package eu.ttbox.batch.core.fs;
 
+import com.google.common.io.PatternFilenameFilter;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.io.File;
 import java.io.FilenameFilter;
 import java.io.IOException;
@@ -7,11 +11,6 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import java.util.regex.Pattern;
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
-import com.google.common.io.PatternFilenameFilter;
 
 public class WorkingLocalFileSystemAccessor {
 	

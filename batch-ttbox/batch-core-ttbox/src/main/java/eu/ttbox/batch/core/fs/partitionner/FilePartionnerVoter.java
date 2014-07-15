@@ -1,9 +1,9 @@
 package eu.ttbox.batch.core.fs.partitionner;
 
-import java.io.File;
-
 import eu.ttbox.batch.core.fs.FilePartitionner;
 import eu.ttbox.batch.core.voter.DecisionManager;
+
+import java.io.File;
 
 public class FilePartionnerVoter implements FilePartitionner {
 

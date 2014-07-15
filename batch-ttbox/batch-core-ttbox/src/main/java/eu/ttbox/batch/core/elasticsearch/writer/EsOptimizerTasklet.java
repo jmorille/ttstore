@@ -4,7 +4,6 @@ import org.elasticsearch.action.ActionListener;
 import org.elasticsearch.action.admin.indices.optimize.OptimizeRequestBuilder;
 import org.elasticsearch.action.admin.indices.optimize.OptimizeResponse;
 import org.elasticsearch.client.Client;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.batch.core.StepContribution;

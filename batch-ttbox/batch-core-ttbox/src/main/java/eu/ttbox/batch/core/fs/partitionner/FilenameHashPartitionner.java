@@ -1,15 +1,14 @@
 package eu.ttbox.batch.core.fs.partitionner;
 
+import eu.ttbox.batch.core.fs.FilePartitionner;
+import eu.ttbox.batch.core.fs.partitionner.stat.ItemPartitionStat;
+import org.springframework.beans.factory.InitializingBean;
+import org.springframework.util.Assert;
+
 import java.io.File;
 import java.text.MessageFormat;
 import java.util.ArrayList;
 import java.util.List;
-
-import org.springframework.beans.factory.InitializingBean;
-import org.springframework.util.Assert;
-
-import eu.ttbox.batch.core.fs.FilePartitionner;
-import eu.ttbox.batch.core.fs.partitionner.stat.ItemPartitionStat;
 
 public class FilenameHashPartitionner implements FilePartitionner, InitializingBean {
 

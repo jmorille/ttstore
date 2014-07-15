@@ -1,11 +1,10 @@
 package eu.ttbox.batch.core.reader.join.impl;
 
+import com.google.common.base.Objects;
+import eu.ttbox.batch.core.reader.join.JoinItem;
+
 import java.util.ArrayList;
 import java.util.List;
-
-import com.google.common.base.Objects;
-
-import eu.ttbox.batch.core.reader.join.JoinItem;
 
 public class JoinItemVO<MASTER, JOIN> implements JoinItem<MASTER, JOIN> {
 

@@ -1,12 +1,11 @@
 package eu.ttbox.batch.core.reader.multijoin.impl;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import com.google.common.base.Objects;
 import com.google.common.base.Objects.ToStringHelper;
-
 import eu.ttbox.batch.core.reader.multijoin.MultiJoinItem;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class MultiJoinItemVO<MASTER> implements MultiJoinItem<MASTER> {
 

@@ -1,13 +1,13 @@
 package eu.ttbox.batch.core.reader.differential;
 
-import java.util.Map;
-
 import org.springframework.batch.item.ItemStreamException;
 import org.springframework.batch.item.database.HibernateCursorItemReader;
 import org.springframework.batch.item.file.ResourceAwareItemReaderItemStream;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.core.io.Resource;
 import org.springframework.util.Assert;
+
+import java.util.Map;
 
 public class DifferentialFileHibernateItemReader<MASTER, JOIN> extends DifferentialItemReader<MASTER, JOIN> implements InitializingBean {
 

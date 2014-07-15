@@ -1,10 +1,10 @@
 package eu.ttbox.batch.core.download.ftp.filter;
 
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
 import org.apache.commons.net.ftp.FTPFile;
 import org.apache.commons.net.ftp.FTPFileFilter;
+
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class FilenamePatternFtpFileFilter implements FTPFileFilter {
 

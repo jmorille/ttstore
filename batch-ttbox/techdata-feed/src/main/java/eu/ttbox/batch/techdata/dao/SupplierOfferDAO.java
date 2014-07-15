@@ -50,7 +50,9 @@ public class SupplierOfferDAO extends HibernateDaoSupport {
 	// @Transactional(propagation=Propagation.REQUIRES_NEW)
 	public void saveOfferUpdates(SupplierFeedStatus status, List<SupplierPrice> updates) {
 		Session session = getSession();
-		getHibernateTemplate().saveOrUpdateAll(updates);
+        for (SupplierPrice update : updates) {
+            getHibernateTemplate().saveOrUpdate(update);
+        }
 		// Status
 		status.setCountUpdate(updates.size());
 		getHibernateTemplate().saveOrUpdate(status);
@@ -82,7 +84,7 @@ public class SupplierOfferDAO extends HibernateDaoSupport {
 		
 		// --- Create Offer ---
 		// --------------------
-		List<SalespointSupplier> suppliers = getHibernateTemplate().find("from SalespointSupplier ss where ss.supplier=? and ss.supplierId=?",
+		List<SalespointSupplier> suppliers = (List<SalespointSupplier>) getHibernateTemplate().find("from SalespointSupplier ss where ss.supplier=? and ss.supplierId=?",
 				status.getSupplier(), status.getSupplierId());
 		for (SalespointSupplier supplier : suppliers) {
 			Salespoint salespoint = supplier.getSalespoint();
@@ -109,7 +111,9 @@ public class SupplierOfferDAO extends HibernateDaoSupport {
 					offers.add(offer);
 //				}
 			}
-			getHibernateTemplate().saveOrUpdateAll(offers);
+            for (Offer offer : offers)  {
+                getHibernateTemplate().saveOrUpdate(offer);
+            }
 			stopWatch.stop();
 			log.info(stopWatch.prettyPrint());
 		}
@@ -125,7 +129,7 @@ public class SupplierOfferDAO extends HibernateDaoSupport {
 	private Map<Integer, Integer> getSalespointBrandCache(Salespoint salespoint) {
 		long begin = System.currentTimeMillis();
 		Map<Integer, Integer> mappingIds = new HashMap<Integer, Integer>();
-		List<Integer[]> sbrands = getHibernateTemplate().find("select sb.brand.id, sb.id from SalespointBrand sb where sb.salespoint=?", salespoint);
+		List<Integer[]> sbrands = (List<Integer[]> )getHibernateTemplate().find("select sb.brand.id, sb.id from SalespointBrand sb where sb.salespoint=?", salespoint);
 		for (Integer[] sbrand : sbrands) {
 			Integer brandId = sbrand[0];
 			Integer entityId = sbrand[1];
@@ -139,7 +143,7 @@ public class SupplierOfferDAO extends HibernateDaoSupport {
 	private Map<Integer, Integer> getSalespointCategoryCache(Salespoint salespoint) {
 		long begin = System.currentTimeMillis();
 		Map<Integer, Integer> mappingIds = new HashMap<Integer, Integer>();
-		List<Integer[]> sbrands = getHibernateTemplate().find("select sb.category.id, sb.id from SalespointCategory sb where sb.salespoint=?", salespoint);
+		List<Integer[]> sbrands = (List<Integer[]> )getHibernateTemplate().find("select sb.category.id, sb.id from SalespointCategory sb where sb.salespoint=?", salespoint);
 		for (Integer[] sbrand : sbrands) {
 			Integer catId = sbrand[0];
 			Integer entityId = sbrand[1];

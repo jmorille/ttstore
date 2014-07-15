@@ -40,14 +40,14 @@
     <jackson-module-hibernate.version>1.8.5</jackson-module-hibernate.version>
     
     <!-- Spring -->
-    <spring.version>3.2.9.RELEASE</spring.version> <!--  3.0.6.RELEASE, 3.1.0.RELEASE -->
-    <spring.security.version>3.1.0.RELEASE</spring.security.version> <!-- 3.0.7.RELEASE, 3.1.0.RC3 -->
-    <spring-batch.version>2.1.8.RELEASE</spring-batch.version> <!-- -->
+    <spring.version>4.0.6.RELEASE</spring.version> <!--  3.0.6.RELEASE, 3.1.0.RELEASE -->
+    <spring.security.version>3.2.4.RELEASE</spring.security.version> <!-- 3.0.7.RELEASE, 3.1.0.RC3 -->
+    <spring-batch.version>3.0.1.RELEASE</spring-batch.version> <!-- 2.1.8.RELEASE -->
     <spring-integration.version>2.0.5.RELEASE</spring-integration.version>
     <aspectj.version>1.6.11</aspectj.version>
 
     <!-- Persistance --> 
-    <hibernate.version>3.6.9.Final</hibernate.version> <!-- 3.6.9.Final , 4.0.1.Final, 4.1.1.Final-->
+    <hibernate.version>4.3.5.Final</hibernate.version> <!--3.6.9.Final, 4.3.5.Final-->
     <hibernate-jpa-2.0-api.version>1.0.1.Final</hibernate-jpa-2.0-api.version> <!-- 1.0.1.Final -->
 
     <querydsl.version>2.2.3</querydsl.version>
@@ -305,12 +305,13 @@
         <artifactId>spring-context-support</artifactId>
         <version>${spring.version}</version>
       </dependency>
-
+<!--
       <dependency>
         <groupId>org.springframework</groupId>
         <artifactId>spring-asm</artifactId>
         <version>${spring.version}</version>
       </dependency>
+	  -->
       <dependency>
         <groupId>org.springframework</groupId>
         <artifactId>spring-aop</artifactId>

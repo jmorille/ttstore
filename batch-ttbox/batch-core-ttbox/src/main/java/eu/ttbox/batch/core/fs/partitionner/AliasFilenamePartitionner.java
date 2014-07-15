@@ -1,13 +1,12 @@
 package eu.ttbox.batch.core.fs.partitionner;
 
-import java.io.File;
-import java.util.List;
-
+import eu.ttbox.batch.core.fs.FilePartitionner;
+import eu.ttbox.batch.core.fs.FileUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import eu.ttbox.batch.core.fs.FilePartitionner;
-import eu.ttbox.batch.core.fs.FileUtils;
+import java.io.File;
+import java.util.List;
 
 public class AliasFilenamePartitionner implements FilePartitionner {
 

@@ -1,7 +1,5 @@
 package eu.ttbox.batch.core.reader.hibernate;
 
-import java.util.Map;
-
 import org.hibernate.ScrollableResults;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -15,6 +13,8 @@ import org.springframework.batch.item.support.AbstractItemCountingItemStreamItem
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.util.Assert;
 import org.springframework.util.ClassUtils;
+
+import java.util.Map;
 
 /**
  * @see  org.springframework.batch.item.database.HibernateCursorItemReader

@@ -1,13 +1,12 @@
 package eu.ttbox.batch.core.fs.partitionner;
 
-import java.io.File;
-import java.util.List;
-
+import eu.ttbox.batch.core.fs.FilePartitionner;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.InitializingBean;
 
-import eu.ttbox.batch.core.fs.FilePartitionner;
+import java.io.File;
+import java.util.List;
 
 public class FsRelocatorPartionner implements FilePartitionner, InitializingBean {
 

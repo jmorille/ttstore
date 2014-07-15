@@ -1,23 +1,15 @@
 package eu.ttbox.batch.core.writer.unzip;
 
-import java.io.BufferedInputStream;
-import java.io.BufferedOutputStream;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
-import java.util.List;
-import java.util.zip.GZIPOutputStream;
-import java.util.zip.ZipEntry;
-import java.util.zip.ZipInputStream;
-
+import eu.ttbox.batch.core.fs.FileUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.batch.item.ItemWriter;
 
-import eu.ttbox.batch.core.fs.FileUtils;
+import java.io.*;
+import java.util.List;
+import java.util.zip.GZIPOutputStream;
+import java.util.zip.ZipEntry;
+import java.util.zip.ZipInputStream;
 
 public class UnZipItemWriter implements ItemWriter<File> {
 

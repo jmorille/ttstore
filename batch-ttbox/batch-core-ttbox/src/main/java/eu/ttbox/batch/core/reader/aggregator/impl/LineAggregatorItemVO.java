@@ -1,11 +1,10 @@
 package eu.ttbox.batch.core.reader.aggregator.impl;
 
+import com.google.common.base.Objects;
+import eu.ttbox.batch.core.reader.aggregator.LineAggregatorItem;
+
 import java.util.ArrayList;
 import java.util.List;
-
-import com.google.common.base.Objects;
-
-import eu.ttbox.batch.core.reader.aggregator.LineAggregatorItem;
  
 
 public class LineAggregatorItemVO<MASTER> implements LineAggregatorItem<MASTER> {

@@ -1,18 +1,11 @@
 package eu.ttbox.batch.core.reader.aggregator;
 
-import java.util.Comparator;
-
+import eu.ttbox.batch.core.reader.aggregator.impl.LineAggregatorItemVOFactory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.batch.item.ExecutionContext;
-import org.springframework.batch.item.ItemReader;
-import org.springframework.batch.item.ItemStream;
-import org.springframework.batch.item.ItemStreamException;
-import org.springframework.batch.item.NonTransientResourceException;
-import org.springframework.batch.item.ParseException;
-import org.springframework.batch.item.UnexpectedInputException;
+import org.springframework.batch.item.*;
 
-import eu.ttbox.batch.core.reader.aggregator.impl.LineAggregatorItemVOFactory;
+import java.util.Comparator;
 
 
 /**

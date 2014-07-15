@@ -1,10 +1,10 @@
 package eu.ttbox.batch.core.download.ftp.filter;
 
-import java.util.Calendar;
-import java.util.Date;
-
 import org.apache.commons.net.ftp.FTPFile;
 import org.apache.commons.net.ftp.FTPFileFilter;
+
+import java.util.Calendar;
+import java.util.Date;
 
 public class DateRangeFtpFileFilter implements FTPFileFilter {
 

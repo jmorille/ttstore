@@ -1,22 +1,15 @@
 package eu.ttbox.batch.core.reader;
 
-import java.io.File;
-import java.io.IOException;
-
+import eu.ttbox.batch.core.fs.GzipResource;
+import eu.ttbox.batch.core.fs.ProxyCacheDownloadConnector;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.batch.item.ExecutionContext;
-import org.springframework.batch.item.ItemReader;
-import org.springframework.batch.item.ItemStream;
-import org.springframework.batch.item.ItemStreamException;
-import org.springframework.batch.item.NonTransientResourceException;
-import org.springframework.batch.item.ParseException;
-import org.springframework.batch.item.UnexpectedInputException;
+import org.springframework.batch.item.*;
 import org.springframework.batch.item.file.ResourceAwareItemReaderItemStream;
 import org.springframework.core.io.Resource;
 
-import eu.ttbox.batch.core.fs.GzipResource;
-import eu.ttbox.batch.core.fs.ProxyCacheDownloadConnector;
+import java.io.File;
+import java.io.IOException;
 
 public class ProxyCacheDelegateItemReader<T> implements ItemReader<T>, ItemStream, ResourceAwareItemReaderItemStream<T> {
 

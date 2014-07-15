@@ -56,23 +56,26 @@ public class TTBoxDAO extends HibernateDaoSupport {
 	}
 
 	public void saveOrUpdateAll(@SuppressWarnings("rawtypes") Collection entities) {
-		getHibernateTemplate().saveOrUpdateAll(entities);
+        for (Object entity : entities) {
+            getHibernateTemplate().saveOrUpdate(entity);
+        }
 	}
 
 	@SuppressWarnings("unchecked")
 	public List<Object[]> getProductIdWithTechId() {
-		List<Object[]> result = getHibernateTemplate().executeFind(new HibernateCallback<List<Product>>() {
-			@Override
-			public List<Product> doInHibernate(Session session) throws HibernateException, SQLException {
-				org.hibernate.Query query = session.createQuery("select p.id, p.extIds.techId from Product p where p.extIds.techId is not null");
-				return query.list();
-			}
-		});
+        HibernateCallback<List<Object[]>> callback = new HibernateCallback<List<Object[]>>() {
+            @Override
+            public List<Object[]> doInHibernate(Session session) throws HibernateException, SQLException {
+                org.hibernate.Query query = session.createQuery("select p.id, p.extIds.techId from Product p where p.extIds.techId is not null");
+                return (List<Object[]>)query.list();
+            }
+        };
+		List<Object[]> result = getHibernateTemplate().execute(callback);
 		return result;
 	}
 
 	public Product getProductByTechId(String techProductId) { 
-		List<Product> result = getHibernateTemplate().findByNamedQuery("product.findByTechdataProductId", techProductId);
+		List<Product> result = (List<Product>)getHibernateTemplate().findByNamedQuery("product.findByTechdataProductId", techProductId);
 		Product entity = null;
 		if (result != null && !result.isEmpty()) {
 			return result.get(0);
@@ -88,7 +91,7 @@ public class TTBoxDAO extends HibernateDaoSupport {
 	public Category getCategoryByTechId(String techId) {
 		final String paramTechId = techId;
 		@SuppressWarnings("unchecked")
-		List<Category> result = getHibernateTemplate().find("select p from Category p inner join p.srcs src where src.source=? and src.sourceId=?", CatalogSrcEnum.TECHDATA, paramTechId);
+		List<Category> result = (List<Category>)getHibernateTemplate().find("select p from Category p inner join p.srcs src where src.source=? and src.sourceId=?", CatalogSrcEnum.TECHDATA, paramTechId);
 		Category entity = null;
 		if (result != null && !result.isEmpty()) {
 			return result.get(0);
@@ -106,7 +109,7 @@ public class TTBoxDAO extends HibernateDaoSupport {
 	@SuppressWarnings("unchecked")
 	public Brand getBrandByTechId(String techId) {
 		final String paramTechId = techId;
-		List<Brand> result = getHibernateTemplate().find ("select p from Brand p inner join p.srcs src where src.source=? and src.sourceId=?", CatalogSrcEnum.TECHDATA, paramTechId);
+		List<Brand> result = (List<Brand>)getHibernateTemplate().find ("select p from Brand p inner join p.srcs src where src.source=? and src.sourceId=?", CatalogSrcEnum.TECHDATA, paramTechId);
  		Brand entity = null;
 		if (result != null && !result.isEmpty()) {
 			return result.get(0);
@@ -116,14 +119,14 @@ public class TTBoxDAO extends HibernateDaoSupport {
 
 	@SuppressWarnings("unchecked")
 	public List<String> getSupplierIds(SupplierEnum techdata) {
-		List<String> result = getHibernateTemplate().find("select p.supplierId from SalespointSupplier p where p.supplier=?", techdata);
+		List<String> result = (List<String>)getHibernateTemplate().find("select p.supplierId from SalespointSupplier p where p.supplier=?", techdata);
 		return result;
 	}
 
 	// -- Category Converter -- //
 	@SuppressWarnings("unchecked")
 	public Map<String, Integer> getCategoryIdWithTechId() { 
-		List<Object[]> mappingIds = getHibernateTemplate().find ("select p.id, src.sourceId from Category p inner join p.srcs src where src.source=?", CatalogSrcEnum.TECHDATA  );
+		List<Object[]> mappingIds = (List<Object[]> )getHibernateTemplate().find ("select p.id, src.sourceId from Category p inner join p.srcs src where src.source=?", CatalogSrcEnum.TECHDATA  );
 		Map<String, Integer> cache = new HashMap<String, Integer>(mappingIds.size());
 		for (Object[] mappingId : mappingIds) {
 			Integer categoryId = (Integer)mappingId[0];
@@ -136,7 +139,7 @@ public class TTBoxDAO extends HibernateDaoSupport {
 	@SuppressWarnings("unchecked")
 	public Category getCategoryByName(String name) {
 		final String paramName = name;
-		List<Category> result = getHibernateTemplate().find("select p from Category p where p.name=?", paramName);
+		List<Category> result = (	List<Category>)getHibernateTemplate().find("select p from Category p where p.name=?", paramName);
 		Category entity = null;
 		if (result != null && !result.isEmpty()) {
 			return result.get(0);
@@ -149,7 +152,7 @@ public class TTBoxDAO extends HibernateDaoSupport {
 
 	@SuppressWarnings("unchecked")
 	public Map<String, Integer> getBrandIdWithTechId() {
-		List<Object[]> mappingIds = getHibernateTemplate().find ("select p.id, src.sourceId from Brand p inner join p.srcs src where src.source=?", CatalogSrcEnum.TECHDATA  );
+		List<Object[]> mappingIds = (List<Object[]>)getHibernateTemplate().find ("select p.id, src.sourceId from Brand p inner join p.srcs src where src.source=?", CatalogSrcEnum.TECHDATA  );
 		Map<String, Integer> cache = new HashMap<String, Integer>(mappingIds.size());
 		for (Object[] mappingId : mappingIds) {
 			Integer brandId = (Integer)mappingId[0];
@@ -163,7 +166,7 @@ public class TTBoxDAO extends HibernateDaoSupport {
 	// -- ProductBrandAssosiater  --//
 	@SuppressWarnings("unchecked")
 	public Map<Integer, Integer> getMapByProductIdAndBrandId() {
-		List<Object[]> mappingIds = getHibernateTemplate().find ("select p.id, p.brand.id from Product p");
+		List<Object[]> mappingIds = (List<Object[]>)getHibernateTemplate().find ("select p.id, p.brand.id from Product p");
 		Map<Integer, Integer> cache = new HashMap<Integer, Integer>(mappingIds.size());
 		for (Object[] mappingId : mappingIds) {
 			Integer productId = (Integer)mappingId[0];
@@ -175,7 +178,7 @@ public class TTBoxDAO extends HibernateDaoSupport {
 	
 	@SuppressWarnings("unchecked")
 	public Brand getBrandByProductId(Integer productId) {
-		List<Brand> result = getHibernateTemplate().find ("select p.brand from Product p where p.id=?", productId);
+		List<Brand> result = (List<Brand>)getHibernateTemplate().find ("select p.brand from Product p where p.id=?", productId);
 		Brand entity = null;
 		if (result.size()==1) {
 			entity = result.get(0);
@@ -187,7 +190,7 @@ public class TTBoxDAO extends HibernateDaoSupport {
 	
 	@SuppressWarnings("unchecked")
 	public Map<Integer, Integer> getMapByProductIdAndCategoryId() {
-		List<Object[]> mappingIds = getHibernateTemplate().find ("select p.id, p.category.id from Product p");
+		List<Object[]> mappingIds = (List<Object[]>)getHibernateTemplate().find ("select p.id, p.category.id from Product p");
 		Map<Integer, Integer> cache = new HashMap<Integer, Integer>(mappingIds.size());
 		for (Object[] mappingId : mappingIds) {
 			Integer productId = (Integer)mappingId[0];
@@ -199,7 +202,7 @@ public class TTBoxDAO extends HibernateDaoSupport {
 	
 	@SuppressWarnings("unchecked")
 	public Category getCategoryByProductId(Integer productId) {
-		List<Category>  result = getHibernateTemplate().find ("select p.category from Product p where p.id=?", productId);
+		List<Category>  result = (List<Category> )getHibernateTemplate().find ("select p.category from Product p where p.id=?", productId);
 		Category entity = null;
 		if (result.size()==1) {
 			entity = result.get(0);

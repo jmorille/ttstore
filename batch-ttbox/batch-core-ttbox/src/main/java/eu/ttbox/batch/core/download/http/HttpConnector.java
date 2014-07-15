@@ -1,37 +1,9 @@
 package eu.ttbox.batch.core.download.http;
 
-import java.io.BufferedInputStream;
-import java.io.BufferedOutputStream;
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.io.OutputStream;
-import java.io.OutputStreamWriter;
-import java.io.Writer;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.Locale;
-import java.util.TimeZone;
-import java.util.zip.GZIPInputStream;
-import java.util.zip.GZIPOutputStream;
-
-import javax.annotation.PostConstruct;
-import javax.annotation.PreDestroy;
-
-import org.apache.http.Header;
-import org.apache.http.HttpEntity;
-import org.apache.http.HttpHeaders;
-import org.apache.http.HttpHost;
-import org.apache.http.HttpResponse;
-import org.apache.http.HttpStatus;
-import org.apache.http.HttpVersion;
-import org.apache.http.StatusLine;
+import com.google.common.base.Strings;
+import eu.ttbox.batch.core.download.DownloaderConnector;
+import eu.ttbox.batch.core.fs.FileUtils;
+import org.apache.http.*;
 import org.apache.http.auth.AuthScope;
 import org.apache.http.auth.UsernamePasswordCredentials;
 import org.apache.http.client.AuthCache;
@@ -49,10 +21,16 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.util.Assert;
 
-import com.google.common.base.Strings;
-
-import eu.ttbox.batch.core.download.DownloaderConnector;
-import eu.ttbox.batch.core.fs.FileUtils;
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+import java.io.*;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
+import java.util.TimeZone;
+import java.util.zip.GZIPInputStream;
+import java.util.zip.GZIPOutputStream;
 
 public class HttpConnector implements DownloaderConnector {
 

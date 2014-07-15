@@ -1,18 +1,15 @@
 package eu.ttbox.batch.core.fs;
 
-import java.io.File;
-import java.io.IOException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.TimeZone;
-
-import javax.annotation.PostConstruct;
-
+import eu.ttbox.batch.core.download.DownloaderConnector;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.util.Assert;
 
-import eu.ttbox.batch.core.download.DownloaderConnector;
+import javax.annotation.PostConstruct;
+import java.io.File;
+import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class ProxyCacheDownloadConnector {
 

@@ -1,13 +1,12 @@
 package eu.ttbox.batch.core.fs.partitionner;
 
-import java.io.File;
-import java.text.MessageFormat;
-import java.util.Date;
-
+import eu.ttbox.batch.core.fs.FilePartitionner;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.util.Assert;
 
-import eu.ttbox.batch.core.fs.FilePartitionner;
+import java.io.File;
+import java.text.MessageFormat;
+import java.util.Date;
 
 public class NowDatePartitionner implements FilePartitionner, InitializingBean {
 

@@ -1,14 +1,9 @@
 package eu.ttbox.batch.core.download.http;
 
-import java.io.IOException;
-
-import org.apache.http.Header;
-import org.apache.http.HeaderElement;
-import org.apache.http.HttpEntity;
-import org.apache.http.HttpException;
-import org.apache.http.HttpResponse;
-import org.apache.http.HttpResponseInterceptor;
+import org.apache.http.*;
 import org.apache.http.protocol.HttpContext;
+
+import java.io.IOException;
 
 public class GzipHttpResponseInterceptor implements HttpResponseInterceptor {
 

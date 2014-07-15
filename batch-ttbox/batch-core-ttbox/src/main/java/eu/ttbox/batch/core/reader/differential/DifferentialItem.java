@@ -1,8 +1,8 @@
 package eu.ttbox.batch.core.reader.differential;
 
-import java.util.UUID;
-
 import com.google.common.base.Objects;
+
+import java.util.UUID;
 
 public class DifferentialItem<MASTER, JOIN> {
 

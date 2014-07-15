@@ -1,8 +1,8 @@
 package eu.ttbox.batch.core.fs.partitionner.voter;
 
-import java.io.File;
-
 import eu.ttbox.batch.core.voter.DecisionVoter;
+
+import java.io.File;
 
 public class FilenameContainsVoter implements DecisionVoter<File> {
 

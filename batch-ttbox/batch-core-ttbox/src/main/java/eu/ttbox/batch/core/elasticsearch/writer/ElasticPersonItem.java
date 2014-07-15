@@ -1,8 +1,8 @@
 package eu.ttbox.batch.core.elasticsearch.writer;
 
-import java.io.Serializable;
-
 import org.elasticsearch.common.xcontent.XContentBuilder;
+
+import java.io.Serializable;
 
 @SuppressWarnings("serial")
 public class ElasticPersonItem  implements Serializable {

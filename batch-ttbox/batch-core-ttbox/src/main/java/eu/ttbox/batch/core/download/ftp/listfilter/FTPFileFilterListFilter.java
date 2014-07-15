@@ -1,10 +1,10 @@
 package eu.ttbox.batch.core.download.ftp.listfilter;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import org.apache.commons.net.ftp.FTPFile;
 import org.apache.commons.net.ftp.FTPFileFilter;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class FTPFileFilterListFilter implements FileListFilter<FTPFile>  {

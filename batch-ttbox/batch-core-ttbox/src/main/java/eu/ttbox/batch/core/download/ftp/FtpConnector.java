@@ -1,32 +1,20 @@
 package eu.ttbox.batch.core.download.ftp;
 
-import java.io.BufferedOutputStream;
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.OutputStream;
-import java.io.PrintWriter;
+import eu.ttbox.batch.core.download.DownloaderConnector;
+import eu.ttbox.batch.core.fs.FileUtils;
+import org.apache.commons.net.PrintCommandListener;
+import org.apache.commons.net.ftp.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.InitializingBean;
+
+import java.io.*;
 import java.net.ConnectException;
 import java.net.SocketException;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 import java.util.zip.GZIPOutputStream;
-
-import org.apache.commons.net.PrintCommandListener;
-import org.apache.commons.net.ftp.FTP;
-import org.apache.commons.net.ftp.FTPClient;
-import org.apache.commons.net.ftp.FTPFile;
-import org.apache.commons.net.ftp.FTPFileFilter;
-import org.apache.commons.net.ftp.FTPFileFilters;
-import org.apache.commons.net.ftp.FTPListParseEngine;
-import org.apache.commons.net.ftp.FTPReply;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.InitializingBean;
-
-import eu.ttbox.batch.core.download.DownloaderConnector;
-import eu.ttbox.batch.core.fs.FileUtils;
 
 public class FtpConnector implements DownloaderConnector, InitializingBean {
 

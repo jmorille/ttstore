@@ -6,7 +6,6 @@ import org.elasticsearch.action.admin.indices.create.CreateIndexResponse;
 import org.elasticsearch.action.admin.indices.mapping.put.PutMappingRequestBuilder;
 import org.elasticsearch.action.admin.indices.mapping.put.PutMappingResponse;
 import org.elasticsearch.client.Client;
-
 import org.elasticsearch.common.base.Strings;
 import org.elasticsearch.common.io.Streams;
 import org.slf4j.Logger;

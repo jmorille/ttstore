@@ -1,14 +1,13 @@
 package eu.ttbox.batch.core.download.ftp.listfilter;
 
-import java.io.File;
-import java.util.ArrayList;
-import java.util.List;
-
+import eu.ttbox.batch.core.download.ftp.FtpFileDownloadRequest;
 import org.apache.commons.net.ftp.FTPFile;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import eu.ttbox.batch.core.download.ftp.FtpFileDownloadRequest;
+import java.io.File;
+import java.util.ArrayList;
+import java.util.List;
 
 public class LocalFileListFilter implements
 		FileListFilter<FtpFileDownloadRequest> {

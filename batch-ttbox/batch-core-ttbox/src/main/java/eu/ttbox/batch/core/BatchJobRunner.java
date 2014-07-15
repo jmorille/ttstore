@@ -1,9 +1,5 @@
 package eu.ttbox.batch.core;
 
-import java.util.Arrays;
-import java.util.Date;
-import java.util.Set;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.batch.core.ExitStatus;
@@ -26,6 +22,10 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.util.Assert;
 import org.springframework.util.StopWatch;
 import org.springframework.util.StringUtils;
+
+import java.util.Arrays;
+import java.util.Date;
+import java.util.Set;
  
 public class BatchJobRunner {
 

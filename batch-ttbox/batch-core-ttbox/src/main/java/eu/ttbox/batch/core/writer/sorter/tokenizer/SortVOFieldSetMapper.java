@@ -1,10 +1,9 @@
 package eu.ttbox.batch.core.writer.sorter.tokenizer;
 
+import eu.ttbox.batch.core.writer.sorter.SortVO;
 import org.springframework.batch.item.file.mapping.FieldSetMapper;
 import org.springframework.batch.item.file.transform.FieldSet;
 import org.springframework.validation.BindException;
-
-import eu.ttbox.batch.core.writer.sorter.SortVO;
 
 public class SortVOFieldSetMapper implements FieldSetMapper<SortVO> {
 

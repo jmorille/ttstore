@@ -1,9 +1,9 @@
 package eu.ttbox.batch.core.writer.sorter;
 
+import com.google.common.base.Objects;
+
 import java.io.Serializable;
 import java.util.Arrays;
-
-import com.google.common.base.Objects;
 
 public class SortVO implements Serializable, Comparable<SortVO> {
  

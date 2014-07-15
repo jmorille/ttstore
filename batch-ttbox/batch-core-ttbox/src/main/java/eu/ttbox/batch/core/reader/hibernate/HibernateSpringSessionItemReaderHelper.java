@@ -1,15 +1,6 @@
 package eu.ttbox.batch.core.reader.hibernate;
 
-import java.util.Collection;
-import java.util.List;
-import java.util.Map;
-
-import org.hibernate.FlushMode;
-import org.hibernate.Query;
-import org.hibernate.ScrollMode;
-import org.hibernate.ScrollableResults;
-import org.hibernate.Session;
-import org.hibernate.StatelessSession;
+import org.hibernate.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.batch.item.database.orm.HibernateQueryProvider;
@@ -19,6 +10,10 @@ import org.springframework.orm.hibernate3.SessionHolder;
 import org.springframework.transaction.support.TransactionSynchronizationManager;
 import org.springframework.util.Assert;
 import org.springframework.util.StringUtils;
+
+import java.util.Collection;
+import java.util.List;
+import java.util.Map;
 
 public class HibernateSpringSessionItemReaderHelper<T> extends HibernateAccessor  {
 

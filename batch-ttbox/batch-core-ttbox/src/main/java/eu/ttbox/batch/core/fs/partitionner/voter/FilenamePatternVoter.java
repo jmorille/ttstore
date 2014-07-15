@@ -1,10 +1,10 @@
 package eu.ttbox.batch.core.fs.partitionner.voter;
 
+import eu.ttbox.batch.core.voter.DecisionVoter;
+
 import java.io.File;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-
-import eu.ttbox.batch.core.voter.DecisionVoter;
 
 public class FilenamePatternVoter implements DecisionVoter<File> {
 

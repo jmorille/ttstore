@@ -4,7 +4,7 @@ import org.hibernate.MappingException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.dialect.Dialect;
-import org.hibernate.impl.SessionFactoryImpl;
+import org.hibernate.engine.spi.SessionFactoryImplementor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Repository;
@@ -34,7 +34,7 @@ public class AutoSelectSequenceDAOImpl implements SequenceDAO {
 
 	@PostConstruct
 	protected void initDao() throws Exception {
-		final Dialect dialect = ((SessionFactoryImpl) sessionFactory).getDialect();
+		final Dialect dialect = ((SessionFactoryImplementor) sessionFactory).getDialect();
 		try {
 			dialect.getSequenceNextValString("dummySeqName");
 			this.sequenceDAO = nextValSequenceDAO;
