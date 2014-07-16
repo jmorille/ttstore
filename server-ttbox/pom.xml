@@ -22,9 +22,7 @@
 	<modules>
 		<module>icecat-domain</module>
 		<module>domain-ttbox</module>
-		<module>search-service-ttbox</module> 
-		<module>admin-webapp-ttbox</module>
-		<module>store-webapp-ttbox</module>
+		<module>search-service-ttbox</module>  
 	</modules>
 	
 	 
